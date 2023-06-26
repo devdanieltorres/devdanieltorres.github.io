@@ -120,6 +120,10 @@
     margin-left: 25%;
     margin-right: 25%;
   }
+
+  .link_git {
+    color:#36899e
+  }
   
   .botao-entrar {
     position: relative;
