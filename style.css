@@ -1,4 +1,56 @@
-.secao-cinza {
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #36899e #e7e7e7;
+}
+
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #e7e7e7;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #36899e;
+  border-radius: 20px;
+  border: 3px solid #e7e7e7;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(100%);
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  color: #000;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.carousel-indicators {
+  bottom: -40px;
+}
+
+.carousel-indicators li {
+  background-color: #000;
+}
+
+.carousel-item img {
+  max-width: 80%;
+  max-height: 80%;
+  display: block;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: large;
+}
+
+  .secao-cinza {
     background-color: #f2f2f2;
   }
   
@@ -33,20 +85,18 @@
     line-height: 40px;
     font-size: 18px;
     font-family: sans-serif;
-    text-decoration: none;
     color: #333;
     border: 2px solid #333;
     text-align: center;
     transition: all .35s;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 20px;
-    margin-bottom: 20px;
   }
   
   .btn-new:hover{
     color: #000000;
     transform: scale(1.1);
+    text-decoration: none;
   }
   
   .barra {
@@ -55,7 +105,7 @@
     height: 7px;
     background-color: #ddd;
     position: relative;
-    margin-bottom: 29px;
+    margin-bottom: 38px;
   }
   
   .preenchimento {
@@ -96,8 +146,8 @@
   }
   
   .profile-img {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     padding: 2%;
   }
   
@@ -109,8 +159,7 @@
   
   .img-seta {
     width: 30px; 
-    height: 30px; 
-    margin-top: 10px;
+    height: 30px;     
   }
   
   
@@ -141,12 +190,7 @@
     margin-bottom: 10%;
     text-align: center;
   }
-  
-  .img-projetos:hover {
-    transform: scale(1.1);
-    transition: transform 0.3s ease-out;
-  }
-  
+
   .profile-text {
   color: #5a5a5a;
   }
@@ -224,14 +268,12 @@
     font-family: 'Roboto', sans-serif;
     font-weight: 1000;
     color: #36899e;
-    margin-bottom: 0;
   }
   
   .txt-resumo {
     font-family: 'Roboto', sans-serif;
     font-weight: 1000;
     color: #36899e;
-    margin-bottom: 0;
     margin-top: 80px;
   }
   
@@ -274,21 +316,23 @@
     text-decoration: none;
   }
   
-  /*nome trabalho*/
-  .trabalho {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 10;
-    margin-top: -50px;
-    margin-left: 35%;
-    margin-right: 35%;
-  }
-  
   /*nome daniel torres*/
   .nome-grande {
     font-family: 'Open Sans', sans-serif;
     font-weight: 1000;
-    font-size: 60px;
-    margin-top: -30px;
+    font-size: 70px;
+  }
+
+  .nome-medio {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 10;
+    font-size: 30px;
+  }
+
+  .subtitulo {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 25px;
   }
   
   /*inicio*/
@@ -328,12 +372,19 @@
     width: 30%;
     margin: auto;
     cursor: pointer;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
   }
   
   .btn-menu {
     color: #FFF;
     transition: all 0.3s;
     position: relative;
+  }
+
+  .btn-menu:hover {
+  color: #FFF; /* mantém o texto em branco */
   }
   
   .btn-menu span {
@@ -464,6 +515,11 @@
       margin: 5px 0;
       width: 50%;
       font-size: 14px;
+    }
+
+    .btn-new {
+      margin-top: 20px;
+      margin-bottom: 20px;
     }
   
     .imagem-fundo {

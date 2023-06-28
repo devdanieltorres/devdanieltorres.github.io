@@ -1,0 +1,7 @@
+personalizar barra de rolagem
+
+aumentar zoom do site quando ir para o mobile
+
+deixar barra de menus fixa na versão mobile e recolhida
+
+adicionar tecnologias utilizadas em cada projeto
