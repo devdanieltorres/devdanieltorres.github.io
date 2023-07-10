@@ -55,8 +55,12 @@ h1 {
   }
   
   .img-contato {
-    background-image: url('imagens/contato.jpg');
+    background-size: cover;
+    background-position: center center;
+    height: 1200px;
     width: 100%;
+    position: absolute;
+
     z-index: -1;
   }
   
@@ -95,7 +99,7 @@ h1 {
   
   .btn-new:hover{
     color: #000000;
-    transform: scale(1.1);
+    margin-bottom: -10px;
     text-decoration: none;
   }
   
@@ -231,6 +235,10 @@ h1 {
   .margem-top {
     padding-top: 70px;
   }
+
+  .margem-saibamais {
+    padding-bottom: 150px;
+  }
   
   body {
     font-family: Arial, sans-serif;
@@ -321,12 +329,14 @@ h1 {
     font-family: 'Open Sans', sans-serif;
     font-weight: 1000;
     font-size: 70px;
+    color: #000;
   }
 
   .nome-medio {
     font-family: 'Roboto', sans-serif;
     font-weight: 10;
     font-size: 30px;
+    color: #000;
   }
 
   .subtitulo {
@@ -338,7 +348,7 @@ h1 {
   /*inicio*/
   #inicio {
     padding-top: 250px;
-    padding-bottom: 170px;
+    padding-bottom: 60px;
     color: #FFF;
   }
   
@@ -439,7 +449,6 @@ h1 {
   
   /*adiciona a imagem inicial*/
   .imagem-fundo {
-    background-image: url('imagens/inicial.png');
     background-size: cover;
     background-position: center center;
     height: 740px;
@@ -540,7 +549,7 @@ h1 {
   
     #inicio {
       padding-top: 130px;
-      padding-bottom: 205px;
+      padding-bottom: 135px;
       color: #FFF;
     }
   
