@@ -9,20 +9,26 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
 		integrity="sha512-1a7W8JvZbuAxoxxTnzbZjjl7V1LdJS4YpyVQgBt21OwVHmFzSudwIAmH8QxAGGmX6kD/p5b5ULW8XFvVP+4C4w=="
 		crossorigin="anonymous" referrerpolicy="no-referrer" />
-		
+
 	<script type="module" src="https://unpkg.com/@splinetool/viewer@0.9.381/build/spline-viewer.js"></script>
 
 </head>
 
 <body>
 	<header>
-		<nav>
-			<a href="#inicio" class="btn btn-menu">INICIO</a>
-			<a href="#sobre" class="btn btn-menu">SOBRE</a>
-			<a href="#resumo" class="btn btn-menu">RESUMO</a>
-			<a href="#portifolio" class="btn btn-menu">PORTFÓLIO</a>
-			<a href="#contato" class="btn btn-menu">CONTATO</a>
-		</nav>
+		<div class="barra-header">
+			<a class="btn-toggle">
+				<img class="img-ico" src="imagens/menu.png" alt="menu" width="90" height="70">
+			</a>
+			
+			<nav class="menu active">
+				<a href="#inicio" class="btn btn-menu">INICIO</a>
+				<a href="#sobre" class="btn btn-menu">SOBRE</a>
+				<a href="#resumo" class="btn btn-menu">RESUMO</a>
+				<a href="#portifolio" class="btn btn-menu">PORTFÓLIO</a>
+				<a href="#contato" class="btn btn-menu">CONTATO</a>
+			</nav>
+		</div>
 		<a href="#" id="scroll-to-top" class="scroll-to-top" onclick="scrollToTop(); return false;">
 			<i class="fas fa-arrow-up">
 				<img class="img-seta" src="imagens/seta.png">
@@ -31,7 +37,8 @@
 	</header>
 	<main>
 		<section id="inicio">
-			<spline-viewer class="imagem-fundo" url="https://prod.spline.design/VRyKTg2HCSIAcZs9/scene.splinecode"></spline-viewer>
+			<spline-viewer class="imagem-fundo"
+				url="https://prod.spline.design/VRyKTg2HCSIAcZs9/scene.splinecode"></spline-viewer>
 			<div class="conteudo-inicial">
 				<h1 class="nome-medio">PORTFÓLIO</h1>
 				<h1 class="nome-grande">DANIEL TORRES</h1>
@@ -266,10 +273,12 @@
 
 			<div class="center-colum">
 				<div class="coluna1">
-					<a href="https://findgeolocationweb.000webhostapp.com/find/login.php" target="_blank" class="btn-new" href="#"><span>PROJETO</span></a>
+					<a href="https://findgeolocationweb.000webhostapp.com/find/login.php" target="_blank"
+						class="btn-new" href="#"><span>PROJETO</span></a>
 				</div>
 				<div class="coluna2">
-					<a href="https://github.com/devdanieltorres/find" target="_blank" class="btn-new" href="#"><span>GITHUB</span></a>
+					<a href="https://github.com/devdanieltorres/find" target="_blank" class="btn-new"
+						href="#"><span>GITHUB</span></a>
 				</div>
 			</div>
 
@@ -294,10 +303,12 @@
 
 			<div class="center-colum">
 				<div class="coluna1">
-					<a href="https://devdanieltorres.github.io/lista.github.io/" target="_blank" class="btn-new" href="#"><span>PROJETO</span></a>
+					<a href="https://devdanieltorres.github.io/lista.github.io/" target="_blank" class="btn-new"
+						href="#"><span>PROJETO</span></a>
 				</div>
 				<div class="coluna2">
-					<a href="https://github.com/devdanieltorres/lista.github.io" target="_blank" class="btn-new" href="#"><span>GITHUB</span></a>
+					<a href="https://github.com/devdanieltorres/lista.github.io" target="_blank" class="btn-new"
+						href="#"><span>GITHUB</span></a>
 				</div>
 			</div>
 
@@ -321,7 +332,8 @@
 			</div>
 
 			<div class="center-colum">
-					<a href="https://github.com/devdanieltorres/conversorMoedas" target="_blank" class="btn-new" href="#"><span>GITHUB</span></a>
+				<a href="https://github.com/devdanieltorres/conversorMoedas" target="_blank" class="btn-new"
+					href="#"><span>GITHUB</span></a>
 			</div>
 
 			<div class="center-colum">
@@ -332,7 +344,7 @@
 					<p class="txt-carreira">Cronômetro</p>
 
 					<p class="profile-text">
-						Uma página onde o usuário tem um cronômetro onde tem as opções de 
+						Uma página onde o usuário tem um cronômetro onde tem as opções de
 						inicial, pausar e zerar.
 					</p><br>
 				</div>
@@ -344,62 +356,65 @@
 
 			<div class="center-colum margem-bottom">
 				<div class="coluna1">
-					<a href="https://devdanieltorres.github.io/cronometro.github.io/" target="_blank" class="btn-new" href="#"><span>PROJETO</span></a>
+					<a href="https://devdanieltorres.github.io/cronometro.github.io/" target="_blank" class="btn-new"
+						href="#"><span>PROJETO</span></a>
 				</div>
 				<div class="coluna2">
-					<a href="https://github.com/devdanieltorres/cronometro.github.io" target="_blank" class="btn-new" href="#"><span>GITHUB</span></a>
+					<a href="https://github.com/devdanieltorres/cronometro.github.io" target="_blank" class="btn-new"
+						href="#"><span>GITHUB</span></a>
 				</div>
 			</div>
 
 		</section>
 
 		<section id="contato">
-			<spline-viewer class="img-contato" url="https://prod.spline.design/iYBxXlMBrd7SKbRO/scene.splinecode"></spline-viewer>
-						<div class="fonte-contato">
-					<div class="centralizar">
-						<h2 class="txt-sobre margem-top">Contato</h2>
-
-					</div>
-					<div class="colunas">
-						<div class="column">
-							<div class="image-container">
-								<img class="img-icones" src="imagens/local.png">
-							</div>
-							<h1 class="txt-contatos">LOCALIZAÇÃO</h1>
-							<p class="txt-info">Brasília-DF</p>
-						</div>
-						<div class="column">
-							<a href="mailto:danieltorres2706@hotmail.com" target="_blank">
-								<div class="image-container">
-									<img class="img-icones" src="imagens/carta.png">
-								</div>
-
-								<h1 class="txt-contatos">ENVIE UM E-MAIL</h1>
-								<p class="txt-info">danieltorres2706@hotmail.com</p>
-							</a>
-						</div>
-						<div class="column">
-							<a href="https://api.whatsapp.com/send?phone=5561991848154" target="_blank">
-								<div class="image-container">
-									<img class="img-icones" src="imagens/telefone.png">
-								</div>
-
-								<h1 class="txt-contatos">CHAMADA OU WHATSAPP</h1>
-								<p class="txt-info">(+55) 61 9.9184-8154</p>
-							</a>
-						</div>
-					</div>
-
+			<spline-viewer class="img-contato"
+				url="https://prod.spline.design/iYBxXlMBrd7SKbRO/scene.splinecode"></spline-viewer>
+			<div class="fonte-contato">
+				<div class="centralizar">
+					<h2 class="txt-sobre margem-top">Contato</h2>
 
 				</div>
-			
+				<div class="colunas">
+					<div class="column">
+						<div class="image-container">
+							<img class="img-icones" src="imagens/local.png">
+						</div>
+						<h1 class="txt-contatos">LOCALIZAÇÃO</h1>
+						<p class="txt-info">Brasília-DF</p>
+					</div>
+					<div class="column">
+						<a href="mailto:danieltorres2706@hotmail.com" target="_blank">
+							<div class="image-container">
+								<img class="img-icones" src="imagens/carta.png">
+							</div>
+
+							<h1 class="txt-contatos">ENVIE UM E-MAIL</h1>
+							<p class="txt-info">danieltorres2706@hotmail.com</p>
+						</a>
+					</div>
+					<div class="column">
+						<a href="https://api.whatsapp.com/send?phone=5561991848154" target="_blank">
+							<div class="image-container">
+								<img class="img-icones" src="imagens/telefone.png">
+							</div>
+
+							<h1 class="txt-contatos">CHAMADA OU WHATSAPP</h1>
+							<p class="txt-info">(+55) 61 9.9184-8154</p>
+						</a>
+					</div>
+				</div>
+
+
+			</div>
+
 		</section>
 	</main>
-	
+
 	<script src="script.js"></script>
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
 </body>
 

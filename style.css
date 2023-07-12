@@ -385,7 +385,7 @@ h1 {
     line-height: 50px;
     height: 50px;
     text-align: center;
-    width: 30%;
+    width: 100%;
     margin: auto;
     cursor: pointer;
     display: flex; 
@@ -394,13 +394,13 @@ h1 {
   }
   
   .btn-menu {
-    color: #FFF;
+    color: #000000;
     transition: all 0.3s;
     position: relative;
   }
 
   .btn-menu:hover {
-  color: #FFF; /* mantém o texto em branco */
+  color: #000000;
   }
   
   .btn-menu span {
@@ -421,8 +421,8 @@ h1 {
     border-bottom-width: 1px;
     border-top-style: solid;
     border-bottom-style: solid;
-    border-top-color: rgba(255, 255, 255, 0.5);
-    border-bottom-color: rgba(255, 255, 255, 0.5);
+    border-top-color: rgba(0, 0, 0, 0.5);
+    border-bottom-color: rgba(0, 0, 0, 0.5);
     transform: scale(0.1, 1);
   }
   
@@ -445,7 +445,7 @@ h1 {
     z-index: 1;
     transition: all 0.3s;
     border-radius: 40px;
-    background-color: rgba(163, 163, 163, 0.116);
+    background-color: rgba(0, 0, 0, 0.116);
   }
   
   .btn-menu:hover::after {
@@ -468,11 +468,17 @@ h1 {
   a:hover .img-ico {
     filter: invert(100%);
   }
+
+  .btn-toggle {
+    margin-left: 15px;
+  }
   
   /*centraliza os nomes do menu*/
   nav {
     font-family: "poppins-medium", sans-serif;
     display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   
   .scroll-to-top {
@@ -499,17 +505,23 @@ h1 {
   }
   
   /* */
-  header {
-    background-color: #000000;
+  .barra-header {
     color: #fff;
-    padding-top: 20px;
-    padding-bottom: 20px;
     position: fixed;
     z-index: 9999;
     top: 0;
-    width: 100%;
+    left: 0;
+    margin: 10px;
   }
   
+  .menu {
+    display: none;
+  }
+  
+  .menu.active {
+    display: flex;
+  }
+
   /* stilos para telas menores */
   @media only screen and (max-width: 1000px) {
   
@@ -520,11 +532,6 @@ h1 {
     header {
       position: static;
     }
-  
-    header nav {
-      flex-direction: column;
-      align-items: center;
-    }
 
     #contato {
       padding-bottom: 195px;
@@ -532,7 +539,7 @@ h1 {
   
     .btn {
       margin: 5px 0;
-      width: 50%;
+      width: 100%;
       font-size: 14px;
     }
 

@@ -11,39 +11,11 @@ links.forEach(link => {
   });
 });
 
-// Envio email
+const btnToggle = document.querySelector('.btn-toggle');
+const menu = document.querySelector('.menu');
 
-const form = document.getElementById("contact-form");
-
-form.addEventListener("submit", function(event) {
-  event.preventDefault();
-  const name = document.getElementById("name").value;
-  const email = document.getElementById("email").value;
-  const subject = document.getElementById("subject").value;
-  const message = document.getElementById("message").value;
-
-  const data = {
-    name,
-    email,
-    subject,
-    message,
-  };
-
-  fetch("send-email.php", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(data)
-  })
-  .then(response => {
-    alert("Mensagem enviada com sucesso!");
-    form.reset();
-  })
-  .catch(error => {
-    console.error(error);
-    alert("Ocorreu um erro ao enviar a mensagem.");
-  });
+btnToggle.addEventListener('click', function() {
+  menu.classList.toggle('active');
 });
 
 function scrollToTop() {
