@@ -270,6 +270,12 @@ h1 {
   .txt-sobre {
     font-family: 'Roboto', sans-serif;
     font-weight: 1000;
+    color: #36899e;
+  }
+
+  .txt-cont {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 1000;
     color: #ffffff;
   }
   
