@@ -17,33 +17,27 @@
   border: 3px solid #e7e7e7;
 }
 
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  filter: invert(100%);
+.sections {
+  display: flex;
+  right: 450px;
+  width: 50%;
+  margin-left: 25%;
+  margin-right: 25%;
 }
 
-.carousel-control-prev,
-.carousel-control-next {
-  color: #000;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 1;
+.sections img{
+width: 0;
+flex-grow: 1;
+object-fit: cover;
+opacity: 8;
+transition: .5s ease;
 }
 
-.carousel-indicators {
-  bottom: -40px;
-}
-
-.carousel-indicators li {
-  background-color: #000;
-}
-
-.carousel-item img {
-  max-width: 80%;
-  max-height: 80%;
-  display: block;
-  margin: 0 auto;
+.sections img:hover {
+  cursor: crosshair;
+  width: 300px;
+  opacity: 1;
+  filter: contrast(120%);
 }
 
 h1 {
@@ -54,16 +48,11 @@ h1 {
     background-color: #f2f2f2;
   }
   
-#contato {
-  padding-bottom: 650px;
-}
+
 
   .img-contato {
-    background-size: cover;
-    background-position: center center;
-    height: 1000px;
+    background-image: url('imagens/contato.jpg');
     width: 100%;
-    position: absolute;
     z-index: -1;
   }
   
@@ -166,9 +155,13 @@ h1 {
   
   .img-seta {
     width: 30px; 
-    height: 30px;     
+    height: 30px;    
+    transition: all 0.2s ease-out; 
   }
-  
+
+  .img-seta:hover{
+    height: 50px;
+  }
   
   .img-projetos {
     width: 50%;
@@ -277,7 +270,7 @@ h1 {
   .txt-sobre {
     font-family: 'Roboto', sans-serif;
     font-weight: 1000;
-    color: #36899e;
+    color: #ffffff;
   }
   
   .txt-resumo {
@@ -294,11 +287,11 @@ h1 {
   .txt-contatos {
     font-family: 'Roboto', sans-serif;
     font-weight: 1000;
-    color: #ffffff;
+    color: #a0a0a0;
   }
 
   .txt-info {
-    color: #000;
+    color: #ffffff;
   }
   
   .txt-title {
@@ -397,6 +390,7 @@ h1 {
     color: #000000;
     transition: all 0.3s;
     position: relative;
+    margin-top: 25px;
   }
 
   .btn-menu:hover {
@@ -529,14 +523,6 @@ h1 {
       zoom: 100%;
     }
   
-    header {
-      position: static;
-    }
-
-    #contato {
-      padding-bottom: 195px;
-    }
-  
     .btn {
       margin: 5px 0;
       width: 100%;
@@ -546,14 +532,10 @@ h1 {
     .btn-new {
       margin-top: 20px;
       margin-bottom: 20px;
-    }
-  
-    .imagem-fundo {
-      margin-top: 340px;
-    }
+    } 
   
     .nome-grande {
-      margin-left: 35%;
+      margin-left: 45%;
       margin-right: 35%;
     }
   
@@ -565,8 +547,8 @@ h1 {
     }
   
     #inicio {
-      padding-top: 130px;
-      padding-bottom: 135px;
+      padding-top: 200px;
+      padding-bottom: 65px;
       color: #FFF;
     }
   

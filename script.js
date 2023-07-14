@@ -6,7 +6,7 @@ links.forEach(link => {
   link.addEventListener('click', (event) => {
     event.preventDefault();
     const target = document.querySelector(link.getAttribute('href'));
-    const scrollTop = target.getBoundingClientRect().top + window.pageYOffset - 50;
+    const scrollTop = target.getBoundingClientRect().top + window.pageYOffset ;
     window.scrollTo({ top: scrollTop, behavior: 'smooth' });
   });
 });
