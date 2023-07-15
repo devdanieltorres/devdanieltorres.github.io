@@ -25,3 +25,8 @@ function scrollToTop() {
     window.scrollTo(0, currentScroll - (currentScroll / 8));
   }
 };
+
+window.addEventListener("load", function() {
+  var loader = document.getElementById("loader");
+  loader.style.display = "none";
+});
