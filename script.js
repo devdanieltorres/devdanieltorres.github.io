@@ -30,3 +30,12 @@ window.addEventListener("load", function() {
   var loader = document.getElementById("loader");
   loader.style.display = "none";
 });
+
+// find
+document.addEventListener("DOMContentLoaded", function() {
+  mostrarImagemGrandeFind('imagens/find (1).png');
+});
+
+function mostrarImagemGrandeFind(imagem) {
+  document.getElementById("imagemGrandeFind").src = imagem;
+}
