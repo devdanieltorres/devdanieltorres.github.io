@@ -498,6 +498,7 @@ h1 {
   
   /*adiciona a imagem inicial*/
   .imagem-fundo {
+    background-image: url('imagens/inicio.jpg');
     background-size: cover;
     background-position: center center;
     height: 740px;
