@@ -1,0 +1,12 @@
+BEGIN:VCARD
+VERSION:3.0
+FN:Daniel Torres
+N:Torres;Daniel;;;
+TITLE:Desenvolvedor Full-Stack
+TEL;TYPE=CELL:(61) 99184-8154
+EMAIL;TYPE=INTERNET:Danieltorres2706@hotmail.com
+ADR;TYPE=HOME:;;Brasilia;DF;;;Brasil
+URL:https://www.linkedin.com/in/daniel-torres-0851581a0/
+URL:https://github.com/devdanieltorres
+NOTE:Portfolio: devdanieltorres
+END:VCARD
