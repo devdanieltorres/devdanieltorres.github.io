@@ -1,325 +1,430 @@
-<?php
-include 'includes/header.php';
-?>
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daniel Torres | Desenvolvedor Full-Stack</title>
+    <meta name="description" content="Portfólio de Daniel Torres, desenvolvedor full-stack com experiência em PHP, CodeIgniter, JavaScript, MySQL, APIs REST e manutenção de sistemas web.">
+    <meta name="theme-color" content="#060e20">
+    <meta name="author" content="Daniel Torres">
+    <meta property="og:title" content="Daniel Torres | Desenvolvedor Full-Stack">
+    <meta property="og:description" content="Portfólio profissional com experiência, habilidades e canais de contato de Daniel Torres.">
+    <meta property="og:type" content="website">
 
-<main id="main-content" class="relative overflow-x-hidden">
-    <div class="fixed inset-0 hero-gradient pointer-events-none -z-10"></div>
-    <div class="fixed -top-24 -right-24 w-64 md:w-96 h-64 md:h-96 bg-primary/5 rounded-full blur-[80px] md:blur-[100px] pointer-events-none -z-10"></div>
-    <div class="fixed top-1/3 -left-24 w-64 md:w-96 h-64 md:h-96 bg-tertiary/10 rounded-full blur-[90px] md:blur-[120px] pointer-events-none -z-10"></div>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        headline: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#81ecff',
+                        'primary-dim': '#00d4ec',
+                        tertiary: '#70aaff',
+                        background: '#060e20',
+                        surface: '#060e20',
+                        'surface-container': '#0f1930',
+                        'surface-container-high': '#141f38',
+                        'surface-container-highest': '#192540',
+                        'on-surface': '#dee5ff',
+                        'on-surface-variant': '#a3aac4',
+                        'outline-variant': '#40485d',
+                        success: '#34d399',
+                        warning: '#fbbf24',
+                    }
+                }
+            }
+        };
+    </script>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-background text-on-surface font-sans antialiased overflow-x-hidden selection:bg-primary/20 selection:text-on-surface">
+    <a href="#home" class="skip-link">Pular para o conteúdo</a>
 
-    <section id="home" class="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center pt-24 pb-16 md:pt-32 md:pb-28">
-        <div class="lg:col-span-7 flex flex-col space-y-6 md:space-y-8 text-center lg:text-left items-center lg:items-start reveal">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-highest border border-outline-variant/30 w-fit">
-                <span class="w-2 h-2 rounded-full bg-success animate-pulse"></span>
-                <span class="text-[10px] md:text-xs font-medium tracking-[0.2em] uppercase text-primary">DisponÃ­vel para novos desafios</span>
-            </div>
-            <div class="space-y-4">
-                <p class="text-sm uppercase tracking-[0.35em] text-on-surface-variant">PortfÃ³lio profissional</p>
-                <h1 class="text-5xl md:text-7xl lg:text-[5.25rem] font-headline font-bold tracking-tight text-on-surface leading-[1.05]">
-                    DANIEL <span class="text-primary">TORRES</span>
-                </h1>
-                <p class="text-xl md:text-3xl font-headline text-on-surface-variant">
-                    Desenvolvedor full-stack com foco em sistemas web estÃ¡veis, performÃ¡ticos e escalÃ¡veis.
-                </p>
-            </div>
-            <p class="text-lg md:text-xl text-on-surface-variant max-w-3xl leading-relaxed">
-                Atuo com desenvolvimento e manutenÃ§Ã£o de sistemas desde 2021, com forte experiÃªncia em PHP, CodeIgniter, JavaScript, MySQL, APIs REST, Git e Azure DevOps.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 pt-4 w-full sm:w-auto">
-                <a href="#contact" class="px-8 py-4 bg-gradient-to-br from-primary to-primary-dim text-background font-bold rounded-xl electric-glow hover:brightness-110 transition-all flex items-center justify-center gap-2">
-                    Entrar em contato
+    <header class="fixed top-0 w-full z-50 bg-[#060e20]/90 backdrop-blur-xl border-b border-outline-variant/10">
+        <div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
+            <a href="#home" class="flex items-center gap-3 group" aria-label="Ir para o início do portfólio">
+                <span class="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary font-headline font-bold">DT</span>
+                <div>
+                    <span class="block text-base md:text-lg font-bold tracking-tight text-on-surface font-headline">DANIEL TORRES</span>
+                    <span class="block text-[10px] uppercase tracking-[0.3em] text-on-surface-variant">Full-Stack Developer</span>
+                </div>
+            </a>
+
+            <nav class="hidden lg:flex gap-8 items-center" aria-label="Navegação principal">
+                <a href="#home" class="nav-link text-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-all">Início</a>
+                <a href="#about" class="nav-link text-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-all">Sobre</a>
+                <a href="#experience" class="nav-link text-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-all">Experiência</a>
+                <a href="#skills" class="nav-link text-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-all">Habilidades</a>
+                <a href="#contact" class="nav-link text-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-all">Contato</a>
+                <a href="https://www.linkedin.com/in/daniel-torres-0851581a0/" target="_blank" rel="noreferrer" class="ml-4 px-6 py-2 bg-primary text-background font-bold rounded-lg hover:scale-105 transition-all focus:outline-none focus:ring-2 focus:ring-primary">
+                    LinkedIn
                 </a>
-                <a href="https://github.com/devdanieltorres" target="_blank" rel="noreferrer" class="px-8 py-4 bg-transparent border border-outline-variant/40 text-on-surface font-bold rounded-xl hover:bg-surface-container-high transition-all text-center">
+            </nav>
+
+            <button id="menu-toggle" class="lg:hidden text-primary p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" aria-controls="mobile-menu" aria-expanded="false" aria-label="Abrir menu">
+                <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 w-full bg-surface-container border-b border-outline-variant/20 shadow-2xl">
+            <nav class="flex flex-col p-6 gap-4" aria-label="Navegação mobile">
+                <a href="#home" class="mobile-nav-link text-lg font-headline uppercase tracking-widest py-3 border-b border-outline-variant/10 text-primary">Início</a>
+                <a href="#about" class="mobile-nav-link text-lg font-headline uppercase tracking-widest py-3 border-b border-outline-variant/10">Sobre</a>
+                <a href="#experience" class="mobile-nav-link text-lg font-headline uppercase tracking-widest py-3 border-b border-outline-variant/10">Experiência</a>
+                <a href="#skills" class="mobile-nav-link text-lg font-headline uppercase tracking-widest py-3 border-b border-outline-variant/10">Habilidades</a>
+                <a href="#contact" class="mobile-nav-link text-lg font-headline uppercase tracking-widest py-3 border-b border-outline-variant/10">Contato</a>
+                <a href="https://github.com/devdanieltorres" target="_blank" rel="noreferrer" class="w-full mt-4 px-6 py-4 bg-primary text-background font-bold rounded-xl text-center">
                     Ver GitHub
                 </a>
-            </div>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 w-full pt-6">
-                <div class="glass-card rounded-2xl p-4 text-left">
-                    <div class="text-2xl font-headline font-bold text-primary">4+</div>
-                    <div class="text-xs uppercase tracking-[0.2em] text-on-surface-variant">anos em tecnologia</div>
-                </div>
-                <div class="glass-card rounded-2xl p-4 text-left">
-                    <div class="text-2xl font-headline font-bold text-primary">PHP</div>
-                    <div class="text-xs uppercase tracking-[0.2em] text-on-surface-variant">stack principal</div>
-                </div>
-                <div class="glass-card rounded-2xl p-4 text-left">
-                    <div class="text-2xl font-headline font-bold text-primary">APIs</div>
-                    <div class="text-xs uppercase tracking-[0.2em] text-on-surface-variant">integraÃ§Ã£o REST</div>
-                </div>
-                <div class="glass-card rounded-2xl p-4 text-left">
-                    <div class="text-2xl font-headline font-bold text-primary">CI/CD</div>
-                    <div class="text-xs uppercase tracking-[0.2em] text-on-surface-variant">Azure DevOps</div>
-                </div>
-            </div>
+            </nav>
         </div>
+    </header>
 
-        <div class="lg:col-span-5 relative flex justify-center mt-12 lg:mt-0 reveal">
-            <div class="relative w-full max-w-[460px]">
-                <div class="absolute inset-0 border-2 border-primary/20 -rotate-3 rounded-3xl -z-10 translate-x-4 translate-y-4"></div>
-                <div class="glass-card rounded-3xl overflow-hidden p-4 md:p-5">
-                    <div class="relative aspect-[4/5] rounded-[1.75rem] overflow-hidden border border-outline-variant/20">
-                        <img
-                            src="assets/img/fotoPreto%20-%20quadrada.jpeg"
-                            alt="Foto profissional de Daniel Torres"
-                            class="w-full h-full object-cover object-center"
-                        >
+    <main id="main-content" class="relative overflow-x-hidden">
+        <div class="fixed inset-0 hero-gradient pointer-events-none -z-10"></div>
+        <div class="fixed -top-24 -right-24 w-64 md:w-96 h-64 md:h-96 bg-primary/5 rounded-full blur-[80px] md:blur-[100px] pointer-events-none -z-10"></div>
+        <div class="fixed top-1/3 -left-24 w-64 md:w-96 h-64 md:h-96 bg-tertiary/10 rounded-full blur-[90px] md:blur-[120px] pointer-events-none -z-10"></div>
+
+        <section id="home" class="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center pt-24 pb-16 md:pt-32 md:pb-28">
+            <div class="lg:col-span-7 flex flex-col space-y-6 md:space-y-8 text-center lg:text-left items-center lg:items-start reveal">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-highest border border-outline-variant/30 w-fit">
+                    <span class="w-2 h-2 rounded-full bg-success animate-pulse"></span>
+                    <span class="text-[10px] md:text-xs font-medium tracking-[0.2em] uppercase text-primary">Disponível para novos desafios</span>
+                </div>
+                <div class="space-y-4">
+                    <p class="text-sm uppercase tracking-[0.35em] text-on-surface-variant">Portfólio profissional</p>
+                    <h1 class="text-5xl md:text-7xl lg:text-[5.25rem] font-headline font-bold tracking-tight text-on-surface leading-[1.05]">
+                        DANIEL <span class="text-primary">TORRES</span>
+                    </h1>
+                    <p class="text-xl md:text-3xl font-headline text-on-surface-variant">
+                        Desenvolvedor full-stack com foco em sistemas web estáveis, performáticos e escaláveis.
+                    </p>
+                </div>
+                <p class="text-lg md:text-xl text-on-surface-variant max-w-3xl leading-relaxed">
+                    Atuo com desenvolvimento e manutenção de sistemas desde 2021, com forte experiência em PHP, CodeIgniter, JavaScript, MySQL, APIs REST, Git e Azure DevOps.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 pt-4 w-full sm:w-auto">
+                    <a href="#contact" class="px-8 py-4 bg-gradient-to-br from-primary to-primary-dim text-background font-bold rounded-xl electric-glow hover:brightness-110 transition-all flex items-center justify-center gap-2">
+                        Entrar em contato
+                    </a>
+                    <a href="https://github.com/devdanieltorres" target="_blank" rel="noreferrer" class="px-8 py-4 bg-transparent border border-outline-variant/40 text-on-surface font-bold rounded-xl hover:bg-surface-container-high transition-all text-center">
+                        Ver GitHub
+                    </a>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 w-full pt-6">
+                    <div class="glass-card rounded-2xl p-4 text-left">
+                        <div class="text-2xl font-headline font-bold text-primary">4+</div>
+                        <div class="text-xs uppercase tracking-[0.2em] text-on-surface-variant">anos em tecnologia</div>
+                    </div>
+                    <div class="glass-card rounded-2xl p-4 text-left">
+                        <div class="text-2xl font-headline font-bold text-primary">PHP</div>
+                        <div class="text-xs uppercase tracking-[0.2em] text-on-surface-variant">stack principal</div>
+                    </div>
+                    <div class="glass-card rounded-2xl p-4 text-left">
+                        <div class="text-2xl font-headline font-bold text-primary">APIs</div>
+                        <div class="text-xs uppercase tracking-[0.2em] text-on-surface-variant">integração REST</div>
+                    </div>
+                    <div class="glass-card rounded-2xl p-4 text-left">
+                        <div class="text-2xl font-headline font-bold text-primary">CI/CD</div>
+                        <div class="text-xs uppercase tracking-[0.2em] text-on-surface-variant">Azure DevOps</div>
                     </div>
                 </div>
-                <div class="mt-5 glass-card rounded-3xl p-5 md:p-6">
-                    <p class="text-xs uppercase tracking-[0.35em] text-primary mb-3">Resumo rÃ¡pido</p>
-                    <h2 class="text-2xl md:text-3xl font-headline font-bold leading-tight mb-4">
-                        Back-end solido, entrega confiÃ¡vel e foco em negÃ³cio.
-                    </h2>
-                    <div class="space-y-3">
-                        <div class="info-chip">Brasilia, DF</div>
-                        <div class="info-chip">PHP / CodeIgniter</div>
-                        <div class="info-chip">JavaScript / jQuery</div>
-                        <div class="info-chip">MySQL / SQL Server</div>
+            </div>
+
+            <div class="lg:col-span-5 relative flex justify-center mt-12 lg:mt-0 reveal">
+                <div class="relative w-full max-w-[460px]">
+                    <div class="absolute inset-0 border-2 border-primary/20 -rotate-3 rounded-3xl -z-10 translate-x-4 translate-y-4"></div>
+                    <div class="glass-card rounded-3xl overflow-hidden p-4 md:p-5">
+                        <div class="relative aspect-[4/5] rounded-[1.75rem] overflow-hidden border border-outline-variant/20">
+                            <img
+                                src="assets/img/fotoPreto%20-%20quadrada.jpeg"
+                                alt="Foto profissional de Daniel Torres"
+                                class="w-full h-full object-cover object-center"
+                            >
+                        </div>
+                    </div>
+                    <div class="mt-5 glass-card rounded-3xl p-5 md:p-6">
+                        <p class="text-xs uppercase tracking-[0.35em] text-primary mb-3">Resumo rápido</p>
+                        <h2 class="text-2xl md:text-3xl font-headline font-bold leading-tight mb-4">
+                            Back-end solido, entrega confiável e foco em negócio.
+                        </h2>
+                        <div class="space-y-3">
+                            <div class="info-chip">Brasilia, DF</div>
+                            <div class="info-chip">PHP / CodeIgniter</div>
+                            <div class="info-chip">JavaScript / jQuery</div>
+                            <div class="info-chip">MySQL / SQL Server</div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="about" class="max-w-7xl mx-auto px-6 lg:px-8 py-20 md:py-28 reveal">
-        <div class="grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-8 md:gap-12 items-start">
-            <div class="glass-card rounded-3xl p-8 md:p-10">
-                <h2 class="text-xs uppercase tracking-[0.3em] text-primary mb-4">Sobre</h2>
-                <h3 class="text-3xl md:text-5xl font-headline font-bold text-on-surface tracking-tight leading-tight mb-6">
-                    Desenvolvimento orientado a qualidade, performance e evoluÃ§Ã£o continua.
+        <section id="about" class="max-w-7xl mx-auto px-6 lg:px-8 py-20 md:py-28 reveal">
+            <div class="grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-8 md:gap-12 items-start">
+                <div class="glass-card rounded-3xl p-8 md:p-10">
+                    <h2 class="text-xs uppercase tracking-[0.3em] text-primary mb-4">Sobre</h2>
+                    <h3 class="text-3xl md:text-5xl font-headline font-bold text-on-surface tracking-tight leading-tight mb-6">
+                        Desenvolvimento orientado a qualidade, performance e evolução continua.
+                    </h3>
+                    <p class="text-on-surface-variant text-base md:text-lg leading-relaxed mb-5">
+                        Desenvolvedor de software com experiência em desenvolvimento e manutenção de sistemas web, atuando na área de tecnologia desde janeiro de 2021. Forte atuação em back-end, com foco em qualidade de código, performance, segurança e escalabilidade das soluções.
+                    </p>
+                    <p class="text-on-surface-variant text-base md:text-lg leading-relaxed mb-5">
+                        Tenho experiência com PHP (CodeIgniter) e JavaScript (jQuery), desenvolvimento com HTML5, CSS3 e Bootstrap, além de versionamento com Git e GitHub. Atuo com bancos MySQL e SQL Server, incluindo modelagem, stored procedures, otimização de consultas e integridade de dados.
+                    </p>
+                    <p class="text-on-surface-variant text-base md:text-lg leading-relaxed">
+                        Também trabalho com APIs REST, manutenção evolutiva de sistemas legados, correção de incidentes, implementação de novas funcionalidades e fluxos de entrega via Azure DevOps. Meu perfil é analítico, colaborativo e orientado a resultados.
+                    </p>
+                </div>
+                <div class="space-y-6">
+                    <div class="glass-card rounded-3xl p-8">
+                        <h3 class="text-xl font-headline font-bold mb-6">Dados profissionais</h3>
+                        <div class="space-y-4 text-sm md:text-base">
+                            <div class="flex justify-between gap-4 border-b border-outline-variant/10 pb-3">
+                                <span class="text-on-surface-variant">Nome</span>
+                                <span class="text-right font-medium">Daniel Torres</span>
+                            </div>
+                            <div class="flex justify-between gap-4 border-b border-outline-variant/10 pb-3">
+                                <span class="text-on-surface-variant">Cargo</span>
+                                <span class="text-right font-medium">Desenvolvedor full-stack</span>
+                            </div>
+                            <div class="flex justify-between gap-4 border-b border-outline-variant/10 pb-3">
+                                <span class="text-on-surface-variant">Residencia</span>
+                                <span class="text-right font-medium">Brasilia, DF</span>
+                            </div>
+                            <div class="flex justify-between gap-4 border-b border-outline-variant/10 pb-3">
+                                <span class="text-on-surface-variant">Email</span>
+                                <a href="mailto:Danieltorres2706@hotmail.com" class="text-right font-medium hover:text-primary transition-colors">Danieltorres2706@hotmail.com</a>
+                            </div>
+                            <div class="flex justify-between gap-4">
+                                <span class="text-on-surface-variant">Portfólio</span>
+                                <span class="text-right font-medium">devdanieltorres</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="glass-card rounded-3xl p-8">
+                        <h3 class="text-xl font-headline font-bold mb-4">Curso extracurricular</h3>
+                        <p class="text-primary text-sm uppercase tracking-[0.3em] mb-3">Designer gráfico</p>
+                        <p class="text-on-surface-variant leading-relaxed">
+                            SAGA - escola de arte, jogo e animação (280 horas), com conhecimentos em arte vetorial, ilustração e pintura digital, tratamento de imagens, edição e composição de vídeos, modelagem e animação 3D e matte painting.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="max-w-7xl mx-auto px-6 lg:px-8 py-20 md:py-28 reveal">
+            <div class="mb-12">
+                <h2 class="text-xs uppercase tracking-[0.35em] text-primary mb-4">Experiência</h2>
+                <h3 class="text-3xl md:text-5xl font-headline font-bold tracking-tight">Trajetória profissional</h3>
+            </div>
+            <div class="timeline space-y-8">
+                <article class="timeline-item glass-card rounded-3xl p-8">
+                    <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
+                        <div>
+                            <h4 class="text-2xl font-headline font-bold">Desenvolvedor</h4>
+                            <p class="text-primary uppercase tracking-[0.3em] text-xs mt-2">HCM Soluções em Tecnologia e Inovação</p>
+                        </div>
+                        <div class="text-sm uppercase tracking-[0.3em] text-on-surface-variant">10/2023 - Atualmente</div>
+                    </div>
+                    <ul class="content-list text-on-surface-variant">
+                        <li>Desenvolvimento e implementação de novas funcionalidades com foco em performance, escalabilidade e experiência do usuário.</li>
+                        <li>Correção de erros e manutenção preventiva em sistemas legados e atuais.</li>
+                        <li>Criacao e modelagem de tabelas e estruturas no banco de dados MySQL.</li>
+                        <li>Publicação de alterações em produção com fluxos de CI/CD via Azure DevOps.</li>
+                        <li>Levantamento de requisitos com clientes internos e externos, inclusive em visitas tecnicas.</li>
+                        <li>Atuação com PHP, CodeIgniter, JavaScript, MySQL, Git, APIs REST, WordPress e outras tecnologias.</li>
+                    </ul>
+                </article>
+
+                <article class="timeline-item glass-card rounded-3xl p-8">
+                    <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
+                        <div>
+                            <h4 class="text-2xl font-headline font-bold">Desenvolvedor full stack - Estágio</h4>
+                            <p class="text-primary uppercase tracking-[0.3em] text-xs mt-2">DATAPREV - Empresa de Tecnologia e Informações da Previdência</p>
+                        </div>
+                        <div class="text-sm uppercase tracking-[0.3em] text-on-surface-variant">12/2021 - 05/2023</div>
+                    </div>
+                    <ul class="content-list text-on-surface-variant">
+                        <li>Implementação de funcionalidades em sistemas internos, elevando usabilidade e eficiência operacional.</li>
+                        <li>Automatização de processos repetitivos com Python, Selenium e Pandas, reduzindo tempo de execução em até 40%.</li>
+                        <li>Manutenção e otimização de sistemas legados com PHP, HTML, CSS, JavaScript e Git/GitHub.</li>
+                        <li>Trabalho colaborativo para entregar soluções alinhadas ao negócio, seguindo prazos e metas.</li>
+                    </ul>
+                </article>
+
+                <article class="timeline-item glass-card rounded-3xl p-8">
+                    <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
+                        <div>
+                            <h4 class="text-2xl font-headline font-bold">Suporte técnico - Estágio</h4>
+                            <p class="text-primary uppercase tracking-[0.3em] text-xs mt-2">SAT - Sistemas de Automação Comercial</p>
+                        </div>
+                        <div class="text-sm uppercase tracking-[0.3em] text-on-surface-variant">01/2021 - 11/2021</div>
+                    </div>
+                    <ul class="content-list text-on-surface-variant">
+                        <li>Atendimento e resolução de 95% dos chamados técnicos em até 24 horas.</li>
+                        <li>Diagnóstico e solução de problemas em sistemas utilizando SQL e ferramentas como ServiceNow.</li>
+                        <li>Desenvolvimento de comunicação, empatia e trabalho em equipe para suporte eficiente e humanizado.</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section id="skills" class="max-w-7xl mx-auto px-6 lg:px-8 py-20 md:py-28 reveal">
+            <div class="mb-12 md:mb-16">
+                <h2 class="text-xs font-headline uppercase tracking-[0.4em] text-primary mb-2">Habilidades</h2>
+                <h3 class="text-3xl md:text-5xl lg:text-6xl font-headline font-bold text-on-surface tracking-tighter">
+                    Stack técnica e ferramentas do dia a dia.
                 </h3>
-                <p class="text-on-surface-variant text-base md:text-lg leading-relaxed mb-5">
-                    Desenvolvedor de software com experiÃªncia em desenvolvimento e manutenÃ§Ã£o de sistemas web, atuando na Ã¡rea de tecnologia desde janeiro de 2021. Forte atuaÃ§Ã£o em back-end, com foco em qualidade de cÃ³digo, performance, seguranÃ§a e escalabilidade das soluÃ§Ãµes.
-                </p>
-                <p class="text-on-surface-variant text-base md:text-lg leading-relaxed mb-5">
-                    Tenho experiÃªncia com PHP (CodeIgniter) e JavaScript (jQuery), desenvolvimento com HTML5, CSS3 e Bootstrap, alÃ©m de versionamento com Git e GitHub. Atuo com bancos MySQL e SQL Server, incluindo modelagem, stored procedures, otimizaÃ§Ã£o de consultas e integridade de dados.
-                </p>
-                <p class="text-on-surface-variant text-base md:text-lg leading-relaxed">
-                    TambÃ©m trabalho com APIs REST, manutenÃ§Ã£o evolutiva de sistemas legados, correÃ§Ã£o de incidentes, implementaÃ§Ã£o de novas funcionalidades e fluxos de entrega via Azure DevOps. Meu perfil Ã© analÃ­tico, colaborativo e orientado a resultados.
-                </p>
             </div>
-            <div class="space-y-6">
-                <div class="glass-card rounded-3xl p-8">
-                    <h3 class="text-xl font-headline font-bold mb-6">Dados profissionais</h3>
-                    <div class="space-y-4 text-sm md:text-base">
-                        <div class="flex justify-between gap-4 border-b border-outline-variant/10 pb-3">
-                            <span class="text-on-surface-variant">Nome</span>
-                            <span class="text-right font-medium">Daniel Torres</span>
+            <div class="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-10 md:gap-12">
+                <div class="glass-card rounded-3xl p-8 md:p-10">
+                    <div class="space-y-8">
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-xs md:text-sm uppercase font-bold">PHP / CodeIgniter</span>
+                                <span class="text-xs text-primary font-mono">95%</span>
+                            </div>
+                            <div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden">
+                                <div class="h-full bg-primary progress-bar-fill" data-width="95%"></div>
+                            </div>
                         </div>
-                        <div class="flex justify-between gap-4 border-b border-outline-variant/10 pb-3">
-                            <span class="text-on-surface-variant">Cargo</span>
-                            <span class="text-right font-medium">Desenvolvedor full-stack</span>
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-xs md:text-sm uppercase font-bold">JavaScript / jQuery</span>
+                                <span class="text-xs text-primary font-mono">90%</span>
+                            </div>
+                            <div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden">
+                                <div class="h-full bg-primary progress-bar-fill" data-width="90%"></div>
+                            </div>
                         </div>
-                        <div class="flex justify-between gap-4 border-b border-outline-variant/10 pb-3">
-                            <span class="text-on-surface-variant">Residencia</span>
-                            <span class="text-right font-medium">Brasilia, DF</span>
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-xs md:text-sm uppercase font-bold">MySQL / SQL Server</span>
+                                <span class="text-xs text-tertiary font-mono">92%</span>
+                            </div>
+                            <div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden">
+                                <div class="h-full bg-tertiary progress-bar-fill" data-width="92%"></div>
+                            </div>
                         </div>
-                        <div class="flex justify-between gap-4 border-b border-outline-variant/10 pb-3">
-                            <span class="text-on-surface-variant">Email</span>
-                            <a href="mailto:Danieltorres2706@hotmail.com" class="text-right font-medium hover:text-primary transition-colors">Danieltorres2706@hotmail.com</a>
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-xs md:text-sm uppercase font-bold">Git / GitHub</span>
+                                <span class="text-xs text-tertiary font-mono">88%</span>
+                            </div>
+                            <div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden">
+                                <div class="h-full bg-tertiary progress-bar-fill" data-width="88%"></div>
+                            </div>
                         </div>
-                        <div class="flex justify-between gap-4">
-                            <span class="text-on-surface-variant">PortfÃ³lio</span>
-                            <span class="text-right font-medium">devdanieltorres</span>
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-xs md:text-sm uppercase font-bold">Azure DevOps</span>
+                                <span class="text-xs text-primary font-mono">84%</span>
+                            </div>
+                            <div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden">
+                                <div class="h-full bg-primary progress-bar-fill" data-width="84%"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="glass-card rounded-3xl p-8">
-                    <h3 class="text-xl font-headline font-bold mb-4">Curso extracurricular</h3>
-                    <p class="text-primary text-sm uppercase tracking-[0.3em] mb-3">Designer grÃ¡fico</p>
-                    <p class="text-on-surface-variant leading-relaxed">
-                        SAGA - escola de arte, jogo e animaÃ§Ã£o (280 horas), com conhecimentos em arte vetorial, ilustraÃ§Ã£o e pintura digital, tratamento de imagens, ediÃ§Ã£o e composiÃ§Ã£o de vÃ­deos, modelagem e animaÃ§Ã£o 3D e matte painting.
-                    </p>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="glass-card rounded-3xl p-6">
+                        <h4 class="text-lg font-headline font-bold mb-3">Back-end</h4>
+                        <p class="text-on-surface-variant">PHP, CodeIgniter, APIs REST, manutenção evolutiva, correção de incidentes e integração de sistemas.</p>
+                    </div>
+                    <div class="glass-card rounded-3xl p-6">
+                        <h4 class="text-lg font-headline font-bold mb-3">Front-end</h4>
+                        <p class="text-on-surface-variant">HTML, CSS, Bootstrap, JavaScript e jQuery para interfaces funcionais e objetivas.</p>
+                    </div>
+                    <div class="glass-card rounded-3xl p-6">
+                        <h4 class="text-lg font-headline font-bold mb-3">Banco de dados</h4>
+                        <p class="text-on-surface-variant">MySQL e SQL Server com modelagem, consultas otimizadas, stored procedures e integridade de dados.</p>
+                    </div>
+                    <div class="glass-card rounded-3xl p-6">
+                        <h4 class="text-lg font-headline font-bold mb-3">Ambiente e fluxo</h4>
+                        <p class="text-on-surface-variant">Git, GitHub, Azure DevOps, XAMPP, Laragon e rotinas de entrega orientadas a qualidade.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="experience" class="max-w-7xl mx-auto px-6 lg:px-8 py-20 md:py-28 reveal">
-        <div class="mb-12">
-            <h2 class="text-xs uppercase tracking-[0.35em] text-primary mb-4">ExperiÃªncia</h2>
-            <h3 class="text-3xl md:text-5xl font-headline font-bold tracking-tight">TrajetÃ³ria profissional</h3>
-        </div>
-        <div class="timeline space-y-8">
-            <article class="timeline-item glass-card rounded-3xl p-8">
-                <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
-                    <div>
-                        <h4 class="text-2xl font-headline font-bold">Desenvolvedor</h4>
-                        <p class="text-primary uppercase tracking-[0.3em] text-xs mt-2">HCM SoluÃ§Ãµes em Tecnologia e InovaÃ§Ã£o</p>
-                    </div>
-                    <div class="text-sm uppercase tracking-[0.3em] text-on-surface-variant">10/2023 - Atualmente</div>
-                </div>
-                <ul class="content-list text-on-surface-variant">
-                    <li>Desenvolvimento e implementaÃ§Ã£o de novas funcionalidades com foco em performance, escalabilidade e experiÃªncia do usuÃ¡rio.</li>
-                    <li>CorreÃ§Ã£o de erros e manutenÃ§Ã£o preventiva em sistemas legados e atuais.</li>
-                    <li>Criacao e modelagem de tabelas e estruturas no banco de dados MySQL.</li>
-                    <li>PublicaÃ§Ã£o de alteraÃ§Ãµes em produÃ§Ã£o com fluxos de CI/CD via Azure DevOps.</li>
-                    <li>Levantamento de requisitos com clientes internos e externos, inclusive em visitas tecnicas.</li>
-                    <li>AtuaÃ§Ã£o com PHP, CodeIgniter, JavaScript, MySQL, Git, APIs REST, WordPress e outras tecnologias.</li>
-                </ul>
-            </article>
-
-            <article class="timeline-item glass-card rounded-3xl p-8">
-                <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
-                    <div>
-                        <h4 class="text-2xl font-headline font-bold">Desenvolvedor full stack - EstÃ¡gio</h4>
-                        <p class="text-primary uppercase tracking-[0.3em] text-xs mt-2">DATAPREV - Empresa de Tecnologia e InformaÃ§Ãµes da PrevidÃªncia</p>
-                    </div>
-                    <div class="text-sm uppercase tracking-[0.3em] text-on-surface-variant">12/2021 - 05/2023</div>
-                </div>
-                <ul class="content-list text-on-surface-variant">
-                    <li>ImplementaÃ§Ã£o de funcionalidades em sistemas internos, elevando usabilidade e eficiÃªncia operacional.</li>
-                    <li>AutomatizaÃ§Ã£o de processos repetitivos com Python, Selenium e Pandas, reduzindo tempo de execuÃ§Ã£o em atÃ© 40%.</li>
-                    <li>ManutenÃ§Ã£o e otimizaÃ§Ã£o de sistemas legados com PHP, HTML, CSS, JavaScript e Git/GitHub.</li>
-                    <li>Trabalho colaborativo para entregar soluÃ§Ãµes alinhadas ao negÃ³cio, seguindo prazos e metas.</li>
-                </ul>
-            </article>
-
-            <article class="timeline-item glass-card rounded-3xl p-8">
-                <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
-                    <div>
-                        <h4 class="text-2xl font-headline font-bold">Suporte tÃ©cnico - EstÃ¡gio</h4>
-                        <p class="text-primary uppercase tracking-[0.3em] text-xs mt-2">SAT - Sistemas de AutomaÃ§Ã£o Comercial</p>
-                    </div>
-                    <div class="text-sm uppercase tracking-[0.3em] text-on-surface-variant">01/2021 - 11/2021</div>
-                </div>
-                <ul class="content-list text-on-surface-variant">
-                    <li>Atendimento e resoluÃ§Ã£o de 95% dos chamados tÃ©cnicos em atÃ© 24 horas.</li>
-                    <li>DiagnÃ³stico e soluÃ§Ã£o de problemas em sistemas utilizando SQL e ferramentas como ServiceNow.</li>
-                    <li>Desenvolvimento de comunicaÃ§Ã£o, empatia e trabalho em equipe para suporte eficiente e humanizado.</li>
-                </ul>
-            </article>
-        </div>
-    </section>
-
-    <section id="skills" class="max-w-7xl mx-auto px-6 lg:px-8 py-20 md:py-28 reveal">
-        <div class="mb-12 md:mb-16">
-            <h2 class="text-xs font-headline uppercase tracking-[0.4em] text-primary mb-2">Habilidades</h2>
-            <h3 class="text-3xl md:text-5xl lg:text-6xl font-headline font-bold text-on-surface tracking-tighter">
-                Stack tÃ©cnica e ferramentas do dia a dia.
-            </h3>
-        </div>
-        <div class="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-10 md:gap-12">
+        <section class="max-w-7xl mx-auto px-6 lg:px-8 py-4 md:py-8 reveal">
             <div class="glass-card rounded-3xl p-8 md:p-10">
-                <div class="space-y-8">
-                    <div class="skill-item">
-                        <div class="flex justify-between mb-2">
-                            <span class="text-xs md:text-sm uppercase font-bold">PHP / CodeIgniter</span>
-                            <span class="text-xs text-primary font-mono">95%</span>
-                        </div>
-                        <div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden">
-                            <div class="h-full bg-primary progress-bar-fill" data-width="95%"></div>
-                        </div>
+                <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
+                    <div>
+                        <h2 class="text-3xl md:text-4xl font-headline font-bold mb-3">Vamos construir a próxima solução?</h2>
+                        <p class="text-on-surface-variant max-w-2xl">
+                            Estou disponível para atuar em desenvolvimento, manutenção de sistemas, melhorias de performance, integrações e sustentação de aplicações web.
+                        </p>
                     </div>
-                    <div class="skill-item">
-                        <div class="flex justify-between mb-2">
-                            <span class="text-xs md:text-sm uppercase font-bold">JavaScript / jQuery</span>
-                            <span class="text-xs text-primary font-mono">90%</span>
-                        </div>
-                        <div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden">
-                            <div class="h-full bg-primary progress-bar-fill" data-width="90%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="flex justify-between mb-2">
-                            <span class="text-xs md:text-sm uppercase font-bold">MySQL / SQL Server</span>
-                            <span class="text-xs text-tertiary font-mono">92%</span>
-                        </div>
-                        <div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden">
-                            <div class="h-full bg-tertiary progress-bar-fill" data-width="92%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="flex justify-between mb-2">
-                            <span class="text-xs md:text-sm uppercase font-bold">Git / GitHub</span>
-                            <span class="text-xs text-tertiary font-mono">88%</span>
-                        </div>
-                        <div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden">
-                            <div class="h-full bg-tertiary progress-bar-fill" data-width="88%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="flex justify-between mb-2">
-                            <span class="text-xs md:text-sm uppercase font-bold">Azure DevOps</span>
-                            <span class="text-xs text-primary font-mono">84%</span>
-                        </div>
-                        <div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden">
-                            <div class="h-full bg-primary progress-bar-fill" data-width="84%"></div>
-                        </div>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="https://www.linkedin.com/in/daniel-torres-0851581a0/" target="_blank" rel="noreferrer" class="px-6 py-4 bg-primary text-background font-bold rounded-2xl text-center">LinkedIn</a>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div class="glass-card rounded-3xl p-6">
-                    <h4 class="text-lg font-headline font-bold mb-3">Back-end</h4>
-                    <p class="text-on-surface-variant">PHP, CodeIgniter, APIs REST, manutenÃ§Ã£o evolutiva, correÃ§Ã£o de incidentes e integraÃ§Ã£o de sistemas.</p>
-                </div>
-                <div class="glass-card rounded-3xl p-6">
-                    <h4 class="text-lg font-headline font-bold mb-3">Front-end</h4>
-                    <p class="text-on-surface-variant">HTML, CSS, Bootstrap, JavaScript e jQuery para interfaces funcionais e objetivas.</p>
-                </div>
-                <div class="glass-card rounded-3xl p-6">
-                    <h4 class="text-lg font-headline font-bold mb-3">Banco de dados</h4>
-                    <p class="text-on-surface-variant">MySQL e SQL Server com modelagem, consultas otimizadas, stored procedures e integridade de dados.</p>
-                </div>
-                <div class="glass-card rounded-3xl p-6">
-                    <h4 class="text-lg font-headline font-bold mb-3">Ambiente e fluxo</h4>
-                    <p class="text-on-surface-variant">Git, GitHub, Azure DevOps, XAMPP, Laragon e rotinas de entrega orientadas a qualidade.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="max-w-7xl mx-auto px-6 lg:px-8 py-4 md:py-8 reveal">
-        <div class="glass-card rounded-3xl p-8 md:p-10">
-            <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
-                <div>
-                    <h2 class="text-3xl md:text-4xl font-headline font-bold mb-3">Vamos construir a prÃ³xima soluÃ§Ã£o?</h2>
-                    <p class="text-on-surface-variant max-w-2xl">
-                        Estou disponÃ­vel para atuar em desenvolvimento, manutenÃ§Ã£o de sistemas, melhorias de performance, integraÃ§Ãµes e sustentaÃ§Ã£o de aplicaÃ§Ãµes web.
+        <section id="contact" class="max-w-7xl mx-auto px-6 lg:px-8 py-20 md:py-28 reveal">
+            <div class="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-8">
+                <div class="glass-card rounded-3xl p-8 md:p-10">
+                    <h2 class="text-3xl md:text-5xl font-headline font-bold mb-4">Contato</h2>
+                    <p class="text-on-surface-variant mb-8">
+                        Fale comigo para oportunidades, manutenção de sistemas, novas funcionalidades ou melhorias em projetos web.
                     </p>
-                </div>
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="https://www.linkedin.com/in/daniel-torres-0851581a0/" target="_blank" rel="noreferrer" class="px-6 py-4 bg-primary text-background font-bold rounded-2xl text-center">LinkedIn</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="max-w-7xl mx-auto px-6 lg:px-8 py-20 md:py-28 reveal">
-        <div class="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-8">
-            <div class="glass-card rounded-3xl p-8 md:p-10">
-                <h2 class="text-3xl md:text-5xl font-headline font-bold mb-4">Contato</h2>
-                <p class="text-on-surface-variant mb-8">
-                    Fale comigo para oportunidades, manutenÃ§Ã£o de sistemas, novas funcionalidades ou melhorias em projetos web.
-                </p>
-                <div class="space-y-5 text-sm md:text-base">
-                    <div>
-                        <p class="text-xs uppercase tracking-[0.3em] text-primary mb-1">ResidÃªncia</p>
-                        <p class="text-on-surface-variant">Brasilia DF</p>
-                    </div>
-                    <div>
-                        <p class="text-xs uppercase tracking-[0.3em] text-primary mb-1">Telefone</p>
-                        <a href="tel:+5561991848154" class="text-on-surface-variant hover:text-primary transition-colors">(61) 9 9184-8154</a>
-                    </div>
-                    <div>
-                        <p class="text-xs uppercase tracking-[0.3em] text-primary mb-1">Email</p>
-                        <a href="mailto:Danieltorres2706@hotmail.com" class="text-on-surface-variant hover:text-primary transition-colors">Danieltorres2706@hotmail.com</a>
-                    </div>
-                    <div>
-                        <p class="text-xs uppercase tracking-[0.3em] text-primary mb-1">LinkedIn</p>
-                        <a href="https://www.linkedin.com/in/daniel-torres-0851581a0/" target="_blank" rel="noreferrer" class="text-on-surface-variant hover:text-primary transition-colors break-all">linkedin.com/in/daniel-torres-0851581a0</a>
-                    </div>
-                    <div>
-                        <p class="text-xs uppercase tracking-[0.3em] text-primary mb-1">GitHub</p>
-                        <a href="https://github.com/devdanieltorres" target="_blank" rel="noreferrer" class="text-on-surface-variant hover:text-primary transition-colors">github.com/devdanieltorres</a>
+                    <div class="space-y-5 text-sm md:text-base">
+                        <div>
+                            <p class="text-xs uppercase tracking-[0.3em] text-primary mb-1">Residência</p>
+                            <p class="text-on-surface-variant">Brasilia DF</p>
+                        </div>
+                        <div>
+                            <p class="text-xs uppercase tracking-[0.3em] text-primary mb-1">Telefone</p>
+                            <a href="tel:+5561991848154" class="text-on-surface-variant hover:text-primary transition-colors">(61) 9 9184-8154</a>
+                        </div>
+                        <div>
+                            <p class="text-xs uppercase tracking-[0.3em] text-primary mb-1">Email</p>
+                            <a href="mailto:Danieltorres2706@hotmail.com" class="text-on-surface-variant hover:text-primary transition-colors">Danieltorres2706@hotmail.com</a>
+                        </div>
+                        <div>
+                            <p class="text-xs uppercase tracking-[0.3em] text-primary mb-1">LinkedIn</p>
+                            <a href="https://www.linkedin.com/in/daniel-torres-0851581a0/" target="_blank" rel="noreferrer" class="text-on-surface-variant hover:text-primary transition-colors break-all">linkedin.com/in/daniel-torres-0851581a0</a>
+                        </div>
+                        <div>
+                            <p class="text-xs uppercase tracking-[0.3em] text-primary mb-1">GitHub</p>
+                            <a href="https://github.com/devdanieltorres" target="_blank" rel="noreferrer" class="text-on-surface-variant hover:text-primary transition-colors">github.com/devdanieltorres</a>
+                        </div>
                     </div>
                 </div>
             </div>
-           
-        </div>
-    </section>
-</main>
+        </section>
+    </main>
 
-<?php include 'includes/footer.php'; ?>
+    <footer class="w-full py-12 bg-background border-t border-outline-variant/20">
+        <div class="flex flex-col md:flex-row justify-between items-center px-6 md:px-12 max-w-7xl mx-auto gap-6">
+            <div class="text-center md:text-left">
+                <div class="text-on-surface text-sm font-headline font-bold tracking-wide">Daniel Torres</div>
+                <div class="text-on-surface-variant text-xs tracking-widest uppercase">
+                    Desenvolvedor full-stack em Brasilia, DF
+                </div>
+            </div>
+            <div class="flex flex-wrap justify-center gap-6">
+                <a href="https://github.com/devdanieltorres" target="_blank" rel="noreferrer" class="text-on-surface-variant hover:text-primary hover:-translate-y-0.5 transition-all text-xs tracking-widest uppercase">GitHub</a>
+                <a href="https://www.linkedin.com/in/daniel-torres-0851581a0/" target="_blank" rel="noreferrer" class="text-on-surface-variant hover:text-primary hover:-translate-y-0.5 transition-all text-xs tracking-widest uppercase">LinkedIn</a>
+                <a href="mailto:Danieltorres2706@hotmail.com" class="text-on-surface-variant hover:text-primary hover:-translate-y-0.5 transition-all text-xs tracking-widest uppercase">Email</a>
+                <a href="tel:+5561991848154" class="text-on-surface-variant hover:text-primary hover:-translate-y-0.5 transition-all text-xs tracking-widest uppercase">Telefone</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
