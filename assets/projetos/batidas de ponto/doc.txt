@@ -1,0 +1,54 @@
+1. Título da Funcionalidade
+Gestão de Batidas de Ponto com Filtros Dinâmicos por Empresa, Período e Colaboradores
+2. Contexto
+A funcionalidade está inserida em um módulo de gestão de jornada dentro de uma plataforma de RH com perfis administrativos.
+Ela atende à necessidade de consultar, auditar e acompanhar registros de ponto de equipes com recortes operacionais (empresa, competência e colaboradores), apoiando rotinas de conferência e tratamento de inconsistências.
+3. Problema
+Antes dessa abordagem, a análise de batidas poderia ficar dependente de consultas amplas e pouco direcionadas, com alto esforço para localizar grupos específicos de colaboradores e períodos de interesse.
+Isso reduz a produtividade do time de gestão e dificulta a tomada de decisão rápida em cenários de fechamento e conformidade de jornada.
+4. Solução Implementada
+A implementação combina controle de acesso no backend com interface reativa no frontend.
+No backend, a action:
+valida sessão/autenticação;
+define o perfil ativo do usuário no contexto do módulo;
+resolve escopo de empresas permitidas com base em vínculos de acesso;
+carrega dados iniciais (empresas, períodos, parâmetros visuais e colaboradores subordinados) para montar a tela de forma contextual.
+No frontend, a view:
+organiza filtros em cascata (empresa → períodos/colaboradores);
+usa carregamento assíncrono para popular opções e resultados;
+permite seleção múltipla de colaboradores, com ação de limpeza;
+aplica validação de preenchimento antes da busca;
+renderiza o resultado sem recarregar a página, com feedback de loading;
+integra recursos de busca e filtros avançados em tabela para refino dos dados exibidos.
+Decisões técnicas relevantes:
+separação clara entre montagem do contexto (controller) e interação/consulta (JS da view);
+uso de identificador de módulo para reutilizar a mesma interface em contextos distintos de perfil;
+consulta sob demanda para melhorar tempo de resposta percebido.
+5. Tecnologias Utilizadas
+Backend: PHP (arquitetura MVC)
+Banco de dados: SQL via Query Builder/ORM do framework
+Frontend: HTML, CSS, JavaScript, jQuery
+Componentes de UI: Select2 (seleção avançada) e DataTables (busca/filtro tabular)
+Comunicação assíncrona: AJAX para carregamento de períodos, colaboradores e resultados
+6. Desafios Técnicos
+Escopo de acesso multiempresa por usuário: necessidade de restringir dados conforme permissões ativas.
+Solução: montagem do conjunto de empresas autorizadas no backend antes de expor filtros e resultados.
+Dependência entre filtros (cascata): períodos e colaboradores variam conforme empresa selecionada.
+Solução: chamadas AJAX independentes para atualizar cada combo dinamicamente.
+Seleção múltipla com boa usabilidade: evitar busca sem colaboradores selecionados e facilitar reset.
+Solução: validação de pré-condição, alerta contextual e botão de limpeza dedicado.
+Performance e experiência de uso: evitar reload completo da página para cada consulta.
+Solução: renderização parcial do conteúdo e feedback visual de processamento.
+7. Resultados Obtidos
+Redução do tempo operacional para localizar e analisar batidas por recortes específicos.
+Melhor governança de jornada com filtros mais precisos e dados segmentados por responsabilidade.
+Interface mais fluida para usuários administrativos, com menos interrupções e retrabalho.
+Maior escalabilidade da tela para diferentes perfis e cenários de consulta.
+8. Boas Práticas Aplicadas
+Organização de código: responsabilidades divididas entre controller (contexto e segurança) e view (interação).
+Segurança: validação de sessão e aplicação de escopo de acesso por perfil/empresa.
+Performance: carregamento assíncrono e atualização incremental de componentes e resultados.
+Manutenibilidade: uso de identificador de módulo e estrutura de filtros reutilizável.
+UX técnica: mensagens de validação, spinner de carregamento e seleção avançada com múltiplos itens.
+9. Resumo para Portfólio
+Desenvolvi uma funcionalidade de gestão de batidas de ponto com filtros dinâmicos por empresa, período e colaboradores, voltada para operação administrativa de RH. Estruturei o backend para aplicar escopo de acesso por perfil e carreguei dados de forma contextual, enquanto no frontend implementei consultas assíncronas, seleção múltipla e filtros avançados em tabela. O resultado foi uma experiência mais rápida, precisa e escalável para auditoria de jornada e tomada de decisão operacional.

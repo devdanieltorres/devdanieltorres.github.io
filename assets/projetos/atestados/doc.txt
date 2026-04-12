@@ -1,0 +1,49 @@
+1. Título da Funcionalidade
+Módulo de Gestão e Análise de Atestados com Fluxo Colaborativo (RH/SSMA e Colaborador)
+2. Contexto
+Esta funcionalidade está inserida em um sistema web corporativo de gestão de pessoas, com foco em saúde ocupacional e controle de afastamentos.
+Ela atende à necessidade de centralizar o envio, triagem, análise e acompanhamento de atestados médicos, além de oferecer visibilidade gerencial por meio de filtros avançados, histórico de interações e painéis analíticos.
+3. Problema
+Antes da implementação, o processo tende a ser fragmentado: envio de documentos sem padronização, baixa rastreabilidade das decisões, dificuldade para comunicação entre áreas e pouca capacidade de análise operacional.
+Isso gera retrabalho, lentidão na tomada de decisão, inconsistência de dados e menor governança sobre prazos e status dos atestados.
+4. Solução Implementada
+Foi implementado um fluxo completo de ponta a ponta com duas frentes integradas:
+Frente do colaborador: modal com abas para novo envio e consulta de históricos, formulário estruturado (datas, tipo de afastamento, dados médicos, anexos e justificativa) e atualização dinâmica de campos dependentes.
+Frente de análise técnica/gestão: tela dedicada com filtros combináveis (empresa, filial, período, tipo, status, situação, pendências de chat), paginação assíncrona, ações de revisão e atualização de status.
+Comunicação contextual: chat vinculado ao atestado para tratativas e anexos, com regras de bloqueio de envio conforme estado final do processo.
+Camada analítica: carregamento assíncrono de métricas e renderização de múltiplos gráficos (status, tipos, situação, evolução temporal e rankings), com tratamento de indisponibilidade da biblioteca gráfica e mensagens de fallback.
+Experiência guiada: tour interativo orientando o usuário pelos principais pontos da interface, com controle de exibição por usuário.
+Decisões técnicas relevantes:
+Separação clara entre renderização inicial (server-side) e atualizações incrementais via AJAX.
+Reuso da mesma visão de listagem para diferentes perfis por meio de um identificador de contexto.
+Validações e mensagens em camada de interface para reduzir erros operacionais e melhorar feedback ao usuário.
+5. Tecnologias Utilizadas
+Backend: PHP (padrão MVC), controlador responsável por sessão, permissões e composição dos dados da view.
+Frontend: HTML, CSS, JavaScript, jQuery, Bootstrap (modais, abas e componentes visuais).
+Visualização de dados: Chart.js + plugin de rótulos para gráficos comparativos e de tendência.
+UX assistida: biblioteca de tour guiado para onboarding contextual.
+Banco de dados: relacional (consultas para parâmetros, usuário, empresa, filial e catálogos como CID).
+Integração: endpoints internos via AJAX para listagem, detalhes, ação de status, exportação e chat.
+6. Desafios Técnicos
+Orquestração de estado de tela: sincronizar filtros, paginação, modal de análise, chat e gráficos sem recarregar página.
+Solução: funções especializadas para cada operação e gatilhos de atualização coordenados.
+Confiabilidade da camada gráfica: dependência de biblioteca externa para charts.
+Solução: verificação de carregamento, tentativa de recuperação e fallback com mensagens de erro amigáveis.
+Controle de regras de negócio no chat: impedir mensagens após fechamento do fluxo em cenários específicos.
+Solução: bloqueio preventivo na interface com validação antes do envio.
+Escalabilidade da listagem: volume potencial alto de registros.
+Solução: paginação assíncrona e filtros granulares para reduzir payload e tempo de resposta percebido.
+7. Resultados Obtidos
+Padronização do processo de envio e análise de atestados.
+Maior rastreabilidade das decisões e da comunicação entre áreas.
+Redução de retrabalho operacional com validações e feedback imediato.
+Melhoria na governança por status, prazos e pendências.
+Apoio à tomada de decisão com dashboards visuais e exportação de dados para análise externa.
+8. Boas Práticas Aplicadas
+Organização: separação de responsabilidades entre controller, views e scripts de interação.
+Segurança/controle: uso de sessão e perfil para contextualizar acesso e dados disponíveis por usuário.
+Performance: carregamento assíncrono, paginação, atualização parcial de componentes e destruição/recriação controlada de gráficos.
+Manutenibilidade: nomenclatura consistente, funções modulares, tratamento explícito de erros e mensagens padronizadas.
+Usabilidade: formulários orientados, estados de botão, alertas contextuais e tour de onboarding.
+9. Resumo para Portfólio
+Desenvolvi um módulo web completo para gestão de atestados médicos, cobrindo envio pelo colaborador, análise técnica, comunicação contextual via chat e painéis de indicadores em tempo real. A solução combina backend MVC e frontend assíncrono para oferecer rastreabilidade, eficiência operacional e melhor experiência do usuário. Também implementei regras de negócio para bloqueios por status, paginação com filtros avançados e visualização analítica para suporte à decisão

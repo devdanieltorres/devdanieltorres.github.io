@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentos Assinados | Daniel Torres</title>
+    <meta name="description" content="Case da central de gest&atilde;o de documentos com monitoramento de assinaturas e filtros multicrit&eacute;rio.">
+    <meta name="theme-color" content="#060e20">
+    <meta name="author" content="Daniel Torres">
+    <meta property="og:title" content="Documentos Assinados | Daniel Torres">
+    <meta property="og:description" content="Projeto corporativo com dashboard de assinados vs pendentes, filtros multicrit&eacute;rio e consulta ass&iacute;ncrona para auditoria documental.">
+    <meta property="og:type" content="website">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        headline: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#81ecff',
+                        'primary-dim': '#00d4ec',
+                        tertiary: '#70aaff',
+                        background: '#060e20',
+                        surface: '#060e20',
+                        'surface-container': '#0f1930',
+                        'surface-container-high': '#141f38',
+                        'surface-container-highest': '#192540',
+                        'on-surface': '#dee5ff',
+                        'on-surface-variant': '#a3aac4',
+                        'outline-variant': '#40485d',
+                        success: '#34d399',
+                        warning: '#fbbf24',
+                    }
+                }
+            }
+        };
+    </script>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-background text-on-surface font-sans antialiased overflow-x-hidden selection:bg-primary/20 selection:text-on-surface">
+    <a href="#project-content" class="skip-link">Pular para o conte&uacute;do</a>
+
+    <header class="fixed top-0 w-full z-50 bg-[#060e20]/90 backdrop-blur-xl border-b border-outline-variant/10">
+        <div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
+            <a href="index.html#home" class="flex items-center gap-3 group" aria-label="Voltar para o in&iacute;cio do portf&oacute;lio">
+                <span class="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary font-headline font-bold">DT</span>
+                <div>
+                    <span class="block text-base md:text-lg font-bold tracking-tight text-on-surface font-headline">DANIEL TORRES</span>
+                    <span class="block text-[10px] uppercase tracking-[0.3em] text-on-surface-variant">Projeto detalhado</span>
+                </div>
+            </a>
+
+            <nav class="hidden lg:flex gap-8 items-center" aria-label="Navega&ccedil;&atilde;o principal">
+                <a href="index.html#about" class="nav-link text-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-all">Sobre</a>
+                <a href="index.html#experience" class="nav-link text-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-all">Experi&ecirc;ncia</a>
+                <a href="index.html#projects" class="nav-link text-sm uppercase tracking-widest text-primary transition-all">Projetos</a>
+                <a href="index.html#contact" class="nav-link text-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-all">Contato</a>
+                <a href="index.html#projects" class="ml-4 px-6 py-2 bg-primary text-background font-bold rounded-lg hover:scale-105 transition-all focus:outline-none focus:ring-2 focus:ring-primary">
+                    Voltar ao portf&oacute;lio
+                </a>
+            </nav>
+
+            <button id="menu-toggle" class="lg:hidden text-primary p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" aria-controls="mobile-menu" aria-expanded="false" aria-label="Abrir menu">
+                <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 w-full bg-surface-container border-b border-outline-variant/20 shadow-2xl">
+            <nav class="flex flex-col p-6 gap-4" aria-label="Navega&ccedil;&atilde;o mobile">
+                <a href="index.html#about" class="mobile-nav-link text-lg font-headline uppercase tracking-widest py-3 border-b border-outline-variant/10">Sobre</a>
+                <a href="index.html#experience" class="mobile-nav-link text-lg font-headline uppercase tracking-widest py-3 border-b border-outline-variant/10">Experi&ecirc;ncia</a>
+                <a href="index.html#projects" class="mobile-nav-link text-lg font-headline uppercase tracking-widest py-3 border-b border-outline-variant/10 text-primary">Projetos</a>
+                <a href="index.html#contact" class="mobile-nav-link text-lg font-headline uppercase tracking-widest py-3 border-b border-outline-variant/10">Contato</a>
+                <a href="index.html#projects" class="w-full mt-4 px-6 py-4 bg-primary text-background font-bold rounded-xl text-center">
+                    Voltar ao portf&oacute;lio
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="project-content" class="relative overflow-x-hidden">
+        <div class="fixed inset-0 hero-gradient pointer-events-none -z-10"></div>
+        <div class="fixed -top-24 -right-24 w-64 md:w-96 h-64 md:h-96 bg-primary/5 rounded-full blur-[80px] md:blur-[100px] pointer-events-none -z-10"></div>
+        <div class="fixed top-1/3 -left-24 w-64 md:w-96 h-64 md:h-96 bg-tertiary/10 rounded-full blur-[90px] md:blur-[120px] pointer-events-none -z-10"></div>
+
+        <section class="max-w-7xl mx-auto px-6 lg:px-8 pt-28 md:pt-36 pb-16 md:pb-24 reveal">
+            <div class="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-10 items-center">
+                <div class="space-y-6">
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-4 py-2 rounded-full bg-primary/10 text-primary text-xs uppercase tracking-[0.25em]">Projeto real</span>
+                        <span class="px-4 py-2 rounded-full bg-surface-container-high text-on-surface-variant text-xs uppercase tracking-[0.25em]">RH / Governan&ccedil;a documental</span>
+                        <span class="px-4 py-2 rounded-full bg-surface-container-high text-on-surface-variant text-xs uppercase tracking-[0.25em]">Dashboard</span>
+                        <span class="px-4 py-2 rounded-full bg-surface-container-high text-on-surface-variant text-xs uppercase tracking-[0.25em]">Case completo</span>
+                    </div>
+                    <div>
+                        <p class="text-sm uppercase tracking-[0.35em] text-on-surface-variant mb-3">Case detalhado</p>
+                        <h1 class="text-4xl md:text-6xl font-headline font-bold tracking-tight leading-[1.05]">
+                            Central de gest&atilde;o de documentos com monitoramento de assinaturas e filtros multicrit&eacute;rio
+                        </h1>
+                    </div>
+                    <p class="text-lg md:text-xl text-on-surface-variant leading-relaxed">
+                        Solu&ccedil;&atilde;o para acompanhar, em uma &uacute;nica tela, o volume de documentos assinados e pendentes, com suporte &agrave; auditoria operacional por empresa, filial, colaborador, per&iacute;odo e tipo de termo.
+                    </p>
+                    <p class="text-base md:text-lg text-on-surface-variant leading-relaxed">
+                        O fluxo combina dashboard comparativo, filtros multicrit&eacute;rio e consulta ass&iacute;ncrona detalhada, unificando documentos heterog&ecirc;neos em um modelo &uacute;nico de monitoramento e prioriza&ccedil;&atilde;o de regulariza&ccedil;&atilde;o.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#galeria" class="px-8 py-4 bg-primary text-background font-bold rounded-2xl text-center">Ver galeria</a>
+                        <a href="index.html#projects" class="px-8 py-4 border border-outline-variant/30 rounded-2xl text-center hover:bg-surface-container-high transition-all">Voltar para projetos</a>
+                    </div>
+                </div>
+
+                <figure class="glass-card rounded-3xl overflow-hidden border border-outline-variant/20">
+                    <img src="assets/projetos/documentos%20assinados/2.png" alt="Dashboard de documentos assinados e n&atilde;o assinados" class="w-full h-full object-cover object-top">
+                </figure>
+            </div>
+        </section>
+
+        <section class="max-w-7xl mx-auto px-6 lg:px-8 pb-12 md:pb-20 reveal">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="glass-card rounded-3xl p-6">
+                    <div class="text-2xl font-headline font-bold text-primary mb-2">Vis&atilde;o executiva</div>
+                    <p class="text-sm text-on-surface-variant">Gr&aacute;fico comparativo entre assinados e n&atilde;o assinados por categoria documental para leitura gerencial imediata.</p>
+                </div>
+                <div class="glass-card rounded-3xl p-6">
+                    <div class="text-2xl font-headline font-bold text-primary mb-2">Filtros multicrit&eacute;rio</div>
+                    <p class="text-sm text-on-surface-variant">Refino por empresa, filial, termo, funcion&aacute;rio, compet&ecirc;ncia, tipo e status documental.</p>
+                </div>
+                <div class="glass-card rounded-3xl p-6">
+                    <div class="text-2xl font-headline font-bold text-primary mb-2">Busca sob demanda</div>
+                    <p class="text-sm text-on-surface-variant">Tabela detalhada gerada por AJAX e carregamento tardio de listas pesadas para melhorar desempenho.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="galeria" class="max-w-7xl mx-auto px-6 lg:px-8 py-12 md:py-20 reveal">
+            <div class="mb-10">
+                <h2 class="text-xs uppercase tracking-[0.35em] text-primary mb-3">Galeria</h2>
+                <h3 class="text-3xl md:text-5xl font-headline font-bold tracking-tight">Vis&otilde;es da funcionalidade</h3>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <figure class="glass-card rounded-3xl overflow-hidden border border-outline-variant/20">
+                    <div class="project-gallery-frame">
+                        <img src="assets/projetos/documentos%20assinados/2.png" alt="Dashboard de documentos assinados e n&atilde;o assinados">
+                    </div>
+                    <figcaption class="p-5 text-sm text-on-surface-variant">Painel principal com gr&aacute;fico comparativo de assinados versus n&atilde;o assinados por categoria e &aacute;rea de filtros avan&ccedil;ados para auditoria documental.</figcaption>
+                    <div class="gallery-action-bar">
+                        <button type="button" class="gallery-fullscreen-button" data-fullscreen-trigger data-image-src="assets/projetos/documentos%20assinados/2.png" data-image-alt="Dashboard de documentos assinados e n&atilde;o assinados" data-image-caption="Painel principal com gr&aacute;fico comparativo de assinados versus n&atilde;o assinados por categoria e &aacute;rea de filtros avan&ccedil;ados para auditoria documental.">
+                            Ver em tela cheia
+                        </button>
+                    </div>
+                </figure>
+
+                <figure class="glass-card rounded-3xl overflow-hidden border border-outline-variant/20">
+                    <div class="project-gallery-frame">
+                        <img src="assets/projetos/documentos%20assinados/3.png" alt="Tabela filtrada da central de documentos assinados">
+                    </div>
+                    <figcaption class="p-5 text-sm text-on-surface-variant">Resultado detalhado da busca com filtros aplicados, exibindo colaborador, refer&ecirc;ncia, tipo documental, status e a&ccedil;&otilde;es operacionais por linha.</figcaption>
+                    <div class="gallery-action-bar">
+                        <button type="button" class="gallery-fullscreen-button" data-fullscreen-trigger data-image-src="assets/projetos/documentos%20assinados/3.png" data-image-alt="Tabela filtrada da central de documentos assinados" data-image-caption="Resultado detalhado da busca com filtros aplicados, exibindo colaborador, refer&ecirc;ncia, tipo documental, status e a&ccedil;&otilde;es operacionais por linha.">
+                            Ver em tela cheia
+                        </button>
+                    </div>
+                </figure>
+
+                <figure class="glass-card rounded-3xl overflow-hidden border border-outline-variant/20 lg:col-span-2">
+                    <div class="project-gallery-frame">
+                        <img src="assets/projetos/documentos%20assinados/1.png" alt="Visualiza&ccedil;&atilde;o de documento assinado">
+                    </div>
+                    <figcaption class="p-5 text-sm text-on-surface-variant">Exemplo de documento j&aacute; assinado, com detalhamento do conte&uacute;do e comprovante visual da assinatura digital persistida no fluxo documental.</figcaption>
+                    <div class="gallery-action-bar">
+                        <button type="button" class="gallery-fullscreen-button" data-fullscreen-trigger data-image-src="assets/projetos/documentos%20assinados/1.png" data-image-alt="Visualiza&ccedil;&atilde;o de documento assinado" data-image-caption="Exemplo de documento j&aacute; assinado, com detalhamento do conte&uacute;do e comprovante visual da assinatura digital persistida no fluxo documental.">
+                            Ver em tela cheia
+                        </button>
+                    </div>
+                </figure>
+            </div>
+        </section>
+
+        <section class="max-w-7xl mx-auto px-6 lg:px-8 py-12 md:py-20 reveal">
+            <div class="grid grid-cols-1 lg:grid-cols-[0.95fr_1.05fr] gap-8">
+                <div class="glass-card rounded-3xl p-8 md:p-10">
+                    <h2 class="text-3xl md:text-4xl font-headline font-bold mb-6">Contexto e problema</h2>
+                    <div class="space-y-5 text-on-surface-variant">
+                        <p>
+                            A funcionalidade foi inserida em um sistema corporativo de RH para controle documental de colaboradores.
+                        </p>
+                        <p>
+                            Sem consolida&ccedil;&atilde;o, o controle de assinaturas ficava fragmentado por tipo documental, dificultando vis&atilde;o executiva de pend&ecirc;ncias, rastreio por recortes organizacionais e prioriza&ccedil;&atilde;o de cobran&ccedil;a.
+                        </p>
+                        <p>
+                            Tamb&eacute;m havia alto esfor&ccedil;o manual para consultar fontes distintas e pouca velocidade para entender a evolu&ccedil;&atilde;o recente das assinaturas.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-3xl p-8 md:p-10">
+                    <h2 class="text-3xl md:text-4xl font-headline font-bold mb-6">Solu&ccedil;&atilde;o implementada</h2>
+                    <ul class="content-list text-on-surface-variant">
+                        <li>Backend respons&aacute;vel por definir janela temporal padr&atilde;o e consolidar contagens por categoria e status.</li>
+                        <li>Payload &uacute;nico para alimentar dashboard gr&aacute;fico e endpoints ass&iacute;ncronos da tabela detalhada.</li>
+                        <li>Filtros multicrit&eacute;rio com empresa, filial, termo, funcion&aacute;rio, m&ecirc;s, tipo e status documental.</li>
+                        <li>Valida&ccedil;&otilde;es de uso antes da busca para evitar requisi&ccedil;&otilde;es inv&aacute;lidas em cen&aacute;rios com filtros obrigat&oacute;rios.</li>
+                        <li>Carregamento tardio da lista de funcion&aacute;rios no primeiro uso para reduzir carga inicial.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-7xl mx-auto px-6 lg:px-8 py-12 md:py-20 reveal">
+            <div class="grid grid-cols-1 lg:grid-cols-[0.95fr_1.05fr] gap-8">
+                <div class="glass-card rounded-3xl p-8 md:p-10">
+                    <h2 class="text-3xl md:text-4xl font-headline font-bold mb-6">Tecnologias utilizadas</h2>
+                    <ul class="content-list text-on-surface-variant">
+                        <li>Back-end em PHP no padr&atilde;o MVC com query builder e consultas SQL sobre m&uacute;ltiplas tabelas de dom&iacute;nio.</li>
+                        <li>Front-end em HTML, CSS, JavaScript, jQuery e Bootstrap com `selectpicker`.</li>
+                        <li>Chart.js para gr&aacute;fico comparativo de volumes assinados e n&atilde;o assinados.</li>
+                        <li>DataTables e plugins de exporta&ccedil;&atilde;o como base instalada da tela.</li>
+                        <li>AJAX para busca filtrada e carregamento sob demanda das op&ccedil;&otilde;es de funcion&aacute;rio.</li>
+                    </ul>
+                </div>
+
+                <div class="glass-card rounded-3xl p-8 md:p-10">
+                    <h2 class="text-3xl md:text-4xl font-headline font-bold mb-6">Desafios t&eacute;cnicos</h2>
+                    <ul class="content-list text-on-surface-variant">
+                        <li>Consolidar fontes documentais heterog&ecirc;neas, resolvido com padroniza&ccedil;&atilde;o de contagem por categoria e status.</li>
+                        <li>Escalabilidade da filtragem com muitos combinadores, tratada com valida&ccedil;&atilde;o pr&eacute;via e busca ass&iacute;ncrona.</li>
+                        <li>Performance no carregamento de listas grandes de colaborador, mitigada com lazy load do seletor no primeiro uso.</li>
+                        <li>Leitura executiva r&aacute;pida para a gest&atilde;o, apoiada por gr&aacute;fico sint&eacute;tico e estrutura visual orientada a decis&atilde;o.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-7xl mx-auto px-6 lg:px-8 py-12 md:py-20 reveal">
+            <div class="glass-card rounded-3xl p-8 md:p-10">
+                <div class="grid grid-cols-1 lg:grid-cols-[0.95fr_1.05fr] gap-8 items-start">
+                    <div>
+                        <h2 class="text-3xl md:text-4xl font-headline font-bold mb-4">Resultados e boas pr&aacute;ticas</h2>
+                        <p class="text-on-surface-variant leading-relaxed">
+                            A centralizou a governan&ccedil;a documental em uma interface &uacute;nica, aumentou a visibilidade sobre pend&ecirc;ncias e reduziu o esfor&ccedil;o manual para auditoria e regulariza&ccedil;&atilde;o. O resultado foi uma experi&ecirc;ncia mais r&aacute;pida, com melhor suporte gerencial para priorizar a&ccedil;&otilde;es em documentos cr&iacute;ticos.
+                        </p>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="rounded-2xl bg-surface-container-high p-5 border border-outline-variant/20">
+                            <div class="text-2xl font-headline font-bold text-primary mb-2">Governan&ccedil;a</div>
+                            <p class="text-sm text-on-surface-variant">Controle centralizado do ciclo de assinatura em m&uacute;ltiplas categorias documentais.</p>
+                        </div>
+                        <div class="rounded-2xl bg-surface-container-high p-5 border border-outline-variant/20">
+                            <div class="text-2xl font-headline font-bold text-primary mb-2">Visibilidade</div>
+                            <p class="text-sm text-on-surface-variant">Leitura r&aacute;pida de assinados e pendentes por tipo e por per&iacute;odo.</p>
+                        </div>
+                        <div class="rounded-2xl bg-surface-container-high p-5 border border-outline-variant/20">
+                            <div class="text-2xl font-headline font-bold text-primary mb-2">Performance</div>
+                            <p class="text-sm text-on-surface-variant">Busca ass&iacute;ncrona e carregamento sob demanda de dados pesados.</p>
+                        </div>
+                        <div class="rounded-2xl bg-surface-container-high p-5 border border-outline-variant/20">
+                            <div class="text-2xl font-headline font-bold text-primary mb-2">Usabilidade</div>
+                            <p class="text-sm text-on-surface-variant">Feedback visual, filtros objetivos e fluxo reutiliz&aacute;vel de consulta detalhada.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="w-full py-12 bg-background border-t border-outline-variant/20">
+        <div class="flex flex-col md:flex-row justify-between items-center px-6 md:px-12 max-w-7xl mx-auto gap-6">
+            <div class="text-center md:text-left">
+                <div class="text-on-surface text-sm font-headline font-bold tracking-wide">Daniel Torres</div>
+                <div class="text-on-surface-variant text-xs tracking-widest uppercase">
+                    Desenvolvedor full-stack em Brasilia, DF
+                </div>
+            </div>
+            <div class="flex flex-wrap justify-center gap-6">
+                <a href="index.html#projects" class="text-on-surface-variant hover:text-primary hover:-translate-y-0.5 transition-all text-xs tracking-widest uppercase">Projetos</a>
+                <a href="https://github.com/devdanieltorres" target="_blank" rel="noreferrer" class="text-on-surface-variant hover:text-primary hover:-translate-y-0.5 transition-all text-xs tracking-widest uppercase">GitHub</a>
+                <a href="https://www.linkedin.com/in/daniel-torres-0851581a0/" target="_blank" rel="noreferrer" class="text-on-surface-variant hover:text-primary hover:-translate-y-0.5 transition-all text-xs tracking-widest uppercase">LinkedIn</a>
+                <a href="mailto:Danieltorres2706@hotmail.com" class="text-on-surface-variant hover:text-primary hover:-translate-y-0.5 transition-all text-xs tracking-widest uppercase">Email</a>
+            </div>
+        </div>
+    </footer>
+
+    <div class="lightbox hidden" data-lightbox aria-hidden="true">
+        <div class="lightbox__dialog">
+            <button type="button" class="lightbox__close" data-lightbox-close aria-label="Fechar visualiza&ccedil;&atilde;o">
+                &times;
+            </button>
+            <div class="lightbox__content">
+                <div class="lightbox__image-wrap">
+                    <img class="lightbox__image" data-lightbox-image src="" alt="">
+                </div>
+                <p class="lightbox__caption" data-lightbox-caption></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

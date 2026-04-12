@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gest&atilde;o de atestados | Daniel Torres</title>
+    <meta name="description" content="Case do m&oacute;dulo de gest&atilde;o e an&aacute;lise de atestados com envio colaborativo, triagem, chat contextual e dashboards anal&iacute;ticos.">
+    <meta name="theme-color" content="#060e20">
+    <meta name="author" content="Daniel Torres">
+    <meta property="og:title" content="Gest&atilde;o de atestados | Daniel Torres">
+    <meta property="og:description" content="Projeto web para envio, an&aacute;lise e acompanhamento de atestados m&eacute;dicos com filtros avan&ccedil;ados e vis&atilde;o anal&iacute;tica.">
+    <meta property="og:type" content="website">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        headline: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#81ecff',
+                        'primary-dim': '#00d4ec',
+                        tertiary: '#70aaff',
+                        background: '#060e20',
+                        surface: '#060e20',
+                        'surface-container': '#0f1930',
+                        'surface-container-high': '#141f38',
+                        'surface-container-highest': '#192540',
+                        'on-surface': '#dee5ff',
+                        'on-surface-variant': '#a3aac4',
+                        'outline-variant': '#40485d',
+                        success: '#34d399',
+                        warning: '#fbbf24',
+                    }
+                }
+            }
+        };
+    </script>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-background text-on-surface font-sans antialiased overflow-x-hidden selection:bg-primary/20 selection:text-on-surface">
+    <a href="#project-content" class="skip-link">Pular para o conte&uacute;do</a>
+
+    <header class="fixed top-0 w-full z-50 bg-[#060e20]/90 backdrop-blur-xl border-b border-outline-variant/10">
+        <div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
+            <a href="index.html#home" class="flex items-center gap-3 group" aria-label="Voltar para o in&iacute;cio do portf&oacute;lio">
+                <span class="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary font-headline font-bold">DT</span>
+                <div>
+                    <span class="block text-base md:text-lg font-bold tracking-tight text-on-surface font-headline">DANIEL TORRES</span>
+                    <span class="block text-[10px] uppercase tracking-[0.3em] text-on-surface-variant">Projeto detalhado</span>
+                </div>
+            </a>
+
+            <nav class="hidden lg:flex gap-8 items-center" aria-label="Navega&ccedil;&atilde;o principal">
+                <a href="index.html#about" class="nav-link text-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-all">Sobre</a>
+                <a href="index.html#experience" class="nav-link text-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-all">Experi&ecirc;ncia</a>
+                <a href="index.html#projects" class="nav-link text-sm uppercase tracking-widest text-primary transition-all">Projetos</a>
+                <a href="index.html#contact" class="nav-link text-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-all">Contato</a>
+                <a href="index.html#projects" class="ml-4 px-6 py-2 bg-primary text-background font-bold rounded-lg hover:scale-105 transition-all focus:outline-none focus:ring-2 focus:ring-primary">
+                    Voltar ao portf&oacute;lio
+                </a>
+            </nav>
+
+            <button id="menu-toggle" class="lg:hidden text-primary p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" aria-controls="mobile-menu" aria-expanded="false" aria-label="Abrir menu">
+                <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 w-full bg-surface-container border-b border-outline-variant/20 shadow-2xl">
+            <nav class="flex flex-col p-6 gap-4" aria-label="Navega&ccedil;&atilde;o mobile">
+                <a href="index.html#about" class="mobile-nav-link text-lg font-headline uppercase tracking-widest py-3 border-b border-outline-variant/10">Sobre</a>
+                <a href="index.html#experience" class="mobile-nav-link text-lg font-headline uppercase tracking-widest py-3 border-b border-outline-variant/10">Experi&ecirc;ncia</a>
+                <a href="index.html#projects" class="mobile-nav-link text-lg font-headline uppercase tracking-widest py-3 border-b border-outline-variant/10 text-primary">Projetos</a>
+                <a href="index.html#contact" class="mobile-nav-link text-lg font-headline uppercase tracking-widest py-3 border-b border-outline-variant/10">Contato</a>
+                <a href="index.html#projects" class="w-full mt-4 px-6 py-4 bg-primary text-background font-bold rounded-xl text-center">
+                    Voltar ao portf&oacute;lio
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="project-content" class="relative overflow-x-hidden">
+        <div class="fixed inset-0 hero-gradient pointer-events-none -z-10"></div>
+        <div class="fixed -top-24 -right-24 w-64 md:w-96 h-64 md:h-96 bg-primary/5 rounded-full blur-[80px] md:blur-[100px] pointer-events-none -z-10"></div>
+        <div class="fixed top-1/3 -left-24 w-64 md:w-96 h-64 md:h-96 bg-tertiary/10 rounded-full blur-[90px] md:blur-[120px] pointer-events-none -z-10"></div>
+
+        <section class="max-w-7xl mx-auto px-6 lg:px-8 pt-28 md:pt-36 pb-16 md:pb-24 reveal">
+            <div class="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-10 items-center">
+                <div class="space-y-6">
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-4 py-2 rounded-full bg-primary/10 text-primary text-xs uppercase tracking-[0.25em]">Projeto real</span>
+                        <span class="px-4 py-2 rounded-full bg-surface-container-high text-on-surface-variant text-xs uppercase tracking-[0.25em]">RH / SSMA</span>
+                        <span class="px-4 py-2 rounded-full bg-surface-container-high text-on-surface-variant text-xs uppercase tracking-[0.25em]">Sa&uacute;de ocupacional</span>
+                        <span class="px-4 py-2 rounded-full bg-surface-container-high text-on-surface-variant text-xs uppercase tracking-[0.25em]">Analytics</span>
+                    </div>
+                    <div>
+                        <p class="text-sm uppercase tracking-[0.35em] text-on-surface-variant mb-3">Case detalhado</p>
+                        <h1 class="text-4xl md:text-6xl font-headline font-bold tracking-tight leading-[1.05]">
+                            M&oacute;dulo de gest&atilde;o e an&aacute;lise de atestados com fluxo colaborativo
+                        </h1>
+                    </div>
+                    <p class="text-lg md:text-xl text-on-surface-variant leading-relaxed">
+                        Solu&ccedil;&atilde;o web para envio, triagem, an&aacute;lise e acompanhamento de atestados m&eacute;dicos, com rastreabilidade das decis&otilde;es, comunica&ccedil;&atilde;o entre &aacute;reas e vis&atilde;o gerencial por meio de filtros e pain&eacute;is anal&iacute;ticos.
+                    </p>
+                    <p class="text-base md:text-lg text-on-surface-variant leading-relaxed">
+                        O projeto une a frente do colaborador, com envio estruturado e consulta do hist&oacute;rico, &agrave; frente t&eacute;cnica e gerencial de RH/SSMA, com an&aacute;lise operacional, chat contextual, pagina&ccedil;&atilde;o ass&iacute;ncrona e gr&aacute;ficos para suporte &agrave; decis&atilde;o.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#galeria" class="px-8 py-4 bg-primary text-background font-bold rounded-2xl text-center">Ver galeria</a>
+                        <a href="index.html#projects" class="px-8 py-4 border border-outline-variant/30 rounded-2xl text-center hover:bg-surface-container-high transition-all">Voltar para projetos</a>
+                    </div>
+                </div>
+
+                <figure class="glass-card rounded-3xl overflow-hidden border border-outline-variant/20">
+                    <img src="assets/projetos/atestados/11.png" alt="Tela de envio de atestado" class="w-full h-full object-cover object-top">
+                </figure>
+            </div>
+        </section>
+
+        <section class="max-w-7xl mx-auto px-6 lg:px-8 pb-12 md:pb-20 reveal">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="glass-card rounded-3xl p-6">
+                    <div class="text-2xl font-headline font-bold text-primary mb-2">Envio guiado</div>
+                    <p class="text-sm text-on-surface-variant">Formul&aacute;rio estruturado com datas, tipo de afastamento, dados m&eacute;dicos, anexos e justificativa.</p>
+                </div>
+                <div class="glass-card rounded-3xl p-6">
+                    <div class="text-2xl font-headline font-bold text-primary mb-2">An&aacute;lise colaborativa</div>
+                    <p class="text-sm text-on-surface-variant">Fluxo de revis&atilde;o com chat contextual, a&ccedil;&otilde;es por status e acompanhamento entre colaborador, RH e SSMA.</p>
+                </div>
+                <div class="glass-card rounded-3xl p-6">
+                    <div class="text-2xl font-headline font-bold text-primary mb-2">Vis&atilde;o anal&iacute;tica</div>
+                    <p class="text-sm text-on-surface-variant">Gr&aacute;ficos por status, tipo, situa&ccedil;&atilde;o, evolu&ccedil;&atilde;o temporal e rankings para leitura gerencial.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="galeria" class="max-w-7xl mx-auto px-6 lg:px-8 py-12 md:py-20 reveal">
+            <div class="mb-10">
+                <h2 class="text-xs uppercase tracking-[0.35em] text-primary mb-3">Galeria</h2>
+                <h3 class="text-3xl md:text-5xl font-headline font-bold tracking-tight">Vis&otilde;es da funcionalidade</h3>
+            </div>
+
+            <div class="grid grid-cols-1 gap-6">
+                <figure class="glass-card rounded-3xl overflow-hidden border border-outline-variant/20">
+                    <div class="project-gallery-frame">
+                        <img src="assets/projetos/atestados/11.png" alt="Formul&aacute;rio principal de envio de atestado">
+                    </div>
+                    <figcaption class="p-5 text-sm text-on-surface-variant">Modal de envio do atestado com datas, tipo de afastamento, CRM, CID opcional, contato e justificativa.</figcaption>
+                    <div class="gallery-action-bar">
+                        <button type="button" class="gallery-fullscreen-button" data-fullscreen-trigger data-image-src="assets/projetos/atestados/11.png" data-image-alt="Formul&aacute;rio principal de envio de atestado" data-image-caption="Modal de envio do atestado com datas, tipo de afastamento, CRM, CID opcional, contato e justificativa.">
+                            Ver em tela cheia
+                        </button>
+                    </div>
+                </figure>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <figure class="glass-card rounded-3xl overflow-hidden border border-outline-variant/20">
+                        <div class="project-gallery-frame">
+                            <img src="assets/projetos/atestados/3.png" alt="Atalho de atestados no dashboard do colaborador">
+                        </div>
+                        <figcaption class="p-5 text-sm text-on-surface-variant">Entrada do fluxo no dashboard do colaborador, com destaque para o acesso r&aacute;pido ao m&oacute;dulo de atestados e badge de pend&ecirc;ncia.</figcaption>
+                        <div class="gallery-action-bar">
+                            <button type="button" class="gallery-fullscreen-button" data-fullscreen-trigger data-image-src="assets/projetos/atestados/3.png" data-image-alt="Atalho de atestados no dashboard do colaborador" data-image-caption="Entrada do fluxo no dashboard do colaborador, com destaque para o acesso r&aacute;pido ao m&oacute;dulo de atestados e badge de pend&ecirc;ncia.">
+                                Ver em tela cheia
+                            </button>
+                        </div>
+                    </figure>
+
+                    <figure class="glass-card rounded-3xl overflow-hidden border border-outline-variant/20">
+                        <div class="project-gallery-frame">
+                            <img src="assets/projetos/atestados/10.png" alt="Campos de anexos do envio de atestado">
+                        </div>
+                        <figcaption class="p-5 text-sm text-on-surface-variant">Continuidade do formul&aacute;rio com upload do atestado, anexo homologado opcional, receita e envio final do fluxo.</figcaption>
+                        <div class="gallery-action-bar">
+                            <button type="button" class="gallery-fullscreen-button" data-fullscreen-trigger data-image-src="assets/projetos/atestados/10.png" data-image-alt="Campos de anexos do envio de atestado" data-image-caption="Continuidade do formul&aacute;rio com upload do atestado, anexo homologado opcional, receita e envio final do fluxo.">
+                                Ver em tela cheia
+                            </button>
+                        </div>
+                    </figure>
+
+                    <figure class="glass-card rounded-3xl overflow-hidden border border-outline-variant/20">
+                        <div class="project-gallery-frame">
+                            <img src="assets/projetos/atestados/9.png" alt="Hist&oacute;rico de atestados enviados pelo colaborador">
+                        </div>
+                        <figcaption class="p-5 text-sm text-on-surface-variant">Aba de hist&oacute;rico do colaborador com listagem dos atestados enviados, status, arquivos, chat e acesso aos detalhes.</figcaption>
+                        <div class="gallery-action-bar">
+                            <button type="button" class="gallery-fullscreen-button" data-fullscreen-trigger data-image-src="assets/projetos/atestados/9.png" data-image-alt="Hist&oacute;rico de atestados enviados pelo colaborador" data-image-caption="Aba de hist&oacute;rico do colaborador com listagem dos atestados enviados, status, arquivos, chat e acesso aos detalhes.">
+                                Ver em tela cheia
+                            </button>
+                        </div>
+                    </figure>
+
+                    <figure class="glass-card rounded-3xl overflow-hidden border border-outline-variant/20">
+                        <div class="project-gallery-frame">
+                            <img src="assets/projetos/atestados/7.png" alt="Listagem administrativa dos atestados">
+                        </div>
+                        <figcaption class="p-5 text-sm text-on-surface-variant">Tela administrativa com filtros combin&aacute;veis, status, situa&ccedil;&atilde;o, datas, pagina&ccedil;&atilde;o ass&iacute;ncrona e a&ccedil;&otilde;es de an&aacute;lise.</figcaption>
+                        <div class="gallery-action-bar">
+                            <button type="button" class="gallery-fullscreen-button" data-fullscreen-trigger data-image-src="assets/projetos/atestados/7.png" data-image-alt="Listagem administrativa dos atestados" data-image-caption="Tela administrativa com filtros combin&aacute;veis, status, situa&ccedil;&atilde;o, datas, pagina&ccedil;&atilde;o ass&iacute;ncrona e a&ccedil;&otilde;es de an&aacute;lise.">
+                                Ver em tela cheia
+                            </button>
+                        </div>
+                    </figure>
+
+                    <figure class="glass-card rounded-3xl overflow-hidden border border-outline-variant/20">
+                        <div class="project-gallery-frame">
+                            <img src="assets/projetos/atestados/2.png" alt="An&aacute;lise completa do atestado com arquivos">
+                        </div>
+                        <figcaption class="p-5 text-sm text-on-surface-variant">Vis&atilde;o consolidada da an&aacute;lise com informa&ccedil;&otilde;es m&eacute;dicas, per&iacute;odo, arquivos anexados e documentos complementares.</figcaption>
+                        <div class="gallery-action-bar">
+                            <button type="button" class="gallery-fullscreen-button" data-fullscreen-trigger data-image-src="assets/projetos/atestados/2.png" data-image-alt="An&aacute;lise completa do atestado com arquivos" data-image-caption="Vis&atilde;o consolidada da an&aacute;lise com informa&ccedil;&otilde;es m&eacute;dicas, per&iacute;odo, arquivos anexados e documentos complementares.">
+                                Ver em tela cheia
+                            </button>
+                        </div>
+                    </figure>
+
+                    <figure class="glass-card rounded-3xl overflow-hidden border border-outline-variant/20">
+                        <div class="project-gallery-frame">
+                            <img src="assets/projetos/atestados/1.png" alt="Tela de an&aacute;lise t&eacute;cnica do atestado">
+                        </div>
+                        <figcaption class="p-5 text-sm text-on-surface-variant">Tela de an&aacute;lise com anexos do atestado, justificativa do funcion&aacute;rio, edi&ccedil;&atilde;o das informa&ccedil;&otilde;es e aplica&ccedil;&atilde;o de a&ccedil;&otilde;es.</figcaption>
+                        <div class="gallery-action-bar">
+                            <button type="button" class="gallery-fullscreen-button" data-fullscreen-trigger data-image-src="assets/projetos/atestados/1.png" data-image-alt="Tela de an&aacute;lise t&eacute;cnica do atestado" data-image-caption="Tela de an&aacute;lise com anexos do atestado, justificativa do funcion&aacute;rio, edi&ccedil;&atilde;o das informa&ccedil;&otilde;es e aplica&ccedil;&atilde;o de a&ccedil;&otilde;es.">
+                                Ver em tela cheia
+                            </button>
+                        </div>
+                    </figure>
+
+                    <figure class="glass-card rounded-3xl overflow-hidden border border-outline-variant/20">
+                        <div class="project-gallery-frame">
+                            <img src="assets/projetos/atestados/6.png" alt="Detalhes completos do atestado">
+                        </div>
+                        <figcaption class="p-5 text-sm text-on-surface-variant">Modal de detalhes com dados completos do atestado, per&iacute;odo, status, CRM, CID, justificativa e links para os arquivos relacionados.</figcaption>
+                        <div class="gallery-action-bar">
+                            <button type="button" class="gallery-fullscreen-button" data-fullscreen-trigger data-image-src="assets/projetos/atestados/6.png" data-image-alt="Detalhes completos do atestado" data-image-caption="Modal de detalhes com dados completos do atestado, per&iacute;odo, status, CRM, CID, justificativa e links para os arquivos relacionados.">
+                                Ver em tela cheia
+                            </button>
+                        </div>
+                    </figure>
+
+                    <figure class="glass-card rounded-3xl overflow-hidden border border-outline-variant/20">
+                        <div class="project-gallery-frame">
+                            <img src="assets/projetos/atestados/4.png" alt="Chat do atestado no fluxo do colaborador">
+                        </div>
+                        <figcaption class="p-5 text-sm text-on-surface-variant">Troca de mensagens no contexto do colaborador, com hist&oacute;rico, campo de resposta e envio de arquivo diretamente no fluxo.</figcaption>
+                        <div class="gallery-action-bar">
+                            <button type="button" class="gallery-fullscreen-button" data-fullscreen-trigger data-image-src="assets/projetos/atestados/4.png" data-image-alt="Chat do atestado no fluxo do colaborador" data-image-caption="Troca de mensagens no contexto do colaborador, com hist&oacute;rico, campo de resposta e envio de arquivo diretamente no fluxo.">
+                                Ver em tela cheia
+                            </button>
+                        </div>
+                    </figure>
+
+                    <figure class="glass-card rounded-3xl overflow-hidden border border-outline-variant/20">
+                        <div class="project-gallery-frame">
+                            <img src="assets/projetos/atestados/5.png" alt="Chat contextual do atestado na tela administrativa">
+                        </div>
+                        <figcaption class="p-5 text-sm text-on-surface-variant">Comunica&ccedil;&atilde;o contextual por chat no contexto de an&aacute;lise, com regras de bloqueio conforme o estado final do processo.</figcaption>
+                        <div class="gallery-action-bar">
+                            <button type="button" class="gallery-fullscreen-button" data-fullscreen-trigger data-image-src="assets/projetos/atestados/5.png" data-image-alt="Chat contextual do atestado na tela administrativa" data-image-caption="Comunica&ccedil;&atilde;o contextual por chat no contexto de an&aacute;lise, com regras de bloqueio conforme o estado final do processo.">
+                                Ver em tela cheia
+                            </button>
+                        </div>
+                    </figure>
+
+                    <figure class="glass-card rounded-3xl overflow-hidden border border-outline-variant/20 lg:col-span-2">
+                        <div class="project-gallery-frame">
+                            <img src="assets/projetos/atestados/8.png" alt="Dashboard anal&iacute;tico dos atestados">
+                        </div>
+                        <figcaption class="p-5 text-sm text-on-surface-variant">Pain&eacute;is anal&iacute;ticos com status, tipos de afastamento, situa&ccedil;&atilde;o, distribui&ccedil;&atilde;o de dias e leitura gerencial do processo.</figcaption>
+                        <div class="gallery-action-bar">
+                            <button type="button" class="gallery-fullscreen-button" data-fullscreen-trigger data-image-src="assets/projetos/atestados/8.png" data-image-alt="Dashboard anal&iacute;tico dos atestados" data-image-caption="Pain&eacute;is anal&iacute;ticos com status, tipos de afastamento, situa&ccedil;&atilde;o, distribui&ccedil;&atilde;o de dias e leitura gerencial do processo.">
+                                Ver em tela cheia
+                            </button>
+                        </div>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-7xl mx-auto px-6 lg:px-8 py-12 md:py-20 reveal">
+            <div class="grid grid-cols-1 lg:grid-cols-[0.95fr_1.05fr] gap-8">
+                <div class="glass-card rounded-3xl p-8 md:p-10">
+                    <h2 class="text-3xl md:text-4xl font-headline font-bold mb-6">Contexto e problema</h2>
+                    <div class="space-y-5 text-on-surface-variant">
+                        <p>
+                            A funcionalidade faz parte de um sistema corporativo de gest&atilde;o de pessoas com foco em sa&uacute;de ocupacional e controle de afastamentos.
+                        </p>
+                        <p>
+                            Antes da implementa&ccedil;&atilde;o, o processo tendia a ser fragmentado, com envio de documentos sem padroniza&ccedil;&atilde;o, pouca rastreabilidade das decis&otilde;es e dificuldade de comunica&ccedil;&atilde;o entre as &aacute;reas.
+                        </p>
+                        <p>
+                            Isso gerava retrabalho, lentid&atilde;o na tomada de decis&atilde;o, inconsist&ecirc;ncia de dados e menor governan&ccedil;a sobre prazos, pend&ecirc;ncias e status dos atestados.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-3xl p-8 md:p-10">
+                    <h2 class="text-3xl md:text-4xl font-headline font-bold mb-6">Solu&ccedil;&atilde;o implementada</h2>
+                    <ul class="content-list text-on-surface-variant">
+                        <li>Frente do colaborador com modal de novo envio e consulta de hist&oacute;rico, incluindo campos dependentes e formul&aacute;rio estruturado.</li>
+                        <li>Frente de an&aacute;lise t&eacute;cnica e gest&atilde;o com filtros combin&aacute;veis, pagina&ccedil;&atilde;o ass&iacute;ncrona e a&ccedil;&otilde;es de revis&atilde;o e atualiza&ccedil;&atilde;o de status.</li>
+                        <li>Chat vinculado ao atestado para tratativas e anexos, respeitando regras de bloqueio conforme o estado final.</li>
+                        <li>Camada anal&iacute;tica carregada de forma ass&iacute;ncrona com gr&aacute;ficos de status, tipos, situa&ccedil;&atilde;o, evolu&ccedil;&atilde;o temporal e rankings.</li>
+                        <li>Tour interativo para onboarding contextual e orienta&ccedil;&atilde;o do usu&aacute;rio pela interface.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-7xl mx-auto px-6 lg:px-8 py-12 md:py-20 reveal">
+            <div class="grid grid-cols-1 lg:grid-cols-[0.95fr_1.05fr] gap-8">
+                <div class="glass-card rounded-3xl p-8 md:p-10">
+                    <h2 class="text-3xl md:text-4xl font-headline font-bold mb-6">Tecnologias utilizadas</h2>
+                    <ul class="content-list text-on-surface-variant">
+                        <li>Back-end em PHP seguindo padr&atilde;o MVC, com controlador para sess&atilde;o, permiss&otilde;es e composi&ccedil;&atilde;o dos dados.</li>
+                        <li>Front-end em HTML, CSS, JavaScript, jQuery e Bootstrap com modais, abas e componentes visuais.</li>
+                        <li>Chart.js com plugin de r&oacute;tulos para visualiza&ccedil;&atilde;o comparativa e de tend&ecirc;ncia.</li>
+                        <li>Biblioteca de tour guiado para onboarding contextual.</li>
+                        <li>Banco relacional com consultas para par&acirc;metros, usu&aacute;rios, empresa, filial e cat&aacute;logos como CID.</li>
+                        <li>Endpoints internos via AJAX para listagem, detalhes, status, exporta&ccedil;&atilde;o e chat.</li>
+                    </ul>
+                </div>
+
+                <div class="glass-card rounded-3xl p-8 md:p-10">
+                    <h2 class="text-3xl md:text-4xl font-headline font-bold mb-6">Desafios t&eacute;cnicos</h2>
+                    <ul class="content-list text-on-surface-variant">
+                        <li>Orquestra&ccedil;&atilde;o de estado da tela entre filtros, pagina&ccedil;&atilde;o, modal de an&aacute;lise, chat e gr&aacute;ficos sem recarregar a p&aacute;gina.</li>
+                        <li>Confiabilidade da camada gr&aacute;fica, tratada com verifica&ccedil;&atilde;o de carregamento, tentativa de recupera&ccedil;&atilde;o e fallback amig&aacute;vel.</li>
+                        <li>Regras de neg&oacute;cio no chat para impedir mensagens ap&oacute;s fechamento em cen&aacute;rios espec&iacute;ficos.</li>
+                        <li>Escalabilidade da listagem, resolvida com pagina&ccedil;&atilde;o ass&iacute;ncrona e filtros granulares para reduzir payload e tempo de resposta percebido.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-7xl mx-auto px-6 lg:px-8 py-12 md:py-20 reveal">
+            <div class="glass-card rounded-3xl p-8 md:p-10">
+                <div class="grid grid-cols-1 lg:grid-cols-[0.95fr_1.05fr] gap-8 items-start">
+                    <div>
+                        <h2 class="text-3xl md:text-4xl font-headline font-bold mb-4">Resultados e boas pr&aacute;ticas</h2>
+                        <p class="text-on-surface-variant leading-relaxed">
+                            O projeto trouxe padroniza&ccedil;&atilde;o ao processo de envio e an&aacute;lise de atestados, aumentou a rastreabilidade das decis&otilde;es, reduziu retrabalho operacional e fortaleceu a governan&ccedil;a por status, prazos e pend&ecirc;ncias.
+                        </p>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="rounded-2xl bg-surface-container-high p-5 border border-outline-variant/20">
+                            <div class="text-2xl font-headline font-bold text-primary mb-2">Padroniza&ccedil;&atilde;o</div>
+                            <p class="text-sm text-on-surface-variant">Fluxo estruturado para envio, triagem e an&aacute;lise dos atestados.</p>
+                        </div>
+                        <div class="rounded-2xl bg-surface-container-high p-5 border border-outline-variant/20">
+                            <div class="text-2xl font-headline font-bold text-primary mb-2">Rastreabilidade</div>
+                            <p class="text-sm text-on-surface-variant">Mais visibilidade sobre decis&otilde;es, tratativas e comunica&ccedil;&atilde;o entre as &aacute;reas.</p>
+                        </div>
+                        <div class="rounded-2xl bg-surface-container-high p-5 border border-outline-variant/20">
+                            <div class="text-2xl font-headline font-bold text-primary mb-2">Performance</div>
+                            <p class="text-sm text-on-surface-variant">Atualiza&ccedil;&atilde;o parcial de componentes, pagina&ccedil;&atilde;o e destrui&ccedil;&atilde;o controlada de gr&aacute;ficos.</p>
+                        </div>
+                        <div class="rounded-2xl bg-surface-container-high p-5 border border-outline-variant/20">
+                            <div class="text-2xl font-headline font-bold text-primary mb-2">Usabilidade</div>
+                            <p class="text-sm text-on-surface-variant">Formul&aacute;rios orientados, alertas contextuais, estados de bot&atilde;o e tour de onboarding.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="w-full py-12 bg-background border-t border-outline-variant/20">
+        <div class="flex flex-col md:flex-row justify-between items-center px-6 md:px-12 max-w-7xl mx-auto gap-6">
+            <div class="text-center md:text-left">
+                <div class="text-on-surface text-sm font-headline font-bold tracking-wide">Daniel Torres</div>
+                <div class="text-on-surface-variant text-xs tracking-widest uppercase">
+                    Desenvolvedor full-stack em Brasilia, DF
+                </div>
+            </div>
+            <div class="flex flex-wrap justify-center gap-6">
+                <a href="index.html#projects" class="text-on-surface-variant hover:text-primary hover:-translate-y-0.5 transition-all text-xs tracking-widest uppercase">Projetos</a>
+                <a href="https://github.com/devdanieltorres" target="_blank" rel="noreferrer" class="text-on-surface-variant hover:text-primary hover:-translate-y-0.5 transition-all text-xs tracking-widest uppercase">GitHub</a>
+                <a href="https://www.linkedin.com/in/daniel-torres-0851581a0/" target="_blank" rel="noreferrer" class="text-on-surface-variant hover:text-primary hover:-translate-y-0.5 transition-all text-xs tracking-widest uppercase">LinkedIn</a>
+                <a href="mailto:Danieltorres2706@hotmail.com" class="text-on-surface-variant hover:text-primary hover:-translate-y-0.5 transition-all text-xs tracking-widest uppercase">Email</a>
+            </div>
+        </div>
+    </footer>
+
+    <div class="lightbox hidden" data-lightbox aria-hidden="true">
+        <div class="lightbox__dialog">
+            <button type="button" class="lightbox__close" data-lightbox-close aria-label="Fechar visualiza&ccedil;&atilde;o">
+                &times;
+            </button>
+            <div class="lightbox__content">
+                <div class="lightbox__image-wrap">
+                    <img class="lightbox__image" data-lightbox-image src="" alt="">
+                </div>
+                <p class="lightbox__caption" data-lightbox-caption></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+1. Título da Funcionalidade
+Central de Documentos para Assinatura com Filtros de Pendência
+2. Contexto
+A funcionalidade está inserida em um portal de autosserviço de colaboradores, na área de documentos trabalhistas e financeiros.
+Ela atende à necessidade de concentrar, em uma única tela, todos os documentos que exigem assinatura eletrônica e permitir priorização rápida do que está pendente.
+3. Problema
+Antes de uma visão consolidada, documentos de naturezas diferentes (folha, ponto e férias) tendem a ficar dispersos em fluxos separados, dificultando controle de pendências.
+Isso gera risco de atraso de assinatura, baixa visibilidade para o colaborador e aumento de suporte operacional.
+4. Solução Implementada
+Foi criada uma aba específica de “Documentos a Assinar” com listagem unificada e filtros práticos:
+Listagem consolidada de múltiplos tipos documentais em uma única tabela (termo, mês de referência, status e ação).
+Identificação de pendência por regra de negócio: ausência de assinatura em campos específicos de cada documento resulta em status “Não assinado”.
+Ação contextual por status: documentos pendentes exibem CTA visual de edição/assinatura; assinados exibem CTA de visualização.
+Filtros combináveis por tipo de termo, mês de referência e status, permitindo foco direto em pendências.
+Integração de fontes distintas (documentos de cálculo, espelho de ponto em cenários alternativos de origem e documentos de férias), apresentados de forma homogênea para o usuário.
+Decisões técnicas relevantes: padronização da interface para documentos heterogêneos e uso de ícones/labels para reduzir ambiguidade entre “assinar” e “apenas visualizar”.
+5. Tecnologias Utilizadas
+Frontend: PHP (renderização server-side), HTML, CSS, JavaScript, Bootstrap e componentes selectpicker.
+Backend (integração de dados): dados vindos de coleções já processadas no controlador e entregues à view para composição da tabela.
+Utilitários de apresentação: formatação de datas e ordenação por referência temporal na tabela.
+6. Desafios Técnicos
+Unificar documentos com estruturas de assinatura diferentes.
+Solução: mapeamento por tipo documental e regra de assinatura específica para cada origem.
+Manter consistência visual e funcional entre documentos assinados e pendentes.
+Solução: status padronizado e ação contextual única na coluna de operação.
+Conciliar múltiplas fontes de espelho de ponto.
+Solução: tratamento condicional de origem mantendo mesma experiência de listagem.
+7. Resultados Obtidos
+Visão única das pendências de assinatura, reduzindo tempo de busca do colaborador.
+Melhora de conformidade operacional, com menor chance de documentos não assinados.
+Navegação mais objetiva por meio de filtros e ordenação por período.
+Redução de fricção no fluxo ao diferenciar claramente “assinar” versus “visualizar”.
+8. Boas Práticas Aplicadas
+Organização: separação por tipo documental com renderização padronizada na mesma tabela.
+Usabilidade: filtros multisseleção, status explícito e ícones de ação orientados ao estado do documento.
+Manutenibilidade: mapeamento de tipos de cálculo para rótulos legíveis e reaproveitamento de componentes visuais.
+Confiabilidade: decisão de status baseada em campos de assinatura já persistidos no domínio de cada documento.
+9. Resumo para Portfólio
+Implementei uma central unificada de documentos para assinatura, consolidando diferentes tipos documentais em uma única listagem com filtros por termo, período e status. A solução identifica automaticamente pendências a partir das regras de assinatura de cada documento e adapta a ação da interface entre assinar ou visualizar. Também tratei múltiplas origens de dados mantendo uma experiência única e consistente. O resultado foi ganho de controle, agilidade e melhor conformidade no ciclo de assinatura eletrônica.

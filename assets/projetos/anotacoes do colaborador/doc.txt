@@ -1,0 +1,80 @@
+1. Título da Funcionalidade
+Gestão de Anotações de Colaboradores com Histórico Auditável, Anexos e Dashboard Analítico
+2. Contexto
+A funcionalidade está inserida em uma plataforma corporativa de RH para acompanhamento de eventos comportamentais e administrativos do colaborador.
+Ela atende à necessidade de registrar ocorrências formais (elogios, feedbacks, advertências e outros tipos), manter histórico rastreável e apoiar decisões de gestão por meio de filtros e indicadores visuais.
+3. Problema
+Sem um módulo dedicado, registros de acompanhamento tendem a ficar descentralizados, sem padrão de qualidade e com baixa auditabilidade.
+Os principais impactos são:
+dificuldade de localizar histórico por colaborador, tipo ou período;
+baixa consistência de preenchimento e anexação de evidências;
+pouca visibilidade gerencial sobre distribuição de anotações por unidade organizacional.
+4. Solução Implementada
+A solução foi estruturada em controller de consulta/governança e view operacional + analítica.
+Camada de backend (controller)
+Define contexto de sessão e perfil de acesso do usuário.
+Resolve escopo organizacional permitido (empresas e filiais acessíveis conforme vínculo/perfil).
+Carrega colaboradores para formulários e filtros.
+Executa consulta principal com junções para:
+dados da anotação,
+colaborador,
+empresa/filial,
+metadados de anexo.
+Aplica filtros dinâmicos por colaborador, tipo, intervalo de datas e busca textual em descrição/nome.
+Ordena histórico por data e identificador para leitura cronológica inversa.
+Entrega payload consolidado para renderização da página.
+Camada de frontend (view)
+Formulário de anotação com:
+validação de campos obrigatórios;
+limite e contador de caracteres;
+validação de tipo/tamanho de anexo;
+UX de colapso/expansão do formulário.
+Histórico filtrável com:
+filtros de colaborador, tipo, data e busca;
+exportação com preservação do estado dos filtros;
+descrição truncada com modal para leitura integral.
+Ações de manutenção:
+edição em modal com pré-carregamento dos dados da linha;
+exclusão via form oculto e submissão controlada.
+Dashboard integrado (Chart.js):
+distribuição por tipo,
+volume por empresa,
+volume por filial,
+evolução diária.
+Tratamento de encoding para garantir exibição correta de textos em ambiente com legado de charset.
+Decisões técnicas relevantes
+separar claramente fluxo transacional (cadastro/edição/exclusão) do fluxo analítico (filtros/dashboard);
+manter o histórico no mesmo contexto da operação para reduzir troca de tela;
+gerar dados do dashboard diretamente a partir do conjunto já filtrado/renderizado;
+padronizar mensagens e validações no cliente para reduzir erros de submissão.
+5. Tecnologias Utilizadas
+Backend: PHP (MVC) com Query Builder e joins relacionais.
+Frontend: HTML, CSS, JavaScript, jQuery e Bootstrap (collapse, modais, componentes de formulário).
+Visualização de dados: Chart.js (doughnut, barras e linha).
+Persistência: banco relacional com tabela principal de anotações e tabela de anexos.
+Integração de saída: exportação de dados por filtros aplicados.
+6. Desafios Técnicos
+Escopo de acesso por estrutura organizacional
+Solução: cálculo de empresas permitidas e aplicação desse escopo na carga de dados.
+Confiabilidade de entrada de dados e anexos
+Solução: validações combinadas de obrigatoriedade, tamanho e extensão no front.
+Legado de codificação de caracteres
+Solução: funções utilitárias para normalização/sanitização antes da exibição e serialização para gráficos.
+Equilíbrio entre detalhe e legibilidade em histórico extenso
+Solução: truncamento inteligente com modal de descrição completa e filtros compostos.
+Experiência fluida para operação diária
+Solução: edição em modal e ações diretas por linha, sem navegação para telas separadas.
+7. Resultados Obtidos
+Centralização do acompanhamento formal de colaboradores em um fluxo único.
+Aumento de rastreabilidade e governança sobre registros e evidências anexadas.
+Redução de tempo para consulta histórica com filtros direcionados.
+Melhor visibilidade gerencial por meio de dashboard com recortes operacionais.
+Melhoria da qualidade dos registros por validações e padronização de tipos de anotação.
+8. Boas Práticas Aplicadas
+Organização: separação entre preparação de dados no controller e comportamento da UI na view.
+Segurança: escape de saída HTML e controle de escopo por empresas permitidas.
+Performance: reaproveitamento do dataset para histórico e dashboard no mesmo ciclo de renderização.
+Manutenibilidade: uso de helpers utilitários (formatação/data/encoding) e estrutura modular de scripts.
+Usabilidade: feedback de validação, contador de caracteres, modais de edição/visualização e filtros persistentes.
+9. Resumo para Portfólio
+Implementei um módulo completo de anotações de colaboradores com cadastro estruturado, anexos, edição/exclusão e histórico filtrável. A solução combina governança de acesso por escopo organizacional, validações de qualidade de dados e dashboard analítico com gráficos por tipo, empresa, filial e evolução diária. Também tratei compatibilidade de encoding em ambiente legado para garantir consistência visual e de exportação. O resultado foi maior rastreabilidade, melhor tomada de decisão e operação mais eficiente para o RH.

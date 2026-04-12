@@ -1,0 +1,65 @@
+1. Título da Funcionalidade
+Painel de Controle de Quadro com Análise Planejado vs Realizado por Empresa, Filial, Centro de Custo e Cargo
+2. Contexto
+A funcionalidade está inserida em um sistema corporativo de RH voltado à governança de headcount e alocação de força de trabalho.
+Ela atende à necessidade de comparar o quadro planejado com o realizado em diferentes níveis organizacionais, apoiando decisões de dimensionamento, remanejamento e priorização de contratação.
+3. Problema
+Sem uma visão consolidada e hierárquica, a leitura de quadro costuma ficar fragmentada entre relatórios isolados, dificultando:
+identificar déficit ou excesso de pessoal com rapidez;
+entender variações por filial e centro de custo;
+comparar desempenho de cargos entre mês atual e mês anterior;
+transformar dados operacionais em status gerencial acionável.
+Isso reduz agilidade de decisão e aumenta risco de desequilíbrio de estrutura.
+4. Solução Implementada
+A implementação foi estruturada em backend analítico + frontend hierárquico interativo.
+Backend (controller)
+Recebe filtros de período (YYYY-MM), empresa e múltiplas filiais.
+Normaliza datas para janela atual e janela anterior (comparativo mensal).
+Executa agregações em camadas:
+Resumo por empresa (planejado x realizado);
+Resumo por filial;
+Resumo por centro de custo;
+Detalhe por cargo com comparação mês anterior vs mês atual.
+Aplica regras de escopo por filiais habilitadas para controle de quadro.
+Ordena dados para renderização previsível e leitura consistente.
+Entrega datasets segmentados para composição de cards, grids e tabelas.
+Frontend (view)
+Exibe cards-resumo por empresa com métricas de planejado, realizado, saldo e status executivo.
+Mostra quebra por filiais com os mesmos indicadores, preservando consistência visual.
+Renderiza matriz por centro de custo com colunas P/R/S por filial e total consolidado.
+Permite expandir cada centro de custo para visualizar detalhe por cargo.
+No nível de cargo, compara mês anterior e atual e classifica status dinâmico (ex.: recuperação, deterioração, persistência de déficit/ociosidade, quadro adequado).
+Implementa filtro com submissão automática ao trocar empresa, reduzindo cliques para navegação analítica.
+Decisões técnicas relevantes
+arquitetura em múltiplas granularidades (empresa → filial → centro → cargo);
+uso de comparação temporal embutida no dataset para status de tendência;
+regra de status baseada em saldo atual + comportamento frente ao período anterior;
+abordagem de “drill-down” sem requisição extra (detalhe já vem preparado no payload).
+5. Tecnologias Utilizadas
+Backend: PHP (MVC) com Query Builder e agregações SQL (SUM, GROUP BY, filtros condicionais).
+Banco de dados: relacional, com joins entre tabelas organizacionais (empresa, filial, centros e cargos).
+Frontend: HTML, CSS e JavaScript (interação de expansão/retração e comportamento de filtros).
+UI/UX: componentes visuais de status por cor e badges para leitura executiva rápida.
+6. Desafios Técnicos
+Consolidar múltiplos níveis de análise no mesmo fluxo de tela.
+Solução: pré-processamento no controller e estruturação em blocos hierárquicos de visualização.
+Criar status interpretável a partir de números brutos.
+Solução: regra de classificação por saldo e tendência temporal (mês atual vs anterior).
+Manter flexibilidade de filtro sem quebrar consistência dos totais.
+Solução: aplicação uniforme dos mesmos filtros em todas as consultas agregadas.
+Evitar sobrecarga cognitiva em tabelas densas.
+Solução: cards executivos, legenda P/R/S, cores semânticas e detalhe sob demanda por clique.
+7. Resultados Obtidos
+Maior visibilidade sobre adequação de quadro em diferentes níveis organizacionais.
+Identificação mais rápida de déficit, excesso e deterioração de estrutura.
+Melhor capacidade de priorização de ações de RH por centro de custo e cargo.
+Redução de tempo de análise com painel único e navegação hierárquica.
+Suporte mais robusto à tomada de decisão baseada em dados comparativos.
+8. Boas Práticas Aplicadas
+Organização: separação clara entre coleta/agregação no controller e apresentação analítica na view.
+Confiabilidade: normalização de filtros e datas antes das consultas.
+Performance: agregações no banco e renderização estruturada para evitar cálculos pesados no cliente.
+Manutenibilidade: regras de status explícitas e padrão visual consistente entre níveis.
+Usabilidade: feedback visual por badges/cores, detalhe expansível e filtros objetivos.
+9. Resumo para Portfólio
+Desenvolvi um painel de Controle de Quadro que compara planejado vs realizado em quatro níveis: empresa, filial, centro de custo e cargo. A solução aplica filtros de período e estrutura organizacional, calcula tendências mensais e classifica status gerenciais automaticamente (como recuperação, deterioração e quadro adequado). Também implementei drill-down de detalhes por clique e consolidação de totais para apoio direto à tomada de decisão de headcount. O resultado foi maior governança de estrutura e análise muito mais ágil para o RH.

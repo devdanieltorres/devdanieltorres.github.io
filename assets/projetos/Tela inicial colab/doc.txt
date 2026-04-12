@@ -1,0 +1,52 @@
+ Evolução da Interface do Dashboard (UI/UX)
+Contexto
+O dashboard é o principal ponto de entrada do usuário no sistema, concentrando informações operacionais, notificações e atalhos para funcionalidades essenciais. A interface anterior apresentava limitações visuais e de usabilidade que impactavam a experiência do usuário no uso diário.
+
+Problemas da Interface Antiga
+Visual mais carregado e menos moderno
+Hierarquia visual pouco clara entre informações importantes
+Menor padronização de cores e espaçamentos
+Navegação lateral menos intuitiva
+Cards e componentes com pouca diferenciação visual
+Experiência menos fluida em longos períodos de uso
+
+Melhorias Implementadas na Nova Interface
+ Organização Visual
+Reestruturação completa do layout do dashboard
+Melhor distribuição de espaçamentos entre blocos e seções
+Separação clara entre informações rápidas, notificações e conteúdo informativo
+ Hierarquia da Informação
+Destaque visual para dados importantes como:
+Horário e data
+Holerite
+Pendências e notificações
+
+Uso mais eficiente de títulos, ícones e cores para guiar o olhar do usuário
+ Cards e Componentes
+Redesign dos cards com:
+Bordas mais suaves
+Ícones mais claros e consistentes
+Melhor contraste visual
+
+Informações apresentadas de forma mais objetiva e escaneável
+ Navegação
+Sidebar modernizada com:
+Melhor legibilidade
+Destaque claro da opção ativa
+Ícones alinhados ao texto
+
+Redução do esforço cognitivo para localizar funcionalidades
+ Paleta de Cores e Estilo
+Aplicação de uma paleta mais moderna e equilibrada
+Uso estratégico de cores para indicar status e ações
+Visual mais limpo, profissional e atual
+
+Resultado Final
+Interface mais moderna e agradável
+Melhor experiência de uso no dia a dia
+Redução da poluição visual
+Maior clareza na apresentação das informações
+Dashboard mais intuitivo, organizado e funcional
+
+Resumo para Portfólio
+Redesign completo do dashboard do sistema, focando na melhoria da experiência do usuário através de uma interface mais moderna, organizada e intuitiva. O trabalho envolveu reorganização visual, padronização de componentes, melhoria na hierarquia da informação e otimização da navegação.

@@ -1,0 +1,47 @@
+1. Título da Funcionalidade
+Módulo de Avaliação de Atendimentos com Dashboard Analítico e Filtros Corporativos
+2. Contexto
+A funcionalidade está inserida em uma plataforma web corporativa de gestão de atendimento interno, com foco em qualidade percebida pelo usuário final.
+Ela atende à necessidade de coletar feedback estruturado sobre atendimentos concluídos, consolidar indicadores operacionais e apoiar decisões de melhoria contínua com base em dados.
+3. Problema
+Sem um fluxo centralizado de avaliação, a organização tende a ter baixa visibilidade sobre satisfação, resolução de solicitações e pontos de fricção no atendimento.
+Além disso, a ausência de filtros por contexto organizacional (empresa/filial), histórico paginado e visualização analítica dificulta auditoria, priorização de ações e acompanhamento de desempenho.
+4. Solução Implementada
+A implementação foi dividida em dois blocos integrados:
+Coleta de feedback no front operacional: modais para listar chamados avaliáveis e abrir formulário de avaliação com perguntas objetivas (resolução, classificação e comentários), incluindo lógica condicional para detalhamento quando não resolvido.
+Painel gerencial de avaliações: tela dedicada com indicadores-resumo, filtros combináveis (ID, respondente, origem, status de resolução, nota, texto, data, empresa e filial), tabela paginada e modal para leitura completa de comentários extensos.
+Camada analítica visual: geração de gráficos para resolução vs. não resolução, distribuição de notas, origem dos atendimentos e ranking por empresa/filial (top N), com labels customizados e fallback para carregamento da biblioteca de gráficos.
+Fluxo de dados entre camadas: controller processa sessão e permissões, aplica filtros no banco com parâmetros, pagina resultados, calcula agregações estatísticas e entrega payload único para renderização de tabela e gráficos na view.
+Decisões técnicas relevantes:
+Restrição de escopo por empresas permitidas ao usuário autenticado antes da aplicação dos filtros.
+Separação entre consulta paginada (listagem) e consulta completa filtrada (métricas agregadas), garantindo consistência dos indicadores.
+Uso de filtros GET para facilitar navegação, paginação e repetibilidade de consultas.
+5. Tecnologias Utilizadas
+Backend: PHP em arquitetura MVC (controller + views), com sessão e regras de acesso por perfil.
+Frontend: HTML, CSS, JavaScript, jQuery e componentes de modal/tabela responsiva.
+Visualização de dados: Chart.js com plugins customizados para exibição de valores em barras e doughnut.
+Banco de dados: relacional, com consultas SQL parametrizadas, JOINs e paginação por offset/fetch.
+Integração interna: carregamento dinâmico de listas e submissão de formulários via interface web.
+6. Desafios Técnicos
+Controle de permissões multiempresa: garantir que filtros nunca extrapolem o escopo autorizado do usuário.
+Solução: validação prévia de empresas permitidas e saneamento de filtros inválidos.
+Coerência entre lista e indicadores: evitar divergência entre totalizadores e itens exibidos.
+Solução: aplicação do mesmo conjunto de filtros nas consultas de paginação e de agregação.
+Usabilidade com textos longos: comentários extensos comprometem legibilidade da tabela.
+Solução: truncamento com ação “ver completo” em modal dedicado.
+Legibilidade de gráficos com rótulos extensos: nomes longos de origem/empresa/filial reduzem clareza visual.
+Solução: abreviação de labels no eixo e manutenção do valor completo em contexto auxiliar.
+7. Resultados Obtidos
+Centralização da jornada de avaliação de atendimento em fluxo único e rastreável.
+Ganho de governança com filtros avançados, paginação e segmentação por contexto organizacional.
+Visão executiva imediata via cards e gráficos para priorização de melhorias.
+Melhoria da experiência do usuário ao combinar coleta simples de feedback com análise detalhada no backoffice.
+Base de dados mais estruturada para acompanhamento de qualidade e tomada de decisão orientada por métricas.
+8. Boas Práticas Aplicadas
+Organização de código: separação de responsabilidades entre interface, regras de negócio e acesso a dados.
+Segurança: uso de sessão/perfil para contexto de acesso, validação de escopo e consultas parametrizadas.
+Performance: paginação no banco, limitação de ranking (top 12), cálculos agregados orientados por filtro.
+Manutenibilidade: estrutura de filtros explícita, nomes semânticos, fallback de dependências e componentes reutilizáveis (modais, cards e gráficos).
+Qualidade de UI: feedback visual consistente, ações de atualização/limpeza e navegação guiada por estado de filtros.
+9. Resumo para Portfólio
+Desenvolvi um módulo completo de avaliação de atendimentos que cobre coleta de feedback, governança por permissões e análise gerencial em tempo real. A solução integra formulários modais, filtros avançados, paginação SQL e dashboard com gráficos de desempenho e satisfação. Também implementei tratamento para textos longos, segmentação por unidade organizacional e agregações estatísticas consistentes com os filtros aplicados. O resultado foi maior rastreabilidade, melhor experiência de uso e suporte técnico à melhoria contínua do atendimento.

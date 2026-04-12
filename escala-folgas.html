@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escala de Folgas | Daniel Torres</title>
+    <meta name="description" content="Case do m&oacute;dulo de escala de folgas e frequ&ecirc;ncia com edi&ccedil;&atilde;o operacional por turno e controle gerencial.">
+    <meta name="theme-color" content="#060e20">
+    <meta name="author" content="Daniel Torres">
+    <meta property="og:title" content="Escala de Folgas | Daniel Torres">
+    <meta property="og:description" content="Projeto corporativo com vis&atilde;o mensal por turno, edi&ccedil;&atilde;o inline ass&iacute;ncrona, valida&ccedil;&otilde;es operacionais e totais gerenciais em tempo real.">
+    <meta property="og:type" content="website">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        headline: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#81ecff',
+                        'primary-dim': '#00d4ec',
+                        tertiary: '#70aaff',
+                        background: '#060e20',
+                        surface: '#060e20',
+                        'surface-container': '#0f1930',
+                        'surface-container-high': '#141f38',
+                        'surface-container-highest': '#192540',
+                        'on-surface': '#dee5ff',
+                        'on-surface-variant': '#a3aac4',
+                        'outline-variant': '#40485d',
+                        success: '#34d399',
+                        warning: '#fbbf24',
+                    }
+                }
+            }
+        };
+    </script>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-background text-on-surface font-sans antialiased overflow-x-hidden selection:bg-primary/20 selection:text-on-surface">
+    <a href="#project-content" class="skip-link">Pular para o conte&uacute;do</a>
+
+    <header class="fixed top-0 w-full z-50 bg-[#060e20]/90 backdrop-blur-xl border-b border-outline-variant/10">
+        <div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
+            <a href="index.html#home" class="flex items-center gap-3 group" aria-label="Voltar para o in&iacute;cio do portf&oacute;lio">
+                <span class="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary font-headline font-bold">DT</span>
+                <div>
+                    <span class="block text-base md:text-lg font-bold tracking-tight text-on-surface font-headline">DANIEL TORRES</span>
+                    <span class="block text-[10px] uppercase tracking-[0.3em] text-on-surface-variant">Projeto detalhado</span>
+                </div>
+            </a>
+
+            <nav class="hidden lg:flex gap-8 items-center" aria-label="Navega&ccedil;&atilde;o principal">
+                <a href="index.html#about" class="nav-link text-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-all">Sobre</a>
+                <a href="index.html#experience" class="nav-link text-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-all">Experi&ecirc;ncia</a>
+                <a href="index.html#projects" class="nav-link text-sm uppercase tracking-widest text-primary transition-all">Projetos</a>
+                <a href="index.html#contact" class="nav-link text-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-all">Contato</a>
+                <a href="index.html#projects" class="ml-4 px-6 py-2 bg-primary text-background font-bold rounded-lg hover:scale-105 transition-all focus:outline-none focus:ring-2 focus:ring-primary">
+                    Voltar ao portf&oacute;lio
+                </a>
+            </nav>
+
+            <button id="menu-toggle" class="lg:hidden text-primary p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" aria-controls="mobile-menu" aria-expanded="false" aria-label="Abrir menu">
+                <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 w-full bg-surface-container border-b border-outline-variant/20 shadow-2xl">
+            <nav class="flex flex-col p-6 gap-4" aria-label="Navega&ccedil;&atilde;o mobile">
+                <a href="index.html#about" class="mobile-nav-link text-lg font-headline uppercase tracking-widest py-3 border-b border-outline-variant/10">Sobre</a>
+                <a href="index.html#experience" class="mobile-nav-link text-lg font-headline uppercase tracking-widest py-3 border-b border-outline-variant/10">Experi&ecirc;ncia</a>
+                <a href="index.html#projects" class="mobile-nav-link text-lg font-headline uppercase tracking-widest py-3 border-b border-outline-variant/10 text-primary">Projetos</a>
+                <a href="index.html#contact" class="mobile-nav-link text-lg font-headline uppercase tracking-widest py-3 border-b border-outline-variant/10">Contato</a>
+                <a href="index.html#projects" class="w-full mt-4 px-6 py-4 bg-primary text-background font-bold rounded-xl text-center">
+                    Voltar ao portf&oacute;lio
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="project-content" class="relative overflow-x-hidden">
+        <div class="fixed inset-0 hero-gradient pointer-events-none -z-10"></div>
+        <div class="fixed -top-24 -right-24 w-64 md:w-96 h-64 md:h-96 bg-primary/5 rounded-full blur-[80px] md:blur-[100px] pointer-events-none -z-10"></div>
+        <div class="fixed top-1/3 -left-24 w-64 md:w-96 h-64 md:h-96 bg-tertiary/10 rounded-full blur-[90px] md:blur-[120px] pointer-events-none -z-10"></div>
+
+        <section class="max-w-7xl mx-auto px-6 lg:px-8 pt-28 md:pt-36 pb-16 md:pb-24 reveal">
+            <div class="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-10 items-center">
+                <div class="space-y-6">
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-4 py-2 rounded-full bg-primary/10 text-primary text-xs uppercase tracking-[0.25em]">Projeto real</span>
+                        <span class="px-4 py-2 rounded-full bg-surface-container-high text-on-surface-variant text-xs uppercase tracking-[0.25em]">RH / Jornada</span>
+                        <span class="px-4 py-2 rounded-full bg-surface-container-high text-on-surface-variant text-xs uppercase tracking-[0.25em]">Opera&ccedil;&atilde;o por turno</span>
+                        <span class="px-4 py-2 rounded-full bg-surface-container-high text-on-surface-variant text-xs uppercase tracking-[0.25em]">Case completo</span>
+                    </div>
+                    <div>
+                        <p class="text-sm uppercase tracking-[0.35em] text-on-surface-variant mb-3">Case detalhado</p>
+                        <h1 class="text-4xl md:text-6xl font-headline font-bold tracking-tight leading-[1.05]">
+                            Escala de folgas e frequ&ecirc;ncia com edi&ccedil;&atilde;o operacional por turno e controle gerencial
+                        </h1>
+                    </div>
+                    <p class="text-lg md:text-xl text-on-surface-variant leading-relaxed">
+                        Solu&ccedil;&atilde;o para planejar e ajustar escalas mensais por unidade organizacional, com vis&atilde;o consolidada por turno, valida&ccedil;&otilde;es operacionais e atualiza&ccedil;&atilde;o r&aacute;pida para decis&atilde;o di&aacute;ria.
+                    </p>
+                    <p class="text-base md:text-lg text-on-surface-variant leading-relaxed">
+                        O fluxo combina filtros hier&aacute;rquicos, edi&ccedil;&atilde;o inline ass&iacute;ncrona, controle de acesso por subordina&ccedil;&atilde;o e totais em tempo real, trazendo mais velocidade e confiabilidade para o planejamento de jornada da equipe.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#galeria" class="px-8 py-4 bg-primary text-background font-bold rounded-2xl text-center">Ver galeria</a>
+                        <a href="index.html#projects" class="px-8 py-4 border border-outline-variant/30 rounded-2xl text-center hover:bg-surface-container-high transition-all">Voltar para projetos</a>
+                    </div>
+                </div>
+
+                <figure class="glass-card rounded-3xl overflow-hidden border border-outline-variant/20">
+                    <img src="assets/projetos/escala%20de%20folgas/1.png" alt="Painel de escala de folga e frequ&ecirc;ncia por turno" class="w-full h-full object-cover object-top">
+                </figure>
+            </div>
+        </section>
+
+        <section class="max-w-7xl mx-auto px-6 lg:px-8 pb-12 md:pb-20 reveal">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="glass-card rounded-3xl p-6">
+                    <div class="text-2xl font-headline font-bold text-primary mb-2">Edi&ccedil;&atilde;o inline</div>
+                    <p class="text-sm text-on-surface-variant">Ajuste de trabalho, folga e banco de horas direto na grade com salvamento ass&iacute;ncrono autom&aacute;tico.</p>
+                </div>
+                <div class="glass-card rounded-3xl p-6">
+                    <div class="text-2xl font-headline font-bold text-primary mb-2">Vis&atilde;o por turno</div>
+                    <p class="text-sm text-on-surface-variant">Tabelas independentes para Turno A e Turno B com leitura consolidada e totais operacionais por dia.</p>
+                </div>
+                <div class="glass-card rounded-3xl p-6">
+                    <div class="text-2xl font-headline font-bold text-primary mb-2">Governan&ccedil;a operacional</div>
+                    <p class="text-sm text-on-surface-variant">Regras de neg&oacute;cio e escopo por hierarquia de gest&atilde;o para manter altera&ccedil;&otilde;es seguras e rastre&aacute;veis.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="galeria" class="max-w-7xl mx-auto px-6 lg:px-8 py-12 md:py-20 reveal">
+            <div class="mb-10">
+                <h2 class="text-xs uppercase tracking-[0.35em] text-primary mb-3">Galeria</h2>
+                <h3 class="text-3xl md:text-5xl font-headline font-bold tracking-tight">Vis&otilde;es da funcionalidade</h3>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <figure class="glass-card rounded-3xl overflow-hidden border border-outline-variant/20">
+                    <div class="project-gallery-frame">
+                        <img src="assets/projetos/escala%20de%20folgas/1.png" alt="Painel de escala de folga e frequ&ecirc;ncia por turno">
+                    </div>
+                    <figcaption class="p-5 text-sm text-on-surface-variant">Tela principal com filtros hier&aacute;rquicos, a&ccedil;&atilde;o de montar escala, legendas operacionais e vis&atilde;o mensal separada por turno.</figcaption>
+                    <div class="gallery-action-bar">
+                        <button type="button" class="gallery-fullscreen-button" data-fullscreen-trigger data-image-src="assets/projetos/escala%20de%20folgas/1.png" data-image-alt="Painel de escala de folga e frequ&ecirc;ncia por turno" data-image-caption="Tela principal com filtros hier&aacute;rquicos, a&ccedil;&atilde;o de montar escala, legendas operacionais e vis&atilde;o mensal separada por turno.">
+                            Ver em tela cheia
+                        </button>
+                    </div>
+                </figure>
+
+                <figure class="glass-card rounded-3xl overflow-hidden border border-outline-variant/20">
+                    <div class="project-gallery-frame">
+                        <img src="assets/projetos/escala%20de%20folgas/2.png" alt="Totais operacionais da escala de folgas">
+                    </div>
+                    <figcaption class="p-5 text-sm text-on-surface-variant">Bloco de totais integrados por turno e total geral, com atualiza&ccedil;&atilde;o imediata ap&oacute;s altera&ccedil;&otilde;es e suporte &agrave; leitura gerencial da opera&ccedil;&atilde;o.</figcaption>
+                    <div class="gallery-action-bar">
+                        <button type="button" class="gallery-fullscreen-button" data-fullscreen-trigger data-image-src="assets/projetos/escala%20de%20folgas/2.png" data-image-alt="Totais operacionais da escala de folgas" data-image-caption="Bloco de totais integrados por turno e total geral, com atualiza&ccedil;&atilde;o imediata ap&oacute;s altera&ccedil;&otilde;es e suporte &agrave; leitura gerencial da opera&ccedil;&atilde;o.">
+                            Ver em tela cheia
+                        </button>
+                    </div>
+                </figure>
+            </div>
+        </section>
+
+        <section class="max-w-7xl mx-auto px-6 lg:px-8 py-12 md:py-20 reveal">
+            <div class="grid grid-cols-1 lg:grid-cols-[0.95fr_1.05fr] gap-8">
+                <div class="glass-card rounded-3xl p-8 md:p-10">
+                    <h2 class="text-3xl md:text-4xl font-headline font-bold mb-6">Contexto e problema</h2>
+                    <div class="space-y-5 text-on-surface-variant">
+                        <p>
+                            A funcionalidade foi inserida em um sistema web de gest&atilde;o de equipes, jornada e opera&ccedil;&atilde;o de pessoal.
+                        </p>
+                        <p>
+                            O desafio principal era conciliar alta granularidade de escala por colaborador e por dia, governan&ccedil;a de acesso por gestor e confiabilidade operacional para mudan&ccedil;as frequentes.
+                        </p>
+                        <p>
+                            Sem isso, o processo tende a ficar lento, sujeito a inconsist&ecirc;ncias e com baixa rastreabilidade das altera&ccedil;&otilde;es na rotina da equipe.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-3xl p-8 md:p-10">
+                    <h2 class="text-3xl md:text-4xl font-headline font-bold mb-6">Solu&ccedil;&atilde;o implementada</h2>
+                    <ul class="content-list text-on-surface-variant">
+                        <li>Filtros hier&aacute;rquicos por ano, m&ecirc;s, empresa, filial, centro de custo e turno para recorte controlado do contexto.</li>
+                        <li>Carregamento restrito aos colaboradores subordinados ao gestor logado, garantindo escopo de edi&ccedil;&atilde;o seguro.</li>
+                        <li>Renderiza&ccedil;&atilde;o separada por Turno A e Turno B com calend&aacute;rio, legendas e colunas fixas para contexto visual.</li>
+                        <li>Edi&ccedil;&atilde;o inline com menu de tipos permitidos e salvamento ass&iacute;ncrono autom&aacute;tico por c&eacute;lula.</li>
+                        <li>Atualiza&ccedil;&atilde;o de par&acirc;metros de contrato, rotina de montagem de escala com confirma&ccedil;&atilde;o e exporta&ccedil;&atilde;o em XLS e PDF.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-7xl mx-auto px-6 lg:px-8 py-12 md:py-20 reveal">
+            <div class="grid grid-cols-1 lg:grid-cols-[0.95fr_1.05fr] gap-8">
+                <div class="glass-card rounded-3xl p-8 md:p-10">
+                    <h2 class="text-3xl md:text-4xl font-headline font-bold mb-6">Tecnologias utilizadas</h2>
+                    <ul class="content-list text-on-surface-variant">
+                        <li>Back-end em PHP no padr&atilde;o MVC com consultas SQL, joins e filtros din&acirc;micos.</li>
+                        <li>Front-end em HTML, CSS, JavaScript, Bootstrap e jQuery para componentes visuais e intera&ccedil;&atilde;o.</li>
+                        <li>Integra&ccedil;&atilde;o ass&iacute;ncrona via AJAX para salvar c&eacute;lulas, atualizar centros e executar montagem de escala.</li>
+                        <li>Gera&ccedil;&atilde;o de relat&oacute;rios em XLS e PDF por filtro corrente.</li>
+                        <li>Tour guiado com persist&ecirc;ncia em `localStorage` para onboarding do usu&aacute;rio.</li>
+                    </ul>
+                </div>
+
+                <div class="glass-card rounded-3xl p-8 md:p-10">
+                    <h2 class="text-3xl md:text-4xl font-headline font-bold mb-6">Desafios t&eacute;cnicos</h2>
+                    <ul class="content-list text-on-surface-variant">
+                        <li>Tabela de alta densidade, resolvida com colunas fixas, separa&ccedil;&atilde;o por turno e destaque de dias e finais de semana.</li>
+                        <li>Regra semanal de folgas, tratada com valida&ccedil;&atilde;o imediata antes do envio e revers&atilde;o visual quando inv&aacute;lido.</li>
+                        <li>Consist&ecirc;ncia dos totais ap&oacute;s edi&ccedil;&atilde;o local, resolvida com atualiza&ccedil;&atilde;o incremental por dia, turno e total geral.</li>
+                        <li>Seguran&ccedil;a do escopo do gestor, garantindo carregamento e edi&ccedil;&atilde;o limitados aos subordinados j&aacute; no backend.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-7xl mx-auto px-6 lg:px-8 py-12 md:py-20 reveal">
+            <div class="glass-card rounded-3xl p-8 md:p-10">
+                <div class="grid grid-cols-1 lg:grid-cols-[0.95fr_1.05fr] gap-8 items-start">
+                    <div>
+                        <h2 class="text-3xl md:text-4xl font-headline font-bold mb-4">Resultados e boas pr&aacute;ticas</h2>
+                        <p class="text-on-surface-variant leading-relaxed">
+                            O m&oacute;dulo reduziu o tempo operacional para ajuste da escala mensal e di&aacute;ria, aumentou o controle gerencial com vis&atilde;o simult&acirc;nea de turnos e totais agregados e diminuiu inconsist&ecirc;ncias por validar regras no ponto de edi&ccedil;&atilde;o. O resultado foi mais velocidade, controle e confiabilidade no planejamento de jornada.
+                        </p>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="rounded-2xl bg-surface-container-high p-5 border border-outline-variant/20">
+                            <div class="text-2xl font-headline font-bold text-primary mb-2">Velocidade</div>
+                            <p class="text-sm text-on-surface-variant">Ajustes de escala feitos diretamente na grade com persist&ecirc;ncia em tempo real.</p>
+                        </div>
+                        <div class="rounded-2xl bg-surface-container-high p-5 border border-outline-variant/20">
+                            <div class="text-2xl font-headline font-bold text-primary mb-2">Controle</div>
+                            <p class="text-sm text-on-surface-variant">Vis&atilde;o integrada de turnos, totais di&aacute;rios e recortes de contexto por unidade.</p>
+                        </div>
+                        <div class="rounded-2xl bg-surface-container-high p-5 border border-outline-variant/20">
+                            <div class="text-2xl font-headline font-bold text-primary mb-2">Confiabilidade</div>
+                            <p class="text-sm text-on-surface-variant">Valida&ccedil;&otilde;es de regra e restri&ccedil;&atilde;o de acesso para evitar inconsist&ecirc;ncias operacionais.</p>
+                        </div>
+                        <div class="rounded-2xl bg-surface-container-high p-5 border border-outline-variant/20">
+                            <div class="text-2xl font-headline font-bold text-primary mb-2">Autonomia</div>
+                            <p class="text-sm text-on-surface-variant">Exporta&ccedil;&atilde;o estruturada e rotinas de montagem apoiando fechamento e auditoria da escala.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="w-full py-12 bg-background border-t border-outline-variant/20">
+        <div class="flex flex-col md:flex-row justify-between items-center px-6 md:px-12 max-w-7xl mx-auto gap-6">
+            <div class="text-center md:text-left">
+                <div class="text-on-surface text-sm font-headline font-bold tracking-wide">Daniel Torres</div>
+                <div class="text-on-surface-variant text-xs tracking-widest uppercase">
+                    Desenvolvedor full-stack em Brasilia, DF
+                </div>
+            </div>
+            <div class="flex flex-wrap justify-center gap-6">
+                <a href="index.html#projects" class="text-on-surface-variant hover:text-primary hover:-translate-y-0.5 transition-all text-xs tracking-widest uppercase">Projetos</a>
+                <a href="https://github.com/devdanieltorres" target="_blank" rel="noreferrer" class="text-on-surface-variant hover:text-primary hover:-translate-y-0.5 transition-all text-xs tracking-widest uppercase">GitHub</a>
+                <a href="https://www.linkedin.com/in/daniel-torres-0851581a0/" target="_blank" rel="noreferrer" class="text-on-surface-variant hover:text-primary hover:-translate-y-0.5 transition-all text-xs tracking-widest uppercase">LinkedIn</a>
+                <a href="mailto:Danieltorres2706@hotmail.com" class="text-on-surface-variant hover:text-primary hover:-translate-y-0.5 transition-all text-xs tracking-widest uppercase">Email</a>
+            </div>
+        </div>
+    </footer>
+
+    <div class="lightbox hidden" data-lightbox aria-hidden="true">
+        <div class="lightbox__dialog">
+            <button type="button" class="lightbox__close" data-lightbox-close aria-label="Fechar visualiza&ccedil;&atilde;o">
+                &times;
+            </button>
+            <div class="lightbox__content">
+                <div class="lightbox__image-wrap">
+                    <img class="lightbox__image" data-lightbox-image src="" alt="">
+                </div>
+                <p class="lightbox__caption" data-lightbox-caption></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

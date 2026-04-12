@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indica&ccedil;&atilde;o para Vagas | Daniel Torres</title>
+    <meta name="description" content="Case da gest&atilde;o de indica&ccedil;&otilde;es de vagas com portal do colaborador e painel administrativo.">
+    <meta name="theme-color" content="#060e20">
+    <meta name="author" content="Daniel Torres">
+    <meta property="og:title" content="Indica&ccedil;&atilde;o para Vagas | Daniel Torres">
+    <meta property="og:description" content="Projeto de RH com jornada integrada para colaborador e painel operacional do RH, incluindo hist&oacute;rico, filtros, edi&ccedil;&atilde;o inline e exporta&ccedil;&atilde;o filtrada.">
+    <meta property="og:type" content="website">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        headline: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#81ecff',
+                        'primary-dim': '#00d4ec',
+                        tertiary: '#70aaff',
+                        background: '#060e20',
+                        surface: '#060e20',
+                        'surface-container': '#0f1930',
+                        'surface-container-high': '#141f38',
+                        'surface-container-highest': '#192540',
+                        'on-surface': '#dee5ff',
+                        'on-surface-variant': '#a3aac4',
+                        'outline-variant': '#40485d',
+                        success: '#34d399',
+                        warning: '#fbbf24',
+                    }
+                }
+            }
+        };
+    </script>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-background text-on-surface font-sans antialiased overflow-x-hidden selection:bg-primary/20 selection:text-on-surface">
+    <a href="#project-content" class="skip-link">Pular para o conte&uacute;do</a>
+
+    <header class="fixed top-0 w-full z-50 bg-[#060e20]/90 backdrop-blur-xl border-b border-outline-variant/10">
+        <div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
+            <a href="index.html#home" class="flex items-center gap-3 group" aria-label="Voltar para o in&iacute;cio do portf&oacute;lio">
+                <span class="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary font-headline font-bold">DT</span>
+                <div>
+                    <span class="block text-base md:text-lg font-bold tracking-tight text-on-surface font-headline">DANIEL TORRES</span>
+                    <span class="block text-[10px] uppercase tracking-[0.3em] text-on-surface-variant">Projeto detalhado</span>
+                </div>
+            </a>
+
+            <nav class="hidden lg:flex gap-8 items-center" aria-label="Navega&ccedil;&atilde;o principal">
+                <a href="index.html#about" class="nav-link text-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-all">Sobre</a>
+                <a href="index.html#experience" class="nav-link text-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-all">Experi&ecirc;ncia</a>
+                <a href="index.html#projects" class="nav-link text-sm uppercase tracking-widest text-primary transition-all">Projetos</a>
+                <a href="index.html#contact" class="nav-link text-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-all">Contato</a>
+                <a href="index.html#projects" class="ml-4 px-6 py-2 bg-primary text-background font-bold rounded-lg hover:scale-105 transition-all focus:outline-none focus:ring-2 focus:ring-primary">
+                    Voltar ao portf&oacute;lio
+                </a>
+            </nav>
+
+            <button id="menu-toggle" class="lg:hidden text-primary p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" aria-controls="mobile-menu" aria-expanded="false" aria-label="Abrir menu">
+                <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 w-full bg-surface-container border-b border-outline-variant/20 shadow-2xl">
+            <nav class="flex flex-col p-6 gap-4" aria-label="Navega&ccedil;&atilde;o mobile">
+                <a href="index.html#about" class="mobile-nav-link text-lg font-headline uppercase tracking-widest py-3 border-b border-outline-variant/10">Sobre</a>
+                <a href="index.html#experience" class="mobile-nav-link text-lg font-headline uppercase tracking-widest py-3 border-b border-outline-variant/10">Experi&ecirc;ncia</a>
+                <a href="index.html#projects" class="mobile-nav-link text-lg font-headline uppercase tracking-widest py-3 border-b border-outline-variant/10 text-primary">Projetos</a>
+                <a href="index.html#contact" class="mobile-nav-link text-lg font-headline uppercase tracking-widest py-3 border-b border-outline-variant/10">Contato</a>
+                <a href="index.html#projects" class="w-full mt-4 px-6 py-4 bg-primary text-background font-bold rounded-xl text-center">
+                    Voltar ao portf&oacute;lio
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="project-content" class="relative overflow-x-hidden">
+        <div class="fixed inset-0 hero-gradient pointer-events-none -z-10"></div>
+        <div class="fixed -top-24 -right-24 w-64 md:w-96 h-64 md:h-96 bg-primary/5 rounded-full blur-[80px] md:blur-[100px] pointer-events-none -z-10"></div>
+        <div class="fixed top-1/3 -left-24 w-64 md:w-96 h-64 md:h-96 bg-tertiary/10 rounded-full blur-[90px] md:blur-[120px] pointer-events-none -z-10"></div>
+
+        <section class="max-w-7xl mx-auto px-6 lg:px-8 pt-28 md:pt-36 pb-16 md:pb-24 reveal">
+            <div class="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-10 items-center">
+                <div class="space-y-6">
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-4 py-2 rounded-full bg-primary/10 text-primary text-xs uppercase tracking-[0.25em]">Projeto real</span>
+                        <span class="px-4 py-2 rounded-full bg-surface-container-high text-on-surface-variant text-xs uppercase tracking-[0.25em]">RH / Recrutamento</span>
+                        <span class="px-4 py-2 rounded-full bg-surface-container-high text-on-surface-variant text-xs uppercase tracking-[0.25em]">Portal + RH</span>
+                        <span class="px-4 py-2 rounded-full bg-surface-container-high text-on-surface-variant text-xs uppercase tracking-[0.25em]">Case completo</span>
+                    </div>
+                    <div>
+                        <p class="text-sm uppercase tracking-[0.35em] text-on-surface-variant mb-3">Case detalhado</p>
+                        <h1 class="text-4xl md:text-6xl font-headline font-bold tracking-tight leading-[1.05]">
+                            Gest&atilde;o de indica&ccedil;&otilde;es de vagas com portal do colaborador e painel administrativo
+                        </h1>
+                    </div>
+                    <p class="text-lg md:text-xl text-on-surface-variant leading-relaxed">
+                        Solu&ccedil;&atilde;o para formalizar indica&ccedil;&otilde;es de candidatos, dar transpar&ecirc;ncia ao colaborador e oferecer ao RH um painel operacional para triagem, atualiza&ccedil;&atilde;o de status e controle hist&oacute;rico.
+                    </p>
+                    <p class="text-base md:text-lg text-on-surface-variant leading-relaxed">
+                        O fluxo foi implementado em duas jornadas integradas: experi&ecirc;ncia do colaborador com hist&oacute;rico e envio de anexos, e painel do RH com DataTables, filtros em tempo real, edi&ccedil;&atilde;o inline, exclus&atilde;o e exporta&ccedil;&atilde;o filtrada.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#galeria" class="px-8 py-4 bg-primary text-background font-bold rounded-2xl text-center">Ver galeria</a>
+                        <a href="index.html#projects" class="px-8 py-4 border border-outline-variant/30 rounded-2xl text-center hover:bg-surface-container-high transition-all">Voltar para projetos</a>
+                    </div>
+                </div>
+
+                <figure class="glass-card rounded-3xl overflow-hidden border border-outline-variant/20">
+                    <img src="assets/projetos/indica%C3%A7%C3%A3o%20para%20vagas/2.png" alt="Painel administrativo de indica&ccedil;&otilde;es de vagas" class="w-full h-full object-cover object-top">
+                </figure>
+            </div>
+        </section>
+
+        <section class="max-w-7xl mx-auto px-6 lg:px-8 pb-12 md:pb-20 reveal">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="glass-card rounded-3xl p-6">
+                    <div class="text-2xl font-headline font-bold text-primary mb-2">Jornada dupla</div>
+                    <p class="text-sm text-on-surface-variant">Experi&ecirc;ncia integrada para colaborador indicar e acompanhar, enquanto o RH opera e audita o processo.</p>
+                </div>
+                <div class="glass-card rounded-3xl p-6">
+                    <div class="text-2xl font-headline font-bold text-primary mb-2">Opera&ccedil;&atilde;o em tabela</div>
+                    <p class="text-sm text-on-surface-variant">Painel com filtros instant&acirc;neos, atualiza&ccedil;&atilde;o inline de status e observa&ccedil;&atilde;o, exclus&atilde;o e exporta&ccedil;&atilde;o.</p>
+                </div>
+                <div class="glass-card rounded-3xl p-6">
+                    <div class="text-2xl font-headline font-bold text-primary mb-2">Robustez legada</div>
+                    <p class="text-sm text-on-surface-variant">Compatibilidade com varia&ccedil;&otilde;es de schema no banco para evitar quebra em ambientes diferentes.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="galeria" class="max-w-7xl mx-auto px-6 lg:px-8 py-12 md:py-20 reveal">
+            <div class="mb-10">
+                <h2 class="text-xs uppercase tracking-[0.35em] text-primary mb-3">Galeria</h2>
+                <h3 class="text-3xl md:text-5xl font-headline font-bold tracking-tight">Vis&otilde;es da funcionalidade</h3>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <figure class="glass-card rounded-3xl overflow-hidden border border-outline-variant/20">
+                    <div class="project-gallery-frame">
+                        <img src="assets/projetos/indica%C3%A7%C3%A3o%20para%20vagas/1.png" alt="Atalho para indica&ccedil;&atilde;o no portal do colaborador">
+                    </div>
+                    <figcaption class="p-5 text-sm text-on-surface-variant">Entrada do fluxo no dashboard do colaborador, destacando o atalho para indicar candidatos de forma r&aacute;pida e contextual.</figcaption>
+                    <div class="gallery-action-bar">
+                        <button type="button" class="gallery-fullscreen-button" data-fullscreen-trigger data-image-src="assets/projetos/indica%C3%A7%C3%A3o%20para%20vagas/1.png" data-image-alt="Atalho para indica&ccedil;&atilde;o no portal do colaborador" data-image-caption="Entrada do fluxo no dashboard do colaborador, destacando o atalho para indicar candidatos de forma r&aacute;pida e contextual.">
+                            Ver em tela cheia
+                        </button>
+                    </div>
+                </figure>
+
+                <figure class="glass-card rounded-3xl overflow-hidden border border-outline-variant/20">
+                    <div class="project-gallery-frame">
+                        <img src="assets/projetos/indica%C3%A7%C3%A3o%20para%20vagas/4.png" alt="Formul&aacute;rio de nova indica&ccedil;&atilde;o de vaga">
+                    </div>
+                    <figcaption class="p-5 text-sm text-on-surface-variant">Modal de nova indica&ccedil;&atilde;o com valida&ccedil;&otilde;es para contato, PCD, parentesco, cargo desejado e anexo de curr&iacute;culo.</figcaption>
+                    <div class="gallery-action-bar">
+                        <button type="button" class="gallery-fullscreen-button" data-fullscreen-trigger data-image-src="assets/projetos/indica%C3%A7%C3%A3o%20para%20vagas/4.png" data-image-alt="Formul&aacute;rio de nova indica&ccedil;&atilde;o de vaga" data-image-caption="Modal de nova indica&ccedil;&atilde;o com valida&ccedil;&otilde;es para contato, PCD, parentesco, cargo desejado e anexo de curr&iacute;culo.">
+                            Ver em tela cheia
+                        </button>
+                    </div>
+                </figure>
+
+                <figure class="glass-card rounded-3xl overflow-hidden border border-outline-variant/20">
+                    <div class="project-gallery-frame">
+                        <img src="assets/projetos/indica%C3%A7%C3%A3o%20para%20vagas/3.png" alt="Hist&oacute;rico de minhas indica&ccedil;&otilde;es">
+                    </div>
+                    <figcaption class="p-5 text-sm text-on-surface-variant">Aba de hist&oacute;rico do colaborador com as &uacute;ltimas indica&ccedil;&otilde;es realizadas e acompanhamento do status do processo.</figcaption>
+                    <div class="gallery-action-bar">
+                        <button type="button" class="gallery-fullscreen-button" data-fullscreen-trigger data-image-src="assets/projetos/indica%C3%A7%C3%A3o%20para%20vagas/3.png" data-image-alt="Hist&oacute;rico de minhas indica&ccedil;&otilde;es" data-image-caption="Aba de hist&oacute;rico do colaborador com as &uacute;ltimas indica&ccedil;&otilde;es realizadas e acompanhamento do status do processo.">
+                            Ver em tela cheia
+                        </button>
+                    </div>
+                </figure>
+
+                <figure class="glass-card rounded-3xl overflow-hidden border border-outline-variant/20">
+                    <div class="project-gallery-frame">
+                        <img src="assets/projetos/indica%C3%A7%C3%A3o%20para%20vagas/2.png" alt="Painel administrativo de indica&ccedil;&otilde;es de vagas">
+                    </div>
+                    <figcaption class="p-5 text-sm text-on-surface-variant">Painel do RH com filtros, DataTable, edi&ccedil;&atilde;o inline de status e opera&ccedil;&otilde;es de salvar, apagar e exportar os registros filtrados.</figcaption>
+                    <div class="gallery-action-bar">
+                        <button type="button" class="gallery-fullscreen-button" data-fullscreen-trigger data-image-src="assets/projetos/indica%C3%A7%C3%A3o%20para%20vagas/2.png" data-image-alt="Painel administrativo de indica&ccedil;&otilde;es de vagas" data-image-caption="Painel do RH com filtros, DataTable, edi&ccedil;&atilde;o inline de status e opera&ccedil;&otilde;es de salvar, apagar e exportar os registros filtrados.">
+                            Ver em tela cheia
+                        </button>
+                    </div>
+                </figure>
+            </div>
+        </section>
+
+        <section class="max-w-7xl mx-auto px-6 lg:px-8 py-12 md:py-20 reveal">
+            <div class="grid grid-cols-1 lg:grid-cols-[0.95fr_1.05fr] gap-8">
+                <div class="glass-card rounded-3xl p-8 md:p-10">
+                    <h2 class="text-3xl md:text-4xl font-headline font-bold mb-6">Contexto e problema</h2>
+                    <div class="space-y-5 text-on-surface-variant">
+                        <p>
+                            A funcionalidade foi inserida em uma aplica&ccedil;&atilde;o web de RH com recursos de recrutamento interno e participa&ccedil;&atilde;o dos colaboradores.
+                        </p>
+                        <p>
+                            Sem um fluxo digital estruturado, as indica&ccedil;&otilde;es tendem a ficar dispersas em canais informais, dificultando rastreabilidade, padroniza&ccedil;&atilde;o de dados e prioriza&ccedil;&atilde;o da an&aacute;lise.
+                        </p>
+                        <p>
+                            Tamb&eacute;m havia pouco controle hist&oacute;rico para o colaborador e limita&ccedil;&atilde;o de uso gerencial pela aus&ecirc;ncia de filtros e exporta&ccedil;&atilde;o consistentes.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-3xl p-8 md:p-10">
+                    <h2 class="text-3xl md:text-4xl font-headline font-bold mb-6">Solu&ccedil;&atilde;o implementada</h2>
+                    <ul class="content-list text-on-surface-variant">
+                        <li>Modal do colaborador com formul&aacute;rio validado para dados do indicado, envio de curr&iacute;culo e aba de hist&oacute;rico das indica&ccedil;&otilde;es.</li>
+                        <li>Painel operacional do RH com at&eacute; 500 registros recentes e filtros em tempo real por status, cargo e telefone.</li>
+                        <li>Edi&ccedil;&atilde;o inline de status e observa&ccedil;&atilde;o para reduzir tempo operacional em grande volume de registros.</li>
+                        <li>Exclus&atilde;o de registros e exporta&ccedil;&atilde;o do subconjunto filtrado para CSV e XLS.</li>
+                        <li>Backend resiliente a diferen&ccedil;as de schema, com detec&ccedil;&atilde;o de colunas opcionais e restri&ccedil;&atilde;o contextual por empresa.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-7xl mx-auto px-6 lg:px-8 py-12 md:py-20 reveal">
+            <div class="grid grid-cols-1 lg:grid-cols-[0.95fr_1.05fr] gap-8">
+                <div class="glass-card rounded-3xl p-8 md:p-10">
+                    <h2 class="text-3xl md:text-4xl font-headline font-bold mb-6">Tecnologias utilizadas</h2>
+                    <ul class="content-list text-on-surface-variant">
+                        <li>Back-end em PHP no padr&atilde;o MVC com sess&atilde;o, perfil e consultas SQL.</li>
+                        <li>Front-end em HTML, CSS, JavaScript, jQuery e Bootstrap com modais e abas.</li>
+                        <li>DataTables para pagina&ccedil;&atilde;o, busca, redraw e filtros customizados.</li>
+                        <li>Gera&ccedil;&atilde;o client-side de CSV e XLS com `Blob` e API de download do navegador.</li>
+                        <li>Tour guiado contextual com persist&ecirc;ncia da conclus&atilde;o por usu&aacute;rio.</li>
+                    </ul>
+                </div>
+
+                <div class="glass-card rounded-3xl p-8 md:p-10">
+                    <h2 class="text-3xl md:text-4xl font-headline font-bold mb-6">Desafios t&eacute;cnicos</h2>
+                    <ul class="content-list text-on-surface-variant">
+                        <li>Compatibilidade com bancos em evolu&ccedil;&atilde;o, resolvida com checagem de exist&ecirc;ncia de campos no backend.</li>
+                        <li>Filtragem por status em coluna com select edit&aacute;vel, tratada com extens&atilde;o customizada de busca no DataTables.</li>
+                        <li>Edi&ccedil;&atilde;o de observa&ccedil;&otilde;es longas, resolvida com modal dedicado para expandir e reaplicar texto no registro.</li>
+                        <li>Consist&ecirc;ncia visual do estado do processo, apoiada por classes din&acirc;micas e codifica&ccedil;&atilde;o visual por status.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-7xl mx-auto px-6 lg:px-8 py-12 md:py-20 reveal">
+            <div class="glass-card rounded-3xl p-8 md:p-10">
+                <div class="grid grid-cols-1 lg:grid-cols-[0.95fr_1.05fr] gap-8 items-start">
+                    <div>
+                        <h2 class="text-3xl md:text-4xl font-headline font-bold mb-4">Resultados e boas pr&aacute;ticas</h2>
+                        <p class="text-on-surface-variant leading-relaxed">
+                            O m&oacute;dulo centralizou o processo de indica&ccedil;&atilde;o com dados padronizados, melhorou a rastreabilidade para colaborador e RH e reduziu esfor&ccedil;o manual com filtros r&aacute;pidos, edi&ccedil;&atilde;o inline e exporta&ccedil;&atilde;o imediata. O resultado foi mais controle, efici&ecirc;ncia e transpar&ecirc;ncia no recrutamento por indica&ccedil;&atilde;o.
+                        </p>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="rounded-2xl bg-surface-container-high p-5 border border-outline-variant/20">
+                            <div class="text-2xl font-headline font-bold text-primary mb-2">Rastreabilidade</div>
+                            <p class="text-sm text-on-surface-variant">Hist&oacute;rico de indica&ccedil;&otilde;es e controle estruturado do status do candidato.</p>
+                        </div>
+                        <div class="rounded-2xl bg-surface-container-high p-5 border border-outline-variant/20">
+                            <div class="text-2xl font-headline font-bold text-primary mb-2">Efici&ecirc;ncia</div>
+                            <p class="text-sm text-on-surface-variant">Edi&ccedil;&atilde;o inline e filtros r&aacute;pidos para operar grandes volumes com menos atrito.</p>
+                        </div>
+                        <div class="rounded-2xl bg-surface-container-high p-5 border border-outline-variant/20">
+                            <div class="text-2xl font-headline font-bold text-primary mb-2">Robustez</div>
+                            <p class="text-sm text-on-surface-variant">Compatibilidade com diferentes esquemas de banco e valida&ccedil;&otilde;es de formul&aacute;rio.</p>
+                        </div>
+                        <div class="rounded-2xl bg-surface-container-high p-5 border border-outline-variant/20">
+                            <div class="text-2xl font-headline font-bold text-primary mb-2">Governan&ccedil;a</div>
+                            <p class="text-sm text-on-surface-variant">Escopo por perfil, restri&ccedil;&atilde;o contextual por empresa e dados prontos para an&aacute;lise gerencial.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="w-full py-12 bg-background border-t border-outline-variant/20">
+        <div class="flex flex-col md:flex-row justify-between items-center px-6 md:px-12 max-w-7xl mx-auto gap-6">
+            <div class="text-center md:text-left">
+                <div class="text-on-surface text-sm font-headline font-bold tracking-wide">Daniel Torres</div>
+                <div class="text-on-surface-variant text-xs tracking-widest uppercase">
+                    Desenvolvedor full-stack em Brasilia, DF
+                </div>
+            </div>
+            <div class="flex flex-wrap justify-center gap-6">
+                <a href="index.html#projects" class="text-on-surface-variant hover:text-primary hover:-translate-y-0.5 transition-all text-xs tracking-widest uppercase">Projetos</a>
+                <a href="https://github.com/devdanieltorres" target="_blank" rel="noreferrer" class="text-on-surface-variant hover:text-primary hover:-translate-y-0.5 transition-all text-xs tracking-widest uppercase">GitHub</a>
+                <a href="https://www.linkedin.com/in/daniel-torres-0851581a0/" target="_blank" rel="noreferrer" class="text-on-surface-variant hover:text-primary hover:-translate-y-0.5 transition-all text-xs tracking-widest uppercase">LinkedIn</a>
+                <a href="mailto:Danieltorres2706@hotmail.com" class="text-on-surface-variant hover:text-primary hover:-translate-y-0.5 transition-all text-xs tracking-widest uppercase">Email</a>
+            </div>
+        </div>
+    </footer>
+
+    <div class="lightbox hidden" data-lightbox aria-hidden="true">
+        <div class="lightbox__dialog">
+            <button type="button" class="lightbox__close" data-lightbox-close aria-label="Fechar visualiza&ccedil;&atilde;o">
+                &times;
+            </button>
+            <div class="lightbox__content">
+                <div class="lightbox__image-wrap">
+                    <img class="lightbox__image" data-lightbox-image src="" alt="">
+                </div>
+                <p class="lightbox__caption" data-lightbox-caption></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

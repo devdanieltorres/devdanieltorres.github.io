@@ -1,0 +1,54 @@
+1. Título da Funcionalidade
+Fluxo de Assinatura Eletrônica e Geração de Demonstrativo em PDF
+2. Contexto
+A funcionalidade está inserida em um portal web de autoatendimento de colaboradores, na área de consulta de demonstrativos de pagamento.
+A necessidade de negócio atendida é garantir formalização digital do recebimento (assinatura), com emissão de PDF pronto para visualização e arquivamento, mantendo trilha de conformidade e experiência simples para o usuário final.
+3. Problema
+O principal desafio era consolidar, em um único fluxo, a busca da competência, o registro de aceite/assinatura e a entrega do documento final com evidências no próprio PDF.
+Sem essa integração, o processo tende a ficar fragmentado entre diferentes telas e fontes de dados, elevando risco de inconsistência, retrabalho e baixa rastreabilidade.
+4. Solução Implementada
+A implementação conecta quatro etapas principais:
+Seleção do demonstrativo: usuário escolhe a competência e aciona a visualização.
+Carregamento de dados para assinatura: backend recupera o cálculo selecionado, metadados de assinatura e identificação do colaborador relacionado ao documento.
+Geração/obtenção do PDF: o documento é produzido a partir de fonte interna já armazenada ou por integração com serviço externo de folha, com persistência do arquivo em diretório por instância/ambiente.
+Aplicação da assinatura no documento final: quando regras de parametrização e consentimento de localização permitem, é aplicado um rodapé de assinatura no PDF antes da exibição.
+Comunicação entre componentes:
+View de consulta dispara ações para controllers.
+Controller orquestra sessão, parâmetros de negócio, consultas em banco e integração externa.
+Serviço de geração de PDF cria o arquivo final.
+Método de pós-processamento adiciona o rodapé de assinatura quando aplicável.
+Resultado é entregue em visualização embutida (iframe).
+Decisões técnicas relevantes:
+Reuso de PDF já existente para evitar recomputação desnecessária.
+Fallback entre múltiplas fontes de geração do documento (cache local, banco e integração externa).
+Aplicação condicional da assinatura com base em parâmetros administrativos e consentimento.
+5. Tecnologias Utilizadas
+Backend: PHP (arquitetura MVC).
+Frontend: HTML + JavaScript (interação de busca e exibição de resultado).
+Banco de dados relacional: armazenamento de parâmetros, cálculos e dados de assinatura.
+Geração de documentos: biblioteca de criação de PDF a partir de HTML.
+Integração externa: SOAP e cURL para obtenção de conteúdo de demonstrativo quando necessário.
+Manipulação de arquivos: escrita em filesystem e conversão Base64 para PDF binário.
+6. Desafios Técnicos
+Múltiplas origens do documento (interno e serviço externo).
+Solução: estratégia de fallback com validação de retorno antes da renderização.
+Consistência da assinatura no arquivo final.
+Solução: pós-processamento dedicado no PDF após geração/decodificação.
+Condição de uso de localização na assinatura.
+Solução: validação de parametrização + verificação de consentimento/valor útil antes de aplicar rodapé.
+Disponibilidade de diretório de saída.
+Solução: criação automática da estrutura de pastas com tratamento de exceção.
+7. Resultados Obtidos
+Fluxo unificado de consulta, assinatura e visualização do demonstrativo.
+Maior rastreabilidade do aceite com aplicação de informação de assinatura no documento final.
+Redução de falhas operacionais por conta de fallback entre fontes de PDF.
+Melhor experiência do usuário com retorno imediato em tela, sem etapas manuais adicionais.
+Aumento de confiabilidade no armazenamento e reaproveitamento de arquivos já gerados.
+8. Boas Práticas Aplicadas
+Organização: separação entre camada de interface, orquestração de regras e geração de documento.
+Segurança e controle: uso de sessão para contexto do usuário e validações de entrada/retorno.
+Performance: reaproveitamento de arquivo previamente gerado e geração sob demanda quando necessário.
+Manutenibilidade: lógica condicional explícita para cenários de assinatura/localização e tratamento de erros em pontos críticos.
+Conformidade funcional: assinatura aplicada apenas quando critérios de negócio são atendidos.
+9. Resumo para Portfólio:
+Desenvolvi um fluxo completo de assinatura eletrônica para documentos de RH, com geração e exibição de PDFs em tempo real, validações de negócio e aplicação condicional de rodapé de assinatura. A solução integra múltiplas fontes de dados e fallback para garantir confiabilidade operacional e rastreabilidade do aceite. Como evolução, a mesma regra de assinatura foi padronizada e aplicada também em marcações de ponto, aviso de férias, recibo de férias e informe de rendimento, ampliando consistência e governança documental em todo o ecossistema.

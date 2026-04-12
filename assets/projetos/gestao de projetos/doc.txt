@@ -1,0 +1,52 @@
+1. Título da Funcionalidade
+Painel Hierárquico de Gestão de Projetos com Drill-Down por Projeto, Fluxo e Fase
+2. Contexto
+Esta funcionalidade está inserida em um ambiente corporativo de gestão operacional, no qual equipes acompanham execução de demandas por status e etapa do processo.
+A necessidade de negócio atendida é oferecer visão consolidada e progressiva do trabalho: primeiro no nível de projetos, depois por fluxo/formulário e, por fim, por fase, com capacidade de investigação detalhada.
+3. Problema
+Sem uma visualização hierárquica e interativa, o monitoramento de tarefas tende a ficar fragmentado em consultas isoladas, dificultando:
+leitura rápida do volume de trabalho aberto, finalizado e cancelado;
+identificação de gargalos por fase;
+análise contextual por período;
+priorização de ações com base em dados consolidados.
+4. Solução Implementada
+A solução foi desenhada em três níveis de navegação, combinando agregação no backend e visualização analítica no frontend:
+Nível 1 (Projetos): lista de projetos com totais de tarefas e distribuição por status, exibida em cards com gráfico do tipo doughnut.
+Nível 2 (Detalhe do Projeto): ao entrar em um projeto, a visualização passa a mostrar os fluxos/formulários vinculados, mantendo os indicadores de status por item.
+Nível 3 (Detalhe do Fluxo/Formulário): apresenta análise por fase com filtro de período (data inicial e final), gráfico em barras horizontal e possibilidade de abrir modal com detalhes da fase clicada.
+Comunicação entre componentes
+O backend prepara os dados agregados por consultas com JOIN, GROUP BY, SUM condicional e concatenação de IDs para drill-down.
+As views recebem os datasets já organizados e renderizam os gráficos dinamicamente.
+Interações de filtro e clique em gráfico disparam nova navegação ou requisição assíncrona para buscar detalhes da fase, exibindo resultado em modal.
+Decisões técnicas relevantes
+Estruturação em camadas de detalhe (macro → intermediário → micro) para reduzir sobrecarga cognitiva.
+Uso de agregações no banco para evitar processamento excessivo no cliente.
+Uso de gráficos com tooltip percentual para apoiar leitura executiva e operacional no mesmo painel.
+5. Tecnologias Utilizadas
+Backend: PHP (arquitetura MVC com controllers e views).
+Banco de dados: SQL com consultas agregadas (COUNT, SUM condicional, STRING_AGG, filtros por data).
+Frontend: HTML, CSS, JavaScript.
+Bibliotecas: Chart.js e plugin de data labels para visualização analítica.
+Integração assíncrona: fetch/requisição HTTP para carregar detalhes de fase em modal.
+6. Desafios Técnicos
+Consolidar múltiplos status de tarefa em indicadores confiáveis
+Resolvido com regras explícitas de agrupamento no backend (abertas, finalizadas, canceladas e fechadas).
+Manter coerência entre níveis de análise
+Resolvido com modelo de drill-down orientado por IDs e filtros consistentes entre telas.
+Escalar visualização conforme quantidade de fases
+Resolvido com ajuste dinâmico de layout e gráfico horizontal para melhorar legibilidade.
+Entregar detalhe sem recarregar toda a página
+Resolvido com carregamento assíncrono de conteúdo em modal ao clicar no gráfico.
+7. Resultados Obtidos
+Ganho de visibilidade operacional sobre andamento de projetos e tarefas.
+Identificação mais rápida de gargalos por fase e por período.
+Melhor tomada de decisão com indicadores consolidados e navegação contextual.
+Experiência de uso mais fluida com exploração analítica progressiva e feedback visual de carregamento.
+8. Boas Práticas Aplicadas
+Organização de código: separação clara entre lógica de consulta (controller) e apresentação (views).
+Segurança: validação de sessão/autenticação antes do carregamento dos painéis.
+Performance: uso de agregações no banco e carregamento sob demanda dos detalhes.
+Manutenibilidade: estrutura modular por rota (visão geral, detalhe de projeto, detalhe de formulário).
+Usabilidade: filtros de período, botões de navegação, tooltips e modal de investigação.
+9. Resumo para Portfólio
+Implementei um painel de gestão de projetos com navegação em três níveis (projeto, fluxo e fase), focado em análise operacional orientada por dados. Estruturei consultas SQL agregadas para indicadores de status e integrei visualizações com Chart.js, incluindo drill-down interativo e detalhamento em modal. Também adicionei filtro por período para análises temporais mais precisas. O resultado foi maior controle da execução, identificação de gargalos e suporte mais eficiente à priorização das ações.

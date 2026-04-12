@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Central de Atendimentos | Daniel Torres</title>
+    <meta name="description" content="Case da central de atendimentos com abertura, acompanhamento por chat e painel anal&iacute;tico por perfil.">
+    <meta name="theme-color" content="#060e20">
+    <meta name="author" content="Daniel Torres">
+    <meta property="og:title" content="Central de Atendimentos | Daniel Torres">
+    <meta property="og:description" content="Projeto corporativo com abertura de solicita&ccedil;&otilde;es, chat, painel operacional e analytics por perfil.">
+    <meta property="og:type" content="website">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        headline: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#81ecff',
+                        'primary-dim': '#00d4ec',
+                        tertiary: '#70aaff',
+                        background: '#060e20',
+                        surface: '#060e20',
+                        'surface-container': '#0f1930',
+                        'surface-container-high': '#141f38',
+                        'surface-container-highest': '#192540',
+                        'on-surface': '#dee5ff',
+                        'on-surface-variant': '#a3aac4',
+                        'outline-variant': '#40485d',
+                        success: '#34d399',
+                        warning: '#fbbf24',
+                    }
+                }
+            }
+        };
+    </script>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-background text-on-surface font-sans antialiased overflow-x-hidden selection:bg-primary/20 selection:text-on-surface">
+    <a href="#project-content" class="skip-link">Pular para o conte&uacute;do</a>
+
+    <header class="fixed top-0 w-full z-50 bg-[#060e20]/90 backdrop-blur-xl border-b border-outline-variant/10">
+        <div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
+            <a href="index.html#home" class="flex items-center gap-3 group" aria-label="Voltar para o in&iacute;cio do portf&oacute;lio">
+                <span class="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary font-headline font-bold">DT</span>
+                <div>
+                    <span class="block text-base md:text-lg font-bold tracking-tight text-on-surface font-headline">DANIEL TORRES</span>
+                    <span class="block text-[10px] uppercase tracking-[0.3em] text-on-surface-variant">Projeto detalhado</span>
+                </div>
+            </a>
+
+            <nav class="hidden lg:flex gap-8 items-center" aria-label="Navega&ccedil;&atilde;o principal">
+                <a href="index.html#about" class="nav-link text-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-all">Sobre</a>
+                <a href="index.html#experience" class="nav-link text-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-all">Experi&ecirc;ncia</a>
+                <a href="index.html#projects" class="nav-link text-sm uppercase tracking-widest text-primary transition-all">Projetos</a>
+                <a href="index.html#contact" class="nav-link text-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-all">Contato</a>
+                <a href="index.html#projects" class="ml-4 px-6 py-2 bg-primary text-background font-bold rounded-lg hover:scale-105 transition-all focus:outline-none focus:ring-2 focus:ring-primary">
+                    Voltar ao portf&oacute;lio
+                </a>
+            </nav>
+
+            <button id="menu-toggle" class="lg:hidden text-primary p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" aria-controls="mobile-menu" aria-expanded="false" aria-label="Abrir menu">
+                <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 w-full bg-surface-container border-b border-outline-variant/20 shadow-2xl">
+            <nav class="flex flex-col p-6 gap-4" aria-label="Navega&ccedil;&atilde;o mobile">
+                <a href="index.html#about" class="mobile-nav-link text-lg font-headline uppercase tracking-widest py-3 border-b border-outline-variant/10">Sobre</a>
+                <a href="index.html#experience" class="mobile-nav-link text-lg font-headline uppercase tracking-widest py-3 border-b border-outline-variant/10">Experi&ecirc;ncia</a>
+                <a href="index.html#projects" class="mobile-nav-link text-lg font-headline uppercase tracking-widest py-3 border-b border-outline-variant/10 text-primary">Projetos</a>
+                <a href="index.html#contact" class="mobile-nav-link text-lg font-headline uppercase tracking-widest py-3 border-b border-outline-variant/10">Contato</a>
+                <a href="index.html#projects" class="w-full mt-4 px-6 py-4 bg-primary text-background font-bold rounded-xl text-center">
+                    Voltar ao portf&oacute;lio
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="project-content" class="relative overflow-x-hidden">
+        <div class="fixed inset-0 hero-gradient pointer-events-none -z-10"></div>
+        <div class="fixed -top-24 -right-24 w-64 md:w-96 h-64 md:h-96 bg-primary/5 rounded-full blur-[80px] md:blur-[100px] pointer-events-none -z-10"></div>
+        <div class="fixed top-1/3 -left-24 w-64 md:w-96 h-64 md:h-96 bg-tertiary/10 rounded-full blur-[90px] md:blur-[120px] pointer-events-none -z-10"></div>
+
+        <section class="max-w-7xl mx-auto px-6 lg:px-8 pt-28 md:pt-36 pb-16 md:pb-24 reveal">
+            <div class="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-10 items-center">
+                <div class="space-y-6">
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-4 py-2 rounded-full bg-primary/10 text-primary text-xs uppercase tracking-[0.25em]">Projeto real</span>
+                        <span class="px-4 py-2 rounded-full bg-surface-container-high text-on-surface-variant text-xs uppercase tracking-[0.25em]">Atendimento</span>
+                        <span class="px-4 py-2 rounded-full bg-surface-container-high text-on-surface-variant text-xs uppercase tracking-[0.25em]">Chat</span>
+                        <span class="px-4 py-2 rounded-full bg-surface-container-high text-on-surface-variant text-xs uppercase tracking-[0.25em]">Analytics</span>
+                    </div>
+                    <div>
+                        <p class="text-sm uppercase tracking-[0.35em] text-on-surface-variant mb-3">Case detalhado</p>
+                        <h1 class="text-4xl md:text-6xl font-headline font-bold tracking-tight leading-[1.05]">
+                            Central de atendimentos com abertura, acompanhamento e painel anal&iacute;tico por perfil
+                        </h1>
+                    </div>
+                    <p class="text-lg md:text-xl text-on-surface-variant leading-relaxed">
+                        M&oacute;dulo corporativo para registro de solicita&ccedil;&otilde;es internas, acompanhamento via chat e gest&atilde;o operacional com vis&atilde;o consolidada para suporte e atendimento.
+                    </p>
+                    <p class="text-base md:text-lg text-on-surface-variant leading-relaxed">
+                        A solu&ccedil;&atilde;o foi organizada em duas frentes: experi&ecirc;ncia do colaborador, com abertura e acompanhamento dos pr&oacute;prios chamados, e experi&ecirc;ncia administrativa, com filtros operacionais, a&ccedil;&otilde;es em linha, pagina&ccedil;&atilde;o e dashboard anal&iacute;tico por perfil.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#galeria" class="px-8 py-4 bg-primary text-background font-bold rounded-2xl text-center">Ver galeria</a>
+                        <a href="index.html#projects" class="px-8 py-4 border border-outline-variant/30 rounded-2xl text-center hover:bg-surface-container-high transition-all">Voltar para projetos</a>
+                    </div>
+                </div>
+
+                <figure class="glass-card rounded-3xl overflow-hidden border border-outline-variant/20">
+                    <img src="assets/projetos/Atendimento/8.png" alt="Painel administrativo da central de atendimentos" class="w-full h-full object-cover object-top">
+                </figure>
+            </div>
+        </section>
+
+        <section class="max-w-7xl mx-auto px-6 lg:px-8 pb-12 md:pb-20 reveal">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="glass-card rounded-3xl p-6">
+                    <div class="text-2xl font-headline font-bold text-primary mb-2">Abertura simples</div>
+                    <p class="text-sm text-on-surface-variant">Fluxo direto no dashboard do colaborador com formul&aacute;rio din&acirc;mico, prioridade, contato, descri&ccedil;&atilde;o e anexo.</p>
+                </div>
+                <div class="glass-card rounded-3xl p-6">
+                    <div class="text-2xl font-headline font-bold text-primary mb-2">Opera&ccedil;&atilde;o cont&iacute;nua</div>
+                    <p class="text-sm text-on-surface-variant">Painel administrativo com filtros compostos, status, respons&aacute;vel, busca textual, pagina&ccedil;&atilde;o e a&ccedil;&otilde;es em linha.</p>
+                </div>
+                <div class="glass-card rounded-3xl p-6">
+                    <div class="text-2xl font-headline font-bold text-primary mb-2">Vis&atilde;o anal&iacute;tica</div>
+                    <p class="text-sm text-on-surface-variant">Indicadores de status, prioridade, anexo, volume por dia, distribui&ccedil;&atilde;o por empresa e tempo m&eacute;dio at&eacute; fechamento.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="galeria" class="max-w-7xl mx-auto px-6 lg:px-8 py-12 md:py-20 reveal">
+            <div class="mb-10">
+                <h2 class="text-xs uppercase tracking-[0.35em] text-primary mb-3">Galeria</h2>
+                <h3 class="text-3xl md:text-5xl font-headline font-bold tracking-tight">Vis&otilde;es da funcionalidade</h3>
+            </div>
+
+            <div class="grid grid-cols-1 gap-6">
+                <figure class="glass-card rounded-3xl overflow-hidden border border-outline-variant/20">
+                    <div class="project-gallery-frame">
+                        <img src="assets/projetos/Atendimento/8.png" alt="Painel administrativo da central de atendimentos">
+                    </div>
+                    <figcaption class="p-5 text-sm text-on-surface-variant">Tela administrativa com filtros operacionais, listagem paginada, a&ccedil;&otilde;es por linha e vis&atilde;o consolidada dos atendimentos.</figcaption>
+                    <div class="gallery-action-bar">
+                        <button type="button" class="gallery-fullscreen-button" data-fullscreen-trigger data-image-src="assets/projetos/Atendimento/8.png" data-image-alt="Painel administrativo da central de atendimentos" data-image-caption="Tela administrativa com filtros operacionais, listagem paginada, a&ccedil;&otilde;es por linha e vis&atilde;o consolidada dos atendimentos.">
+                            Ver em tela cheia
+                        </button>
+                    </div>
+                </figure>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <figure class="glass-card rounded-3xl overflow-hidden border border-outline-variant/20">
+                        <div class="project-gallery-frame">
+                            <img src="assets/projetos/Atendimento/1.png" alt="Dashboard do colaborador com atalho para atendimento">
+                        </div>
+                        <figcaption class="p-5 text-sm text-on-surface-variant">Entrada do fluxo no dashboard do colaborador, com atalho para atendimento e badge de mensagens n&atilde;o lidas.</figcaption>
+                        <div class="gallery-action-bar">
+                            <button type="button" class="gallery-fullscreen-button" data-fullscreen-trigger data-image-src="assets/projetos/Atendimento/1.png" data-image-alt="Dashboard do colaborador com atalho para atendimento" data-image-caption="Entrada do fluxo no dashboard do colaborador, com atalho para atendimento e badge de mensagens n&atilde;o lidas.">
+                                Ver em tela cheia
+                            </button>
+                        </div>
+                    </figure>
+
+                    <figure class="glass-card rounded-3xl overflow-hidden border border-outline-variant/20">
+                        <div class="project-gallery-frame">
+                            <img src="assets/projetos/Atendimento/7.png" alt="Formul&aacute;rio de abertura de novo atendimento">
+                        </div>
+                        <figcaption class="p-5 text-sm text-on-surface-variant">Modal de abertura de atendimento com tipo, subtipo, anexo, contato, descri&ccedil;&atilde;o detalhada e prioridade percebida.</figcaption>
+                        <div class="gallery-action-bar">
+                            <button type="button" class="gallery-fullscreen-button" data-fullscreen-trigger data-image-src="assets/projetos/Atendimento/7.png" data-image-alt="Formul&aacute;rio de abertura de novo atendimento" data-image-caption="Modal de abertura de atendimento com tipo, subtipo, anexo, contato, descri&ccedil;&atilde;o detalhada e prioridade percebida.">
+                                Ver em tela cheia
+                            </button>
+                        </div>
+                    </figure>
+
+                    <figure class="glass-card rounded-3xl overflow-hidden border border-outline-variant/20">
+                        <div class="project-gallery-frame">
+                            <img src="assets/projetos/Atendimento/6.png" alt="Lista dos meus atendimentos do colaborador">
+                        </div>
+                        <figcaption class="p-5 text-sm text-on-surface-variant">Acompanhamento dos pr&oacute;prios chamados com atualiza&ccedil;&atilde;o, pagina&ccedil;&atilde;o e acesso r&aacute;pido ao chat.</figcaption>
+                        <div class="gallery-action-bar">
+                            <button type="button" class="gallery-fullscreen-button" data-fullscreen-trigger data-image-src="assets/projetos/Atendimento/6.png" data-image-alt="Lista dos meus atendimentos do colaborador" data-image-caption="Acompanhamento dos pr&oacute;prios chamados com atualiza&ccedil;&atilde;o, pagina&ccedil;&atilde;o e acesso r&aacute;pido ao chat.">
+                                Ver em tela cheia
+                            </button>
+                        </div>
+                    </figure>
+
+                    <figure class="glass-card rounded-3xl overflow-hidden border border-outline-variant/20">
+                        <div class="project-gallery-frame">
+                            <img src="assets/projetos/Atendimento/2.png" alt="Chat administrativo do atendimento">
+                        </div>
+                        <figcaption class="p-5 text-sm text-on-surface-variant">Vis&atilde;o do chat no contexto administrativo, com hist&oacute;rico de mensagens, resposta direta e anexo para tratativa do chamado.</figcaption>
+                        <div class="gallery-action-bar">
+                            <button type="button" class="gallery-fullscreen-button" data-fullscreen-trigger data-image-src="assets/projetos/Atendimento/2.png" data-image-alt="Chat administrativo do atendimento" data-image-caption="Vis&atilde;o do chat no contexto administrativo, com hist&oacute;rico de mensagens, resposta direta e anexo para tratativa do chamado.">
+                                Ver em tela cheia
+                            </button>
+                        </div>
+                    </figure>
+
+                    <figure class="glass-card rounded-3xl overflow-hidden border border-outline-variant/20">
+                        <div class="project-gallery-frame">
+                            <img src="assets/projetos/Atendimento/3.png" alt="Chat do atendimento">
+                        </div>
+                        <figcaption class="p-5 text-sm text-on-surface-variant">Fluxo de comunica&ccedil;&atilde;o via chat com hist&oacute;rico de mensagens, campo de resposta e envio de anexo.</figcaption>
+                        <div class="gallery-action-bar">
+                            <button type="button" class="gallery-fullscreen-button" data-fullscreen-trigger data-image-src="assets/projetos/Atendimento/3.png" data-image-alt="Chat do atendimento" data-image-caption="Fluxo de comunica&ccedil;&atilde;o via chat com hist&oacute;rico de mensagens, campo de resposta e envio de anexo.">
+                                Ver em tela cheia
+                            </button>
+                        </div>
+                    </figure>
+
+                    <figure class="glass-card rounded-3xl overflow-hidden border border-outline-variant/20">
+                        <div class="project-gallery-frame">
+                            <img src="assets/projetos/Atendimento/4.png" alt="Detalhes do atendimento">
+                        </div>
+                        <figcaption class="p-5 text-sm text-on-surface-variant">Visualiza&ccedil;&atilde;o detalhada do chamado com dados operacionais, status, prioridade, empresa, filial e anexo associado.</figcaption>
+                        <div class="gallery-action-bar">
+                            <button type="button" class="gallery-fullscreen-button" data-fullscreen-trigger data-image-src="assets/projetos/Atendimento/4.png" data-image-alt="Detalhes do atendimento" data-image-caption="Visualiza&ccedil;&atilde;o detalhada do chamado com dados operacionais, status, prioridade, empresa, filial e anexo associado.">
+                                Ver em tela cheia
+                            </button>
+                        </div>
+                    </figure>
+
+                    <figure class="glass-card rounded-3xl overflow-hidden border border-outline-variant/20 lg:col-span-2">
+                        <div class="project-gallery-frame">
+                            <img src="assets/projetos/Atendimento/5.png" alt="Dashboard anal&iacute;tico dos atendimentos">
+                        </div>
+                        <figcaption class="p-5 text-sm text-on-surface-variant">Camada anal&iacute;tica com gr&aacute;ficos por status, prioridade, presen&ccedil;a de anexo, volume por dia e distribui&ccedil;&atilde;o por empresa.</figcaption>
+                        <div class="gallery-action-bar">
+                            <button type="button" class="gallery-fullscreen-button" data-fullscreen-trigger data-image-src="assets/projetos/Atendimento/5.png" data-image-alt="Dashboard anal&iacute;tico dos atendimentos" data-image-caption="Camada anal&iacute;tica com gr&aacute;ficos por status, prioridade, presen&ccedil;a de anexo, volume por dia e distribui&ccedil;&atilde;o por empresa.">
+                                Ver em tela cheia
+                            </button>
+                        </div>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-7xl mx-auto px-6 lg:px-8 py-12 md:py-20 reveal">
+            <div class="grid grid-cols-1 lg:grid-cols-[0.95fr_1.05fr] gap-8">
+                <div class="glass-card rounded-3xl p-8 md:p-10">
+                    <h2 class="text-3xl md:text-4xl font-headline font-bold mb-6">Contexto e problema</h2>
+                    <div class="space-y-5 text-on-surface-variant">
+                        <p>
+                            A funcionalidade foi inserida em um sistema web corporativo com m&uacute;ltiplos perfis de acesso, incluindo colaborador e time administrativo.
+                        </p>
+                        <p>
+                            O desafio era evitar a fragmenta&ccedil;&atilde;o do fluxo de atendimento, que normalmente separa abertura, acompanhamento e vis&atilde;o gerencial em pontos desconectados.
+                        </p>
+                        <p>
+                            Essa fragmenta&ccedil;&atilde;o prejudica tempo de resposta, controle de SLA, rastreabilidade de pend&ecirc;ncias e capacidade anal&iacute;tica para prioriza&ccedil;&atilde;o do suporte.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-3xl p-8 md:p-10">
+                    <h2 class="text-3xl md:text-4xl font-headline font-bold mb-6">Solu&ccedil;&atilde;o implementada</h2>
+                    <ul class="content-list text-on-surface-variant">
+                        <li>Dashboard do colaborador com acesso r&aacute;pido ao m&oacute;dulo e badge de mensagens n&atilde;o lidas.</li>
+                        <li>Modal com duas abas para abertura de novo atendimento e acompanhamento dos atendimentos do pr&oacute;prio usu&aacute;rio.</li>
+                        <li>Formul&aacute;rio din&acirc;mico com tipo, subtipo, prioridade, contato, descri&ccedil;&atilde;o e upload de anexo.</li>
+                        <li>Painel administrativo com filtros por empresa, filial, status, tipo, prioridade, respons&aacute;vel, per&iacute;odo, busca textual e chat pendente.</li>
+                        <li>Listagem paginada com a&ccedil;&otilde;es de detalhamento, chat, atualiza&ccedil;&atilde;o de status e exclus&atilde;o.</li>
+                        <li>Dashboard anal&iacute;tico alimentado pelos mesmos filtros operacionais da lista para manter consist&ecirc;ncia dos indicadores.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-7xl mx-auto px-6 lg:px-8 py-12 md:py-20 reveal">
+            <div class="grid grid-cols-1 lg:grid-cols-[0.95fr_1.05fr] gap-8">
+                <div class="glass-card rounded-3xl p-8 md:p-10">
+                    <h2 class="text-3xl md:text-4xl font-headline font-bold mb-6">Tecnologias utilizadas</h2>
+                    <ul class="content-list text-on-surface-variant">
+                        <li>Back-end em PHP com arquitetura MVC.</li>
+                        <li>Front-end em HTML, CSS, JavaScript, jQuery e Bootstrap.</li>
+                        <li>Banco relacional com acesso via query builder.</li>
+                        <li>Carregamento ass&iacute;ncrono com AJAX para listagem, chat, status e m&eacute;tricas.</li>
+                        <li>Biblioteca de gr&aacute;ficos em canvas carregada sob demanda para o painel anal&iacute;tico.</li>
+                    </ul>
+                </div>
+
+                <div class="glass-card rounded-3xl p-8 md:p-10">
+                    <h2 class="text-3xl md:text-4xl font-headline font-bold mb-6">Desafios t&eacute;cnicos</h2>
+                    <ul class="content-list text-on-surface-variant">
+                        <li>Controle de acesso por escopo organizacional, resolvido com empresas permitidas por v&iacute;nculo perfil-usu&aacute;rio.</li>
+                        <li>Formul&aacute;rios e filtros com alta variabilidade, tratados por estrutura padronizada e atualiza&ccedil;&atilde;o din&acirc;mica de subtipos.</li>
+                        <li>Converg&ecirc;ncia entre opera&ccedil;&atilde;o e analytics, resolvida com reaproveitamento do mesmo conjunto de filtros para lista e gr&aacute;ficos.</li>
+                        <li>Opera&ccedil;&atilde;o cont&iacute;nua com pagina&ccedil;&atilde;o, refresh, chips de filtros ativos e a&ccedil;&otilde;es em linha para reduzir atrito operacional.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-7xl mx-auto px-6 lg:px-8 py-12 md:py-20 reveal">
+            <div class="glass-card rounded-3xl p-8 md:p-10">
+                <div class="grid grid-cols-1 lg:grid-cols-[0.95fr_1.05fr] gap-8 items-start">
+                    <div>
+                        <h2 class="text-3xl md:text-4xl font-headline font-bold mb-4">Resultados e boas pr&aacute;ticas</h2>
+                        <p class="text-on-surface-variant leading-relaxed">
+                            O projeto entregou uma opera&ccedil;&atilde;o mais rastre&aacute;vel, responsiva e orientada a dados, com melhor visibilidade de pend&ecirc;ncias, menor fric&ccedil;&atilde;o para abertura e acompanhamento de chamados e mais capacidade gerencial para prioriza&ccedil;&atilde;o.
+                        </p>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="rounded-2xl bg-surface-container-high p-5 border border-outline-variant/20">
+                            <div class="text-2xl font-headline font-bold text-primary mb-2">Visibilidade</div>
+                            <p class="text-sm text-on-surface-variant">Mais clareza sobre pend&ecirc;ncias de atendimento e chat n&atilde;o lido.</p>
+                        </div>
+                        <div class="rounded-2xl bg-surface-container-high p-5 border border-outline-variant/20">
+                            <div class="text-2xl font-headline font-bold text-primary mb-2">Governan&ccedil;a</div>
+                            <p class="text-sm text-on-surface-variant">Controle de escopo e estados operacionais padronizados por perfil.</p>
+                        </div>
+                        <div class="rounded-2xl bg-surface-container-high p-5 border border-outline-variant/20">
+                            <div class="text-2xl font-headline font-bold text-primary mb-2">Performance</div>
+                            <p class="text-sm text-on-surface-variant">Carregamento ass&iacute;ncrono, pagina&ccedil;&atilde;o e gr&aacute;ficos sob demanda para melhor fluidez.</p>
+                        </div>
+                        <div class="rounded-2xl bg-surface-container-high p-5 border border-outline-variant/20">
+                            <div class="text-2xl font-headline font-bold text-primary mb-2">Manutenibilidade</div>
+                            <p class="text-sm text-on-surface-variant">Componentes reutiliz&aacute;veis de filtros, alertas, chips e a&ccedil;&otilde;es com fluxo de eventos padronizado.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="w-full py-12 bg-background border-t border-outline-variant/20">
+        <div class="flex flex-col md:flex-row justify-between items-center px-6 md:px-12 max-w-7xl mx-auto gap-6">
+            <div class="text-center md:text-left">
+                <div class="text-on-surface text-sm font-headline font-bold tracking-wide">Daniel Torres</div>
+                <div class="text-on-surface-variant text-xs tracking-widest uppercase">
+                    Desenvolvedor full-stack em Brasilia, DF
+                </div>
+            </div>
+            <div class="flex flex-wrap justify-center gap-6">
+                <a href="index.html#projects" class="text-on-surface-variant hover:text-primary hover:-translate-y-0.5 transition-all text-xs tracking-widest uppercase">Projetos</a>
+                <a href="https://github.com/devdanieltorres" target="_blank" rel="noreferrer" class="text-on-surface-variant hover:text-primary hover:-translate-y-0.5 transition-all text-xs tracking-widest uppercase">GitHub</a>
+                <a href="https://www.linkedin.com/in/daniel-torres-0851581a0/" target="_blank" rel="noreferrer" class="text-on-surface-variant hover:text-primary hover:-translate-y-0.5 transition-all text-xs tracking-widest uppercase">LinkedIn</a>
+                <a href="mailto:Danieltorres2706@hotmail.com" class="text-on-surface-variant hover:text-primary hover:-translate-y-0.5 transition-all text-xs tracking-widest uppercase">Email</a>
+            </div>
+        </div>
+    </footer>
+
+    <div class="lightbox hidden" data-lightbox aria-hidden="true">
+        <div class="lightbox__dialog">
+            <button type="button" class="lightbox__close" data-lightbox-close aria-label="Fechar visualiza&ccedil;&atilde;o">
+                &times;
+            </button>
+            <div class="lightbox__content">
+                <div class="lightbox__image-wrap">
+                    <img class="lightbox__image" data-lightbox-image src="" alt="">
+                </div>
+                <p class="lightbox__caption" data-lightbox-caption></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

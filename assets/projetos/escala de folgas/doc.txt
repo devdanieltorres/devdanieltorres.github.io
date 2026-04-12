@@ -1,0 +1,58 @@
+1. Título da Funcionalidade
+Escala de Folgas e Frequência com Edição Operacional por Turno e Controle Gerencial
+2. Contexto
+A funcionalidade está inserida em um sistema web de gestão de equipes, jornada e operação de pessoal.
+Ela atende à necessidade de planejar e ajustar escalas mensais de trabalhofolga por unidade organizacional (empresa, filial, centro de custo e turno), com visão consolidada e atualização rápida para tomada de decisão diária.
+3. Problema
+O desafio principal era conciliar três frentes ao mesmo tempo
+Volume e granularidade escala por colaborador, por dia, por turno, com múltiplos status operacionais.
+Governança de acesso gestor precisa editar apenas seu escopo de equipe subordinada.
+Confiabilidade operacional mudanças frequentes exigem salvamento imediato, validações de regra e visão de totais em tempo real.
+Sem isso, o processo tende a ficar lento, sujeito a inconsistências e com baixa rastreabilidade das alterações.
+4. Solução Implementada
+A solução foi estruturada em controller + view com regras explícitas de negócio e experiência focada em operação.
+Filtro hierárquico de contexto anomês, empresa, filial, centro de custo e turno (AB), com navegação entre meses e recorte obrigatório por centro para evitar carga excessiva.
+Escopo de gestão por subordinação dados de escala são carregados somente para colaboradores vinculados ao gestor logado via relação de chefiasubordinados.
+Renderização por turno tabelas independentes para Turno A e Turno B, com cabeçalho de calendário (dia útilfim de semana), legendas de tipo e colunas fixas para identificação do colaborador.
+Edição inline orientada a operação clique na célula abre menu de tipos permitidos (Trabalho, Folga, Banco de Horas), com salvamento assíncrono automático.
+Validações de regra bloqueio de mais de 2 folgas na semana (segunda a domingo) para o colaborador; tipos restritos para edição direta em célula.
+Gestão de contrato no mesmo grid atualização de parâmetros de contrato (turno, tipo de turno e folgas padrão) via selects dedicados.
+Ação de montagem de escala botão para execução de rotina de montagemreprocessamento mensal com confirmação modal e feedback de sucessoerro.
+Totais operacionais integrados cálculo e exibição de totais por dia para Turno A, Turno B e total geral, com atualização imediata após alteração de célula.
+Saída gerencial exportação de dados filtrados em XLS e PDF.
+Decisões técnicas relevantes
+edição permitida somente no módulo de gestão (perfil com permissão de alteração);
+uso de AJAX para evitar recarga total da página em cada ajuste;
+separação de totais por turno e agregado para facilitar leitura executiva;
+interface com colunas “sticky” para manter contexto visual em tabelas largas.
+5. Tecnologias Utilizadas
+Backend PHP (MVC), consultas SQL com joins e filtros dinâmicos.
+Frontend HTML, CSS, JavaScript, Bootstrap, jQuery (componentes visuais e interação).
+Integração assíncrona fetchrequisições AJAX para salvar células, atualizar centros e executar montagem de escala.
+Exportação geração de relatórios em XLS e PDF por filtro corrente.
+UX assistida tour guiado com persistência em localStorage.
+6. Desafios Técnicos
+Tabela de alta densidade (mês inteiro x equipe)
+Solução colunas fixas, separação por turno, destaque de semanafim de semana e controle de visibilidade de colunas extras.
+Regra semanal de folgas sem perder agilidade de edição
+Solução validação no frontend antes do envio, com feedback imediato e reversão visual quando inválido.
+Consistência dos totais após edição local
+Solução atualização incremental dos totais por dia e por bloco (turnogeral) após resposta de sucesso.
+Escopo de segurança do gestor
+Solução carregamento e edição limitados aos subordinados no backend, não apenas na interface.
+Operação pesada de “montar escala”
+Solução confirmação explícita, estado de carregamento, mensagens de retorno e recarga controlada.
+7. Resultados Obtidos
+Redução do tempo operacional para ajuste de escala mensal e diária.
+Maior controle gerencial com visão simultânea de turnos e totais agregados.
+Menor incidência de inconsistências por validações de regra no ponto de edição.
+Melhor governança de acesso, mantendo alteração restrita ao responsável de equipe.
+Mais autonomia para fechamento e auditoria da escala com exportação estruturada.
+8. Boas Práticas Aplicadas
+Organização separação clara de responsabilidades entre controller (dadosregra) e view (interaçãoapresentação).
+Segurança restrição por escopo de subordinação e bloqueio de edição fora do contexto autorizado.
+Performance filtros obrigatórios de recorte, carregamento segmentado e operações assíncronas granulares.
+Manutenibilidade mapeamento explícito de tipos de escala, regras centralizadas e feedbacks padronizados.
+Usabilidade legenda visual, navegação mensal, confirmação para ações críticas e tour de onboarding.
+9. Resumo para Portfólio
+Desenvolvi um módulo completo de escala de folgasfrequência com visão mensal por turno, edição inline e salvamento assíncrono em tempo real. A solução aplica regras operacionais (como limite semanal de folgas), atualiza totais automaticamente e restringe acesso por hierarquia de gestão. Também implementei rotina de montagem de escala com confirmação segura, filtros de alto desempenho e exportação em XLSPDF. O resultado foi ganho de velocidade, controle e confiabilidade no planejamento de jornada da equipe.

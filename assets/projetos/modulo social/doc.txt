@@ -1,0 +1,97 @@
+1. Título da Funcionalidade
+Mural Interno de Publicações com Gestão de Conteúdo e Notificações
+2. Contexto
+A funcionalidade está inserida em uma plataforma corporativa de gestão de pessoas, com foco em comunicação interna.
+Ela atende à necessidade de centralizar anúncios e conteúdos institucionais (texto + mídia), permitindo que colaboradores visualizem novidades e que usuários autorizados publiquem ou removam conteúdos por escopo organizacional.
+3. Problema
+Antes da implementação, a comunicação interna digital tende a ficar fragmentada entre canais externos ou processos manuais, com baixa rastreabilidade e pouca governança de publicação.
+Isso dificulta a distribuição consistente de mensagens, reduz o alcance das atualizações e aumenta o esforço para controle de conteúdo ativo.
+4. Solução Implementada
+A solução foi estruturada em um módulo completo com três fluxos principais: feed de leitura, publicação e remoção.
+No backend, o controller valida sessão, define perfil ativo e carrega contexto do usuário (tema, permissões e escopo organizacional).
+O feed lista publicações da empresa do usuário, com dados do autor e ordenação por data.
+A camada de visualização identifica automaticamente o tipo de mídia (imagem, vídeo direto ou link de vídeo incorporado) e renderiza o formato adequado para consumo no mural.
+O fluxo de publicação recebe formulário assíncrono, grava registros para múltiplas empresas selecionadas e dispara notificações para colaboradores ativos do respectivo escopo.
+O fluxo de exclusão disponibiliza tabela administrativa com paginação/busca e ação de remoção via AJAX, com feedback de sucesso/erro e atualização da tela.
+Decisões técnicas relevantes
+Separação de responsabilidades por telas (consumo, criação e administração).
+Comunicação assíncrona para operações de escrita/remoção sem recarga total da página.
+Controle de escopo por empresa no acesso e na distribuição de notificações.
+5. Tecnologias Utilizadas
+Backend: PHP em arquitetura MVC (controller + views).
+Banco de dados: SQL via camada de acesso do framework (consultas, joins, inserts, updates e deletes).
+Frontend: HTML, CSS, JavaScript e jQuery.
+Plugins/UI: DataTables (listagem administrativa com busca/paginação) e select com busca para múltipla seleção de empresas.
+Integração assíncrona: AJAX/FormData para envio de formulários e comandos de exclusão.
+Manipulação de datas/mídia: formatação de data no servidor e renderização condicional por tipo de conteúdo.
+6. Desafios Técnicos
+Renderização heterogênea de mídia: necessidade de suportar links de imagem, vídeo local e vídeos incorporados.
+Solução: validação por padrão de URL/extensão e estratégia de renderização condicional.
+Publicação com múltiplos destinos: um único post podendo atingir mais de uma empresa.
+Solução: iteração por empresas selecionadas com gravação e notificação por escopo.
+Distribuição de notificações internas: avisar usuários ativos sem incluir o autor da publicação.
+Solução: consulta segmentada por empresa e status, com criação de notificações por destinatário.
+Operação administrativa de exclusão: necessidade de ação rápida com retorno imediato ao usuário.
+Solução: exclusão assíncrona com feedback visual e recarregamento controlado.
+7. Resultados Obtidos
+Centralização da comunicação interna em um canal único dentro da plataforma.
+Maior agilidade na publicação e retirada de conteúdos sem dependência de processos externos.
+Melhor alcance das mensagens via notificações automáticas para colaboradores elegíveis.
+Experiência de uso mais fluida em tarefas administrativas (consulta, filtro e exclusão).
+Evolução do controle operacional sobre o ciclo de vida das publicações.
+8. Boas Práticas Aplicadas
+Organização de código: divisão clara entre fluxo de leitura, criação e administração de conteúdo.
+Segurança e governança: validação de sessão/perfil e aplicação de escopo por empresa.
+Performance: uso de AJAX para reduzir recargas completas e melhorar responsividade percebida.
+Manutenibilidade: padronização de consultas e estrutura MVC, facilitando evolução do módulo.
+Usabilidade: mensagens de feedback, tabela com filtros e renderização automática de mídia compatível.
+9. Resumo para Portfólio
+Implementei um módulo de comunicação interna com feed de publicações, cadastro de novos conteúdos e gestão administrativa de exclusão. A solução foi construída em MVC com operações assíncronas (AJAX), suporte a múltiplos formatos de mídia e controle de escopo por empresa. Também integrei notificações automáticas para ampliar o alcance das mensagens entre colaboradores ativos. O resultado foi uma comunicação mais ágil, rastreável e fácil de administrar em ambiente corporativo.1. Título da Funcionalidade
+Mural Interno de Publicações com Gestão de Conteúdo e Notificações
+2. Contexto
+A funcionalidade está inserida em uma plataforma corporativa de gestão de pessoas, com foco em comunicação interna.
+Ela atende à necessidade de centralizar anúncios e conteúdos institucionais (texto + mídia), permitindo que colaboradores visualizem novidades e que usuários autorizados publiquem ou removam conteúdos por escopo organizacional.
+3. Problema
+Antes da implementação, a comunicação interna digital tende a ficar fragmentada entre canais externos ou processos manuais, com baixa rastreabilidade e pouca governança de publicação.
+Isso dificulta a distribuição consistente de mensagens, reduz o alcance das atualizações e aumenta o esforço para controle de conteúdo ativo.
+4. Solução Implementada
+A solução foi estruturada em um módulo completo com três fluxos principais: feed de leitura, publicação e remoção.
+No backend, o controller valida sessão, define perfil ativo e carrega contexto do usuário (tema, permissões e escopo organizacional).
+O feed lista publicações da empresa do usuário, com dados do autor e ordenação por data.
+A camada de visualização identifica automaticamente o tipo de mídia (imagem, vídeo direto ou link de vídeo incorporado) e renderiza o formato adequado para consumo no mural.
+O fluxo de publicação recebe formulário assíncrono, grava registros para múltiplas empresas selecionadas e dispara notificações para colaboradores ativos do respectivo escopo.
+O fluxo de exclusão disponibiliza tabela administrativa com paginação/busca e ação de remoção via AJAX, com feedback de sucesso/erro e atualização da tela.
+Decisões técnicas relevantes
+Separação de responsabilidades por telas (consumo, criação e administração).
+Comunicação assíncrona para operações de escrita/remoção sem recarga total da página.
+Controle de escopo por empresa no acesso e na distribuição de notificações.
+5. Tecnologias Utilizadas
+Backend: PHP em arquitetura MVC (controller + views).
+Banco de dados: SQL via camada de acesso do framework (consultas, joins, inserts, updates e deletes).
+Frontend: HTML, CSS, JavaScript e jQuery.
+Plugins/UI: DataTables (listagem administrativa com busca/paginação) e select com busca para múltipla seleção de empresas.
+Integração assíncrona: AJAX/FormData para envio de formulários e comandos de exclusão.
+Manipulação de datas/mídia: formatação de data no servidor e renderização condicional por tipo de conteúdo.
+6. Desafios Técnicos
+Renderização heterogênea de mídia: necessidade de suportar links de imagem, vídeo local e vídeos incorporados.
+Solução: validação por padrão de URL/extensão e estratégia de renderização condicional.
+Publicação com múltiplos destinos: um único post podendo atingir mais de uma empresa.
+Solução: iteração por empresas selecionadas com gravação e notificação por escopo.
+Distribuição de notificações internas: avisar usuários ativos sem incluir o autor da publicação.
+Solução: consulta segmentada por empresa e status, com criação de notificações por destinatário.
+Operação administrativa de exclusão: necessidade de ação rápida com retorno imediato ao usuário.
+Solução: exclusão assíncrona com feedback visual e recarregamento controlado.
+7. Resultados Obtidos
+Centralização da comunicação interna em um canal único dentro da plataforma.
+Maior agilidade na publicação e retirada de conteúdos sem dependência de processos externos.
+Melhor alcance das mensagens via notificações automáticas para colaboradores elegíveis.
+Experiência de uso mais fluida em tarefas administrativas (consulta, filtro e exclusão).
+Evolução do controle operacional sobre o ciclo de vida das publicações.
+8. Boas Práticas Aplicadas
+Organização de código: divisão clara entre fluxo de leitura, criação e administração de conteúdo.
+Segurança e governança: validação de sessão/perfil e aplicação de escopo por empresa.
+Performance: uso de AJAX para reduzir recargas completas e melhorar responsividade percebida.
+Manutenibilidade: padronização de consultas e estrutura MVC, facilitando evolução do módulo.
+Usabilidade: mensagens de feedback, tabela com filtros e renderização automática de mídia compatível.
+9. Resumo para Portfólio
+Implementei um módulo de comunicação interna com feed de publicações, cadastro de novos conteúdos e gestão administrativa de exclusão. A solução foi construída em MVC com operações assíncronas (AJAX), suporte a múltiplos formatos de mídia e controle de escopo por empresa. Também integrei notificações automáticas para ampliar o alcance das mensagens entre colaboradores ativos. O resultado foi uma comunicação mais ágil, rastreável e fácil de administrar em ambiente corporativo.

@@ -1,0 +1,59 @@
+1. Título da Funcionalidade
+Painel de Monitoramento de Batidas de Ponto Atrasadas com Filtro por Empresa e Faixa de Dias
+2. Contexto
+A funcionalidade está inserida em um sistema corporativo de RH voltado à gestão de jornada e conformidade de ponto.
+Ela atende à necessidade de identificar rapidamente colaboradores com ausência recorrente de registro de ponto (ex.: 3, 5 ou 7 dias), permitindo ação preventiva e corretiva da gestão.
+3. Problema
+Sem um painel específico, o acompanhamento de não-batidas tende a ser reativo e disperso, com baixa visibilidade sobre criticidade por empresa e período de atraso.
+Os principais impactos são:
+dificuldade de triagem operacional diária;
+atraso em tratativas de regularização;
+risco de inconsistências em fechamento de jornada;
+aumento de esforço manual para cruzar dados em múltiplas telas.
+4. Solução Implementada
+A solução foi estruturada com backend de escopo/permissão e frontend assíncrono para consulta dinâmica.
+Backend (controller)
+Configura contexto de sessão e perfil ativo do módulo.
+Resolve empresas permitidas ao usuário com base em vínculos de perfil-empresa.
+Aplica regras de escopo por empresa em cenários de acesso individual.
+Carrega dados iniciais necessários para renderização da tela (empresas, tema, parâmetros e contexto do usuário).
+Define identificador de módulo para roteamento correto dos endpoints de consulta assíncrona.
+Frontend (view)
+Exibe formulário de filtros com:
+empresa (incluindo opção “todas”),
+faixa de atraso (3, 5, 7 dias ou agregada).
+Ao alterar o período, dispara chamada AJAX para carregar os itens de batidas atrasadas.
+Define controller dinamicamente conforme identificador do módulo, permitindo reaproveitamento da interface em contextos distintos.
+Atualiza a área de resultados sem recarregar a página, com feedback visual de carregamento.
+Mantém integração com componentes de busca/filtro tabular para exploração dos resultados carregados.
+Decisões técnicas relevantes
+priorizar interação assíncrona para reduzir tempo de resposta percebido;
+separar tela-base (filtros) da montagem dos itens (endpoint dedicado);
+reaproveitar infraestrutura de filtros avançados e DataTables para consistência operacional com outros relatórios.
+5. Tecnologias Utilizadas
+Backend: PHP em arquitetura MVC com Query Builder para controle de acesso e preparação de dados.
+Frontend: HTML, CSS, JavaScript, jQuery.
+Componentes UI: Select2 para seletores pesquisáveis; DataTables para pesquisa e filtros em tabela.
+Integração assíncrona: AJAX para carregamento sob demanda dos registros de atraso.
+6. Desafios Técnicos
+Controle de acesso multiempresa por perfil
+Solução: cálculo de escopo autorizado antes da renderização da tela.
+Necessidade de consulta rápida para rotina diária
+Solução: carregamento parcial por AJAX com spinner e atualização do container de resultados.
+Reuso entre módulos com rotas diferentes
+Solução: definição de controller no frontend a partir do identificador de contexto.
+Operação sobre grandes volumes de dados
+Solução: integração com busca e filtros tabulares para refino local após carregamento.
+7. Resultados Obtidos
+Maior agilidade na detecção de colaboradores sem batida de ponto.
+Redução do tempo de triagem e priorização de tratativas.
+Melhora da governança de jornada com visão focada por criticidade temporal.
+Fluxo mais fluido para o usuário, com menos recargas e navegação mais objetiva.
+8. Boas Práticas Aplicadas
+Organização: separação clara entre camada de acesso/contexto (controller) e interação de consulta (view/JS).
+Segurança: aplicação de escopo por empresa e perfil antes da exposição de dados.
+Performance: estratégia de carregamento sob demanda e atualização incremental da interface.
+Manutenibilidade: uso de identificador de módulo para reduzir duplicidade de tela.
+Usabilidade: feedback de loading, filtros objetivos e navegação simplificada com botão de retorno.
+9. Resumo para Portfólio
+Desenvolvi um painel de monitoramento de batidas de ponto atrasadas com filtros por empresa e faixa de dias sem registro, focado em operação de RH. A solução aplica regras de acesso por perfil, carrega resultados via AJAX e permite análise rápida com busca/filtros tabulares. Também padronizei o reuso da interface entre contextos de módulo por identificador dinâmico. O resultado foi maior velocidade de triagem e melhor controle de conformidade de jornada.

@@ -1,0 +1,46 @@
+<svg width="1200" height="760" viewBox="0 0 1200 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="760" rx="36" fill="#081326"/>
+  <rect x="36" y="36" width="1128" height="688" rx="30" fill="#0F1930" stroke="#243453"/>
+  <text x="82" y="110" fill="#DEE5FF" font-family="Arial, sans-serif" font-size="34" font-weight="700">Fluxo de atendimento</text>
+  <text x="82" y="148" fill="#A3AAC4" font-family="Arial, sans-serif" font-size="20">Da abertura do chamado at&eacute; a valida&ccedil;&atilde;o final do servi&ccedil;o.</text>
+
+  <rect x="82" y="210" width="200" height="130" rx="26" fill="#111D34"/>
+  <rect x="322" y="210" width="200" height="130" rx="26" fill="#111D34"/>
+  <rect x="562" y="210" width="200" height="130" rx="26" fill="#111D34"/>
+  <rect x="802" y="210" width="200" height="130" rx="26" fill="#111D34"/>
+
+  <text x="114" y="260" fill="#81ECFF" font-family="Arial, sans-serif" font-size="18" font-weight="700">1. Chamado aberto</text>
+  <text x="114" y="292" fill="#DEE5FF" font-family="Arial, sans-serif" font-size="16">Cliente registra a</text>
+  <text x="114" y="316" fill="#DEE5FF" font-family="Arial, sans-serif" font-size="16">solicita&ccedil;&atilde;o e prioridade.</text>
+
+  <text x="354" y="260" fill="#81ECFF" font-family="Arial, sans-serif" font-size="18" font-weight="700">2. Despacho</text>
+  <text x="354" y="292" fill="#DEE5FF" font-family="Arial, sans-serif" font-size="16">Motor de regra define</text>
+  <text x="354" y="316" fill="#DEE5FF" font-family="Arial, sans-serif" font-size="16">t&eacute;cnico e janela ideal.</text>
+
+  <text x="594" y="260" fill="#81ECFF" font-family="Arial, sans-serif" font-size="18" font-weight="700">3. Execu&ccedil;&atilde;o</text>
+  <text x="594" y="292" fill="#DEE5FF" font-family="Arial, sans-serif" font-size="16">Checklist, anexos e</text>
+  <text x="594" y="316" fill="#DEE5FF" font-family="Arial, sans-serif" font-size="16">atualiza&ccedil;&atilde;o em campo.</text>
+
+  <text x="834" y="260" fill="#81ECFF" font-family="Arial, sans-serif" font-size="18" font-weight="700">4. Conclus&atilde;o</text>
+  <text x="834" y="292" fill="#DEE5FF" font-family="Arial, sans-serif" font-size="16">Valida&ccedil;&atilde;o, hist&oacute;rico</text>
+  <text x="834" y="316" fill="#DEE5FF" font-family="Arial, sans-serif" font-size="16">e medi&ccedil;&atilde;o de SLA.</text>
+
+  <path d="M282 276H322" stroke="#70AAFF" stroke-width="8" stroke-linecap="round"/>
+  <path d="M522 276H562" stroke="#70AAFF" stroke-width="8" stroke-linecap="round"/>
+  <path d="M762 276H802" stroke="#70AAFF" stroke-width="8" stroke-linecap="round"/>
+
+  <rect x="82" y="406" width="1082" height="256" rx="28" fill="#111D34"/>
+  <text x="118" y="456" fill="#DEE5FF" font-family="Arial, sans-serif" font-size="28" font-weight="700">Resultados esperados</text>
+
+  <rect x="118" y="494" width="280" height="18" rx="9" fill="#34D399" fill-opacity="0.24"/>
+  <rect x="118" y="530" width="340" height="18" rx="9" fill="#A3AAC4" fill-opacity="0.24"/>
+  <rect x="118" y="566" width="300" height="18" rx="9" fill="#A3AAC4" fill-opacity="0.24"/>
+
+  <rect x="496" y="494" width="260" height="18" rx="9" fill="#81ECFF" fill-opacity="0.24"/>
+  <rect x="496" y="530" width="324" height="18" rx="9" fill="#A3AAC4" fill-opacity="0.24"/>
+  <rect x="496" y="566" width="290" height="18" rx="9" fill="#A3AAC4" fill-opacity="0.24"/>
+
+  <rect x="860" y="484" width="244" height="94" rx="22" fill="#16233F"/>
+  <text x="894" y="528" fill="#81ECFF" font-family="Arial, sans-serif" font-size="32" font-weight="700">-28%</text>
+  <text x="894" y="556" fill="#DEE5FF" font-family="Arial, sans-serif" font-size="18">tempo de despacho</text>
+</svg>

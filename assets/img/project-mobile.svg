@@ -1,0 +1,31 @@
+<svg width="760" height="760" viewBox="0 0 760 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="760" height="760" rx="36" fill="#081326"/>
+  <rect x="98" y="36" width="564" height="688" rx="48" fill="#0F1930" stroke="#243453" stroke-width="10"/>
+  <rect x="280" y="58" width="200" height="20" rx="10" fill="#243453"/>
+  <rect x="136" y="110" width="488" height="92" rx="28" fill="#111D34"/>
+  <text x="170" y="154" fill="#DEE5FF" font-family="Arial, sans-serif" font-size="28" font-weight="700">App do t&eacute;cnico</text>
+  <text x="170" y="186" fill="#81ECFF" font-family="Arial, sans-serif" font-size="18">Atendimento guiado em campo</text>
+
+  <rect x="136" y="228" width="150" height="44" rx="22" fill="#81ECFF" fill-opacity="0.18"/>
+  <rect x="304" y="228" width="128" height="44" rx="22" fill="#70AAFF" fill-opacity="0.18"/>
+  <rect x="450" y="228" width="138" height="44" rx="22" fill="#34D399" fill-opacity="0.18"/>
+
+  <rect x="136" y="302" width="488" height="144" rx="28" fill="#111D34"/>
+  <text x="168" y="344" fill="#DEE5FF" font-family="Arial, sans-serif" font-size="24" font-weight="700">OS #2841 - Instala&ccedil;&atilde;o</text>
+  <rect x="168" y="366" width="178" height="16" rx="8" fill="#A3AAC4" fill-opacity="0.24"/>
+  <rect x="168" y="400" width="122" height="34" rx="17" fill="#34D399" fill-opacity="0.22"/>
+  <rect x="306" y="400" width="138" height="34" rx="17" fill="#81ECFF" fill-opacity="0.22"/>
+  <rect x="466" y="334" width="126" height="86" rx="20" fill="#16233F"/>
+
+  <rect x="136" y="470" width="488" height="120" rx="28" fill="#111D34"/>
+  <text x="168" y="512" fill="#DEE5FF" font-family="Arial, sans-serif" font-size="24" font-weight="700">Checklist de execu&ccedil;&atilde;o</text>
+  <rect x="168" y="534" width="236" height="16" rx="8" fill="#A3AAC4" fill-opacity="0.24"/>
+  <rect x="168" y="562" width="200" height="16" rx="8" fill="#A3AAC4" fill-opacity="0.24"/>
+  <circle cx="566" cy="526" r="18" fill="#34D399"/>
+  <circle cx="566" cy="568" r="18" fill="#81ECFF"/>
+
+  <rect x="136" y="616" width="236" height="62" rx="22" fill="#81ECFF"/>
+  <rect x="388" y="616" width="236" height="62" rx="22" fill="#16233F"/>
+  <text x="192" y="655" fill="#081326" font-family="Arial, sans-serif" font-size="22" font-weight="700">Concluir visita</text>
+  <text x="456" y="655" fill="#DEE5FF" font-family="Arial, sans-serif" font-size="22" font-weight="700">Abrir mapa</text>
+</svg>

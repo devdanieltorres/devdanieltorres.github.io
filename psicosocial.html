@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psicossocial | Daniel Torres</title>
+    <meta name="description" content="Case do programa de monitoramento psicossocial com campanhas, resposta an&ocirc;nima, analytics de risco e planos de a&ccedil;&atilde;o NR-01.">
+    <meta name="theme-color" content="#060e20">
+    <meta name="author" content="Daniel Torres">
+    <meta property="og:title" content="Psicossocial | Daniel Torres">
+    <meta property="og:description" content="Solu&ccedil;&atilde;o ponta a ponta para campanhas psicossociais, coleta an&ocirc;nima, painel anal&iacute;tico com IRPG e gest&atilde;o de planos de a&ccedil;&atilde;o.">
+    <meta property="og:type" content="website">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        headline: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#81ecff',
+                        'primary-dim': '#00d4ec',
+                        tertiary: '#70aaff',
+                        background: '#060e20',
+                        surface: '#060e20',
+                        'surface-container': '#0f1930',
+                        'surface-container-high': '#141f38',
+                        'surface-container-highest': '#192540',
+                        'on-surface': '#dee5ff',
+                        'on-surface-variant': '#a3aac4',
+                        'outline-variant': '#40485d',
+                        success: '#34d399',
+                        warning: '#fbbf24',
+                    }
+                }
+            }
+        };
+    </script>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-background text-on-surface font-sans antialiased overflow-x-hidden selection:bg-primary/20 selection:text-on-surface">
+    <a href="#project-content" class="skip-link">Pular para o conte&uacute;do</a>
+
+    <header class="fixed top-0 w-full z-50 bg-[#060e20]/90 backdrop-blur-xl border-b border-outline-variant/10">
+        <div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
+            <a href="index.html#home" class="flex items-center gap-3 group" aria-label="Voltar para o in&iacute;cio do portf&oacute;lio">
+                <span class="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary font-headline font-bold">DT</span>
+                <div>
+                    <span class="block text-base md:text-lg font-bold tracking-tight text-on-surface font-headline">DANIEL TORRES</span>
+                    <span class="block text-[10px] uppercase tracking-[0.3em] text-on-surface-variant">Projeto detalhado</span>
+                </div>
+            </a>
+
+            <nav class="hidden lg:flex gap-8 items-center" aria-label="Navega&ccedil;&atilde;o principal">
+                <a href="index.html#about" class="nav-link text-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-all">Sobre</a>
+                <a href="index.html#experience" class="nav-link text-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-all">Experi&ecirc;ncia</a>
+                <a href="index.html#projects" class="nav-link text-sm uppercase tracking-widest text-primary transition-all">Projetos</a>
+                <a href="index.html#contact" class="nav-link text-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-all">Contato</a>
+                <a href="index.html#projects" class="ml-4 px-6 py-2 bg-primary text-background font-bold rounded-lg hover:scale-105 transition-all focus:outline-none focus:ring-2 focus:ring-primary">
+                    Voltar ao portf&oacute;lio
+                </a>
+            </nav>
+
+            <button id="menu-toggle" class="lg:hidden text-primary p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" aria-controls="mobile-menu" aria-expanded="false" aria-label="Abrir menu">
+                <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 w-full bg-surface-container border-b border-outline-variant/20 shadow-2xl">
+            <nav class="flex flex-col p-6 gap-4" aria-label="Navega&ccedil;&atilde;o mobile">
+                <a href="index.html#about" class="mobile-nav-link text-lg font-headline uppercase tracking-widest py-3 border-b border-outline-variant/10">Sobre</a>
+                <a href="index.html#experience" class="mobile-nav-link text-lg font-headline uppercase tracking-widest py-3 border-b border-outline-variant/10">Experi&ecirc;ncia</a>
+                <a href="index.html#projects" class="mobile-nav-link text-lg font-headline uppercase tracking-widest py-3 border-b border-outline-variant/10 text-primary">Projetos</a>
+                <a href="index.html#contact" class="mobile-nav-link text-lg font-headline uppercase tracking-widest py-3 border-b border-outline-variant/10">Contato</a>
+                <a href="index.html#projects" class="w-full mt-4 px-6 py-4 bg-primary text-background font-bold rounded-xl text-center">
+                    Voltar ao portf&oacute;lio
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="project-content" class="relative overflow-x-hidden">
+        <div class="fixed inset-0 hero-gradient pointer-events-none -z-10"></div>
+        <div class="fixed -top-24 -right-24 w-64 md:w-96 h-64 md:h-96 bg-primary/5 rounded-full blur-[80px] md:blur-[100px] pointer-events-none -z-10"></div>
+        <div class="fixed top-1/3 -left-24 w-64 md:w-96 h-64 md:h-96 bg-tertiary/10 rounded-full blur-[90px] md:blur-[120px] pointer-events-none -z-10"></div>
+
+        <section class="max-w-7xl mx-auto px-6 lg:px-8 pt-28 md:pt-36 pb-16 md:pb-24 reveal">
+            <div class="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-10 items-center">
+                <div class="space-y-6">
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-4 py-2 rounded-full bg-primary/10 text-primary text-xs uppercase tracking-[0.25em]">Projeto real</span>
+                        <span class="px-4 py-2 rounded-full bg-surface-container-high text-on-surface-variant text-xs uppercase tracking-[0.25em]">Sa&uacute;de ocupacional</span>
+                        <span class="px-4 py-2 rounded-full bg-surface-container-high text-on-surface-variant text-xs uppercase tracking-[0.25em]">NR-01</span>
+                        <span class="px-4 py-2 rounded-full bg-surface-container-high text-on-surface-variant text-xs uppercase tracking-[0.25em]">Case completo</span>
+                    </div>
+                    <div>
+                        <p class="text-sm uppercase tracking-[0.35em] text-on-surface-variant mb-3">Case detalhado</p>
+                        <h1 class="text-4xl md:text-6xl font-headline font-bold tracking-tight leading-[1.05]">
+                            Programa de monitoramento psicossocial com campanhas, resposta an&ocirc;nima, analytics de risco e planos de a&ccedil;&atilde;o
+                        </h1>
+                    </div>
+                    <p class="text-lg md:text-xl text-on-surface-variant leading-relaxed">
+                        Solu&ccedil;&atilde;o ponta a ponta para apoiar gest&atilde;o de riscos psicossociais, cobrindo governan&ccedil;a de campanhas, coleta estruturada para colaboradores, painel anal&iacute;tico agregado e desdobramento em planos de a&ccedil;&atilde;o.
+                    </p>
+                    <p class="text-base md:text-lg text-on-surface-variant leading-relaxed">
+                        O fluxo foi desenhado para manter privacidade, evitar respostas duplicadas, transformar dados em prioriza&ccedil;&atilde;o objetiva e fechar o ciclo entre diagn&oacute;stico e a&ccedil;&atilde;o corretiva ou preventiva em conformidade com a NR-01.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#galeria" class="px-8 py-4 bg-primary text-background font-bold rounded-2xl text-center">Ver galeria</a>
+                        <a href="index.html#projects" class="px-8 py-4 border border-outline-variant/30 rounded-2xl text-center hover:bg-surface-container-high transition-all">Voltar para projetos</a>
+                    </div>
+                </div>
+
+                <figure class="glass-card rounded-3xl overflow-hidden border border-outline-variant/20">
+                    <img src="assets/projetos/Psicosocial/5.png" alt="Painel psicossocial com indicadores de risco" class="w-full h-full object-cover object-top">
+                </figure>
+            </div>
+        </section>
+
+        <section class="max-w-7xl mx-auto px-6 lg:px-8 pb-12 md:pb-20 reveal">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div class="glass-card rounded-3xl p-6">
+                    <div class="text-2xl font-headline font-bold text-primary mb-2">Campanhas</div>
+                    <p class="text-sm text-on-surface-variant">Cadastro com ciclo de vida controlado e regra de ativa&ccedil;&atilde;o exclusiva por campanha.</p>
+                </div>
+                <div class="glass-card rounded-3xl p-6">
+                    <div class="text-2xl font-headline font-bold text-primary mb-2">Coleta an&ocirc;nima</div>
+                    <p class="text-sm text-on-surface-variant">Uma resposta por colaborador e experi&ecirc;ncia guiada para responder sem fric&ccedil;&atilde;o.</p>
+                </div>
+                <div class="glass-card rounded-3xl p-6">
+                    <div class="text-2xl font-headline font-bold text-primary mb-2">Analytics</div>
+                    <p class="text-sm text-on-surface-variant">IRPG, alertas, hotspots, an&aacute;lise temporal e leitura agregada orientada &agrave; decis&atilde;o.</p>
+                </div>
+                <div class="glass-card rounded-3xl p-6">
+                    <div class="text-2xl font-headline font-bold text-primary mb-2">A&ccedil;&atilde;o NR-01</div>
+                    <p class="text-sm text-on-surface-variant">Planos de a&ccedil;&atilde;o com KPIs, filtros, prazos, prioridades e acompanhamento operacional.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="galeria" class="max-w-7xl mx-auto px-6 lg:px-8 py-12 md:py-20 reveal">
+            <div class="mb-10">
+                <h2 class="text-xs uppercase tracking-[0.35em] text-primary mb-3">Galeria</h2>
+                <h3 class="text-3xl md:text-5xl font-headline font-bold tracking-tight">Vis&otilde;es da funcionalidade</h3>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <figure class="glass-card rounded-3xl overflow-hidden border border-outline-variant/20">
+                    <div class="project-gallery-frame">
+                        <img src="assets/projetos/Psicosocial/1.png" alt="Atalho do question&aacute;rio psicossocial no portal">
+                    </div>
+                    <figcaption class="p-5 text-sm text-on-surface-variant">Entrada do fluxo no portal do colaborador, destacando o acesso ao question&aacute;rio psicossocial diretamente no dashboard operacional.</figcaption>
+                    <div class="gallery-action-bar">
+                        <button type="button" class="gallery-fullscreen-button" data-fullscreen-trigger data-image-src="assets/projetos/Psicosocial/1.png" data-image-alt="Atalho do question&aacute;rio psicossocial no portal" data-image-caption="Entrada do fluxo no portal do colaborador, destacando o acesso ao question&aacute;rio psicossocial diretamente no dashboard operacional.">
+                            Ver em tela cheia
+                        </button>
+                    </div>
+                </figure>
+
+                <figure class="glass-card rounded-3xl overflow-hidden border border-outline-variant/20">
+                    <div class="project-gallery-frame">
+                        <img src="assets/projetos/Psicosocial/2.png" alt="Gest&atilde;o de campanhas do question&aacute;rio psicossocial">
+                    </div>
+                    <figcaption class="p-5 text-sm text-on-surface-variant">Tela administrativa para criar, editar, ativar, inativar e encerrar campanhas, com regra expl&iacute;cita de uma campanha ativa por vez.</figcaption>
+                    <div class="gallery-action-bar">
+                        <button type="button" class="gallery-fullscreen-button" data-fullscreen-trigger data-image-src="assets/projetos/Psicosocial/2.png" data-image-alt="Gest&atilde;o de campanhas do question&aacute;rio psicossocial" data-image-caption="Tela administrativa para criar, editar, ativar, inativar e encerrar campanhas, com regra expl&iacute;cita de uma campanha ativa por vez.">
+                            Ver em tela cheia
+                        </button>
+                    </div>
+                </figure>
+
+                <figure class="glass-card rounded-3xl overflow-hidden border border-outline-variant/20">
+                    <div class="project-gallery-frame">
+                        <img src="assets/projetos/Psicosocial/4.png" alt="Formul&aacute;rio do question&aacute;rio psicossocial">
+                    </div>
+                    <figcaption class="p-5 text-sm text-on-surface-variant">Fluxo de resposta do colaborador com perguntas objetivas, valida&ccedil;&atilde;o obrigat&oacute;ria e experi&ecirc;ncia controlada para impedir duplicidade.</figcaption>
+                    <div class="gallery-action-bar">
+                        <button type="button" class="gallery-fullscreen-button" data-fullscreen-trigger data-image-src="assets/projetos/Psicosocial/4.png" data-image-alt="Formul&aacute;rio do question&aacute;rio psicossocial" data-image-caption="Fluxo de resposta do colaborador com perguntas objetivas, valida&ccedil;&atilde;o obrigat&oacute;ria e experi&ecirc;ncia controlada para impedir duplicidade.">
+                            Ver em tela cheia
+                        </button>
+                    </div>
+                </figure>
+
+                <figure class="glass-card rounded-3xl overflow-hidden border border-outline-variant/20">
+                    <div class="project-gallery-frame">
+                        <img src="assets/projetos/Psicosocial/10.png" alt="Confirma&ccedil;&atilde;o de question&aacute;rio j&aacute; respondido">
+                    </div>
+                    <figcaption class="p-5 text-sm text-on-surface-variant">Confirma&ccedil;&atilde;o de participa&ccedil;&atilde;o quando j&aacute; existe resposta registrada para a campanha ativa, bloqueando nova submiss&atilde;o.</figcaption>
+                    <div class="gallery-action-bar">
+                        <button type="button" class="gallery-fullscreen-button" data-fullscreen-trigger data-image-src="assets/projetos/Psicosocial/10.png" data-image-alt="Confirma&ccedil;&atilde;o de question&aacute;rio j&aacute; respondido" data-image-caption="Confirma&ccedil;&atilde;o de participa&ccedil;&atilde;o quando j&aacute; existe resposta registrada para a campanha ativa, bloqueando nova submiss&atilde;o.">
+                            Ver em tela cheia
+                        </button>
+                    </div>
+                </figure>
+
+                <figure class="glass-card rounded-3xl overflow-hidden border border-outline-variant/20">
+                    <div class="project-gallery-frame">
+                        <img src="assets/projetos/Psicosocial/5.png" alt="Painel psicossocial com KPIs e alertas">
+                    </div>
+                    <figcaption class="p-5 text-sm text-on-surface-variant">Vis&atilde;o executiva do painel com filtros, KPIs, classifica&ccedil;&atilde;o do IRPG, taxa de participa&ccedil;&atilde;o e alertas autom&aacute;ticos de prioriza&ccedil;&atilde;o.</figcaption>
+                    <div class="gallery-action-bar">
+                        <button type="button" class="gallery-fullscreen-button" data-fullscreen-trigger data-image-src="assets/projetos/Psicosocial/5.png" data-image-alt="Painel psicossocial com KPIs e alertas" data-image-caption="Vis&atilde;o executiva do painel com filtros, KPIs, classifica&ccedil;&atilde;o do IRPG, taxa de participa&ccedil;&atilde;o e alertas autom&aacute;ticos de prioriza&ccedil;&atilde;o.">
+                            Ver em tela cheia
+                        </button>
+                    </div>
+                </figure>
+
+                <figure class="glass-card rounded-3xl overflow-hidden border border-outline-variant/20">
+                    <div class="project-gallery-frame">
+                        <img src="assets/projetos/Psicosocial/6.png" alt="Indicadores por dimens&atilde;o e metas NR-01">
+                    </div>
+                    <figcaption class="p-5 text-sm text-on-surface-variant">Tabela de indicadores por dimens&atilde;o e recomenda&ccedil;&otilde;es da NR-01, com metas, criticidade e leitura comparativa por m&eacute;trica.</figcaption>
+                    <div class="gallery-action-bar">
+                        <button type="button" class="gallery-fullscreen-button" data-fullscreen-trigger data-image-src="assets/projetos/Psicosocial/6.png" data-image-alt="Indicadores por dimens&atilde;o e metas NR-01" data-image-caption="Tabela de indicadores por dimens&atilde;o e recomenda&ccedil;&otilde;es da NR-01, com metas, criticidade e leitura comparativa por m&eacute;trica.">
+                            Ver em tela cheia
+                        </button>
+                    </div>
+                </figure>
+
+                <figure class="glass-card rounded-3xl overflow-hidden border border-outline-variant/20">
+                    <div class="project-gallery-frame">
+                        <img src="assets/projetos/Psicosocial/7.png" alt="Gr&aacute;ficos de respostas e risco por pergunta">
+                    </div>
+                    <figcaption class="p-5 text-sm text-on-surface-variant">Conjunto de gr&aacute;ficos com m&eacute;dia das respostas, risco estimado por pergunta, distribui&ccedil;&atilde;o por tempo de empresa e top cargos por participa&ccedil;&atilde;o.</figcaption>
+                    <div class="gallery-action-bar">
+                        <button type="button" class="gallery-fullscreen-button" data-fullscreen-trigger data-image-src="assets/projetos/Psicosocial/7.png" data-image-alt="Gr&aacute;ficos de respostas e risco por pergunta" data-image-caption="Conjunto de gr&aacute;ficos com m&eacute;dia das respostas, risco estimado por pergunta, distribui&ccedil;&atilde;o por tempo de empresa e top cargos por participa&ccedil;&atilde;o.">
+                            Ver em tela cheia
+                        </button>
+                    </div>
+                </figure>
+
+                <figure class="glass-card rounded-3xl overflow-hidden border border-outline-variant/20">
+                    <div class="project-gallery-frame">
+                        <img src="assets/projetos/Psicosocial/8.png" alt="Evolu&ccedil;&atilde;o hist&oacute;rica e an&aacute;lise qualitativa">
+                    </div>
+                    <figcaption class="p-5 text-sm text-on-surface-variant">Camada qualitativa e temporal do painel, combinando evolu&ccedil;&atilde;o hist&oacute;rica, categoriza&ccedil;&atilde;o da pergunta aberta e nuvem de palavras.</figcaption>
+                    <div class="gallery-action-bar">
+                        <button type="button" class="gallery-fullscreen-button" data-fullscreen-trigger data-image-src="assets/projetos/Psicosocial/8.png" data-image-alt="Evolu&ccedil;&atilde;o hist&oacute;rica e an&aacute;lise qualitativa" data-image-caption="Camada qualitativa e temporal do painel, combinando evolu&ccedil;&atilde;o hist&oacute;rica, categoriza&ccedil;&atilde;o da pergunta aberta e nuvem de palavras.">
+                            Ver em tela cheia
+                        </button>
+                    </div>
+                </figure>
+
+                <figure class="glass-card rounded-3xl overflow-hidden border border-outline-variant/20">
+                    <div class="project-gallery-frame">
+                        <img src="assets/projetos/Psicosocial/9.png" alt="Listagem de planos de a&ccedil;&atilde;o NR-01">
+                    </div>
+                    <figcaption class="p-5 text-sm text-on-surface-variant">M&oacute;dulo operacional de planos de a&ccedil;&atilde;o com KPIs, filtros avan&ccedil;ados, atalhos para novo plano, relat&oacute;rio e exporta&ccedil;&atilde;o CSV.</figcaption>
+                    <div class="gallery-action-bar">
+                        <button type="button" class="gallery-fullscreen-button" data-fullscreen-trigger data-image-src="assets/projetos/Psicosocial/9.png" data-image-alt="Listagem de planos de a&ccedil;&atilde;o NR-01" data-image-caption="M&oacute;dulo operacional de planos de a&ccedil;&atilde;o com KPIs, filtros avan&ccedil;ados, atalhos para novo plano, relat&oacute;rio e exporta&ccedil;&atilde;o CSV.">
+                            Ver em tela cheia
+                        </button>
+                    </div>
+                </figure>
+
+                <figure class="glass-card rounded-3xl overflow-hidden border border-outline-variant/20">
+                    <div class="project-gallery-frame">
+                        <img src="assets/projetos/Psicosocial/3.png" alt="Cadastro de novo plano de a&ccedil;&atilde;o NR-01">
+                    </div>
+                    <figcaption class="p-5 text-sm text-on-surface-variant">Formul&aacute;rio para criar plano de a&ccedil;&atilde;o corretivo, preventivo ou mitigador com prioridade, respons&aacute;vel, prazos, causa raiz e evid&ecirc;ncias.</figcaption>
+                    <div class="gallery-action-bar">
+                        <button type="button" class="gallery-fullscreen-button" data-fullscreen-trigger data-image-src="assets/projetos/Psicosocial/3.png" data-image-alt="Cadastro de novo plano de a&ccedil;&atilde;o NR-01" data-image-caption="Formul&aacute;rio para criar plano de a&ccedil;&atilde;o corretivo, preventivo ou mitigador com prioridade, respons&aacute;vel, prazos, causa raiz e evid&ecirc;ncias.">
+                            Ver em tela cheia
+                        </button>
+                    </div>
+                </figure>
+            </div>
+        </section>
+
+        <section class="max-w-7xl mx-auto px-6 lg:px-8 py-12 md:py-20 reveal">
+            <div class="grid grid-cols-1 lg:grid-cols-[0.95fr_1.05fr] gap-8">
+                <div class="glass-card rounded-3xl p-8 md:p-10">
+                    <h2 class="text-3xl md:text-4xl font-headline font-bold mb-6">Contexto e problema</h2>
+                    <div class="space-y-5 text-on-surface-variant">
+                        <p>
+                            A funcionalidade foi inserida em uma plataforma corporativa de gest&atilde;o de pessoas, sa&uacute;de ocupacional e conformidade trabalhista.
+                        </p>
+                        <p>
+                            Antes da abordagem integrada, campanhas tinham pouca governan&ccedil;a de status e per&iacute;odo, havia risco de respostas duplicadas, dificuldade para converter respostas em indicadores acion&aacute;veis e baixa rastreabilidade entre insight e plano execut&aacute;vel.
+                        </p>
+                        <p>
+                            Tamb&eacute;m existia o risco de leitura individualizada de dados sens&iacute;veis, em vez de uma vis&atilde;o agregada orientada &agrave; preven&ccedil;&atilde;o e conformidade.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-3xl p-8 md:p-10">
+                    <h2 class="text-3xl md:text-4xl font-headline font-bold mb-6">Solu&ccedil;&atilde;o implementada</h2>
+                    <ul class="content-list text-on-surface-variant">
+                        <li>Gest&atilde;o de campanhas com cadastro, edi&ccedil;&atilde;o, datas, situa&ccedil;&atilde;o e ativa&ccedil;&atilde;o exclusiva para controlar elegibilidade de resposta.</li>
+                        <li>Fluxo do colaborador condicionado ao estado da campanha, bloqueando envio quando n&atilde;o h&aacute; campanha ativa ou quando a resposta j&aacute; foi registrada.</li>
+                        <li>Question&aacute;rio com 23 perguntas objetivas e 1 pergunta aberta opcional, valida&ccedil;&atilde;o obrigat&oacute;ria e preserva&ccedil;&atilde;o de respostas em caso de erro.</li>
+                        <li>Painel anal&iacute;tico com filtros, IRPG, alertas por limiar, an&aacute;lise temporal, hotspots e leitura qualitativa da pergunta aberta.</li>
+                        <li>M&oacute;dulo de planos de a&ccedil;&atilde;o NR-01 integrado ao diagn&oacute;stico para fechar o ciclo medir, priorizar, agir e acompanhar.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-7xl mx-auto px-6 lg:px-8 py-12 md:py-20 reveal">
+            <div class="grid grid-cols-1 lg:grid-cols-[0.95fr_1.05fr] gap-8">
+                <div class="glass-card rounded-3xl p-8 md:p-10">
+                    <h2 class="text-3xl md:text-4xl font-headline font-bold mb-6">Tecnologias utilizadas</h2>
+                    <ul class="content-list text-on-surface-variant">
+                        <li>Back-end em PHP com arquitetura MVC e consultas SQL relacionais com agrega&ccedil;&otilde;es, `COUNT`, `AVG`, `GROUP BY` e filtros din&acirc;micos.</li>
+                        <li>Front-end em HTML, CSS, JavaScript, jQuery e componentes responsivos por perfil de uso.</li>
+                        <li>Google Charts para visualiza&ccedil;&atilde;o de colunas, barras, pizza, linha e tabelas anal&iacute;ticas.</li>
+                        <li>Tour guiado com persist&ecirc;ncia em `localStorage` para onboarding do usu&aacute;rio de neg&oacute;cio.</li>
+                        <li>Uso de sess&atilde;o e contexto de permiss&atilde;o para separar experi&ecirc;ncias de colaborador, RH e SSMA.</li>
+                    </ul>
+                </div>
+
+                <div class="glass-card rounded-3xl p-8 md:p-10">
+                    <h2 class="text-3xl md:text-4xl font-headline font-bold mb-6">Desafios t&eacute;cnicos</h2>
+                    <ul class="content-list text-on-surface-variant">
+                        <li>Conciliar privacidade com utilidade anal&iacute;tica, resolvido com tokeniza&ccedil;&atilde;o an&ocirc;nima, exibi&ccedil;&atilde;o agregada e supress&atilde;o de grupos pequenos.</li>
+                        <li>Normalizar perguntas com escalas e polaridades diferentes na mesma m&eacute;trica global de risco.</li>
+                        <li>Evitar sobreposi&ccedil;&atilde;o operacional de campanhas por meio de controle de status com ativa&ccedil;&atilde;o exclusiva.</li>
+                        <li>Transformar dashboards em execu&ccedil;&atilde;o real com planos de a&ccedil;&atilde;o, filtros, indicadores de prazo e taxa de resolu&ccedil;&atilde;o.</li>
+                        <li>Facilitar ado&ccedil;&atilde;o por usu&aacute;rios n&atilde;o t&eacute;cnicos com KPIs de topo, alertas priorizados e tour contextual.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-7xl mx-auto px-6 lg:px-8 py-12 md:py-20 reveal">
+            <div class="glass-card rounded-3xl p-8 md:p-10">
+                <div class="grid grid-cols-1 lg:grid-cols-[0.95fr_1.05fr] gap-8 items-start">
+                    <div>
+                        <h2 class="text-3xl md:text-4xl font-headline font-bold mb-4">Resultados e boas pr&aacute;ticas</h2>
+                        <p class="text-on-surface-variant leading-relaxed">
+                            A solu&ccedil;&atilde;o estruturou um pipeline completo de risco psicossocial, elevou a confiabilidade estat&iacute;stica com regra de resposta &uacute;nica, melhorou a prioriza&ccedil;&atilde;o com alertas e hotspots e adicionou governan&ccedil;a operacional para execu&ccedil;&atilde;o de planos NR-01. Tudo isso preservando privacidade com leitura exclusivamente agregada.
+                        </p>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="rounded-2xl bg-surface-container-high p-5 border border-outline-variant/20">
+                            <div class="text-2xl font-headline font-bold text-primary mb-2">Privacidade</div>
+                            <p class="text-sm text-on-surface-variant">Tokeniza&ccedil;&atilde;o determin&iacute;stica e n&atilde;o exibi&ccedil;&atilde;o individual de respostas sens&iacute;veis.</p>
+                        </div>
+                        <div class="rounded-2xl bg-surface-container-high p-5 border border-outline-variant/20">
+                            <div class="text-2xl font-headline font-bold text-primary mb-2">Governan&ccedil;a</div>
+                            <p class="text-sm text-on-surface-variant">Ciclo de campanha controlado, coleta eleg&iacute;vel e indicadores com regras expl&iacute;citas.</p>
+                        </div>
+                        <div class="rounded-2xl bg-surface-container-high p-5 border border-outline-variant/20">
+                            <div class="text-2xl font-headline font-bold text-primary mb-2">Priorizac&atilde;o</div>
+                            <p class="text-sm text-on-surface-variant">IRPG, alertas e hotspots para converter resposta em foco de interven&ccedil;&atilde;o.</p>
+                        </div>
+                        <div class="rounded-2xl bg-surface-container-high p-5 border border-outline-variant/20">
+                            <div class="text-2xl font-headline font-bold text-primary mb-2">Execu&ccedil;&atilde;o</div>
+                            <p class="text-sm text-on-surface-variant">Planos de a&ccedil;&atilde;o com prazos, respons&aacute;veis, status e taxa de resolu&ccedil;&atilde;o para fechar o ciclo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="w-full py-12 bg-background border-t border-outline-variant/20">
+        <div class="flex flex-col md:flex-row justify-between items-center px-6 md:px-12 max-w-7xl mx-auto gap-6">
+            <div class="text-center md:text-left">
+                <div class="text-on-surface text-sm font-headline font-bold tracking-wide">Daniel Torres</div>
+                <div class="text-on-surface-variant text-xs tracking-widest uppercase">
+                    Desenvolvedor full-stack em Brasilia, DF
+                </div>
+            </div>
+            <div class="flex flex-wrap justify-center gap-6">
+                <a href="index.html#projects" class="text-on-surface-variant hover:text-primary hover:-translate-y-0.5 transition-all text-xs tracking-widest uppercase">Projetos</a>
+                <a href="https://github.com/devdanieltorres" target="_blank" rel="noreferrer" class="text-on-surface-variant hover:text-primary hover:-translate-y-0.5 transition-all text-xs tracking-widest uppercase">GitHub</a>
+                <a href="https://www.linkedin.com/in/daniel-torres-0851581a0/" target="_blank" rel="noreferrer" class="text-on-surface-variant hover:text-primary hover:-translate-y-0.5 transition-all text-xs tracking-widest uppercase">LinkedIn</a>
+                <a href="mailto:Danieltorres2706@hotmail.com" class="text-on-surface-variant hover:text-primary hover:-translate-y-0.5 transition-all text-xs tracking-widest uppercase">Email</a>
+            </div>
+        </div>
+    </footer>
+
+    <div class="lightbox hidden" data-lightbox aria-hidden="true">
+        <div class="lightbox__dialog">
+            <button type="button" class="lightbox__close" data-lightbox-close aria-label="Fechar visualiza&ccedil;&atilde;o">
+                &times;
+            </button>
+            <div class="lightbox__content">
+                <div class="lightbox__image-wrap">
+                    <img class="lightbox__image" data-lightbox-image src="" alt="">
+                </div>
+                <p class="lightbox__caption" data-lightbox-caption></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+1. Título da Funcionalidade
+Painel de Saldos de Banco de Horas com Consulta por Empresa e Período
+2. Contexto
+A funcionalidade está inserida em um sistema web de gestão de RH e jornada, com foco em apuração de banco de horas.
+Ela atende à necessidade de disponibilizar, para usuários administrativos, uma visão operacional dos saldos por período, com suporte a filtros, navegação e análise tabular para acompanhamento de horas acumuladas.
+3. Problema
+Antes de um painel centralizado, a leitura de saldos de banco de horas tende a ficar fragmentada entre consultas pontuais, dificultando:
+seleção consistente de período por empresa;
+conferência rápida em tabela com mecanismos de busca;
+produtividade na análise de grandes volumes de colaboradores;
+padronização de acesso conforme escopo de empresas permitidas.
+Esse cenário aumenta retrabalho operacional e risco de leitura incompleta dos dados de ponto.
+4. Solução Implementada
+A implementação combina controle de acesso no backend e interação dinâmica no frontend.
+Backend (controller)
+Define contexto do usuário logado e perfil ativo do módulo.
+Carrega empresas disponíveis conforme regras de acesso (incluindo cenários com múltiplas permissões por perfil).
+Restringe dados por empresa quando o ambiente está configurado para escopo individual.
+Entrega dados base para renderização da tela de saldos e inicialização de componentes da interface.
+Mantém identificador de módulo para rotear corretamente as requisições assíncronas subsequentes.
+Frontend (view)
+Exibe formulário de entrada com seleção de empresa e período.
+Ao selecionar empresa, dispara busca assíncrona dos períodos disponíveis.
+Seleciona automaticamente o período mais recente e carrega os itens do relatório sem recarregar a página.
+Renderiza o conteúdo retornado em um container dedicado para navegação contínua.
+Integra recursos de busca e filtragem tabular (DataTables), além de suporte a seleção de linhas e filtros avançados.
+Inclui visualização de loading/spinner e feedbacks de sucesso/erro para ações assíncronas.
+Decisões técnicas relevantes
+uso de carregamento progressivo (empresa → períodos → itens) para reduzir custo inicial de renderização;
+desacoplamento entre tela-base e conteúdo do relatório via AJAX;
+reaproveitamento de infraestrutura comum de filtros e tabela para aumentar produtividade operacional.
+5. Tecnologias Utilizadas
+Backend: PHP (MVC) com sessão/perfil e Query Builder para regras de acesso e carga de dados.
+Frontend: HTML, CSS, JavaScript e jQuery.
+Componentes de UI: Select2 para seletores pesquisáveis; DataTables para busca/filtro tabular.
+Integração assíncrona: requisições AJAX para buscar períodos e montar relatório por período.
+Utilitários adicionais presentes no módulo: bibliotecas de exportação e manipulação de tabelas.
+6. Desafios Técnicos
+Controle de visibilidade por empresa/perfil
+Solução: composição de lista de empresas permitidas baseada em relacionamento usuário-perfil-empresa.
+Dependência entre filtros (empresa e período)
+Solução: fluxo encadeado com atualização automática de período após seleção da empresa.
+Escalabilidade da consulta em listas extensas
+Solução: carregamento sob demanda e aplicação de DataTables para refino local.
+Experiência de uso em operações repetitivas
+Solução: pré-seleção do último período e atualização automática do relatório para reduzir cliques.
+7. Resultados Obtidos
+Redução do tempo para localizar e revisar saldos de banco de horas.
+Melhoria de governança de acesso, exibindo somente empresas compatíveis com o perfil do usuário.
+Maior fluidez de navegação com atualização parcial da tela (sem refresh completo).
+Aumento da eficiência analítica com filtros e busca em tabela para grandes volumes de dados.
+8. Boas Práticas Aplicadas
+Organização: separação entre preparação de contexto (controller) e comportamento de consulta (view/JS).
+Segurança: aplicação de escopo por sessão/perfil antes da exposição de dados de empresas.
+Performance: fluxo incremental de carga e renderização assíncrona por etapa.
+Manutenibilidade: estrutura modular de eventos JS e endpoints dedicados por responsabilidade.
+Usabilidade: indicadores de carregamento, seleção automática de período e interface orientada a tarefa.
+9. Resumo para Portfólio
+Desenvolvi um painel de saldos de banco de horas com fluxo assíncrono de consulta por empresa e período, orientado para operação de RH em alto volume. A solução aplica regras de acesso por perfil, carrega períodos dinamicamente e monta o relatório sem recarregar a página. Também integrei busca e filtros tabulares para acelerar conferências e análises. O resultado foi maior produtividade, melhor governança de dados e experiência operacional mais fluida.

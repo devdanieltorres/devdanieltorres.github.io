@@ -1,0 +1,45 @@
+1. Título da Funcionalidade
+Cadastro de Assinatura Eletrônica por Desenho com Validação e Persistência Segura
+2. Contexto
+A funcionalidade está inserida em um portal web corporativo de autosserviço, na jornada de assinatura digital de documentos internos.
+Ela atende à necessidade de permitir que o colaborador registre sua assinatura de forma rápida, padronizada e reutilizável em processos documentais eletrônicos.
+3. Problema
+Sem um fluxo dedicado de cadastro, o uso de assinatura em documentos digitais fica sujeito a inconsistências de formato, baixa usabilidade e falhas de validação.
+Também havia a necessidade de garantir que apenas imagens válidas fossem armazenadas, com rastreabilidade de data de atualização.
+4. Solução Implementada
+A solução foi implementada com interface modal e backend dedicado:
+Camada de UI: exibe status da assinatura atual, data da última atualização e área de desenho em canvas para captura da assinatura.
+Captura da assinatura: após o usuário desenhar, o canvas é convertido para imagem Base64 em PNG no frontend.
+Validação pré-envio: bloqueio de envio quando não há assinatura desenhada e feedback visual imediato ao usuário.
+Persistência no backend: endpoint recebe a imagem, valida conteúdo Base64, decodifica, verifica assinatura binária de PNG e grava no cadastro do colaborador junto ao timestamp.
+Feedback e atualização em tela: retorno JSON orienta mensagens de sucesso/erro e atualização da prévia sem necessidade de recarregar a página.
+Decisões técnicas relevantes:
+Padronização em PNG para garantir consistência de formato.
+Validação de assinatura de arquivo (header binário) para reduzir risco de conteúdo inválido.
+Registro de data/hora em timezone definido para auditoria funcional.
+5. Tecnologias Utilizadas
+Frontend: HTML, CSS, JavaScript e jQuery.
+Captura de imagem: canvas HTML5 + html2canvas.
+Backend: PHP (controller MVC) com resposta JSON.
+Persistência: banco de dados relacional (atualização de campos de assinatura e data).
+UX: modal responsivo com alertas e estado de carregamento.
+6. Desafios Técnicos
+Garantir assinatura real antes do envio.
+Solução: verificação explícita de interação no canvas e bloqueio preventivo.
+Evitar armazenamento de arquivo inválido/disfarçado.
+Solução: dupla validação (Base64 válido + checagem de header PNG).
+Manter experiência fluida em operação assíncrona.
+Solução: AJAX com controle de botão, loader e mensagens contextuais.
+7. Resultados Obtidos
+Cadastro de assinatura mais simples e orientado para o usuário final.
+Padronização técnica do ativo de assinatura (formato e validação).
+Maior confiabilidade no armazenamento e reaproveitamento em documentos digitais.
+Redução de erros operacionais com feedback imediato e tratamento claro de falhas.
+8. Boas Práticas Aplicadas
+Organização: separação clara entre apresentação, captura e persistência.
+Segurança: validação de entrada no servidor e rejeição de payload inválido.
+Performance: processamento assíncrono com atualização parcial da interface.
+Manutenibilidade: endpoint coeso, retorno estruturado e mensagens de erro legíveis.
+Rastreabilidade: registro de data/hora de atualização da assinatura.
+9. Resumo para Portfólio
+Implementei um módulo de cadastro de assinatura eletrônica com captura via canvas, envio assíncrono e validação robusta no backend. A solução garante padronização em PNG, bloqueia envios sem assinatura e rejeita conteúdos inválidos antes de persistir no banco. Também incluí atualização imediata da pré-visualização e registro de data/hora da assinatura para rastreabilidade. O resultado foi maior confiabilidade técnica e melhor experiência de uso no fluxo documental digital.

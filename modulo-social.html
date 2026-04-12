@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M&oacute;dulo Social | Daniel Torres</title>
+    <meta name="description" content="Case do mural interno de publica&ccedil;&otilde;es com gest&atilde;o de conte&uacute;do e notifica&ccedil;&otilde;es.">
+    <meta name="theme-color" content="#060e20">
+    <meta name="author" content="Daniel Torres">
+    <meta property="og:title" content="M&oacute;dulo Social | Daniel Torres">
+    <meta property="og:description" content="Projeto de comunica&ccedil;&atilde;o interna com feed corporativo, publica&ccedil;&atilde;o ass&iacute;ncrona, gest&atilde;o administrativa e notifica&ccedil;&otilde;es por empresa.">
+    <meta property="og:type" content="website">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        headline: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#81ecff',
+                        'primary-dim': '#00d4ec',
+                        tertiary: '#70aaff',
+                        background: '#060e20',
+                        surface: '#060e20',
+                        'surface-container': '#0f1930',
+                        'surface-container-high': '#141f38',
+                        'surface-container-highest': '#192540',
+                        'on-surface': '#dee5ff',
+                        'on-surface-variant': '#a3aac4',
+                        'outline-variant': '#40485d',
+                        success: '#34d399',
+                        warning: '#fbbf24',
+                    }
+                }
+            }
+        };
+    </script>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-background text-on-surface font-sans antialiased overflow-x-hidden selection:bg-primary/20 selection:text-on-surface">
+    <a href="#project-content" class="skip-link">Pular para o conte&uacute;do</a>
+
+    <header class="fixed top-0 w-full z-50 bg-[#060e20]/90 backdrop-blur-xl border-b border-outline-variant/10">
+        <div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
+            <a href="index.html#home" class="flex items-center gap-3 group" aria-label="Voltar para o in&iacute;cio do portf&oacute;lio">
+                <span class="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary font-headline font-bold">DT</span>
+                <div>
+                    <span class="block text-base md:text-lg font-bold tracking-tight text-on-surface font-headline">DANIEL TORRES</span>
+                    <span class="block text-[10px] uppercase tracking-[0.3em] text-on-surface-variant">Projeto detalhado</span>
+                </div>
+            </a>
+
+            <nav class="hidden lg:flex gap-8 items-center" aria-label="Navega&ccedil;&atilde;o principal">
+                <a href="index.html#about" class="nav-link text-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-all">Sobre</a>
+                <a href="index.html#experience" class="nav-link text-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-all">Experi&ecirc;ncia</a>
+                <a href="index.html#projects" class="nav-link text-sm uppercase tracking-widest text-primary transition-all">Projetos</a>
+                <a href="index.html#contact" class="nav-link text-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-all">Contato</a>
+                <a href="index.html#projects" class="ml-4 px-6 py-2 bg-primary text-background font-bold rounded-lg hover:scale-105 transition-all focus:outline-none focus:ring-2 focus:ring-primary">
+                    Voltar ao portf&oacute;lio
+                </a>
+            </nav>
+
+            <button id="menu-toggle" class="lg:hidden text-primary p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" aria-controls="mobile-menu" aria-expanded="false" aria-label="Abrir menu">
+                <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 w-full bg-surface-container border-b border-outline-variant/20 shadow-2xl">
+            <nav class="flex flex-col p-6 gap-4" aria-label="Navega&ccedil;&atilde;o mobile">
+                <a href="index.html#about" class="mobile-nav-link text-lg font-headline uppercase tracking-widest py-3 border-b border-outline-variant/10">Sobre</a>
+                <a href="index.html#experience" class="mobile-nav-link text-lg font-headline uppercase tracking-widest py-3 border-b border-outline-variant/10">Experi&ecirc;ncia</a>
+                <a href="index.html#projects" class="mobile-nav-link text-lg font-headline uppercase tracking-widest py-3 border-b border-outline-variant/10 text-primary">Projetos</a>
+                <a href="index.html#contact" class="mobile-nav-link text-lg font-headline uppercase tracking-widest py-3 border-b border-outline-variant/10">Contato</a>
+                <a href="index.html#projects" class="w-full mt-4 px-6 py-4 bg-primary text-background font-bold rounded-xl text-center">
+                    Voltar ao portf&oacute;lio
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="project-content" class="relative overflow-x-hidden">
+        <div class="fixed inset-0 hero-gradient pointer-events-none -z-10"></div>
+        <div class="fixed -top-24 -right-24 w-64 md:w-96 h-64 md:h-96 bg-primary/5 rounded-full blur-[80px] md:blur-[100px] pointer-events-none -z-10"></div>
+        <div class="fixed top-1/3 -left-24 w-64 md:w-96 h-64 md:h-96 bg-tertiary/10 rounded-full blur-[90px] md:blur-[120px] pointer-events-none -z-10"></div>
+
+        <section class="max-w-7xl mx-auto px-6 lg:px-8 pt-28 md:pt-36 pb-16 md:pb-24 reveal">
+            <div class="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-10 items-center">
+                <div class="space-y-6">
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-4 py-2 rounded-full bg-primary/10 text-primary text-xs uppercase tracking-[0.25em]">Projeto real</span>
+                        <span class="px-4 py-2 rounded-full bg-surface-container-high text-on-surface-variant text-xs uppercase tracking-[0.25em]">Comunica&ccedil;&atilde;o interna</span>
+                        <span class="px-4 py-2 rounded-full bg-surface-container-high text-on-surface-variant text-xs uppercase tracking-[0.25em]">Feed + Admin</span>
+                        <span class="px-4 py-2 rounded-full bg-surface-container-high text-on-surface-variant text-xs uppercase tracking-[0.25em]">Case completo</span>
+                    </div>
+                    <div>
+                        <p class="text-sm uppercase tracking-[0.35em] text-on-surface-variant mb-3">Case detalhado</p>
+                        <h1 class="text-4xl md:text-6xl font-headline font-bold tracking-tight leading-[1.05]">
+                            Mural interno de publica&ccedil;&otilde;es com gest&atilde;o de conte&uacute;do e notifica&ccedil;&otilde;es
+                        </h1>
+                    </div>
+                    <p class="text-lg md:text-xl text-on-surface-variant leading-relaxed">
+                        Solu&ccedil;&atilde;o criada para centralizar an&uacute;ncios e conte&uacute;dos institucionais em um feed corporativo, permitindo leitura pelos colaboradores e publica&ccedil;&atilde;o ou remo&ccedil;&atilde;o por usu&aacute;rios autorizados.
+                    </p>
+                    <p class="text-base md:text-lg text-on-surface-variant leading-relaxed">
+                        O m&oacute;dulo foi estruturado em tr&ecirc;s frentes: feed de leitura, formul&aacute;rio ass&iacute;ncrono de publica&ccedil;&atilde;o e tabela administrativa para exclus&atilde;o, com controle de escopo por empresa e disparo de notifica&ccedil;&otilde;es internas.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#galeria" class="px-8 py-4 bg-primary text-background font-bold rounded-2xl text-center">Ver galeria</a>
+                        <a href="index.html#projects" class="px-8 py-4 border border-outline-variant/30 rounded-2xl text-center hover:bg-surface-container-high transition-all">Voltar para projetos</a>
+                    </div>
+                </div>
+
+                <figure class="glass-card rounded-3xl overflow-hidden border border-outline-variant/20">
+                    <img src="assets/projetos/modulo%20social/3.png" alt="Feed do mural interno com conte&uacute;dos multim&iacute;dia" class="w-full h-full object-cover object-top">
+                </figure>
+            </div>
+        </section>
+
+        <section class="max-w-7xl mx-auto px-6 lg:px-8 pb-12 md:pb-20 reveal">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="glass-card rounded-3xl p-6">
+                    <div class="text-2xl font-headline font-bold text-primary mb-2">Feed corporativo</div>
+                    <p class="text-sm text-on-surface-variant">Leitura centralizada de publica&ccedil;&otilde;es com suporte a imagem, v&iacute;deo direto e v&iacute;deo incorporado.</p>
+                </div>
+                <div class="glass-card rounded-3xl p-6">
+                    <div class="text-2xl font-headline font-bold text-primary mb-2">Publica&ccedil;&atilde;o ass&iacute;ncrona</div>
+                    <p class="text-sm text-on-surface-variant">Cadastro de conte&uacute;dos para m&uacute;ltiplas empresas com formul&aacute;rio sem recarga total da tela.</p>
+                </div>
+                <div class="glass-card rounded-3xl p-6">
+                    <div class="text-2xl font-headline font-bold text-primary mb-2">Governan&ccedil;a ativa</div>
+                    <p class="text-sm text-on-surface-variant">Gest&atilde;o administrativa com busca, pagina&ccedil;&atilde;o, remo&ccedil;&atilde;o e notifica&ccedil;&otilde;es por escopo organizacional.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="galeria" class="max-w-7xl mx-auto px-6 lg:px-8 py-12 md:py-20 reveal">
+            <div class="mb-10">
+                <h2 class="text-xs uppercase tracking-[0.35em] text-primary mb-3">Galeria</h2>
+                <h3 class="text-3xl md:text-5xl font-headline font-bold tracking-tight">Vis&otilde;es da funcionalidade</h3>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <figure class="glass-card rounded-3xl overflow-hidden border border-outline-variant/20">
+                    <div class="project-gallery-frame">
+                        <img src="assets/projetos/modulo%20social/3.png" alt="Feed do mural interno com conte&uacute;do multim&iacute;dia">
+                    </div>
+                    <figcaption class="p-5 text-sm text-on-surface-variant">Feed principal do mural exibindo publica&ccedil;&otilde;es ordenadas por data, com autor identificado e renderiza&ccedil;&atilde;o autom&aacute;tica do formato de m&iacute;dia.</figcaption>
+                    <div class="gallery-action-bar">
+                        <button type="button" class="gallery-fullscreen-button" data-fullscreen-trigger data-image-src="assets/projetos/modulo%20social/3.png" data-image-alt="Feed do mural interno com conte&uacute;do multim&iacute;dia" data-image-caption="Feed principal do mural exibindo publica&ccedil;&otilde;es ordenadas por data, com autor identificado e renderiza&ccedil;&atilde;o autom&aacute;tica do formato de m&iacute;dia.">
+                            Ver em tela cheia
+                        </button>
+                    </div>
+                </figure>
+
+                <figure class="glass-card rounded-3xl overflow-hidden border border-outline-variant/20">
+                    <div class="project-gallery-frame">
+                        <img src="assets/projetos/modulo%20social/1.png" alt="Tela de cria&ccedil;&atilde;o de nova publica&ccedil;&atilde;o">
+                    </div>
+                    <figcaption class="p-5 text-sm text-on-surface-variant">Fluxo de publica&ccedil;&atilde;o com descri&ccedil;&atilde;o, link de m&iacute;dia e sele&ccedil;&atilde;o de empresas para distribuir o conte&uacute;do a m&uacute;ltiplos destinos.</figcaption>
+                    <div class="gallery-action-bar">
+                        <button type="button" class="gallery-fullscreen-button" data-fullscreen-trigger data-image-src="assets/projetos/modulo%20social/1.png" data-image-alt="Tela de cria&ccedil;&atilde;o de nova publica&ccedil;&atilde;o" data-image-caption="Fluxo de publica&ccedil;&atilde;o com descri&ccedil;&atilde;o, link de m&iacute;dia e sele&ccedil;&atilde;o de empresas para distribuir o conte&uacute;do a m&uacute;ltiplos destinos.">
+                            Ver em tela cheia
+                        </button>
+                    </div>
+                </figure>
+
+                <figure class="glass-card rounded-3xl overflow-hidden border border-outline-variant/20 lg:col-span-2">
+                    <div class="project-gallery-frame">
+                        <img src="assets/projetos/modulo%20social/2.png" alt="Tabela administrativa para exclus&atilde;o de publica&ccedil;&otilde;es">
+                    </div>
+                    <figcaption class="p-5 text-sm text-on-surface-variant">Painel administrativo de remo&ccedil;&atilde;o com DataTables, pagina&ccedil;&atilde;o, busca e exclus&atilde;o ass&iacute;ncrona para controle r&aacute;pido do conte&uacute;do ativo.</figcaption>
+                    <div class="gallery-action-bar">
+                        <button type="button" class="gallery-fullscreen-button" data-fullscreen-trigger data-image-src="assets/projetos/modulo%20social/2.png" data-image-alt="Tabela administrativa para exclus&atilde;o de publica&ccedil;&otilde;es" data-image-caption="Painel administrativo de remo&ccedil;&atilde;o com DataTables, pagina&ccedil;&atilde;o, busca e exclus&atilde;o ass&iacute;ncrona para controle r&aacute;pido do conte&uacute;do ativo.">
+                            Ver em tela cheia
+                        </button>
+                    </div>
+                </figure>
+            </div>
+        </section>
+
+        <section class="max-w-7xl mx-auto px-6 lg:px-8 py-12 md:py-20 reveal">
+            <div class="grid grid-cols-1 lg:grid-cols-[0.95fr_1.05fr] gap-8">
+                <div class="glass-card rounded-3xl p-8 md:p-10">
+                    <h2 class="text-3xl md:text-4xl font-headline font-bold mb-6">Contexto e problema</h2>
+                    <div class="space-y-5 text-on-surface-variant">
+                        <p>
+                            A funcionalidade foi criada dentro de uma plataforma corporativa de gest&atilde;o de pessoas com foco em comunica&ccedil;&atilde;o interna.
+                        </p>
+                        <p>
+                            Antes da implementa&ccedil;&atilde;o, an&uacute;ncios e conte&uacute;dos institucionais tendiam a ficar fragmentados entre canais externos ou processos manuais, com baixa rastreabilidade e pouca governan&ccedil;a de publica&ccedil;&atilde;o.
+                        </p>
+                        <p>
+                            Isso reduzia o alcance das atualiza&ccedil;&otilde;es, aumentava o esfor&ccedil;o para controlar conte&uacute;do ativo e dificultava a distribui&ccedil;&atilde;o consistente das mensagens.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-3xl p-8 md:p-10">
+                    <h2 class="text-3xl md:text-4xl font-headline font-bold mb-6">Solu&ccedil;&atilde;o implementada</h2>
+                    <ul class="content-list text-on-surface-variant">
+                        <li>M&oacute;dulo completo com tr&ecirc;s fluxos principais: feed de leitura, cria&ccedil;&atilde;o de publica&ccedil;&otilde;es e remo&ccedil;&atilde;o administrativa.</li>
+                        <li>Controller em MVC validando sess&atilde;o, perfil ativo e contexto do usu&aacute;rio, incluindo permiss&otilde;es e escopo organizacional.</li>
+                        <li>Renderiza&ccedil;&atilde;o condicional para imagem, v&iacute;deo local ou link de v&iacute;deo incorporado no mural.</li>
+                        <li>Publica&ccedil;&atilde;o ass&iacute;ncrona para uma ou mais empresas selecionadas com disparo de notifica&ccedil;&otilde;es para colaboradores eleg&iacute;veis.</li>
+                        <li>Exclus&atilde;o via AJAX com feedback visual e atualiza&ccedil;&atilde;o controlada da interface.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-7xl mx-auto px-6 lg:px-8 py-12 md:py-20 reveal">
+            <div class="grid grid-cols-1 lg:grid-cols-[0.95fr_1.05fr] gap-8">
+                <div class="glass-card rounded-3xl p-8 md:p-10">
+                    <h2 class="text-3xl md:text-4xl font-headline font-bold mb-6">Tecnologias utilizadas</h2>
+                    <ul class="content-list text-on-surface-variant">
+                        <li>Back-end em PHP com arquitetura MVC, consultas SQL, joins, inserts, updates e deletes.</li>
+                        <li>Front-end em HTML, CSS, JavaScript e jQuery para intera&ccedil;&otilde;es e feedback imediato.</li>
+                        <li>DataTables para listagem administrativa com busca, pagina&ccedil;&atilde;o e opera&ccedil;&atilde;o em volume.</li>
+                        <li>Select com busca para sele&ccedil;&atilde;o m&uacute;ltipla de empresas na publica&ccedil;&atilde;o.</li>
+                        <li>AJAX e `FormData` para envios ass&iacute;ncronos de formul&aacute;rio e comandos de exclus&atilde;o.</li>
+                    </ul>
+                </div>
+
+                <div class="glass-card rounded-3xl p-8 md:p-10">
+                    <h2 class="text-3xl md:text-4xl font-headline font-bold mb-6">Desafios t&eacute;cnicos</h2>
+                    <ul class="content-list text-on-surface-variant">
+                        <li>Renderiza&ccedil;&atilde;o heterog&ecirc;nea de m&iacute;dia, resolvida por valida&ccedil;&atilde;o de URL/extens&atilde;o e estrat&eacute;gia condicional de exibi&ccedil;&atilde;o.</li>
+                        <li>Publica&ccedil;&atilde;o para m&uacute;ltiplos destinos, tratada com itera&ccedil;&atilde;o por empresas e grava&ccedil;&atilde;o segmentada por escopo.</li>
+                        <li>Distribui&ccedil;&atilde;o de notifica&ccedil;&otilde;es internas sem incluir o autor da publica&ccedil;&atilde;o.</li>
+                        <li>Opera&ccedil;&atilde;o administrativa de exclus&atilde;o com retorno imediato, implementada com fluxo ass&iacute;ncrono e feedback visual.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-7xl mx-auto px-6 lg:px-8 py-12 md:py-20 reveal">
+            <div class="glass-card rounded-3xl p-8 md:p-10">
+                <div class="grid grid-cols-1 lg:grid-cols-[0.95fr_1.05fr] gap-8 items-start">
+                    <div>
+                        <h2 class="text-3xl md:text-4xl font-headline font-bold mb-4">Resultados e boas pr&aacute;ticas</h2>
+                        <p class="text-on-surface-variant leading-relaxed">
+                            O m&oacute;dulo centralizou a comunica&ccedil;&atilde;o interna em um canal &uacute;nico dentro da plataforma, aumentou a agilidade para publicar e retirar conte&uacute;dos e ampliou o alcance das mensagens com notifica&ccedil;&otilde;es autom&aacute;ticas. O resultado foi uma experi&ecirc;ncia mais rastre&aacute;vel, fluida e f&aacute;cil de administrar em ambiente corporativo.
+                        </p>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="rounded-2xl bg-surface-container-high p-5 border border-outline-variant/20">
+                            <div class="text-2xl font-headline font-bold text-primary mb-2">Alcance</div>
+                            <p class="text-sm text-on-surface-variant">Notifica&ccedil;&otilde;es autom&aacute;ticas para colaboradores ativos dentro do escopo correto.</p>
+                        </div>
+                        <div class="rounded-2xl bg-surface-container-high p-5 border border-outline-variant/20">
+                            <div class="text-2xl font-headline font-bold text-primary mb-2">Agilidade</div>
+                            <p class="text-sm text-on-surface-variant">Cria&ccedil;&atilde;o e exclus&atilde;o sem recarga total da tela, com retorno imediato para o usu&aacute;rio.</p>
+                        </div>
+                        <div class="rounded-2xl bg-surface-container-high p-5 border border-outline-variant/20">
+                            <div class="text-2xl font-headline font-bold text-primary mb-2">Governan&ccedil;a</div>
+                            <p class="text-sm text-on-surface-variant">Valida&ccedil;&atilde;o de sess&atilde;o, perfil e empresa para garantir publica&ccedil;&atilde;o controlada.</p>
+                        </div>
+                        <div class="rounded-2xl bg-surface-container-high p-5 border border-outline-variant/20">
+                            <div class="text-2xl font-headline font-bold text-primary mb-2">Manutenibilidade</div>
+                            <p class="text-sm text-on-surface-variant">Estrutura MVC e separa&ccedil;&atilde;o clara entre leitura, cria&ccedil;&atilde;o e administra&ccedil;&atilde;o de conte&uacute;do.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="w-full py-12 bg-background border-t border-outline-variant/20">
+        <div class="flex flex-col md:flex-row justify-between items-center px-6 md:px-12 max-w-7xl mx-auto gap-6">
+            <div class="text-center md:text-left">
+                <div class="text-on-surface text-sm font-headline font-bold tracking-wide">Daniel Torres</div>
+                <div class="text-on-surface-variant text-xs tracking-widest uppercase">
+                    Desenvolvedor full-stack em Brasilia, DF
+                </div>
+            </div>
+            <div class="flex flex-wrap justify-center gap-6">
+                <a href="index.html#projects" class="text-on-surface-variant hover:text-primary hover:-translate-y-0.5 transition-all text-xs tracking-widest uppercase">Projetos</a>
+                <a href="https://github.com/devdanieltorres" target="_blank" rel="noreferrer" class="text-on-surface-variant hover:text-primary hover:-translate-y-0.5 transition-all text-xs tracking-widest uppercase">GitHub</a>
+                <a href="https://www.linkedin.com/in/daniel-torres-0851581a0/" target="_blank" rel="noreferrer" class="text-on-surface-variant hover:text-primary hover:-translate-y-0.5 transition-all text-xs tracking-widest uppercase">LinkedIn</a>
+                <a href="mailto:Danieltorres2706@hotmail.com" class="text-on-surface-variant hover:text-primary hover:-translate-y-0.5 transition-all text-xs tracking-widest uppercase">Email</a>
+            </div>
+        </div>
+    </footer>
+
+    <div class="lightbox hidden" data-lightbox aria-hidden="true">
+        <div class="lightbox__dialog">
+            <button type="button" class="lightbox__close" data-lightbox-close aria-label="Fechar visualiza&ccedil;&atilde;o">
+                &times;
+            </button>
+            <div class="lightbox__content">
+                <div class="lightbox__image-wrap">
+                    <img class="lightbox__image" data-lightbox-image src="" alt="">
+                </div>
+                <p class="lightbox__caption" data-lightbox-caption></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

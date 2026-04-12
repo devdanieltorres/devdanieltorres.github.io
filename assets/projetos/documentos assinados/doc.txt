@@ -1,0 +1,65 @@
+1. Título da Funcionalidade
+Central de Gestão de Documentos com Monitoramento de Assinaturas e Filtros Multicritério
+2. Contexto
+A funcionalidade está inserida em um sistema corporativo de RH para controle documental de colaboradores.
+Ela atende à necessidade de acompanhar, em uma única tela, o volume de documentos assinados e pendentes, além de permitir auditoria operacional por empresa, filial, colaborador, período e tipo de termo.
+3. Problema
+Sem consolidação, o controle de assinaturas ficava fragmentado por tipo documental (folha, férias, ponto, formulários e recibos), dificultando:
+visão executiva de pendências;
+rastreio por recortes organizacionais;
+priorização de cobrança e regularização;
+leitura rápida da evolução recente de assinatura.
+Além disso, a ausência de filtros combinados exigia consultas manuais em múltiplos pontos do sistema.
+4. Solução Implementada
+A implementação unifica coleta, consolidação e visualização em duas camadas: backend analítico e frontend interativo.
+Backend (controller)
+Define janela temporal padrão de análise para os últimos 3 meses.
+Consulta diferentes domínios documentais e separa contagem por:
+não assinados;
+assinados.
+Consolida totais por categoria e total geral para alimentar painel gráfico.
+Carrega metadados para filtros dinâmicos (empresa, filial, termos e formulários relacionados).
+Entrega payload único para renderização do dashboard e para endpoints assíncronos de tabela detalhada.
+Frontend (view)
+Exibe gráfico comparativo de assinados vs não assinados por categoria documental.
+Disponibiliza filtros avançados com múltipla seleção:
+empresa, termo, status do colaborador, filial, funcionário, tipo e status documental;
+mês de referência com janela histórica.
+Realiza validações de uso antes da busca (ex.: exigência de termo e, em cenários específicos, competência).
+Dispara requisição AJAX para gerar tabela filtrada sob demanda, evitando recarga completa da página.
+Implementa carregamento tardio de lista de funcionários ao abrir o seletor, reduzindo carga inicial.
+Mantém áreas de resultado para exibição da tabela e fluxo complementar de assinatura/visualização.
+Decisões técnicas relevantes
+Separar agregação de KPI/gráfico da consulta detalhada por filtro.
+Padronizar validações de entrada no front para reduzir chamadas inválidas.
+Carregar dados pesados (funcionários) apenas quando necessário.
+Tratar documentos heterogêneos em modelo único de monitoramento.
+5. Tecnologias Utilizadas
+Backend: PHP (MVC) com Query Builder e consultas SQL em múltiplas tabelas de domínio.
+Frontend: HTML, CSS, JavaScript, jQuery e Bootstrap/Selectpicker.
+Visualização: Chart.js para gráfico comparativo de volumes.
+Tabelas/Exportação (base instalada): DataTables e plugins de exportação presentes na tela.
+Comunicação assíncrona: AJAX para busca de dados filtrados e carregamento de opções de funcionário.
+6. Desafios Técnicos
+Consolidar fontes documentais heterogêneas (tipos, tabelas e regras distintas de assinatura).
+Solução: padronização de contagem por categoria e status (assinado/não assinado), com totalizadores agregados.
+Escalabilidade da filtragem com muitos combinadores possíveis.
+Solução: validação prévia de filtros obrigatórios e envio assíncrono para montagem da tabela.
+Performance de carregamento de filtros de colaborador em bases grandes.
+Solução: lazy load do seletor de funcionários no primeiro uso.
+Leitura executiva rápida para gestão.
+Solução: gráfico sintético de comparação e estrutura visual orientada a decisão.
+7. Resultados Obtidos
+Centralização da governança documental em uma interface única.
+Maior visibilidade de pendências de assinatura por tipo e período.
+Redução de esforço manual para auditoria e cobrança de regularização.
+Resposta mais rápida da interface com carregamento sob demanda e busca assíncrona.
+Melhor suporte gerencial para priorização de ações em documentos críticos.
+8. Boas Práticas Aplicadas
+Organização: separação clara entre métricas agregadas (dashboard) e consulta detalhada (tabela filtrada).
+Confiabilidade: validações de filtro antes de requisições e tratamento de erros em chamadas AJAX.
+Performance: janela temporal definida, carregamento tardio de listas extensas e atualização parcial da tela.
+Manutenibilidade: estrutura de categorias documentais explícita e fluxo reutilizável de filtros.
+Usabilidade: feedback visual de carregamento, mensagens de alerta e navegação objetiva.
+9. Resumo para Portfólio
+Desenvolvi uma central de gestão documental focada em assinaturas, com consolidação de múltiplos tipos de documentos e monitoramento comparativo entre assinados e pendentes. A solução combina dashboard em gráfico, filtros multicritério e consulta assíncrona para análise detalhada sem recarga de página. Também implementei validações de entrada e carregamento sob demanda de dados pesados para melhorar desempenho e experiência. O resultado foi maior controle operacional, melhor governança e agilidade na regularização documental.

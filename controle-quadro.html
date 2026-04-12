@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Quadro | Daniel Torres</title>
+    <meta name="description" content="Case do painel de controle de quadro com an&aacute;lise planejado vs realizado por empresa, filial, centro de custo e cargo.">
+    <meta name="theme-color" content="#060e20">
+    <meta name="author" content="Daniel Torres">
+    <meta property="og:title" content="Controle de Quadro | Daniel Torres">
+    <meta property="og:description" content="Projeto corporativo de headcount com drill-down hier&aacute;rquico, compara&ccedil;&atilde;o mensal e status gerenciais autom&aacute;ticos para RH.">
+    <meta property="og:type" content="website">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        headline: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#81ecff',
+                        'primary-dim': '#00d4ec',
+                        tertiary: '#70aaff',
+                        background: '#060e20',
+                        surface: '#060e20',
+                        'surface-container': '#0f1930',
+                        'surface-container-high': '#141f38',
+                        'surface-container-highest': '#192540',
+                        'on-surface': '#dee5ff',
+                        'on-surface-variant': '#a3aac4',
+                        'outline-variant': '#40485d',
+                        success: '#34d399',
+                        warning: '#fbbf24',
+                    }
+                }
+            }
+        };
+    </script>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-background text-on-surface font-sans antialiased overflow-x-hidden selection:bg-primary/20 selection:text-on-surface">
+    <a href="#project-content" class="skip-link">Pular para o conte&uacute;do</a>
+
+    <header class="fixed top-0 w-full z-50 bg-[#060e20]/90 backdrop-blur-xl border-b border-outline-variant/10">
+        <div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
+            <a href="index.html#home" class="flex items-center gap-3 group" aria-label="Voltar para o in&iacute;cio do portf&oacute;lio">
+                <span class="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary font-headline font-bold">DT</span>
+                <div>
+                    <span class="block text-base md:text-lg font-bold tracking-tight text-on-surface font-headline">DANIEL TORRES</span>
+                    <span class="block text-[10px] uppercase tracking-[0.3em] text-on-surface-variant">Projeto detalhado</span>
+                </div>
+            </a>
+
+            <nav class="hidden lg:flex gap-8 items-center" aria-label="Navega&ccedil;&atilde;o principal">
+                <a href="index.html#about" class="nav-link text-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-all">Sobre</a>
+                <a href="index.html#experience" class="nav-link text-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-all">Experi&ecirc;ncia</a>
+                <a href="index.html#projects" class="nav-link text-sm uppercase tracking-widest text-primary transition-all">Projetos</a>
+                <a href="index.html#contact" class="nav-link text-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-all">Contato</a>
+                <a href="index.html#projects" class="ml-4 px-6 py-2 bg-primary text-background font-bold rounded-lg hover:scale-105 transition-all focus:outline-none focus:ring-2 focus:ring-primary">
+                    Voltar ao portf&oacute;lio
+                </a>
+            </nav>
+
+            <button id="menu-toggle" class="lg:hidden text-primary p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" aria-controls="mobile-menu" aria-expanded="false" aria-label="Abrir menu">
+                <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 w-full bg-surface-container border-b border-outline-variant/20 shadow-2xl">
+            <nav class="flex flex-col p-6 gap-4" aria-label="Navega&ccedil;&atilde;o mobile">
+                <a href="index.html#about" class="mobile-nav-link text-lg font-headline uppercase tracking-widest py-3 border-b border-outline-variant/10">Sobre</a>
+                <a href="index.html#experience" class="mobile-nav-link text-lg font-headline uppercase tracking-widest py-3 border-b border-outline-variant/10">Experi&ecirc;ncia</a>
+                <a href="index.html#projects" class="mobile-nav-link text-lg font-headline uppercase tracking-widest py-3 border-b border-outline-variant/10 text-primary">Projetos</a>
+                <a href="index.html#contact" class="mobile-nav-link text-lg font-headline uppercase tracking-widest py-3 border-b border-outline-variant/10">Contato</a>
+                <a href="index.html#projects" class="w-full mt-4 px-6 py-4 bg-primary text-background font-bold rounded-xl text-center">
+                    Voltar ao portf&oacute;lio
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="project-content" class="relative overflow-x-hidden">
+        <div class="fixed inset-0 hero-gradient pointer-events-none -z-10"></div>
+        <div class="fixed -top-24 -right-24 w-64 md:w-96 h-64 md:h-96 bg-primary/5 rounded-full blur-[80px] md:blur-[100px] pointer-events-none -z-10"></div>
+        <div class="fixed top-1/3 -left-24 w-64 md:w-96 h-64 md:h-96 bg-tertiary/10 rounded-full blur-[90px] md:blur-[120px] pointer-events-none -z-10"></div>
+
+        <section class="max-w-7xl mx-auto px-6 lg:px-8 pt-28 md:pt-36 pb-16 md:pb-24 reveal">
+            <div class="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-10 items-center">
+                <div class="space-y-6">
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-4 py-2 rounded-full bg-primary/10 text-primary text-xs uppercase tracking-[0.25em]">Projeto real</span>
+                        <span class="px-4 py-2 rounded-full bg-surface-container-high text-on-surface-variant text-xs uppercase tracking-[0.25em]">RH / Headcount</span>
+                        <span class="px-4 py-2 rounded-full bg-surface-container-high text-on-surface-variant text-xs uppercase tracking-[0.25em]">Drill-down anal&iacute;tico</span>
+                        <span class="px-4 py-2 rounded-full bg-surface-container-high text-on-surface-variant text-xs uppercase tracking-[0.25em]">Case completo</span>
+                    </div>
+                    <div>
+                        <p class="text-sm uppercase tracking-[0.35em] text-on-surface-variant mb-3">Case detalhado</p>
+                        <h1 class="text-4xl md:text-6xl font-headline font-bold tracking-tight leading-[1.05]">
+                            Painel de controle de quadro com an&aacute;lise planejado vs realizado por empresa, filial, centro de custo e cargo
+                        </h1>
+                    </div>
+                    <p class="text-lg md:text-xl text-on-surface-variant leading-relaxed">
+                        Solu&ccedil;&atilde;o para governan&ccedil;a de headcount com compara&ccedil;&atilde;o entre quadro planejado e realizado em diferentes n&iacute;veis organizacionais, apoiando decis&otilde;es de dimensionamento e prioriza&ccedil;&atilde;o de contrata&ccedil;&atilde;o.
+                    </p>
+                    <p class="text-base md:text-lg text-on-surface-variant leading-relaxed">
+                        O fluxo foi desenhado com agrega&ccedil;&otilde;es hier&aacute;rquicas no backend e navega&ccedil;&atilde;o interativa no frontend, permitindo leitura executiva por empresa, detalhamento por filial e centro de custo e drill-down por cargo com compara&ccedil;&atilde;o mensal.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#galeria" class="px-8 py-4 bg-primary text-background font-bold rounded-2xl text-center">Ver galeria</a>
+                        <a href="index.html#projects" class="px-8 py-4 border border-outline-variant/30 rounded-2xl text-center hover:bg-surface-container-high transition-all">Voltar para projetos</a>
+                    </div>
+                </div>
+
+                <figure class="glass-card rounded-3xl overflow-hidden border border-outline-variant/20">
+                    <img src="assets/projetos/controle%20de%20quadro/2.png" alt="Painel principal de controle de quadro com filtros e cards-resumo" class="w-full h-full object-cover object-top">
+                </figure>
+            </div>
+        </section>
+
+        <section class="max-w-7xl mx-auto px-6 lg:px-8 pb-12 md:pb-20 reveal">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="glass-card rounded-3xl p-6">
+                    <div class="text-2xl font-headline font-bold text-primary mb-2">Hierarquia anal&iacute;tica</div>
+                    <p class="text-sm text-on-surface-variant">Leitura estruturada por empresa, filial, centro de custo e cargo no mesmo fluxo de an&aacute;lise.</p>
+                </div>
+                <div class="glass-card rounded-3xl p-6">
+                    <div class="text-2xl font-headline font-bold text-primary mb-2">Comparativo mensal</div>
+                    <p class="text-sm text-on-surface-variant">Tend&ecirc;ncia baseada em m&ecirc;s atual versus m&ecirc;s anterior para classificar recupera&ccedil;&atilde;o, deteriora&ccedil;&atilde;o e persist&ecirc;ncia.</p>
+                </div>
+                <div class="glass-card rounded-3xl p-6">
+                    <div class="text-2xl font-headline font-bold text-primary mb-2">Leitura executiva</div>
+                    <p class="text-sm text-on-surface-variant">Cards-resumo, badges de status e legenda P/R/S para transformar dados densos em decis&atilde;o gerencial acion&aacute;vel.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="galeria" class="max-w-7xl mx-auto px-6 lg:px-8 py-12 md:py-20 reveal">
+            <div class="mb-10">
+                <h2 class="text-xs uppercase tracking-[0.35em] text-primary mb-3">Galeria</h2>
+                <h3 class="text-3xl md:text-5xl font-headline font-bold tracking-tight">Vis&otilde;es da funcionalidade</h3>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <figure class="glass-card rounded-3xl overflow-hidden border border-outline-variant/20">
+                    <div class="project-gallery-frame">
+                        <img src="assets/projetos/controle%20de%20quadro/2.png" alt="Painel principal de controle de quadro com filtros e cards-resumo">
+                    </div>
+                    <figcaption class="p-5 text-sm text-on-surface-variant">Tela principal com filtros por m&ecirc;s, empresa e filiais, al&eacute;m de cards-resumo que comparam planejado, realizado, saldo e status executivo por unidade.</figcaption>
+                    <div class="gallery-action-bar">
+                        <button type="button" class="gallery-fullscreen-button" data-fullscreen-trigger data-image-src="assets/projetos/controle%20de%20quadro/2.png" data-image-alt="Painel principal de controle de quadro com filtros e cards-resumo" data-image-caption="Tela principal com filtros por m&ecirc;s, empresa e filiais, al&eacute;m de cards-resumo que comparam planejado, realizado, saldo e status executivo por unidade.">
+                            Ver em tela cheia
+                        </button>
+                    </div>
+                </figure>
+
+                <figure class="glass-card rounded-3xl overflow-hidden border border-outline-variant/20">
+                    <div class="project-gallery-frame">
+                        <img src="assets/projetos/controle%20de%20quadro/1.png" alt="Detalhamento por centro de custo e cargo no controle de quadro">
+                    </div>
+                    <figcaption class="p-5 text-sm text-on-surface-variant">Drill-down por centro de custo e cargo, com compara&ccedil;&atilde;o entre m&ecirc;s anterior e atual e classifica&ccedil;&atilde;o autom&aacute;tica do status da estrutura.</figcaption>
+                    <div class="gallery-action-bar">
+                        <button type="button" class="gallery-fullscreen-button" data-fullscreen-trigger data-image-src="assets/projetos/controle%20de%20quadro/1.png" data-image-alt="Detalhamento por centro de custo e cargo no controle de quadro" data-image-caption="Drill-down por centro de custo e cargo, com compara&ccedil;&atilde;o entre m&ecirc;s anterior e atual e classifica&ccedil;&atilde;o autom&aacute;tica do status da estrutura.">
+                            Ver em tela cheia
+                        </button>
+                    </div>
+                </figure>
+            </div>
+        </section>
+
+        <section class="max-w-7xl mx-auto px-6 lg:px-8 py-12 md:py-20 reveal">
+            <div class="grid grid-cols-1 lg:grid-cols-[0.95fr_1.05fr] gap-8">
+                <div class="glass-card rounded-3xl p-8 md:p-10">
+                    <h2 class="text-3xl md:text-4xl font-headline font-bold mb-6">Contexto e problema</h2>
+                    <div class="space-y-5 text-on-surface-variant">
+                        <p>
+                            A funcionalidade foi inserida em um sistema corporativo de RH voltado &agrave; governan&ccedil;a de headcount e aloca&ccedil;&atilde;o de for&ccedil;a de trabalho.
+                        </p>
+                        <p>
+                            Sem uma vis&atilde;o consolidada e hier&aacute;rquica, a leitura do quadro costuma ficar fragmentada entre relat&oacute;rios isolados, dificultando identificar d&eacute;ficit ou excesso de pessoal com rapidez.
+                        </p>
+                        <p>
+                            Isso reduz agilidade de decis&atilde;o, compromete o entendimento por filial e centro de custo e aumenta o risco de desequil&iacute;brio estrutural.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-3xl p-8 md:p-10">
+                    <h2 class="text-3xl md:text-4xl font-headline font-bold mb-6">Solu&ccedil;&atilde;o implementada</h2>
+                    <ul class="content-list text-on-surface-variant">
+                        <li>Controller respons&aacute;vel por receber filtros de per&iacute;odo, empresa e m&uacute;ltiplas filiais, normalizando janela atual e anterior.</li>
+                        <li>Agrega&ccedil;&otilde;es em camadas para resumo por empresa, filial, centro de custo e detalhe por cargo.</li>
+                        <li>Datasets preparados para compor cards, grids e tabelas com ordena&ccedil;&atilde;o previs&iacute;vel e leitura consistente.</li>
+                        <li>Drill-down sem requisi&ccedil;&atilde;o extra, com detalhe j&aacute; entregue no payload para expans&atilde;o sob demanda.</li>
+                        <li>Classifica&ccedil;&atilde;o autom&aacute;tica de status baseada no saldo atual e na tend&ecirc;ncia frente ao m&ecirc;s anterior.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-7xl mx-auto px-6 lg:px-8 py-12 md:py-20 reveal">
+            <div class="grid grid-cols-1 lg:grid-cols-[0.95fr_1.05fr] gap-8">
+                <div class="glass-card rounded-3xl p-8 md:p-10">
+                    <h2 class="text-3xl md:text-4xl font-headline font-bold mb-6">Tecnologias utilizadas</h2>
+                    <ul class="content-list text-on-surface-variant">
+                        <li>Back-end em PHP com arquitetura MVC, query builder e agrega&ccedil;&otilde;es SQL com `SUM`, `GROUP BY` e filtros condicionais.</li>
+                        <li>Banco relacional com joins entre empresa, filial, centro de custo e cargos.</li>
+                        <li>Front-end em HTML, CSS e JavaScript para expans&atilde;o e retra&ccedil;&atilde;o dos detalhes anal&iacute;ticos.</li>
+                        <li>Componentes visuais com status por cor e badges para leitura executiva r&aacute;pida.</li>
+                    </ul>
+                </div>
+
+                <div class="glass-card rounded-3xl p-8 md:p-10">
+                    <h2 class="text-3xl md:text-4xl font-headline font-bold mb-6">Desafios t&eacute;cnicos</h2>
+                    <ul class="content-list text-on-surface-variant">
+                        <li>Consolidar m&uacute;ltiplos n&iacute;veis de an&aacute;lise no mesmo fluxo de tela, resolvido com pr&eacute;-processamento no controller.</li>
+                        <li>Criar status interpret&aacute;vel a partir de n&uacute;meros brutos, tratado com regra de classifica&ccedil;&atilde;o por saldo e tend&ecirc;ncia temporal.</li>
+                        <li>Manter flexibilidade de filtro sem quebrar consist&ecirc;ncia dos totais, resolvido com aplica&ccedil;&atilde;o uniforme dos mesmos filtros em todas as consultas.</li>
+                        <li>Evitar sobrecarga cognitiva em tabelas densas, mitigado com cards executivos, legenda P/R/S, cores sem&acirc;nticas e detalhe sob demanda.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-7xl mx-auto px-6 lg:px-8 py-12 md:py-20 reveal">
+            <div class="glass-card rounded-3xl p-8 md:p-10">
+                <div class="grid grid-cols-1 lg:grid-cols-[0.95fr_1.05fr] gap-8 items-start">
+                    <div>
+                        <h2 class="text-3xl md:text-4xl font-headline font-bold mb-4">Resultados e boas pr&aacute;ticas</h2>
+                        <p class="text-on-surface-variant leading-relaxed">
+                            O painel elevou a visibilidade sobre adequa&ccedil;&atilde;o de quadro, acelerou a identifica&ccedil;&atilde;o de d&eacute;ficit, excesso e deteriora&ccedil;&atilde;o estrutural e trouxe uma navega&ccedil;&atilde;o hier&aacute;rquica muito mais eficiente para o RH. O resultado foi suporte mais robusto &agrave; tomada de decis&atilde;o baseada em dados comparativos.
+                        </p>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="rounded-2xl bg-surface-container-high p-5 border border-outline-variant/20">
+                            <div class="text-2xl font-headline font-bold text-primary mb-2">Visibilidade</div>
+                            <p class="text-sm text-on-surface-variant">Leitura consolidada da estrutura em quatro n&iacute;veis de detalhe.</p>
+                        </div>
+                        <div class="rounded-2xl bg-surface-container-high p-5 border border-outline-variant/20">
+                            <div class="text-2xl font-headline font-bold text-primary mb-2">Prioriza&ccedil;&atilde;o</div>
+                            <p class="text-sm text-on-surface-variant">Decis&otilde;es mais r&aacute;pidas sobre remanejamento e contrata&ccedil;&atilde;o por centro e cargo.</p>
+                        </div>
+                        <div class="rounded-2xl bg-surface-container-high p-5 border border-outline-variant/20">
+                            <div class="text-2xl font-headline font-bold text-primary mb-2">Confiabilidade</div>
+                            <p class="text-sm text-on-surface-variant">Filtros e datas normalizados antes das consultas para manter consist&ecirc;ncia dos totais.</p>
+                        </div>
+                        <div class="rounded-2xl bg-surface-container-high p-5 border border-outline-variant/20">
+                            <div class="text-2xl font-headline font-bold text-primary mb-2">Usabilidade</div>
+                            <p class="text-sm text-on-surface-variant">Detalhe expans&iacute;vel, badges sem&acirc;nticos e leitura executiva orientada a status.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="w-full py-12 bg-background border-t border-outline-variant/20">
+        <div class="flex flex-col md:flex-row justify-between items-center px-6 md:px-12 max-w-7xl mx-auto gap-6">
+            <div class="text-center md:text-left">
+                <div class="text-on-surface text-sm font-headline font-bold tracking-wide">Daniel Torres</div>
+                <div class="text-on-surface-variant text-xs tracking-widest uppercase">
+                    Desenvolvedor full-stack em Brasilia, DF
+                </div>
+            </div>
+            <div class="flex flex-wrap justify-center gap-6">
+                <a href="index.html#projects" class="text-on-surface-variant hover:text-primary hover:-translate-y-0.5 transition-all text-xs tracking-widest uppercase">Projetos</a>
+                <a href="https://github.com/devdanieltorres" target="_blank" rel="noreferrer" class="text-on-surface-variant hover:text-primary hover:-translate-y-0.5 transition-all text-xs tracking-widest uppercase">GitHub</a>
+                <a href="https://www.linkedin.com/in/daniel-torres-0851581a0/" target="_blank" rel="noreferrer" class="text-on-surface-variant hover:text-primary hover:-translate-y-0.5 transition-all text-xs tracking-widest uppercase">LinkedIn</a>
+                <a href="mailto:Danieltorres2706@hotmail.com" class="text-on-surface-variant hover:text-primary hover:-translate-y-0.5 transition-all text-xs tracking-widest uppercase">Email</a>
+            </div>
+        </div>
+    </footer>
+
+    <div class="lightbox hidden" data-lightbox aria-hidden="true">
+        <div class="lightbox__dialog">
+            <button type="button" class="lightbox__close" data-lightbox-close aria-label="Fechar visualiza&ccedil;&atilde;o">
+                &times;
+            </button>
+            <div class="lightbox__content">
+                <div class="lightbox__image-wrap">
+                    <img class="lightbox__image" data-lightbox-image src="" alt="">
+                </div>
+                <p class="lightbox__caption" data-lightbox-caption></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+1. Título da Funcionalidade
+Programa de Monitoramento Psicossocial com Campanhas, Resposta Anônima, Analytics de Risco (NR-01) e Gestão de Planos de Ação
+2. Contexto
+Esta funcionalidade está inserida em uma plataforma corporativa de gestão de pessoas, saúde ocupacional e conformidade trabalhista.
+Ela foi desenhada para atender um ciclo completo de gestão psicossocial:
+Planejamento: criação e governança de campanhas de questionário.
+Coleta: resposta do colaborador em fluxo controlado (uma resposta por campanha).
+Análise: consolidação de indicadores agregados de risco psicossocial.
+Ação: desdobramento em planos de ação com acompanhamento de execução.
+Necessidade de negócio atendida:
+apoiar requisitos de gestão de riscos psicossociais;
+transformar respostas em priorização objetiva;
+manter privacidade e conformidade (sem exposição individual);
+fechar o ciclo entre diagnóstico e ação corretiva/preventiva.
+3. Problema
+Antes de uma abordagem integrada, havia desafios típicos de processos psicossociais distribuídos:
+campanhas sem governança clara de status e período;
+risco de múltiplas respostas por colaborador para a mesma campanha;
+dificuldade de converter respostas em indicadores acionáveis;
+baixa rastreabilidade na transição de “insight” para “plano executável”;
+risco de leitura individualizada de dados sensíveis, em vez de visão agregada com foco preventivo.
+4. Solução Implementada
+A implementação foi estruturada em quatro camadas funcionais conectadas entre si.
+4.1 Gestão de campanhas (admin)
+Foi criada uma tela de cadastro e manutenção de campanhas com:
+criação/edição de título, descrição, datas e situação;
+listagem de campanhas com ações rápidas de ativar, inativar e encerrar;
+regra operacional explícita: ao ativar uma campanha, as demais ficam inativas;
+feedback transacional via mensagens de sucesso/erro em sessão.
+Objetivo técnico: padronizar o ciclo de vida da campanha e controlar qual campanha está elegível para respostas.
+4.2 Coleta para colaborador (formulário de resposta)
+No perfil do colaborador, o fluxo foi desenhado com comportamento condicional:
+se não existir campanha ativa, o envio é bloqueado;
+se já houver resposta registrada, exibe confirmação de participação e bloqueia nova submissão;
+se houver campanha ativa e pendência, libera formulário completo.
+Características do formulário:
+bloco estruturado com 23 perguntas objetivas + 1 pergunta aberta opcional;
+variação de escalas por pergunta específica (incluindo opções especiais de sensibilidade);
+validação obrigatória para respostas fechadas;
+preservação de respostas em caso de erro de validação (melhor UX).
+Objetivo técnico: garantir integridade da coleta sem fricção para o usuário final.
+4.3 Painel analítico (RH/SSMA)
+A camada analítica reúne filtros, KPIs, regras de negócio e visualizações:
+filtros por campanha, cargo e tempo de empresa;
+leitura agregada de respostas por janela de análise;
+cálculo de índice sintético de risco (IRPG), classificação por faixa e meta;
+alertas automáticos com limiares para assédio, estresse, sobrecarga, participação e liderança;
+distribuição por tempo de empresa e top cargos;
+análise temporal com comparação de período anterior;
+análise qualitativa da pergunta aberta (categorização temática + nuvem de palavras);
+detecção de hotspots por setor/turno/setor-turno e heatmap com tamanho mínimo de grupo;
+tour guiado na interface para onboarding do usuário de negócio.
+Objetivo técnico: transformar dado bruto em priorização prática de risco.
+4.4 Gestão de planos de ação (NR-01)
+Foi adicionada uma área específica de planos de ação integrada ao diagnóstico:
+listagem com filtros avançados (status, tipo, responsável, prioridade, setor, período, prazo e indicadores);
+KPIs de execução (abertas, concluídas, vencidas, taxa de resolução);
+classificação de criticidade por prioridade e indicador de atraso/vencimento próximo;
+atalhos para novo plano, relatório e exportação CSV.
+Objetivo técnico: fechar o ciclo “medir → priorizar → agir → acompanhar”.
+4.5 Como os componentes se comunicam
+A comunicação segue fluxo MVC orientado por perfil:
+Controller de administração prepara campanhas e estado de edição.
+Controller de colaborador resolve campanha ativa, verifica elegibilidade de envio e status de resposta.
+Controller analítico executa agregações, regras e modelos de visualização.
+View renderiza UX por perfil (colaborador vs painel analítico).
+Módulo de planos consome filtros e mostra execução operacional do tratamento de riscos.
+4.6 Decisões técnicas relevantes
+Anonimização determinística por token para vincular análise sem expor identidade individual.
+Regra de uma resposta por campanha para evitar duplicidade de amostra.
+Modelo de pesos por pergunta no cálculo do índice para refletir criticidade real.
+Limiar mínimo de respostas por grupo antes de exibir hotspots/heatmap (privacidade + robustez estatística).
+Separação clara de experiências: colaborador responde; gestão analisa dados agregados.
+5. Tecnologias Utilizadas
+Backend: PHP em arquitetura MVC.
+Banco de dados: SQL relacional (consultas agregadas, COUNT, AVG, GROUP BY, filtros dinâmicos).
+Frontend: HTML, CSS, JavaScript, jQuery e componentes de UI responsivos.
+Data visualization: Google Charts (coluna, barra, pizza, linha e tabela).
+UX assistida: tour guiado com armazenamento em localStorage para controle de exibição.
+Sessão e segurança contextual: uso de dados de sessão para perfil ativo, escopo e fluxo de permissões.
+6. Desafios Técnicos
+6.1 Conciliação entre privacidade e utilidade analítica
+Desafio: obter insights úteis sem expor respostas individuais.
+Solução: tokenização anônima, exibição exclusivamente agregada e supressão de grupos pequenos.
+6.2 Cálculo de risco com perguntas heterogêneas
+Desafio: perguntas com escalas e polaridades diferentes na mesma métrica global.
+Solução: normalização por questão, inversão de escala quando necessário e ponderação por criticidade.
+6.3 Governança de campanhas simultâneas
+Desafio: evitar sobreposição operacional e inconsistência de coleta.
+Solução: controle de status com regra de ativação exclusiva.
+6.4 Transformar diagnóstico em execução
+Desafio: dashboards sem plano de ação viram “insight sem fechamento”.
+Solução: módulo de planos com filtros, indicadores de prazo e métricas de resolução.
+6.5 Adoção por usuários não técnicos
+Desafio: painel avançado com alto volume de informação.
+Solução: KPIs de topo, alertas priorizados, visualizações orientadas e tour contextual.
+7. Resultados Obtidos
+Estruturação de um pipeline completo de risco psicossocial (campanha → resposta → análise → ação).
+Maior confiabilidade estatística com regra de resposta única e controle de participação.
+Ganho de governança com indicadores executivos e alertas automáticos por limiar.
+Melhoria da capacidade de priorização por hotspots e evolução histórica.
+Aumento da capacidade operacional para cumprimento de planos de ação, com controle de vencimento e taxa de resolução.
+Melhora de conformidade em privacidade, mantendo foco em dados agregados.
+8. Boas Práticas Aplicadas
+Organização de código
+separação de responsabilidades por controller e por perfil de uso;
+views especializadas para cadastro, resposta, analytics e execução.
+Segurança e privacidade
+anonimização por token determinístico;
+política de não exibição individual;
+limiar mínimo de respostas em agrupamentos analíticos.
+Performance e escalabilidade funcional
+agregações no banco para reduzir processamento no cliente;
+filtros objetivos e recortes por campanha para consultas mais precisas;
+renderização orientada por disponibilidade de dados.
+Manutenibilidade
+regras de negócio explícitas (metas, criticidade, thresholds);
+componentes visuais reutilizáveis (KPIs, alertas, tabelas, gráficos);
+fluxo consistente de filtros e exportação no módulo de planos.
+Qualidade de experiência
+mensagens transacionais claras;
+persistência de estado de resposta em caso de erro;
+tour guiado para reduzir curva de aprendizado.
+9. Resumo para Portfólio
+Desenvolvi uma solução ponta a ponta para gestão de riscos psicossociais: cadastro de campanhas, coleta anônima de respostas, painel analítico com índice de risco, alertas automáticos e detecção de hotspots por grupo. Estruturei o cálculo com normalização e pesos por criticidade, preservando privacidade por tokenização e dados exclusivamente agregados. Também integrei a camada de execução com planos de ação NR-01, incluindo filtros avançados, KPIs de acompanhamento e controle de prazos. O resultado foi um fluxo completo de diagnóstico e intervenção, com governança, rastreabilidade e foco em decisão orientada por dados.

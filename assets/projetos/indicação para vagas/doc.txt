@@ -1,0 +1,47 @@
+1. Título da Funcionalidade
+Gestão de Indicações de Vagas com Portal do Colaborador e Painel Administrativo
+2. Contexto
+A funcionalidade está inserida em uma aplicação web de RH com recursos de recrutamento interno e participação dos colaboradores.
+Ela atende à necessidade de formalizar indicações de candidatos, permitir acompanhamento pelo colaborador e oferecer ao time de RH um painel operacional para triagem, atualização de status e controle histórico.
+3. Problema
+Sem um fluxo digital estruturado, indicações de candidatos tendem a ser dispersas em canais informais, dificultando rastreabilidade, padronização de dados e priorização de análise.
+Além disso, a ausência de filtros e exportação limita o uso gerencial das informações, enquanto a falta de histórico para o colaborador reduz transparência do processo.
+4. Solução Implementada
+A solução foi implementada em duas frentes complementares:
+Experiência do colaborador (modal de indicação): formulário com validações para dados do indicado (contato, PCD, parentesco, cargo e currículo), envio de anexos e aba de histórico com as últimas indicações realizadas.
+Painel de relatórios e operação (RH): tabela com até 500 registros recentes, filtros em tempo real (status, cargo e telefone), atualização inline de status e observação, exclusão de registros e exportação das linhas filtradas para CSV/XLS.
+Camada de controle no backend: identificação dinâmica da estrutura da tabela (verificação de existência de colunas como status, observacao, fk_usuario, fk_empresa), joins para enriquecer dados do indicador e restrição por empresa quando necessário.
+Onboarding e usabilidade: tour guiado contextual com persistência de conclusão por usuário e controles visuais para reduzir curva de aprendizado.
+Decisões técnicas relevantes:
+Design resiliente a variações de schema, evitando quebra em bases legadas com colunas opcionais.
+Edição inline para reduzir tempo operacional no tratamento de grande volume.
+Exportação baseada no subconjunto filtrado da tabela para manter consistência entre visualização e saída de dados.
+5. Tecnologias Utilizadas
+Backend: PHP em padrão MVC, com sessão, perfil e consultas SQL via camada de banco.
+Frontend: HTML, CSS, JavaScript, jQuery e Bootstrap (modais, abas, botões, feedback visual).
+Tabela interativa: DataTables para paginação, busca, redraw e filtros customizados.
+Exportação client-side: geração de arquivos CSV e XLS com Blob/API de download do navegador.
+UX assistida: biblioteca de tour interativo para orientação inicial.
+6. Desafios Técnicos
+Compatibilidade com bancos em evolução: nem todos os ambientes possuem as mesmas colunas.
+Solução: checagem de existência de campos no backend e renderização condicional no frontend.
+Filtragem por status em coluna com select editável: a busca padrão da tabela não cobria o valor selecionado de forma confiável.
+Solução: implementação de filtro customizado na extensão de busca do DataTables.
+Edição de observações longas: textarea na célula podia limitar leitura e edição completa.
+Solução: modal dedicado para expandir/editar e reaplicar texto no registro.
+Consistência visual do estado do processo: necessidade de identificar rapidamente o estágio de cada indicação.
+Solução: classes dinâmicas por status com codificação visual e atualização automática ao alterar seleção.
+7. Resultados Obtidos
+Centralização do processo de indicação com dados padronizados e anexos obrigatórios.
+Melhoria da rastreabilidade com histórico para colaborador e controle operacional para RH.
+Redução de esforço manual por meio de edição inline, filtros rápidos e exportação imediata.
+Aumento da capacidade analítica e de auditoria com dados estruturados e extração por recorte filtrado.
+Melhor experiência de uso com interface orientada e feedbacks de ação (salvar, excluir, atualizar).
+8. Boas Práticas Aplicadas
+Organização de código: separação entre modal transacional (colaborador), relatório operacional (RH) e lógica de carregamento no controller.
+Segurança e governança: verificação de login/sessão, escopo por perfil e restrição contextual por empresa quando aplicável.
+Performance: limite de registros no relatório, filtragem no cliente para resposta rápida e operações assíncronas pontuais.
+Manutenibilidade: tratamento de schema heterogêneo, nomes semânticos e componentes reutilizáveis (filtros, modal, ações).
+Qualidade de dados: validações de formulário, sanitização de saídas em HTML e padronização de estados do funil.
+9. Resumo para Portfólio
+Implementei um módulo completo de indicações de vagas com duas jornadas integradas: envio e acompanhamento pelo colaborador, e operação analítica pelo RH. A solução inclui formulário com anexos, histórico de indicações, painel interativo com DataTables, atualização inline de status/observação e exportação filtrada para CSV/XLS. Também tratei compatibilidade com diferentes versões de schema no banco, garantindo robustez em ambientes legados. O resultado foi mais controle, rastreabilidade e eficiência no processo de recrutamento por indicação.

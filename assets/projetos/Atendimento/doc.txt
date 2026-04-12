@@ -1,0 +1,50 @@
+1) Título da Funcionalidade
+Central de Atendimentos com Abertura, Acompanhamento e Painel Analítico por Perfil
+2) Contexto
+A funcionalidade está inserida em um sistema web corporativo com múltiplos perfis de acesso (colaborador e time administrativo). Ela atende à necessidade de registrar solicitações internas, acompanhar tratativas via chat e oferecer visão gerencial consolidada para operação de suporte/atendimento.
+3) Problema
+Antes dessa abordagem, o fluxo de atendimento tende a ficar fragmentado: abertura em um ponto, acompanhamento em outro, pouca visibilidade de pendências e baixa capacidade analítica para priorização. Isso afeta tempo de resposta, controle de SLA e experiência do usuário final.
+4) Solução Implementada
+Foi estruturado um fluxo completo em duas frentes:
+Experiência do colaborador (dashboard):
+Atalho de acesso rápido ao módulo de atendimento.
+Exibição de badge com quantidade de mensagens não lidas.
+Modal com duas abas: abertura de novo atendimento e lista de atendimentos do próprio usuário.
+Formulário dinâmico com tipo/subtipo, prioridade, contato, descrição e upload de anexo.
+Experiência administrativa (painel de suporte):
+Tela dedicada com filtros operacionais (empresa, filial, status, tipo, prioridade, responsável, período, busca textual e pendência de chat).
+Listagem paginada com ações de atualização de status, detalhamento, chat e exclusão.
+Camada analítica com múltiplos gráficos (status, prioridade, presença de anexo, volume por dia, distribuição por empresa/filial/tipo e tempo médio até fechamento).
+Comunicação entre componentes:
+A camada de interface realiza carregamento assíncrono dos dados e ações.
+O backend prepara dados por perfil, restringindo escopo por permissões.
+O filtro de empresas/filiais segue vínculo de acesso do usuário, evitando visualização indevida.
+Decisões técnicas relevantes:
+Separação clara de contexto por perfil.
+Uso de filtros compostos e chips de filtros ativos para rastreabilidade.
+Estrutura orientada a operação contínua (refresh, paginação, ações em linha e gráficos atualizados por filtro).
+5) Tecnologias Utilizadas
+Backend: PHP (arquitetura MVC)
+Frontend: HTML, CSS, JavaScript, jQuery, Bootstrap
+Dados: Banco relacional via query builder
+Visualização: biblioteca de gráficos em canvas (carregada sob demanda)
+Integração UI/Backend: AJAX para listagem, chat, atualização de status e métricas
+6) Desafios Técnicos
+Controle de acesso por escopo organizacional:
+Resolvido com montagem de empresas permitidas por vínculo perfil-usuário e aplicação desses filtros nas consultas.
+Formulários e filtros com alta variabilidade:
+Resolvido com estrutura de filtros padronizada, atualização dinâmica de subtipos e renderização de filtros ativos.
+Convergência entre operação e analytics:
+Resolvido com reaproveitamento do mesmo conjunto de filtros para lista e gráficos, mantendo consistência dos indicadores.
+7) Resultados Obtidos
+Maior visibilidade de pendências de atendimento (inclusive chat não lido).
+Redução de fricção para abertura e acompanhamento de chamados.
+Melhor governança operacional com filtros avançados e atualização de status em fluxo contínuo.
+Ganho analítico para gestão de volume, priorização e tempo de resolução.
+8) Boas Práticas Aplicadas
+Organização: separação de responsabilidades entre dashboard, painel administrativo e endpoints de dados.
+Segurança: escopo de dados baseado em permissões de usuário/perfil e contexto organizacional.
+Performance: carregamento assíncrono, paginação e carregamento sob demanda da biblioteca de gráficos.
+Manutenibilidade: componentes de UI reutilizáveis (filtros, alertas, chips, ações), padronização de estados e fluxo de eventos.
+9) Resumo para Portfólio
+Desenvolvi uma central de atendimentos com fluxo completo de abertura, acompanhamento e gestão operacional, incluindo chat, filtros avançados e dashboard analítico. A solução foi projetada para múltiplos perfis, com controle de acesso por escopo organizacional e atualizações assíncronas para melhor experiência. Também implementei visualizações de indicadores-chave para apoiar priorização e eficiência de atendimento. O resultado foi uma operação mais rastreável, responsiva e orientada a dados.

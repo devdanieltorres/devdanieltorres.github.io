@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FluxDesk Field Service | Daniel Torres</title>
+    <meta name="description" content="Case fict&iacute;cio do projeto FluxDesk Field Service com galeria, escopo funcional e vis&atilde;o t&eacute;cnica da solu&ccedil;&atilde;o.">
+    <meta name="theme-color" content="#060e20">
+    <meta name="author" content="Daniel Torres">
+    <meta property="og:title" content="FluxDesk Field Service | Daniel Torres">
+    <meta property="og:description" content="Projeto fict&iacute;cio de plataforma para gest&atilde;o de atendimentos t&eacute;cnicos em campo.">
+    <meta property="og:type" content="website">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        headline: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#81ecff',
+                        'primary-dim': '#00d4ec',
+                        tertiary: '#70aaff',
+                        background: '#060e20',
+                        surface: '#060e20',
+                        'surface-container': '#0f1930',
+                        'surface-container-high': '#141f38',
+                        'surface-container-highest': '#192540',
+                        'on-surface': '#dee5ff',
+                        'on-surface-variant': '#a3aac4',
+                        'outline-variant': '#40485d',
+                        success: '#34d399',
+                        warning: '#fbbf24',
+                    }
+                }
+            }
+        };
+    </script>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-background text-on-surface font-sans antialiased overflow-x-hidden selection:bg-primary/20 selection:text-on-surface">
+    <a href="#project-content" class="skip-link">Pular para o conte&uacute;do</a>
+
+    <header class="fixed top-0 w-full z-50 bg-[#060e20]/90 backdrop-blur-xl border-b border-outline-variant/10">
+        <div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
+            <a href="index.html#home" class="flex items-center gap-3 group" aria-label="Voltar para o in&iacute;cio do portf&oacute;lio">
+                <span class="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary font-headline font-bold">DT</span>
+                <div>
+                    <span class="block text-base md:text-lg font-bold tracking-tight text-on-surface font-headline">DANIEL TORRES</span>
+                    <span class="block text-[10px] uppercase tracking-[0.3em] text-on-surface-variant">Projeto detalhado</span>
+                </div>
+            </a>
+
+            <nav class="hidden lg:flex gap-8 items-center" aria-label="Navega&ccedil;&atilde;o principal">
+                <a href="index.html#about" class="nav-link text-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-all">Sobre</a>
+                <a href="index.html#experience" class="nav-link text-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-all">Experi&ecirc;ncia</a>
+                <a href="index.html#projects" class="nav-link text-sm uppercase tracking-widest text-primary transition-all">Projetos</a>
+                <a href="index.html#contact" class="nav-link text-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-all">Contato</a>
+                <a href="index.html#projects" class="ml-4 px-6 py-2 bg-primary text-background font-bold rounded-lg hover:scale-105 transition-all focus:outline-none focus:ring-2 focus:ring-primary">
+                    Voltar ao portf&oacute;lio
+                </a>
+            </nav>
+
+            <button id="menu-toggle" class="lg:hidden text-primary p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" aria-controls="mobile-menu" aria-expanded="false" aria-label="Abrir menu">
+                <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 w-full bg-surface-container border-b border-outline-variant/20 shadow-2xl">
+            <nav class="flex flex-col p-6 gap-4" aria-label="Navega&ccedil;&atilde;o mobile">
+                <a href="index.html#about" class="mobile-nav-link text-lg font-headline uppercase tracking-widest py-3 border-b border-outline-variant/10">Sobre</a>
+                <a href="index.html#experience" class="mobile-nav-link text-lg font-headline uppercase tracking-widest py-3 border-b border-outline-variant/10">Experi&ecirc;ncia</a>
+                <a href="index.html#projects" class="mobile-nav-link text-lg font-headline uppercase tracking-widest py-3 border-b border-outline-variant/10 text-primary">Projetos</a>
+                <a href="index.html#contact" class="mobile-nav-link text-lg font-headline uppercase tracking-widest py-3 border-b border-outline-variant/10">Contato</a>
+                <a href="index.html#projects" class="w-full mt-4 px-6 py-4 bg-primary text-background font-bold rounded-xl text-center">
+                    Voltar ao portf&oacute;lio
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="project-content" class="relative overflow-x-hidden">
+        <div class="fixed inset-0 hero-gradient pointer-events-none -z-10"></div>
+        <div class="fixed -top-24 -right-24 w-64 md:w-96 h-64 md:h-96 bg-primary/5 rounded-full blur-[80px] md:blur-[100px] pointer-events-none -z-10"></div>
+        <div class="fixed top-1/3 -left-24 w-64 md:w-96 h-64 md:h-96 bg-tertiary/10 rounded-full blur-[90px] md:blur-[120px] pointer-events-none -z-10"></div>
+
+        <section class="max-w-7xl mx-auto px-6 lg:px-8 pt-28 md:pt-36 pb-16 md:pb-24 reveal">
+            <div class="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-10 items-center">
+                <div class="space-y-6">
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-4 py-2 rounded-full bg-primary/10 text-primary text-xs uppercase tracking-[0.25em]">Projeto fict&iacute;cio</span>
+                        <span class="px-4 py-2 rounded-full bg-surface-container-high text-on-surface-variant text-xs uppercase tracking-[0.25em]">Field Service</span>
+                        <span class="px-4 py-2 rounded-full bg-surface-container-high text-on-surface-variant text-xs uppercase tracking-[0.25em]">Web + Mobile</span>
+                    </div>
+                    <div>
+                        <p class="text-sm uppercase tracking-[0.35em] text-on-surface-variant mb-3">Case detalhado</p>
+                        <h1 class="text-4xl md:text-6xl font-headline font-bold tracking-tight leading-[1.05]">
+                            FluxDesk Field Service
+                        </h1>
+                    </div>
+                    <p class="text-lg md:text-xl text-on-surface-variant leading-relaxed">
+                        Plataforma conceitual para controle de chamados, despacho de equipes, execu&ccedil;&atilde;o t&eacute;cnica em campo e monitoramento de SLA em tempo real.
+                    </p>
+                    <p class="text-base md:text-lg text-on-surface-variant leading-relaxed">
+                        O objetivo deste case &eacute; demonstrar como eu estruturaria um sistema voltado para opera&ccedil;&atilde;o externa, com foco em usabilidade, rastreabilidade do atendimento, visibilidade gerencial e integra&ccedil;&atilde;o entre back-end e interface operacional.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#galeria" class="px-8 py-4 bg-primary text-background font-bold rounded-2xl text-center">Ver galeria</a>
+                        <a href="index.html#projects" class="px-8 py-4 border border-outline-variant/30 rounded-2xl text-center hover:bg-surface-container-high transition-all">Voltar para projetos</a>
+                    </div>
+                </div>
+
+                <figure class="glass-card rounded-3xl overflow-hidden border border-outline-variant/20">
+                    <img src="assets/img/project-dashboard.svg" alt="Tela principal do projeto FluxDesk Field Service" class="w-full h-full object-cover">
+                </figure>
+            </div>
+        </section>
+
+        <section class="max-w-7xl mx-auto px-6 lg:px-8 pb-12 md:pb-20 reveal">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="glass-card rounded-3xl p-6">
+                    <div class="text-2xl font-headline font-bold text-primary mb-2">Painel web</div>
+                    <p class="text-sm text-on-surface-variant">Monitoramento operacional, indicadores, backlog, agenda e distribui&ccedil;&atilde;o de ordens.</p>
+                </div>
+                <div class="glass-card rounded-3xl p-6">
+                    <div class="text-2xl font-headline font-bold text-primary mb-2">App t&eacute;cnico</div>
+                    <p class="text-sm text-on-surface-variant">Checklist, anexos, atualiza&ccedil;&atilde;o de status, confirma&ccedil;&atilde;o de visita e consulta de roteiro.</p>
+                </div>
+                <div class="glass-card rounded-3xl p-6">
+                    <div class="text-2xl font-headline font-bold text-primary mb-2">Vis&atilde;o gerencial</div>
+                    <p class="text-sm text-on-surface-variant">Leitura r&aacute;pida de produtividade, cumprimento de SLA e gargalos da opera&ccedil;&atilde;o.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="galeria" class="max-w-7xl mx-auto px-6 lg:px-8 py-12 md:py-20 reveal">
+            <div class="mb-10">
+                <h2 class="text-xs uppercase tracking-[0.35em] text-primary mb-3">Galeria</h2>
+                <h3 class="text-3xl md:text-5xl font-headline font-bold tracking-tight">Vis&otilde;es do produto</h3>
+            </div>
+
+            <div class="grid grid-cols-1 gap-6">
+                <figure class="glass-card rounded-3xl overflow-hidden border border-outline-variant/20">
+                    <div class="project-gallery-frame">
+                        <img src="assets/img/project-dashboard.svg" alt="Painel operacional do FluxDesk">
+                    </div>
+                    <figcaption class="p-5 text-sm text-on-surface-variant">Dashboard com indicadores operacionais, agenda de atendimentos e ordens de servi&ccedil;o em andamento.</figcaption>
+                    <div class="gallery-action-bar">
+                        <button
+                            type="button"
+                            class="gallery-fullscreen-button"
+                            data-fullscreen-trigger
+                            data-image-src="assets/img/project-dashboard.svg"
+                            data-image-alt="Painel operacional do FluxDesk"
+                            data-image-caption="Dashboard com indicadores operacionais, agenda de atendimentos e ordens de servi&ccedil;o em andamento."
+                        >
+                            Ver em tela cheia
+                        </button>
+                    </div>
+                </figure>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <figure class="glass-card rounded-3xl overflow-hidden border border-outline-variant/20">
+                        <div class="project-gallery-frame">
+                            <img src="assets/img/project-mobile.svg" alt="Aplicativo do t&eacute;cnico do FluxDesk">
+                        </div>
+                        <figcaption class="p-5 text-sm text-on-surface-variant">Fluxo mobile para execu&ccedil;&atilde;o em campo com checklist, a&ccedil;&otilde;es r&aacute;pidas e atualiza&ccedil;&atilde;o de status.</figcaption>
+                        <div class="gallery-action-bar">
+                            <button
+                                type="button"
+                                class="gallery-fullscreen-button"
+                                data-fullscreen-trigger
+                                data-image-src="assets/img/project-mobile.svg"
+                                data-image-alt="Aplicativo do t&eacute;cnico do FluxDesk"
+                                data-image-caption="Fluxo mobile para execu&ccedil;&atilde;o em campo com checklist, a&ccedil;&otilde;es r&aacute;pidas e atualiza&ccedil;&atilde;o de status."
+                            >
+                                Ver em tela cheia
+                            </button>
+                        </div>
+                    </figure>
+
+                    <figure class="glass-card rounded-3xl overflow-hidden border border-outline-variant/20">
+                        <div class="project-gallery-frame">
+                            <img src="assets/img/project-workflow.svg" alt="Fluxo operacional do projeto FluxDesk">
+                        </div>
+                        <figcaption class="p-5 text-sm text-on-surface-variant">Mapa resumido do fluxo do atendimento, desde a abertura do chamado at&eacute; a conclus&atilde;o com medi&ccedil;&atilde;o de SLA.</figcaption>
+                        <div class="gallery-action-bar">
+                            <button
+                                type="button"
+                                class="gallery-fullscreen-button"
+                                data-fullscreen-trigger
+                                data-image-src="assets/img/project-workflow.svg"
+                                data-image-alt="Fluxo operacional do projeto FluxDesk"
+                                data-image-caption="Mapa resumido do fluxo do atendimento, desde a abertura do chamado at&eacute; a conclus&atilde;o com medi&ccedil;&atilde;o de SLA."
+                            >
+                                Ver em tela cheia
+                            </button>
+                        </div>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-7xl mx-auto px-6 lg:px-8 py-12 md:py-20 reveal">
+            <div class="grid grid-cols-1 lg:grid-cols-[0.95fr_1.05fr] gap-8">
+                <div class="glass-card rounded-3xl p-8 md:p-10">
+                    <h2 class="text-3xl md:text-4xl font-headline font-bold mb-6">Escopo funcional</h2>
+                    <ul class="content-list text-on-surface-variant">
+                        <li>Abertura de chamados com classifica&ccedil;&atilde;o por categoria, prioridade, cliente e regi&atilde;o de atendimento.</li>
+                        <li>Despacho autom&aacute;tico baseado em regras de disponibilidade, proximidade e especialidade t&eacute;cnica.</li>
+                        <li>Atualiza&ccedil;&atilde;o do atendimento em tempo real com status, hor&aacute;rios, anexos e registros de execu&ccedil;&atilde;o.</li>
+                        <li>Checklists din&acirc;micos por tipo de servi&ccedil;o para padronizar a entrega da equipe.</li>
+                        <li>Painel gerencial com backlog, produtividade, tempo m&eacute;dio e cumprimento de SLA.</li>
+                    </ul>
+                </div>
+
+                <div class="glass-card rounded-3xl p-8 md:p-10">
+                    <h2 class="text-3xl md:text-4xl font-headline font-bold mb-6">Vis&atilde;o t&eacute;cnica</h2>
+                    <div class="space-y-5 text-on-surface-variant">
+                        <p>
+                            O projeto foi pensado como uma aplica&ccedil;&atilde;o web com back-end em PHP/CodeIgniter, API REST para integra&ccedil;&atilde;o com o aplicativo do t&eacute;cnico e persist&ecirc;ncia em MySQL.
+                        </p>
+                        <p>
+                            A camada administrativa concentra autentica&ccedil;&atilde;o, dashboards, filtros operacionais, auditoria de atendimento e hist&oacute;rico de intera&ccedil;&otilde;es. No front operacional, a prioridade &eacute; oferecer velocidade, clareza e baixo atrito para o t&eacute;cnico em campo.
+                        </p>
+                        <p>
+                            Em um cen&aacute;rio real, esse tipo de solu&ccedil;&atilde;o se beneficiaria de integra&ccedil;&otilde;es com mapas, mensageria, fila de notifica&ccedil;&otilde;es, armazenamento de anexos e trilhas de auditoria para suporte e conformidade.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-7xl mx-auto px-6 lg:px-8 py-12 md:py-20 reveal">
+            <div class="glass-card rounded-3xl p-8 md:p-10">
+                <div class="grid grid-cols-1 lg:grid-cols-[0.95fr_1.05fr] gap-8 items-start">
+                    <div>
+                        <h2 class="text-3xl md:text-4xl font-headline font-bold mb-4">Valor entregue pela solu&ccedil;&atilde;o</h2>
+                        <p class="text-on-surface-variant leading-relaxed">
+                            Mesmo sendo um projeto fict&iacute;cio, o case foi estruturado para refletir um cen&aacute;rio comum em empresas que precisam ganhar previsibilidade operacional, reduzir atrasos e padronizar a execu&ccedil;&atilde;o dos servi&ccedil;os externos.
+                        </p>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="rounded-2xl bg-surface-container-high p-5 border border-outline-variant/20">
+                            <div class="text-2xl font-headline font-bold text-primary mb-2">SLA vis&iacute;vel</div>
+                            <p class="text-sm text-on-surface-variant">Indicadores acess&iacute;veis para tomada de decis&atilde;o r&aacute;pida.</p>
+                        </div>
+                        <div class="rounded-2xl bg-surface-container-high p-5 border border-outline-variant/20">
+                            <div class="text-2xl font-headline font-bold text-primary mb-2">Processo padr&atilde;o</div>
+                            <p class="text-sm text-on-surface-variant">Menos retrabalho com fluxos operacionais bem definidos.</p>
+                        </div>
+                        <div class="rounded-2xl bg-surface-container-high p-5 border border-outline-variant/20">
+                            <div class="text-2xl font-headline font-bold text-primary mb-2">Hist&oacute;rico centralizado</div>
+                            <p class="text-sm text-on-surface-variant">Mais rastreabilidade para suporte, auditoria e melhoria cont&iacute;nua.</p>
+                        </div>
+                        <div class="rounded-2xl bg-surface-container-high p-5 border border-outline-variant/20">
+                            <div class="text-2xl font-headline font-bold text-primary mb-2">Opera&ccedil;&atilde;o integrada</div>
+                            <p class="text-sm text-on-surface-variant">Back-office e equipe de campo trabalhando sobre a mesma informa&ccedil;&atilde;o.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="w-full py-12 bg-background border-t border-outline-variant/20">
+        <div class="flex flex-col md:flex-row justify-between items-center px-6 md:px-12 max-w-7xl mx-auto gap-6">
+            <div class="text-center md:text-left">
+                <div class="text-on-surface text-sm font-headline font-bold tracking-wide">Daniel Torres</div>
+                <div class="text-on-surface-variant text-xs tracking-widest uppercase">
+                    Desenvolvedor full-stack em Brasilia, DF
+                </div>
+            </div>
+            <div class="flex flex-wrap justify-center gap-6">
+                <a href="index.html#projects" class="text-on-surface-variant hover:text-primary hover:-translate-y-0.5 transition-all text-xs tracking-widest uppercase">Projetos</a>
+                <a href="https://github.com/devdanieltorres" target="_blank" rel="noreferrer" class="text-on-surface-variant hover:text-primary hover:-translate-y-0.5 transition-all text-xs tracking-widest uppercase">GitHub</a>
+                <a href="https://www.linkedin.com/in/daniel-torres-0851581a0/" target="_blank" rel="noreferrer" class="text-on-surface-variant hover:text-primary hover:-translate-y-0.5 transition-all text-xs tracking-widest uppercase">LinkedIn</a>
+                <a href="mailto:Danieltorres2706@hotmail.com" class="text-on-surface-variant hover:text-primary hover:-translate-y-0.5 transition-all text-xs tracking-widest uppercase">Email</a>
+            </div>
+        </div>
+    </footer>
+
+    <div class="lightbox hidden" data-lightbox aria-hidden="true">
+        <div class="lightbox__dialog">
+            <button type="button" class="lightbox__close" data-lightbox-close aria-label="Fechar visualiza&ccedil;&atilde;o">
+                &times;
+            </button>
+            <div class="lightbox__content">
+                <div class="lightbox__image-wrap">
+                    <img class="lightbox__image" data-lightbox-image src="" alt="">
+                </div>
+                <p class="lightbox__caption" data-lightbox-caption></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
