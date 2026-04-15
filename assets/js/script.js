@@ -6,13 +6,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const desktopLinks = [...document.querySelectorAll('.nav-link')];
     const mobileLinks = [...document.querySelectorAll('.mobile-nav-link')];
     const revealItems = document.querySelectorAll('.reveal');
-    const progressBars = document.querySelectorAll('.progress-bar-fill');
     const fullscreenTriggers = [...document.querySelectorAll('[data-fullscreen-trigger]')];
     const lightbox = document.querySelector('[data-lightbox]');
     const lightboxImage = lightbox?.querySelector('[data-lightbox-image]') || null;
     const lightboxCaption = lightbox?.querySelector('[data-lightbox-caption]') || null;
     const lightboxClose = lightbox?.querySelector('[data-lightbox-close]') || null;
-
     const setMenuIcon = (isOpen) => {
         if (!menuIcon) {
             return;
@@ -158,24 +156,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         revealItems.forEach((item) => revealObserver.observe(item));
 
-        const skillObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach((entry) => {
-                if (!entry.isIntersecting) {
-                    return;
-                }
-
-                const targetWidth = entry.target.dataset.width || '0%';
-                entry.target.style.width = targetWidth;
-                observer.unobserve(entry.target);
-            });
-        }, { threshold: 0.4 });
-
-        progressBars.forEach((bar) => skillObserver.observe(bar));
     } else {
         revealItems.forEach((item) => item.classList.add('is-visible'));
-        progressBars.forEach((bar) => {
-            bar.style.width = bar.dataset.width || '0%';
-        });
     }
 
     document.addEventListener('keydown', (event) => {
