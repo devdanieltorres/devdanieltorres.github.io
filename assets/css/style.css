@@ -299,6 +299,25 @@ button {
 }
 
 @media (max-width: 768px) {
+    main > .fixed {
+        display: none;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .glass-card {
+        backdrop-filter: none;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.16);
+    }
+
+    header {
+        backdrop-filter: none;
+    }
+
     .timeline::before {
         left: 0.9rem;
     }
