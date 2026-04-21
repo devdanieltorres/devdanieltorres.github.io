@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daniel Torres | Desenvolvedor Full-Stack</title>
-    <meta name="description" content="Portfólio de Daniel Torres, desenvolvedor full-stack com experiência em PHP, CodeIgniter, JavaScript, MySQL, APIs REST e manutenção de sistemas web.">
+    <title>Daniel Torres | Desenvolvedor de software</title>
+    <meta name="description" content="Portfólio de Daniel Torres, desenvolvedor de software com experiência em PHP, CodeIgniter, JavaScript, MySQL, APIs REST e manutenção de sistemas web.">
     <meta name="theme-color" content="#060e20">
     <meta name="author" content="Daniel Torres">
-    <meta property="og:title" content="Daniel Torres | Desenvolvedor Full-Stack">
+    <meta property="og:title" content="Daniel Torres | Desenvolvedor de software">
     <meta property="og:description" content="Portfólio profissional com experiência, habilidades e canais de contato de Daniel Torres.">
     <meta property="og:type" content="website">
 
@@ -53,7 +53,7 @@
                 <span class="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary font-headline font-bold">DT</span>
                 <div>
                     <span class="block text-base md:text-lg font-bold tracking-tight text-on-surface font-headline">DANIEL TORRES</span>
-                    <span class="block text-[10px] uppercase tracking-[0.3em] text-on-surface-variant">Full-Stack Developer</span>
+                    <span class="block text-[10px] uppercase tracking-[0.3em] text-on-surface-variant">Desenvolvedor de software</span>
                 </div>
             </a>
 
