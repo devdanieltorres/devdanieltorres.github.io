@@ -2,11 +2,12 @@ BEGIN:VCARD
 VERSION:3.0
 FN:Daniel Torres
 N:Torres;Daniel;;;
-TITLE:Desenvolvedor de software
-TEL;TYPE=CELL:(61) 99184-8154
-EMAIL;TYPE=INTERNET:Danieltorres2706@hotmail.com
-ADR;TYPE=HOME:;;Brasilia;DF;;;Brasil
+TITLE:Desenvolvedor de software full-stack
+TEL;TYPE=CELL:+55 61 99184-8154
+EMAIL;TYPE=INTERNET:danieltorres2706@hotmail.com
+ADR;TYPE=HOME:;;;Brasília;DF;;Brasil
+URL:https://devdanieltorres.github.io/
 URL:https://www.linkedin.com/in/daniel-torres-0851581a0/
 URL:https://github.com/devdanieltorres
-NOTE:Portfolio: devdanieltorres
+NOTE:Portfólio: https://devdanieltorres.github.io/
 END:VCARD

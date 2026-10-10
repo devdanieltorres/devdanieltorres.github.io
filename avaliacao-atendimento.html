@@ -1,344 +1,284 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth">
+<html lang="pt-BR" data-theme="dark" data-page="projects">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Avalia&ccedil;&atilde;o de Atendimento | Daniel Torres</title>
-    <meta name="description" content="Case do m&oacute;dulo de avalia&ccedil;&atilde;o de atendimentos com coleta de feedback, filtros corporativos e dashboard anal&iacute;tico.">
-    <meta name="theme-color" content="#060e20">
+    <meta charset="utf-8">
+    <title>Avaliação de atendimento — Case | Daniel Torres</title>
+    <meta name="description" content="Avalia&#231;&#227;o de atendimento: pesquisa de satisfa&#231;&#227;o ap&#243;s cada atendimento e painel gerencial com filtros, tabela paginada e gr&#225;ficos.">
+    <link rel="canonical" href="https://devdanieltorres.github.io/avaliacao-atendimento.html">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="Daniel Torres">
+    <meta property="og:title" content="Avaliação de atendimento — case de Daniel Torres">
+    <meta property="og:description" content="Avalia&#231;&#227;o de atendimento: pesquisa de satisfa&#231;&#227;o ap&#243;s cada atendimento e painel gerencial com filtros, tabela paginada e gr&#225;ficos.">
+    <meta property="og:url" content="https://devdanieltorres.github.io/avaliacao-atendimento.html">
+    <meta property="og:image" content="https://devdanieltorres.github.io/assets/img/og/avaliacao-atendimento.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <!-- layout:head -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#07090d">
+    <meta name="color-scheme" content="dark light">
     <meta name="author" content="Daniel Torres">
-    <meta property="og:title" content="Avalia&ccedil;&atilde;o de Atendimento | Daniel Torres">
-    <meta property="og:description" content="Projeto corporativo com formul&aacute;rios de feedback, governan&ccedil;a por permiss&otilde;es e painel gerencial com gr&aacute;ficos e filtros avan&ccedil;ados.">
-    <meta property="og:type" content="website">
-    <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
-
+    <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        headline: ['Space Grotesk', 'sans-serif'],
-                    },
-                    colors: {
-                        primary: '#81ecff',
-                        'primary-dim': '#00d4ec',
-                        tertiary: '#70aaff',
-                        background: '#060e20',
-                        surface: '#060e20',
-                        'surface-container': '#0f1930',
-                        'surface-container-high': '#141f38',
-                        'surface-container-highest': '#192540',
-                        'on-surface': '#dee5ff',
-                        'on-surface-variant': '#a3aac4',
-                        'outline-variant': '#40485d',
-                        success: '#34d399',
-                        warning: '#fbbf24',
-                    }
-                }
-            }
-        };
-    </script>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@400..600&family=Instrument+Serif:ital@1&display=swap">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <script>(function(){var d=document.documentElement;d.classList.add('js');try{var t=localStorage.getItem('theme');if(t)d.setAttribute('data-theme',t)}catch(e){}})();</script>
+    <script src="assets/js/main.js" defer></script>
+    <!-- /layout:head -->
 </head>
-<body class="bg-background text-on-surface font-sans antialiased overflow-x-hidden selection:bg-primary/20 selection:text-on-surface">
-    <a href="#project-content" class="skip-link">Pular para o conte&uacute;do</a>
+<body>
+    <!-- layout:header -->
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
 
-    <header class="fixed top-0 w-full z-50 bg-[#060e20]/90 backdrop-blur-xl border-b border-outline-variant/10">
-        <div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
-            <a href="index.html#home" class="flex items-center gap-3 group" aria-label="Voltar para o in&iacute;cio do portf&oacute;lio">
-                <span class="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary font-headline font-bold">DT</span>
-                <div>
-                    <span class="block text-base md:text-lg font-bold tracking-tight text-on-surface font-headline">DANIEL TORRES</span>
-                    <span class="block text-[10px] uppercase tracking-[0.3em] text-on-surface-variant">Projeto detalhado</span>
-                </div>
-            </a>
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+      <defs>
+        <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></symbol>
+        <symbol id="i-arrow-up-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></symbol>
+        <symbol id="i-arrow-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 19l-7-7 7-7"/></symbol>
+        <symbol id="i-arrow-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></symbol>
+        <symbol id="i-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m-4-4 4 4 4-4M5 21h14"/></symbol>
+        <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></symbol>
+        <symbol id="i-whatsapp" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 8.6 8.6 0 0 1-3.9-.9L3 21l1.9-5A8.4 8.4 0 0 1 12 3a8.5 8.5 0 0 1 9 8.5z"/></symbol>
+        <symbol id="i-github" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></symbol>
+        <symbol id="i-linkedin" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></symbol>
+        <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></symbol>
+        <symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></symbol>
+        <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+        <symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+        <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+        <symbol id="i-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></symbol>
+        <symbol id="i-contact" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></symbol>
+        <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></symbol>
+        <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></symbol>
+        <symbol id="i-server" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="8" rx="2"/><rect x="2" y="13" width="20" height="8" rx="2"/><path d="M6 7h.01M6 17h.01"/></symbol>
+        <symbol id="i-layout" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></symbol>
+        <symbol id="i-database" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"/></symbol>
+        <symbol id="i-git" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="8" r="3"/><path d="M6 9v6M18 11a6 6 0 0 1-6 6H9"/></symbol>
+        <symbol id="i-bot" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3"/><rect x="4" y="7" width="16" height="12" rx="3"/><path d="M9 12h.01M15 12h.01M9 16h6"/></symbol>
+        <symbol id="i-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></symbol>
+        <symbol id="i-zap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></symbol>
+        <symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+        <symbol id="i-pen" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></symbol>
+        <symbol id="i-cap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></symbol>
+      </defs>
+    </svg>
 
-            <nav class="hidden lg:flex gap-8 items-center" aria-label="Navega&ccedil;&atilde;o principal">
-                <a href="index.html#projects" class="nav-link text-sm uppercase tracking-widest text-primary transition-all">Projetos</a>
-                <a href="index.html#projects" class="ml-4 px-6 py-2 bg-primary text-background font-bold rounded-lg hover:scale-105 transition-all focus:outline-none focus:ring-2 focus:ring-primary">
-                    Voltar ao portf&oacute;lio
-                </a>
-            </nav>
-
-            <button id="menu-toggle" class="lg:hidden text-primary p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" aria-controls="mobile-menu" aria-expanded="false" aria-label="Abrir menu">
-                <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-                </svg>
-            </button>
+    <header class="site-header">
+      <div class="container site-header__inner">
+        <a class="brand" href="index.html" aria-label="Daniel Torres, página inicial">
+          <span class="brand__mark" aria-hidden="true">DT</span>
+          <span class="brand__text">Daniel Torres <small>dev full-stack</small></span>
+        </a>
+        <nav class="nav" aria-label="Principal">
+          <ul role="list">
+            <li><a href="index.html#sobre">Sobre</a></li>
+            <li><a href="index.html#experiencia">Experiência</a></li>
+            <li><a href="index.html#stack">Stack</a></li>
+            <li><a href="projects.html" data-nav="projects">Projetos</a></li>
+            <li><a href="index.html#contato">Contato</a></li>
+          </ul>
+        </nav>
+        <div class="header-actions">
+          <button class="icon-button theme-toggle" type="button" data-theme-toggle aria-label="Alternar tema">
+            <svg class="icon-moon" aria-hidden="true"><use href="#i-moon"/></svg>
+            <svg class="icon-sun" aria-hidden="true"><use href="#i-sun"/></svg>
+          </button>
+          <a class="btn btn--primary btn--sm" href="index.html#contato">Fale comigo</a>
+          <button class="icon-button menu-button" type="button" data-menu-open aria-controls="mobile-nav" aria-expanded="false" aria-label="Abrir menu">
+            <svg aria-hidden="true"><use href="#i-menu"/></svg>
+          </button>
         </div>
-
-        <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 w-full bg-surface-container border-b border-outline-variant/20 shadow-2xl">
-            <nav class="flex flex-col p-6 gap-4" aria-label="Navega&ccedil;&atilde;o mobile">
-                <a href="index.html#projects" class="mobile-nav-link text-lg font-headline uppercase tracking-widest py-3 border-b border-outline-variant/10 text-primary">Projetos</a>
-                <a href="index.html#projects" class="w-full mt-4 px-6 py-4 bg-primary text-background font-bold rounded-xl text-center">
-                    Voltar ao portf&oacute;lio
-                </a>
-            </nav>
-        </div>
+      </div>
     </header>
 
-    <main id="project-content" class="relative overflow-x-hidden">
-        <div class="fixed inset-0 hero-gradient pointer-events-none -z-10"></div>
-        <div class="fixed -top-24 -right-24 w-64 md:w-96 h-64 md:h-96 bg-primary/5 rounded-full blur-[80px] md:blur-[100px] pointer-events-none -z-10"></div>
-        <div class="fixed top-1/3 -left-24 w-64 md:w-96 h-64 md:h-96 bg-tertiary/10 rounded-full blur-[90px] md:blur-[120px] pointer-events-none -z-10"></div>
+    <dialog class="mobile-nav" id="mobile-nav" aria-label="Menu">
+      <div class="container">
+        <div class="mobile-nav__top">
+          <a class="brand" href="index.html"><span class="brand__mark" aria-hidden="true">DT</span><span class="brand__text">Daniel Torres</span></a>
+          <button class="icon-button" type="button" data-menu-close aria-label="Fechar menu"><svg aria-hidden="true"><use href="#i-close"/></svg></button>
+        </div>
+        <ul role="list">
+          <li><a href="index.html#sobre">Sobre</a></li>
+          <li><a href="index.html#experiencia">Experiência</a></li>
+          <li><a href="index.html#stack">Stack</a></li>
+          <li><a href="projects.html" data-nav="projects">Projetos</a></li>
+          <li><a href="index.html#contato">Contato</a></li>
+        </ul>
+        <div class="mobile-nav__cta">
+          <a class="btn btn--primary btn--lg" href="index.html#contato">Fale comigo</a>
+          <a class="btn btn--lg" href="assets/docs/curriculumDaniel.pdf" download="Curriculo-Daniel-Torres.pdf"><svg aria-hidden="true"><use href="#i-download"/></svg>Baixar currículo</a>
+        </div>
+      </div>
+    </dialog>
+    <!-- /layout:header -->
 
-        <section class="max-w-7xl mx-auto px-6 lg:px-8 pt-28 md:pt-36 pb-16 md:pb-24 reveal">
-            <div class="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-10 items-center">
-                <div class="space-y-6">
-                    <div class="flex flex-wrap gap-3">
-                        <span class="px-4 py-2 rounded-full bg-primary/10 text-primary text-xs uppercase tracking-[0.25em]">Projeto real</span>
-                        <span class="px-4 py-2 rounded-full bg-surface-container-high text-on-surface-variant text-xs uppercase tracking-[0.25em]">Atendimento / Qualidade</span>
-                        <span class="px-4 py-2 rounded-full bg-surface-container-high text-on-surface-variant text-xs uppercase tracking-[0.25em]">Dashboard</span>
-                        <span class="px-4 py-2 rounded-full bg-surface-container-high text-on-surface-variant text-xs uppercase tracking-[0.25em]">Feedback</span>
+    <main id="conteudo">
+        <header class="case-hero container">
+            <nav class="breadcrumb" aria-label="Você está em"><ol><li><a href="index.html">Início</a></li><li><a href="projects.html">Projetos</a></li><li aria-current="page">Avaliação de atendimento</li></ol></nav>
+            <div class="case-hero__copy">
+                <span class="eyebrow">Atendimento · Qualidade</span>
+                <h1>Avaliação de atendimento</h1>
+                <p class="case-hero__lead">Pesquisa de satisfação que aparece ao colaborador depois de cada atendimento (inclusive de atestados), e um painel gerencial com filtros, tabela paginada e gráficos para acompanhar a qualidade do suporte.</p>
+                <dl class="facts">
+                    <div><dt>Contexto</dt><dd>Plataforma web de atendimento interno</dd></div>
+                    <div><dt>Perfis</dt><dd>Colaborador · Gestão do atendimento</dd></div>
+                    <div><dt>Meu papel</dt><dd>Desenvolvimento full-stack: back-end, banco de dados e interface</dd></div>
+                    <div><dt>Stack</dt><dd class="chips"><span class="chip">PHP MVC</span><span class="chip">SQL</span><span class="chip">jQuery</span><span class="chip">Chart.js</span></dd></div>
+                </dl>
+            </div>
+            <figure class="case-hero__cover" data-gallery>
+                <a href="assets/projetos/avaliacao-atendimento/01.webp" data-lightbox data-caption="Formul&#225;rio de avalia&#231;&#227;o: o problema foi resolvido? Nota de 1 a 5 e coment&#225;rio opcional.">
+                    <div class="browser"><div class="browser__bar"><i></i><i></i><i></i><span>colaborador / avaliacao</span></div>
+                        <img src="assets/projetos/avaliacao-atendimento/01.webp" srcset="assets/projetos/avaliacao-atendimento/01-960.webp 960w, assets/projetos/avaliacao-atendimento/01.webp 1900w" sizes="(min-width: 1220px) 1180px, 100vw" width="1900" height="908" fetchpriority="high" alt="Formul&#225;rio de avalia&#231;&#227;o com pergunta de resolu&#231;&#227;o, nota e coment&#225;rios" style="view-transition-name: capa-avaliacao-atendimento">
                     </div>
-                    <div>
-                        <p class="text-sm uppercase tracking-[0.35em] text-on-surface-variant mb-3">Case detalhado</p>
-                        <h1 class="text-4xl md:text-6xl font-headline font-bold tracking-tight leading-[1.05]">
-                            M&oacute;dulo de avalia&ccedil;&atilde;o de atendimentos com dashboard anal&iacute;tico e filtros corporativos
-                        </h1>
-                    </div>
-                    <p class="text-lg md:text-xl text-on-surface-variant leading-relaxed">
-                        Solu&ccedil;&atilde;o corporativa para coletar feedback estruturado sobre atendimentos conclu&iacute;dos, consolidar indicadores e apoiar melhoria cont&iacute;nua com base em dados.
-                    </p>
-                    <p class="text-base md:text-lg text-on-surface-variant leading-relaxed">
-                        O fluxo foi dividido entre a experi&ecirc;ncia operacional do colaborador, com modais simples para avaliar solicita&ccedil;&otilde;es pendentes, e a experi&ecirc;ncia gerencial, com listagem paginada, filtros avan&ccedil;ados e dashboard visual para leitura executiva.
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="#galeria" class="px-8 py-4 bg-primary text-background font-bold rounded-2xl text-center">Ver galeria</a>
-                        <a href="index.html#projects" class="px-8 py-4 border border-outline-variant/30 rounded-2xl text-center hover:bg-surface-container-high transition-all">Voltar para projetos</a>
-                    </div>
-                </div>
+                </a>
+            </figure>
+        </header>
 
-                <figure class="glass-card rounded-3xl overflow-hidden border border-outline-variant/20">
-                    <img src="assets/projetos/Avalia%C3%A7%C3%A3o%20de%20atendimento/5.png" alt="Painel gerencial de avalia&ccedil;&otilde;es de atendimento" class="w-full h-full object-cover object-top">
-                </figure>
+        <section class="container" aria-label="Destaques">
+            <div class="highlights">
+                <div class="card reveal"><h3>Coleta estruturada</h3><p>Resolução, nota e comentário — com pergunta extra quando não resolvido.</p></div>
+                <div class="card reveal" style="--i:1"><h3>Governança por filtros</h3><p>Empresa, filial, respondente, origem, nota, texto, ID, data e resolução.</p></div>
+                <div class="card reveal" style="--i:2"><h3>Leitura analítica</h3><p>Cards de resumo e gráficos de satisfação e resolutividade.</p></div>
             </div>
         </section>
 
-        <section class="max-w-7xl mx-auto px-6 lg:px-8 pb-12 md:pb-20 reveal">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div class="glass-card rounded-3xl p-6">
-                    <div class="text-2xl font-headline font-bold text-primary mb-2">Coleta estruturada</div>
-                    <p class="text-sm text-on-surface-variant">Fluxo de feedback com perguntas objetivas sobre resolu&ccedil;&atilde;o, nota do atendimento e coment&aacute;rios adicionais.</p>
-                </div>
-                <div class="glass-card rounded-3xl p-6">
-                    <div class="text-2xl font-headline font-bold text-primary mb-2">Governan&ccedil;a por filtros</div>
-                    <p class="text-sm text-on-surface-variant">Painel com filtros por empresa, filial, respondente, origem, nota, texto, data e status de resolu&ccedil;&atilde;o.</p>
-                </div>
-                <div class="glass-card rounded-3xl p-6">
-                    <div class="text-2xl font-headline font-bold text-primary mb-2">Leitura anal&iacute;tica</div>
-                    <p class="text-sm text-on-surface-variant">Cards de resumo e gr&aacute;ficos que tornam vis&iacute;vel satisfa&ccedil;&atilde;o, resolutividade e distribui&ccedil;&atilde;o por origem e unidade.</p>
-                </div>
-            </div>
-        </section>
+        <div class="section container case-layout">
+            <aside class="toc" aria-label="Nesta página">
+                <p>Nesta página</p>
+                <ol>
+                    <li><a href="#contexto">Contexto e problema</a></li>
+                    <li><a href="#solucao">Solução</a></li>
+                    <li><a href="#telas">Telas</a></li>
+                    <li><a href="#tecnologias">Tecnologias</a></li>
+                    <li><a href="#desafios">Desafios</a></li>
+                    <li><a href="#resultados">Resultados</a></li>
+                </ol>
+            </aside>
 
-        <section id="galeria" class="max-w-7xl mx-auto px-6 lg:px-8 py-12 md:py-20 reveal">
-            <div class="mb-10">
-                <h2 class="text-xs uppercase tracking-[0.35em] text-primary mb-3">Galeria</h2>
-                <h3 class="text-3xl md:text-5xl font-headline font-bold tracking-tight">Vis&otilde;es da funcionalidade</h3>
-            </div>
-
-            <div class="grid grid-cols-1 gap-6">
-                <figure class="glass-card rounded-3xl overflow-hidden border border-outline-variant/20">
-                    <div class="project-gallery-frame">
-                        <img src="assets/projetos/Avalia%C3%A7%C3%A3o%20de%20atendimento/5.png" alt="Painel gerencial de avalia&ccedil;&otilde;es de atendimento">
-                    </div>
-                    <figcaption class="p-5 text-sm text-on-surface-variant">Tela principal do painel gerencial com indicadores-resumo, filtros corporativos combin&aacute;veis e listagem paginada das avalia&ccedil;&otilde;es recebidas.</figcaption>
-                    <div class="gallery-action-bar">
-                        <button type="button" class="gallery-fullscreen-button" data-fullscreen-trigger data-image-src="assets/projetos/Avalia%C3%A7%C3%A3o%20de%20atendimento/5.png" data-image-alt="Painel gerencial de avalia&ccedil;&otilde;es de atendimento" data-image-caption="Tela principal do painel gerencial com indicadores-resumo, filtros corporativos combin&aacute;veis e listagem paginada das avalia&ccedil;&otilde;es recebidas.">
-                            Ver em tela cheia
-                        </button>
-                    </div>
-                </figure>
-
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                    <figure class="glass-card rounded-3xl overflow-hidden border border-outline-variant/20">
-                        <div class="project-gallery-frame">
-                            <img src="assets/projetos/Avalia%C3%A7%C3%A3o%20de%20atendimento/4.png" alt="Atalho para avalia&ccedil;&atilde;o de atendimento no dashboard">
-                        </div>
-                        <figcaption class="p-5 text-sm text-on-surface-variant">Entrada do fluxo no dashboard do colaborador, destacando o atalho para avaliar atendimentos pendentes diretamente na &aacute;rea pessoal.</figcaption>
-                        <div class="gallery-action-bar">
-                            <button type="button" class="gallery-fullscreen-button" data-fullscreen-trigger data-image-src="assets/projetos/Avalia%C3%A7%C3%A3o%20de%20atendimento/4.png" data-image-alt="Atalho para avalia&ccedil;&atilde;o de atendimento no dashboard" data-image-caption="Entrada do fluxo no dashboard do colaborador, destacando o atalho para avaliar atendimentos pendentes diretamente na &aacute;rea pessoal.">
-                                Ver em tela cheia
-                            </button>
-                        </div>
-                    </figure>
-
-                    <figure class="glass-card rounded-3xl overflow-hidden border border-outline-variant/20">
-                        <div class="project-gallery-frame">
-                            <img src="assets/projetos/Avalia%C3%A7%C3%A3o%20de%20atendimento/3.png" alt="Lista de atendimentos pendentes para avalia&ccedil;&atilde;o">
-                        </div>
-                        <figcaption class="p-5 text-sm text-on-surface-variant">Modal com os atendimentos pendentes de avalia&ccedil;&atilde;o, permitindo ao usu&aacute;rio selecionar rapidamente cada solicita&ccedil;&atilde;o a ser respondida.</figcaption>
-                        <div class="gallery-action-bar">
-                            <button type="button" class="gallery-fullscreen-button" data-fullscreen-trigger data-image-src="assets/projetos/Avalia%C3%A7%C3%A3o%20de%20atendimento/3.png" data-image-alt="Lista de atendimentos pendentes para avalia&ccedil;&atilde;o" data-image-caption="Modal com os atendimentos pendentes de avalia&ccedil;&atilde;o, permitindo ao usu&aacute;rio selecionar rapidamente cada solicita&ccedil;&atilde;o a ser respondida.">
-                                Ver em tela cheia
-                            </button>
-                        </div>
-                    </figure>
-
-                    <figure class="glass-card rounded-3xl overflow-hidden border border-outline-variant/20">
-                        <div class="project-gallery-frame">
-                            <img src="assets/projetos/Avalia%C3%A7%C3%A3o%20de%20atendimento/1.png" alt="Formul&aacute;rio de avalia&ccedil;&atilde;o de atendimento">
-                        </div>
-                        <figcaption class="p-5 text-sm text-on-surface-variant">Formul&aacute;rio de feedback com identifica&ccedil;&atilde;o do atendimento, pergunta sobre resolu&ccedil;&atilde;o, nota do servi&ccedil;o e coment&aacute;rios opcionais.</figcaption>
-                        <div class="gallery-action-bar">
-                            <button type="button" class="gallery-fullscreen-button" data-fullscreen-trigger data-image-src="assets/projetos/Avalia%C3%A7%C3%A3o%20de%20atendimento/1.png" data-image-alt="Formul&aacute;rio de avalia&ccedil;&atilde;o de atendimento" data-image-caption="Formul&aacute;rio de feedback com identifica&ccedil;&atilde;o do atendimento, pergunta sobre resolu&ccedil;&atilde;o, nota do servi&ccedil;o e coment&aacute;rios opcionais.">
-                                Ver em tela cheia
-                            </button>
-                        </div>
-                    </figure>
-
-                    <figure class="glass-card rounded-3xl overflow-hidden border border-outline-variant/20">
-                        <div class="project-gallery-frame">
-                            <img src="assets/projetos/Avalia%C3%A7%C3%A3o%20de%20atendimento/2.png" alt="Hist&oacute;rico de itens avali&aacute;veis no modal">
-                        </div>
-                        <figcaption class="p-5 text-sm text-on-surface-variant">Listagem operacional dos chamados avali&aacute;veis com identifica&ccedil;&atilde;o, tipo, status e a&ccedil;&atilde;o direta para abrir a avalia&ccedil;&atilde;o.</figcaption>
-                        <div class="gallery-action-bar">
-                            <button type="button" class="gallery-fullscreen-button" data-fullscreen-trigger data-image-src="assets/projetos/Avalia%C3%A7%C3%A3o%20de%20atendimento/2.png" data-image-alt="Hist&oacute;rico de itens avali&aacute;veis no modal" data-image-caption="Listagem operacional dos chamados avali&aacute;veis com identifica&ccedil;&atilde;o, tipo, status e a&ccedil;&atilde;o direta para abrir a avalia&ccedil;&atilde;o.">
-                                Ver em tela cheia
-                            </button>
-                        </div>
-                    </figure>
-
-                    <figure class="glass-card rounded-3xl overflow-hidden border border-outline-variant/20 lg:col-span-2">
-                        <div class="project-gallery-frame">
-                            <img src="assets/projetos/Avalia%C3%A7%C3%A3o%20de%20atendimento/6.png" alt="Dashboard anal&iacute;tico das avalia&ccedil;&otilde;es">
-                        </div>
-                        <figcaption class="p-5 text-sm text-on-surface-variant">Camada anal&iacute;tica com gr&aacute;ficos de resolu&ccedil;&atilde;o, distribui&ccedil;&atilde;o de notas, origem dos atendimentos e ranking por empresa e filial.</figcaption>
-                        <div class="gallery-action-bar">
-                            <button type="button" class="gallery-fullscreen-button" data-fullscreen-trigger data-image-src="assets/projetos/Avalia%C3%A7%C3%A3o%20de%20atendimento/6.png" data-image-alt="Dashboard anal&iacute;tico das avalia&ccedil;&otilde;es" data-image-caption="Camada anal&iacute;tica com gr&aacute;ficos de resolu&ccedil;&atilde;o, distribui&ccedil;&atilde;o de notas, origem dos atendimentos e ranking por empresa e filial.">
-                                Ver em tela cheia
-                            </button>
-                        </div>
-                    </figure>
-                </div>
-            </div>
-        </section>
-
-        <section class="max-w-7xl mx-auto px-6 lg:px-8 py-12 md:py-20 reveal">
-            <div class="grid grid-cols-1 lg:grid-cols-[0.95fr_1.05fr] gap-8">
-                <div class="glass-card rounded-3xl p-8 md:p-10">
-                    <h2 class="text-3xl md:text-4xl font-headline font-bold mb-6">Contexto e problema</h2>
-                    <div class="space-y-5 text-on-surface-variant">
-                        <p>
-                            A funcionalidade foi criada dentro de uma plataforma web corporativa de atendimento interno, com foco na qualidade percebida pelo usu&aacute;rio final.
-                        </p>
-                        <p>
-                            Sem um fluxo centralizado de avalia&ccedil;&atilde;o, a organiza&ccedil;&atilde;o perde visibilidade sobre satisfa&ccedil;&atilde;o, resolutividade dos chamados e pontos de fric&ccedil;&atilde;o no suporte.
-                        </p>
-                        <p>
-                            Tamb&eacute;m havia necessidade de auditoria e leitura gerencial por contexto organizacional, o que exigia filtros por empresa e filial, hist&oacute;rico paginado e indicadores confi&aacute;veis.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="glass-card rounded-3xl p-8 md:p-10">
-                    <h2 class="text-3xl md:text-4xl font-headline font-bold mb-6">Solu&ccedil;&atilde;o implementada</h2>
-                    <ul class="content-list text-on-surface-variant">
-                        <li>Fluxo operacional com modais para listar atendimentos avali&aacute;veis e abrir o formul&aacute;rio de feedback.</li>
-                        <li>Perguntas objetivas sobre resolu&ccedil;&atilde;o, classifica&ccedil;&atilde;o do atendimento e coment&aacute;rios adicionais.</li>
-                        <li>Painel gerencial com cards de resumo, tabela paginada e filtros combin&aacute;veis por contexto organizacional.</li>
-                        <li>Modal para leitura completa de coment&aacute;rios extensos sem comprometer a legibilidade da listagem.</li>
-                        <li>Dashboard visual com gr&aacute;ficos de resolu&ccedil;&atilde;o, notas, origem dos atendimentos e ranking por empresa e filial.</li>
-                        <li>Consist&ecirc;ncia entre tabela e indicadores por reaproveitamento do mesmo conjunto de filtros na agrega&ccedil;&atilde;o.</li>
+            <div class="case-body">
+                <section class="case-section" id="contexto">
+                    <h2>Contexto e problema</h2>
+                    <p>Sem um fluxo centralizado de avaliação, a organização não enxerga a qualidade percebida do suporte.</p>
+                    <ul class="list">
+                        <li>Pouca visibilidade sobre satisfação e resolutividade.</li>
+                        <li>Pontos de atrito no suporte passam despercebidos.</li>
+                        <li>Necessidade de auditoria por empresa e filial.</li>
                     </ul>
-                </div>
-            </div>
-        </section>
+                </section>
 
-        <section class="max-w-7xl mx-auto px-6 lg:px-8 py-12 md:py-20 reveal">
-            <div class="grid grid-cols-1 lg:grid-cols-[0.95fr_1.05fr] gap-8">
-                <div class="glass-card rounded-3xl p-8 md:p-10">
-                    <h2 class="text-3xl md:text-4xl font-headline font-bold mb-6">Tecnologias utilizadas</h2>
-                    <ul class="content-list text-on-surface-variant">
-                        <li>Back-end em PHP com arquitetura MVC, controle de sess&atilde;o e regras de acesso por perfil.</li>
-                        <li>Front-end em HTML, CSS, JavaScript e jQuery com modais e tabela responsiva.</li>
-                        <li>Chart.js com plugins customizados para exibi&ccedil;&atilde;o de valores e composi&ccedil;&atilde;o visual dos gr&aacute;ficos.</li>
-                        <li>Banco de dados relacional com consultas SQL parametrizadas, JOINs e pagina&ccedil;&atilde;o por offset.</li>
-                        <li>Integra&ccedil;&atilde;o web com filtros GET para navega&ccedil;&atilde;o, pagina&ccedil;&atilde;o e repetibilidade das consultas.</li>
+                <section class="case-section" id="solucao">
+                    <h2>Solução</h2>
+                    <p>Criei a coleta no fluxo do colaborador e um painel gerencial que usa os mesmos filtros para tabela e gráficos.</p>
+                    <ul class="list">
+                        <li><strong>Pendências:</strong> modal lista atendimentos e atestados a avaliar; quando há pendência, o colaborador é convidado a avaliar antes de continuar.</li>
+                        <li><strong>Formulário:</strong> pergunta de resolução, nota de 1 a 5, comentário opcional e pergunta condicional quando o problema não foi resolvido.</li>
+                        <li><strong>Painel:</strong> cards de resumo, tabela paginada (OFFSET/FETCH) e filtros combináveis, com limpeza de filtros inválidos.</li>
+                        <li><strong>Comentários longos</strong> truncados na tabela e lidos por completo em modal.</li>
+                        <li><strong>Gráficos:</strong> resolução, distribuição de notas, origem e rankings (top 12) por empresa e filial — com fallback se a biblioteca não carregar.</li>
                     </ul>
-                </div>
+                </section>
 
-                <div class="glass-card rounded-3xl p-8 md:p-10">
-                    <h2 class="text-3xl md:text-4xl font-headline font-bold mb-6">Desafios t&eacute;cnicos</h2>
-                    <ul class="content-list text-on-surface-variant">
-                        <li>Controle de permiss&otilde;es multiempresa, resolvido com valida&ccedil;&atilde;o pr&eacute;via do escopo autorizado ao usu&aacute;rio.</li>
-                        <li>Coer&ecirc;ncia entre lista e indicadores, tratada com aplica&ccedil;&atilde;o do mesmo filtro nas consultas paginadas e agregadas.</li>
-                        <li>Usabilidade com coment&aacute;rios longos, resolvida com truncamento em tabela e leitura completa em modal.</li>
-                        <li>Legibilidade de gr&aacute;ficos com labels extensos, tratada com abrevia&ccedil;&atilde;o visual e preserva&ccedil;&atilde;o do contexto anal&iacute;tico.</li>
+                <section class="case-section" id="telas">
+                    <h2>Telas</h2>
+                    <p class="privacy-note"><svg aria-hidden="true"><use href="#i-shield"/></svg>Capturas do sistema em produção. Dados pessoais e de clientes foram ocultados (LGPD). Clique nas imagens para ampliar.</p>
+                    <div class="gallery" data-gallery>
+                        <figure>
+                            <a href="assets/projetos/avaliacao-atendimento/04.webp" data-lightbox data-caption="Entrada do fluxo. Atalho para avaliar atendimentos no dashboard.">
+                                <div class="browser"><div class="browser__bar"><i></i><i></i><i></i><span>colaborador / inicio</span></div>
+                                <img src="assets/projetos/avaliacao-atendimento/04-960.webp" srcset="assets/projetos/avaliacao-atendimento/04-960.webp 960w, assets/projetos/avaliacao-atendimento/04.webp 1900w" sizes="(min-width: 1024px) 450px, 100vw" width="960" height="459" loading="lazy" decoding="async" alt="Dashboard do colaborador com atalho para avalia&#231;&#227;o"></div>
+                            </a>
+                            <figcaption><b>Entrada do fluxo.</b> Atalho para avaliar atendimentos no dashboard.</figcaption>
+                        </figure>
+                        <figure>
+                            <a href="assets/projetos/avaliacao-atendimento/03.webp" data-lightbox data-caption="Convite &#224; avalia&#231;&#227;o. Aviso com as pend&#234;ncias antes de continuar.">
+                                <div class="browser"><div class="browser__bar"><i></i><i></i><i></i><span>colaborador / avaliacao / pendentes</span></div>
+                                <img src="assets/projetos/avaliacao-atendimento/03-960.webp" srcset="assets/projetos/avaliacao-atendimento/03-960.webp 960w, assets/projetos/avaliacao-atendimento/03.webp 1900w" sizes="(min-width: 1024px) 450px, 100vw" width="960" height="459" loading="lazy" decoding="async" alt="Modal informando avalia&#231;&#245;es pendentes"></div>
+                            </a>
+                            <figcaption><b>Convite à avaliação.</b> Aviso com as pendências antes de continuar.</figcaption>
+                        </figure>
+                        <figure>
+                            <a href="assets/projetos/avaliacao-atendimento/02.webp" data-lightbox data-caption="Itens a avaliar. Atendimentos e atestados aguardando avalia&#231;&#227;o.">
+                                <div class="browser"><div class="browser__bar"><i></i><i></i><i></i><span>colaborador / avaliacao / lista</span></div>
+                                <img src="assets/projetos/avaliacao-atendimento/02-960.webp" srcset="assets/projetos/avaliacao-atendimento/02-960.webp 960w, assets/projetos/avaliacao-atendimento/02.webp 1900w" sizes="(min-width: 1024px) 450px, 100vw" width="960" height="459" loading="lazy" decoding="async" alt="Lista de itens pendentes de avalia&#231;&#227;o"></div>
+                            </a>
+                            <figcaption><b>Itens a avaliar.</b> Atendimentos e atestados aguardando avaliação.</figcaption>
+                        </figure>
+                        <figure>
+                            <a href="assets/projetos/avaliacao-atendimento/05.webp" data-lightbox data-caption="Painel gerencial. Resumo, filtros combin&#225;veis e tabela paginada.">
+                                <div class="browser"><div class="browser__bar"><i></i><i></i><i></i><span>gestao / avaliacoes</span></div>
+                                <img src="assets/projetos/avaliacao-atendimento/05-960.webp" srcset="assets/projetos/avaliacao-atendimento/05-960.webp 960w, assets/projetos/avaliacao-atendimento/05.webp 1900w" sizes="(min-width: 1024px) 450px, 100vw" width="960" height="459" loading="lazy" decoding="async" alt="Painel gerencial com cards de resumo, filtros e tabela (dados ocultados)"></div>
+                            </a>
+                            <figcaption><b>Painel gerencial.</b> Resumo, filtros combináveis e tabela paginada.</figcaption>
+                        </figure>
+                        <figure class="is-wide">
+                            <a href="assets/projetos/avaliacao-atendimento/06.webp" data-lightbox data-caption="Gr&#225;ficos. Resolu&#231;&#227;o, notas, origem e rankings por empresa e filial.">
+                                <div class="browser"><div class="browser__bar"><i></i><i></i><i></i><span>gestao / avaliacoes / graficos</span></div>
+                                <img src="assets/projetos/avaliacao-atendimento/06-960.webp" srcset="assets/projetos/avaliacao-atendimento/06-960.webp 960w, assets/projetos/avaliacao-atendimento/06.webp 1900w" sizes="(min-width: 1024px) 900px, 100vw" width="960" height="459" loading="lazy" decoding="async" alt="Gr&#225;ficos de resolu&#231;&#227;o, notas, origem e rankings (dados ocultados)"></div>
+                            </a>
+                            <figcaption><b>Gráficos.</b> Resolução, notas, origem e rankings por empresa e filial.</figcaption>
+                        </figure>
+                    </div>
+                </section>
+
+                <section class="case-section" id="tecnologias">
+                    <h2>Tecnologias</h2>
+                    <ul class="list">
+                        <li><strong>Back-end:</strong> PHP em MVC com sessão e regras de acesso por perfil.</li>
+                        <li><strong>Banco:</strong> SQL parametrizado com JOINs e paginação OFFSET/FETCH; um único payload alimenta tabela e gráficos.</li>
+                        <li><strong>Front-end:</strong> HTML, CSS, JavaScript e jQuery com modais e tabela responsiva.</li>
+                        <li><strong>Gráficos:</strong> Chart.js com plugins customizados de rótulos.</li>
+                        <li><strong>Navegação:</strong> filtros via GET, repetíveis e compartilháveis.</li>
                     </ul>
-                </div>
-            </div>
-        </section>
+                </section>
 
-        <section class="max-w-7xl mx-auto px-6 lg:px-8 py-12 md:py-20 reveal">
-            <div class="glass-card rounded-3xl p-8 md:p-10">
-                <div class="grid grid-cols-1 lg:grid-cols-[0.95fr_1.05fr] gap-8 items-start">
-                    <div>
-                        <h2 class="text-3xl md:text-4xl font-headline font-bold mb-4">Resultados e boas pr&aacute;ticas</h2>
-                        <p class="text-on-surface-variant leading-relaxed">
-                            O projeto centralizou a jornada de avalia&ccedil;&atilde;o, aumentou rastreabilidade e trouxe leitura executiva imediata da qualidade do atendimento. O resultado foi uma base mais consistente para melhoria cont&iacute;nua, prioriza&ccedil;&atilde;o de a&ccedil;&otilde;es e tomada de decis&atilde;o orientada por m&eacute;tricas.
-                        </p>
+                <section class="case-section" id="desafios">
+                    <h2>Desafios técnicos</h2>
+                    <div class="challenges">
+                        <div class="challenge"><h3>Permissões multiempresa</h3><p>Escopo autorizado validado antes das consultas.</p></div>
+                        <div class="challenge"><h3>Lista × indicadores</h3><p>Mesmos filtros nas consultas paginadas e agregadas.</p></div>
+                        <div class="challenge"><h3>Comentários longos</h3><p>Truncamento na tabela e leitura em modal.</p></div>
+                        <div class="challenge"><h3>Rótulos extensos</h3><p>Abreviação visual preservando o contexto.</p></div>
                     </div>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div class="rounded-2xl bg-surface-container-high p-5 border border-outline-variant/20">
-                            <div class="text-2xl font-headline font-bold text-primary mb-2">Rastreabilidade</div>
-                            <p class="text-sm text-on-surface-variant">Fluxo &uacute;nico para coleta, leitura e acompanhamento das avalia&ccedil;&otilde;es.</p>
-                        </div>
-                        <div class="rounded-2xl bg-surface-container-high p-5 border border-outline-variant/20">
-                            <div class="text-2xl font-headline font-bold text-primary mb-2">Governan&ccedil;a</div>
-                            <p class="text-sm text-on-surface-variant">Filtros avan&ccedil;ados e segmenta&ccedil;&atilde;o por empresa e filial com escopo seguro.</p>
-                        </div>
-                        <div class="rounded-2xl bg-surface-container-high p-5 border border-outline-variant/20">
-                            <div class="text-2xl font-headline font-bold text-primary mb-2">Vis&atilde;o executiva</div>
-                            <p class="text-sm text-on-surface-variant">Cards e gr&aacute;ficos tornam r&aacute;pida a leitura de satisfa&ccedil;&atilde;o, nota e resolu&ccedil;&atilde;o.</p>
-                        </div>
-                        <div class="rounded-2xl bg-surface-container-high p-5 border border-outline-variant/20">
-                            <div class="text-2xl font-headline font-bold text-primary mb-2">Manutenibilidade</div>
-                            <p class="text-sm text-on-surface-variant">Estrutura expl&iacute;cita de filtros, consultas parametrizadas e componentes reutiliz&aacute;veis.</p>
-                        </div>
+                </section>
+
+                <section class="case-section" id="resultados">
+                    <h2>Resultados</h2>
+                    <p>A jornada de avaliação ficou centralizada e a gestão passou a ter leitura imediata da qualidade do atendimento.</p>
+                    <div class="results">
+                        <div class="result"><h3>Rastreabilidade</h3><p>Coleta, leitura e acompanhamento em um fluxo só.</p></div>
+                        <div class="result"><h3>Governança</h3><p>Segmentação segura por empresa e filial.</p></div>
+                        <div class="result"><h3>Visão executiva</h3><p>Satisfação e resolução em segundos.</p></div>
+                        <div class="result"><h3>Manutenibilidade</h3><p>Filtros explícitos e consultas parametrizadas.</p></div>
                     </div>
-                </div>
+                </section>
+
+                <nav class="pager" aria-label="Outros projetos">
+                    <a href="documentos-assinados.html"><small>← Anterior</small><strong>Documentos assinados</strong></a>
+                    <a class="next" href="assinatura-documentos.html"><small>Próximo →</small><strong>Assinatura de documentos</strong></a>
+                </nav>
             </div>
-        </section>
+        </div>
     </main>
 
-    <footer class="w-full py-12 bg-background border-t border-outline-variant/20">
-        <div class="flex flex-col md:flex-row justify-between items-center px-6 md:px-12 max-w-7xl mx-auto gap-6">
-            <div class="text-center md:text-left">
-                <div class="text-on-surface text-sm font-headline font-bold tracking-wide">Daniel Torres</div>
-                <div class="text-on-surface-variant text-xs tracking-widest uppercase">
-                    Desenvolvedor de software em Brasilia, DF
-                </div>
-            </div>
-            <div class="flex flex-wrap justify-center gap-6">
-                <a href="index.html#projects" class="text-on-surface-variant hover:text-primary hover:-translate-y-0.5 transition-all text-xs tracking-widest uppercase">Projetos</a>
-                <a href="https://github.com/devdanieltorres" target="_blank" rel="noreferrer" class="text-on-surface-variant hover:text-primary hover:-translate-y-0.5 transition-all text-xs tracking-widest uppercase">GitHub</a>
-                <a href="https://www.linkedin.com/in/daniel-torres-0851581a0/" target="_blank" rel="noreferrer" class="text-on-surface-variant hover:text-primary hover:-translate-y-0.5 transition-all text-xs tracking-widest uppercase">LinkedIn</a>
-                <a href="mailto:Danieltorres2706@hotmail.com" class="text-on-surface-variant hover:text-primary hover:-translate-y-0.5 transition-all text-xs tracking-widest uppercase">Email</a>
-            </div>
-        </div>
+    <!-- layout:footer -->
+    <footer class="site-footer">
+      <div class="container site-footer__inner">
+        <p>© <span data-year>2026</span> Daniel Torres · Desenvolvedor full-stack em Brasília, DF</p>
+        <nav aria-label="Rodapé">
+          <ul role="list">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="projects.html">Projetos</a></li>
+            <li><a href="https://github.com/devdanieltorres" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/daniel-torres-0851581a0/" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="mailto:danieltorres2706@hotmail.com">E-mail</a></li>
+          </ul>
+        </nav>
+        <a class="to-top" href="#conteudo"><svg width="14" height="14" aria-hidden="true"><use href="#i-arrow-up"/></svg>Voltar ao topo</a>
+      </div>
     </footer>
-
-    <div class="lightbox hidden" data-lightbox aria-hidden="true">
-        <div class="lightbox__dialog">
-            <button type="button" class="lightbox__close" data-lightbox-close aria-label="Fechar visualiza&ccedil;&atilde;o">
-                &times;
-            </button>
-            <div class="lightbox__content">
-                <div class="lightbox__image-wrap">
-                    <img class="lightbox__image" data-lightbox-image src="" alt="">
-                </div>
-                <p class="lightbox__caption" data-lightbox-caption></p>
-            </div>
-        </div>
-    </div>
-
-    <script src="assets/js/script.js"></script>
+    <!-- /layout:footer -->
 </body>
 </html>
