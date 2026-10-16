@@ -17,19 +17,18 @@
     <meta name="twitter:card" content="summary_large_image">
     <!-- layout:head -->
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <meta name="theme-color" content="#07090d">
+    <meta name="theme-color" content="#0f0d0a">
     <meta name="color-scheme" content="dark light">
     <meta name="author" content="Daniel Torres">
     <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@400..600&family=Instrument+Serif:ital@1&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@400..600&family=Instrument+Serif:ital@0;1&display=swap">
     <link rel="stylesheet" href="assets/css/main.css">
     <script>(function(){var d=document.documentElement;d.classList.add('js');try{var t=localStorage.getItem('theme');if(t)d.setAttribute('data-theme',t)}catch(e){}})();</script>
     <script src="assets/js/main.js" defer></script>
     <!-- /layout:head -->
-    <link rel="preload" as="image" href="assets/img/daniel-torres-480.webp" imagesrcset="assets/img/daniel-torres-480.webp 480w, assets/img/daniel-torres.webp 1200w" imagesizes="(min-width: 960px) 400px, 80vw">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -136,36 +135,32 @@
 
         <!-- ============================== HERO -->
         <section class="hero container" aria-labelledby="titulo">
-            <div class="hero__grid">
-                <div class="hero__copy">
-                    <span class="badge reveal"><span class="badge__dot" aria-hidden="true"></span>Disponível para novos desafios</span>
-                    <h1 id="titulo" class="reveal" style="--i:1">Software que resolve, do banco de dados à <em class="serif">interface</em>.</h1>
-                    <p class="hero__lead reveal" style="--i:2">
-                        Sou <strong>Daniel Torres</strong>, desenvolvedor full-stack com <span data-years-since="2021-01">5</span>+ anos em tecnologia.
-                        Crio, integro e modernizo <strong>sistemas web, APIs, bancos de dados e automações</strong> —
-                        e me adapto rápido a qualquer stack, domínio ou desafio de negócio.
-                    </p>
-                    <div class="hero__actions reveal" style="--i:3">
-                        <a class="btn btn--primary btn--lg" href="#projetos">Ver projetos <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
-                        <a class="btn btn--lg" href="assets/docs/curriculumDaniel.pdf" download="Curriculo-Daniel-Torres.pdf"><svg aria-hidden="true"><use href="#i-download"/></svg>Baixar currículo</a>
-                        <div class="socials">
-                            <a class="icon-button" href="https://github.com/devdanieltorres" target="_blank" rel="noopener" aria-label="GitHub"><svg aria-hidden="true"><use href="#i-github"/></svg></a>
-                            <a class="icon-button" href="https://www.linkedin.com/in/daniel-torres-0851581a0/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg aria-hidden="true"><use href="#i-linkedin"/></svg></a>
-                            <a class="icon-button" href="mailto:danieltorres2706@hotmail.com" aria-label="E-mail"><svg aria-hidden="true"><use href="#i-mail"/></svg></a>
-                        </div>
+            <div class="hero__top reveal">
+                <span class="badge"><span class="badge__dot" aria-hidden="true"></span>Disponível para novos desafios</span>
+                <p class="hero__meta">Brasília, DF · dev full-stack · desde 2021</p>
+            </div>
+
+            <h1 id="titulo">
+                <span class="reveal-mask"><span>Software que resolve,</span></span>
+                <span class="reveal-mask" style="--i:1"><span>do banco de dados</span></span>
+                <span class="reveal-mask" style="--i:2"><span>à <em class="serif">interface</em>.</span></span>
+            </h1>
+
+            <div class="hero__row">
+                <p class="hero__lead reveal" style="--i:2">
+                    Sou <strong>Daniel Torres</strong>, desenvolvedor full-stack com <span data-years-since="2021-01">5</span>+ anos em tecnologia.
+                    Crio, integro e modernizo <strong>sistemas web, APIs, bancos de dados e automações</strong> —
+                    e me adapto rápido a qualquer stack, domínio ou desafio de negócio.
+                </p>
+                <div class="hero__actions reveal" style="--i:3">
+                    <a class="btn btn--primary btn--lg" href="#projetos">Ver projetos <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+                    <a class="btn btn--lg" href="assets/docs/curriculumDaniel.pdf" download="Curriculo-Daniel-Torres.pdf"><svg aria-hidden="true"><use href="#i-download"/></svg>Currículo</a>
+                    <div class="socials">
+                        <a class="icon-button" href="https://github.com/devdanieltorres" target="_blank" rel="noopener" aria-label="GitHub"><svg aria-hidden="true"><use href="#i-github"/></svg></a>
+                        <a class="icon-button" href="https://www.linkedin.com/in/daniel-torres-0851581a0/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg aria-hidden="true"><use href="#i-linkedin"/></svg></a>
+                        <a class="icon-button" href="mailto:danieltorres2706@hotmail.com" aria-label="E-mail"><svg aria-hidden="true"><use href="#i-mail"/></svg></a>
                     </div>
                 </div>
-
-                <figure class="portrait reveal" style="--i:2">
-                    <div class="portrait__frame">
-                        <img src="assets/img/daniel-torres-480.webp"
-                             srcset="assets/img/daniel-torres-480.webp 480w, assets/img/daniel-torres.webp 1200w"
-                             sizes="(min-width: 960px) 400px, 80vw"
-                             width="480" height="480" alt="Daniel Torres, de camisa preta e braços cruzados" fetchpriority="high">
-                    </div>
-                    <span class="portrait__tag portrait__tag--a"><svg aria-hidden="true"><use href="#i-pin"/></svg>Brasília, DF</span>
-                    <span class="portrait__tag portrait__tag--b">back · front · dados</span>
-                </figure>
             </div>
 
             <div class="stats">
@@ -187,69 +182,76 @@
         <!-- ============================== SOBRE -->
         <section class="section container" id="sobre" aria-labelledby="sobre-titulo">
             <div class="section-head">
-                <span class="eyebrow">Sobre</span>
+                <span class="eyebrow">01 — Sobre</span>
                 <h2 id="sobre-titulo">Versátil por natureza, <em class="serif">sólido</em> na entrega.</h2>
             </div>
 
-            <div class="bento">
-                <article class="card span-4 reveal" data-spotlight>
-                    <p class="about-lead">Comecei no suporte técnico em 2021, passei pela Dataprev automatizando processos com Python e hoje desenvolvo e modernizo sistemas corporativos na HCM Soluções.</p>
-                    <p>Atuo de ponta a ponta: regras de negócio, modelagem de dados, integrações, performance e interfaces claras para quem usa o sistema todo dia. Já trabalhei com suporte, automação, sistemas legados e produtos em evolução — e levo essa bagagem para qualquer área: web, dados, integrações, automação ou produto. Trabalho com autonomia e perto do negócio, do requisito ao deploy.</p>
-                </article>
-
-                <article class="card span-2 reveal" style="--i:1" data-spotlight>
-                    <div class="card__icon"><svg aria-hidden="true"><use href="#i-users"/></svg></div>
-                    <h3>O que eu faço</h3>
-                    <div class="chips">
-                        <span class="chip">Sistemas web</span>
-                        <span class="chip">APIs e integrações</span>
-                        <span class="chip">Banco de dados</span>
-                        <span class="chip">Dashboards e BI</span>
-                        <span class="chip">Automação</span>
-                        <span class="chip">Modernização de legado</span>
-                        <span class="chip">UI/UX</span>
-                        <span class="chip">CI/CD</span>
+            <div class="about">
+                <figure class="portrait reveal">
+                    <div class="portrait__frame">
+                        <img src="assets/img/daniel-torres-480.webp"
+                             srcset="assets/img/daniel-torres-480.webp 480w, assets/img/daniel-torres.webp 1200w"
+                             sizes="(min-width: 960px) 340px, 80vw"
+                             width="480" height="480" loading="lazy" decoding="async"
+                             alt="Daniel Torres, de camisa preta e braços cruzados">
                     </div>
-                </article>
+                    <figcaption>
+                        <b>fig. 00 — Daniel Torres</b>
+                        <span><svg width="11" height="11" style="display:inline-block;vertical-align:-1px;margin-right:4px" aria-hidden="true"><use href="#i-pin"/></svg>Brasília, DF · <span class="accent">back · front · dados</span></span>
+                    </figcaption>
+                </figure>
 
-                <article class="card span-2 reveal" data-spotlight>
-                    <div class="card__icon"><svg aria-hidden="true"><use href="#i-cap"/></svg></div>
-                    <h3>Sistemas de Informação</h3>
-                    <p>Graduação concluída na Uniprojeção.</p>
-                    <p class="meta">2019 — 2023</p>
-                </article>
+                <div class="about__body">
+                    <p class="about-lead reveal">Comecei no suporte técnico em 2021, passei pela Dataprev automatizando processos com Python e hoje desenvolvo e modernizo sistemas corporativos na HCM Soluções.</p>
+                    <p class="reveal" style="--i:1">Atuo de ponta a ponta: regras de negócio, modelagem de dados, integrações, performance e interfaces claras para quem usa o sistema todo dia. Já trabalhei com suporte, automação, sistemas legados e produtos em evolução — e levo essa bagagem para qualquer área: web, dados, integrações, automação ou produto. Trabalho com autonomia e perto do negócio, do requisito ao deploy.</p>
 
-                <article class="card span-2 reveal" style="--i:1" data-spotlight>
-                    <div class="card__icon"><svg aria-hidden="true"><use href="#i-pen"/></svg></div>
-                    <h3>Design + código</h3>
-                    <p>Curso de design gráfico na SAGA (280h): vetor, ilustração, tratamento de imagem e 3D. Ajuda a pensar interfaces, não só telas.</p>
-                </article>
-
-                <article class="card span-2 reveal" style="--i:2" data-spotlight>
-                    <div class="card__icon"><svg aria-hidden="true"><use href="#i-bot"/></svg></div>
-                    <h3>IA no fluxo de trabalho</h3>
-                    <p>Uso Cursor e Claude Code para acelerar refatorações, leitura de código legado e revisões — sempre com revisão humana e critério técnico.</p>
-                </article>
+                    <div class="facets">
+                        <div class="facet reveal">
+                            <h3>O que eu faço</h3>
+                            <div class="chips">
+                                <span class="chip">Sistemas web</span>
+                                <span class="chip">APIs e integrações</span>
+                                <span class="chip">Banco de dados</span>
+                                <span class="chip">Dashboards e BI</span>
+                                <span class="chip">Automação</span>
+                                <span class="chip">Modernização de legado</span>
+                                <span class="chip">UI/UX</span>
+                                <span class="chip">CI/CD</span>
+                            </div>
+                        </div>
+                        <div class="facet reveal" style="--i:1">
+                            <h3>Sistemas de Informação</h3>
+                            <p>Graduação concluída na Uniprojeção.</p>
+                            <p class="meta">2019 — 2023</p>
+                        </div>
+                        <div class="facet reveal" style="--i:2">
+                            <h3>Design + código</h3>
+                            <p>Curso de design gráfico na SAGA (280h): vetor, ilustração, tratamento de imagem e 3D. Ajuda a pensar interfaces, não só telas.</p>
+                        </div>
+                        <div class="facet reveal" style="--i:3">
+                            <h3>IA no fluxo de trabalho</h3>
+                            <p>Uso Cursor e Claude Code para acelerar refatorações, leitura de código legado e revisões — sempre com revisão humana e critério técnico.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- ============================== EXPERIÊNCIA -->
         <section class="section container" id="experiencia" aria-labelledby="exp-titulo">
             <div class="section-head">
-                <span class="eyebrow">Experiência</span>
+                <span class="eyebrow">02 — Experiência</span>
                 <h2 id="exp-titulo">Trajetória</h2>
                 <p>Do suporte ao desenvolvimento full-stack, sempre perto de sistemas corporativos em produção.</p>
             </div>
 
             <ol class="timeline" role="list">
                 <li class="job reveal">
-                    <article class="card">
+                    <p class="job__period">out 2023 — atual<small data-duration-from="2023-10">3 anos</small></p>
+                    <div class="job__body">
                         <div class="job__head">
-                            <div>
-                                <h3>Desenvolvedor de software</h3>
-                                <p class="job__company">HCM Soluções em Tecnologia e Inovação</p>
-                            </div>
-                            <p class="job__period">out 2023 — atual<small data-duration-from="2023-10">3 anos</small></p>
+                            <h3>Desenvolvedor de software</h3>
+                            <p class="job__company">HCM Soluções em Tecnologia e Inovação</p>
                         </div>
                         <ul class="list">
                             <li>Desenvolvo e evoluo módulos estratégicos de um sistema corporativo — dashboards, fluxos operacionais e integrações — com foco em rastreabilidade e apoio à decisão.</li>
@@ -262,17 +264,15 @@
                         <div class="chips">
                             <span class="chip chip--accent">PHP</span><span class="chip chip--accent">CodeIgniter</span><span class="chip">MySQL</span><span class="chip">JavaScript</span><span class="chip">jQuery</span><span class="chip">APIs REST</span><span class="chip">Azure DevOps</span>
                         </div>
-                    </article>
+                    </div>
                 </li>
 
                 <li class="job reveal">
-                    <article class="card">
+                    <p class="job__period">dez 2021 — mai 2023<small data-duration-from="2021-12" data-duration-to="2023-05">1 ano e 6 meses</small></p>
+                    <div class="job__body">
                         <div class="job__head">
-                            <div>
-                                <h3>Desenvolvedor full-stack · estágio</h3>
-                                <p class="job__company">Dataprev — Empresa de Tecnologia e Informações da Previdência</p>
-                            </div>
-                            <p class="job__period">dez 2021 — mai 2023<small data-duration-from="2021-12" data-duration-to="2023-05">1 ano e 6 meses</small></p>
+                            <h3>Desenvolvedor full-stack · estágio</h3>
+                            <p class="job__company">Dataprev — Empresa de Tecnologia e Informações da Previdência</p>
                         </div>
                         <ul class="list">
                             <li>Implementei novas funcionalidades em sistemas internos, melhorando usabilidade, eficiência e estabilidade.</li>
@@ -282,17 +282,15 @@
                         <div class="chips">
                             <span class="chip chip--accent">PHP</span><span class="chip chip--accent">Python</span><span class="chip">Selenium</span><span class="chip">Pandas</span><span class="chip">Git</span>
                         </div>
-                    </article>
+                    </div>
                 </li>
 
                 <li class="job reveal">
-                    <article class="card">
+                    <p class="job__period">jan 2021 — nov 2021<small data-duration-from="2021-01" data-duration-to="2021-11">11 meses</small></p>
+                    <div class="job__body">
                         <div class="job__head">
-                            <div>
-                                <h3>Suporte técnico · estágio</h3>
-                                <p class="job__company">SAT — Sistemas de Automação Comercial</p>
-                            </div>
-                            <p class="job__period">jan 2021 — nov 2021<small data-duration-from="2021-01" data-duration-to="2021-11">11 meses</small></p>
+                            <h3>Suporte técnico · estágio</h3>
+                            <p class="job__company">SAT — Sistemas de Automação Comercial</p>
                         </div>
                         <ul class="list">
                             <li>Resolvi <strong>95% dos chamados técnicos em até 24 horas</strong>.</li>
@@ -301,7 +299,7 @@
                         <div class="chips">
                             <span class="chip">SQL</span><span class="chip">ServiceNow</span>
                         </div>
-                    </article>
+                    </div>
                 </li>
             </ol>
         </section>
@@ -309,39 +307,39 @@
         <!-- ============================== STACK -->
         <section class="section container" id="stack" aria-labelledby="stack-titulo">
             <div class="section-head">
-                <span class="eyebrow">Stack</span>
+                <span class="eyebrow">03 — Stack</span>
                 <h2 id="stack-titulo">Ferramentas que uso em produção</h2>
                 <p>Agrupadas pelo papel que cumprem nos sistemas que desenvolvo.</p>
             </div>
 
-            <div class="grid grid-3">
-                <article class="card stack-card reveal" data-spotlight>
-                    <h3><span class="card__icon"><svg aria-hidden="true"><use href="#i-server"/></svg></span>Back-end</h3>
+            <div class="stack-grid">
+                <article class="stack-card reveal">
+                    <h3>Back-end</h3>
                     <p>Regras de negócio, controle de acesso por perfil e integrações em arquitetura MVC.</p>
                     <div class="chips"><span class="chip chip--accent">PHP</span><span class="chip chip--accent">CodeIgniter</span><span class="chip">APIs REST</span><span class="chip">SOAP</span><span class="chip">MVC</span></div>
                 </article>
-                <article class="card stack-card reveal" style="--i:1" data-spotlight>
-                    <h3><span class="card__icon"><svg aria-hidden="true"><use href="#i-layout"/></svg></span>Front-end</h3>
+                <article class="stack-card reveal" style="--i:1">
+                    <h3>Front-end</h3>
                     <p>Dashboards, filtros dinâmicos, modais e fluxos pensados para quem opera o sistema o dia todo.</p>
                     <div class="chips"><span class="chip chip--accent">JavaScript</span><span class="chip">jQuery</span><span class="chip">HTML/CSS</span><span class="chip">Bootstrap</span><span class="chip">Tailwind CSS</span></div>
                 </article>
-                <article class="card stack-card reveal" style="--i:2" data-spotlight>
-                    <h3><span class="card__icon"><svg aria-hidden="true"><use href="#i-database"/></svg></span>Dados</h3>
+                <article class="stack-card reveal" style="--i:2">
+                    <h3>Dados</h3>
                     <p>Modelagem relacional, stored procedures e consultas otimizadas para grandes volumes.</p>
                     <div class="chips"><span class="chip chip--accent">MySQL</span><span class="chip chip--accent">SQL Server</span><span class="chip">Modelagem</span><span class="chip">Performance</span></div>
                 </article>
-                <article class="card stack-card reveal" data-spotlight>
-                    <h3><span class="card__icon"><svg aria-hidden="true"><use href="#i-git"/></svg></span>DevOps e versionamento</h3>
+                <article class="stack-card reveal">
+                    <h3>DevOps e versionamento</h3>
                     <p>Fluxo de trabalho, revisão de código e publicação contínua em ambiente corporativo.</p>
                     <div class="chips"><span class="chip chip--accent">Azure DevOps</span><span class="chip">CI/CD</span><span class="chip">Git</span><span class="chip">GitHub</span></div>
                 </article>
-                <article class="card stack-card reveal" style="--i:1" data-spotlight>
-                    <h3><span class="card__icon"><svg aria-hidden="true"><use href="#i-chart"/></svg></span>Visualização</h3>
+                <article class="stack-card reveal" style="--i:1">
+                    <h3>Visualização</h3>
                     <p>Gráficos, tabelas analíticas e exportações para leitura gerencial.</p>
                     <div class="chips"><span class="chip">Chart.js</span><span class="chip">Google Charts</span><span class="chip">DataTables</span></div>
                 </article>
-                <article class="card stack-card reveal" style="--i:2" data-spotlight>
-                    <h3><span class="card__icon"><svg aria-hidden="true"><use href="#i-zap"/></svg></span>Automação</h3>
+                <article class="stack-card reveal" style="--i:2">
+                    <h3>Automação</h3>
                     <p>Scripts que eliminam tarefas repetitivas e tratam dados em lote.</p>
                     <div class="chips"><span class="chip">Python</span><span class="chip">Selenium</span><span class="chip">Pandas</span></div>
                 </article>
@@ -351,19 +349,19 @@
         <!-- ============================== PROJETOS -->
         <section class="section container" id="projetos" aria-labelledby="proj-titulo">
             <div class="section-head section-head--row">
-                <div class="stack" style="--stack:0.9rem">
-                    <span class="eyebrow">Projetos</span>
-                    <h2 id="proj-titulo">Projetos reais, em produção</h2>
+                <div class="stack" style="--stack:1.1rem">
+                    <span class="eyebrow">04 — Projetos</span>
+                    <h2 id="proj-titulo">Projetos reais, <em class="serif">em produção</em></h2>
                     <p>Dashboards, integrações, fluxos operacionais, assinatura eletrônica e redesign de interfaces — entregues em um sistema corporativo usado todos os dias.</p>
                 </div>
-                <a class="link-arrow" href="projects.html">Ver todos os 19 projetos <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+                <a class="link-arrow" href="projects.html">Ver todos os 19 <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
             </div>
 
             <div class="projects-featured">
-                <article class="project-card is-large reveal" data-spotlight>
+                <article class="project-card is-feature plate-hover reveal">
                     <div class="project-card__media">
                         <div class="browser"><div class="browser__bar"><i></i><i></i><i></i><span>rh / psicossocial</span></div>
-                            <img src="assets/projetos/psicosocial/05-960.webp" srcset="assets/projetos/psicosocial/05-960.webp 960w, assets/projetos/psicosocial/05.webp 1900w" sizes="(min-width: 1024px) 560px, (min-width: 720px) 50vw, 100vw" width="960" height="459" loading="lazy" decoding="async" alt="Painel psicossocial com indicadores e alertas de risco" style="view-transition-name: capa-psicosocial">
+                            <img src="assets/projetos/psicosocial/05-960.webp" srcset="assets/projetos/psicosocial/05-960.webp 960w, assets/projetos/psicosocial/05.webp 1900w" sizes="(min-width: 1024px) 640px, (min-width: 720px) 60vw, 100vw" width="960" height="459" loading="lazy" decoding="async" alt="Painel psicossocial com indicadores e alertas de risco" style="view-transition-name: capa-psicosocial">
                         </div>
                     </div>
                     <div class="project-card__body">
@@ -377,7 +375,7 @@
                     </div>
                 </article>
 
-                <article class="project-card is-large reveal" style="--i:1" data-spotlight>
+                <article class="project-card plate-hover reveal" style="--i:1">
                     <div class="project-card__media">
                         <div class="browser"><div class="browser__bar"><i></i><i></i><i></i><span>rh / atendimentos</span></div>
                             <img src="assets/projetos/central-atendimentos/05-960.webp" srcset="assets/projetos/central-atendimentos/05-960.webp 960w, assets/projetos/central-atendimentos/05.webp 1900w" sizes="(min-width: 1024px) 560px, (min-width: 720px) 50vw, 100vw" width="960" height="459" loading="lazy" decoding="async" alt="Gráficos de status, prioridade e volume de atendimentos" style="view-transition-name: capa-central-atendimentos">
@@ -394,10 +392,10 @@
                     </div>
                 </article>
 
-                <article class="project-card reveal" data-spotlight>
+                <article class="project-card plate-hover reveal" style="--i:2">
                     <div class="project-card__media">
                         <div class="browser"><div class="browser__bar"><i></i><i></i><i></i><span>ssma / atestados</span></div>
-                            <img src="assets/projetos/gestao-atestados/08-960.webp" srcset="assets/projetos/gestao-atestados/08-960.webp 960w, assets/projetos/gestao-atestados/08.webp 1900w" sizes="(min-width: 1024px) 380px, (min-width: 720px) 50vw, 100vw" width="960" height="459" loading="lazy" decoding="async" alt="Estatísticas de atestados por status, tipo e dias de afastamento" style="view-transition-name: capa-gestao-atestados">
+                            <img src="assets/projetos/gestao-atestados/08-960.webp" srcset="assets/projetos/gestao-atestados/08-960.webp 960w, assets/projetos/gestao-atestados/08.webp 1900w" sizes="(min-width: 1024px) 560px, (min-width: 720px) 50vw, 100vw" width="960" height="459" loading="lazy" decoding="async" alt="Estatísticas de atestados por status, tipo e dias de afastamento" style="view-transition-name: capa-gestao-atestados">
                         </div>
                     </div>
                     <div class="project-card__body">
@@ -411,10 +409,10 @@
                     </div>
                 </article>
 
-                <article class="project-card reveal" style="--i:1" data-spotlight>
+                <article class="project-card plate-hover reveal">
                     <div class="project-card__media">
                         <div class="browser"><div class="browser__bar"><i></i><i></i><i></i><span>rh / controle-de-quadro</span></div>
-                            <img src="assets/projetos/controle-quadro/02-960.webp" srcset="assets/projetos/controle-quadro/02-960.webp 960w, assets/projetos/controle-quadro/02.webp 1900w" sizes="(min-width: 1024px) 380px, (min-width: 720px) 50vw, 100vw" width="960" height="459" loading="lazy" decoding="async" alt="Painel de controle de quadro com planejado, realizado e saldo por filial" style="view-transition-name: capa-controle-quadro">
+                            <img src="assets/projetos/controle-quadro/02-960.webp" srcset="assets/projetos/controle-quadro/02-960.webp 960w, assets/projetos/controle-quadro/02.webp 1900w" sizes="(min-width: 1024px) 560px, (min-width: 720px) 50vw, 100vw" width="960" height="459" loading="lazy" decoding="async" alt="Painel de controle de quadro com planejado, realizado e saldo por filial" style="view-transition-name: capa-controle-quadro">
                         </div>
                     </div>
                     <div class="project-card__body">
@@ -428,10 +426,10 @@
                     </div>
                 </article>
 
-                <article class="project-card reveal" style="--i:2" data-spotlight>
+                <article class="project-card plate-hover reveal" style="--i:1">
                     <div class="project-card__media">
                         <div class="browser"><div class="browser__bar"><i></i><i></i><i></i><span>gestor / escala</span></div>
-                            <img src="assets/projetos/escala-folgas/01-960.webp" srcset="assets/projetos/escala-folgas/01-960.webp 960w, assets/projetos/escala-folgas/01.webp 1900w" sizes="(min-width: 1024px) 380px, (min-width: 720px) 50vw, 100vw" width="960" height="459" loading="lazy" decoding="async" alt="Grade mensal de escala de folgas com edição por célula" style="view-transition-name: capa-escala-folgas">
+                            <img src="assets/projetos/escala-folgas/01-960.webp" srcset="assets/projetos/escala-folgas/01-960.webp 960w, assets/projetos/escala-folgas/01.webp 1900w" sizes="(min-width: 1024px) 560px, (min-width: 720px) 50vw, 100vw" width="960" height="459" loading="lazy" decoding="async" alt="Grade mensal de escala de folgas com edição por célula" style="view-transition-name: capa-escala-folgas">
                         </div>
                     </div>
                     <div class="project-card__body">
@@ -453,7 +451,7 @@
             <div class="cta reveal">
                 <div class="cta__grid">
                     <div>
-                        <span class="eyebrow">Contato</span>
+                        <span class="eyebrow">05 — Contato</span>
                         <h2 id="contato-titulo" class="mt-1">Vamos <em class="serif">conversar</em>?</h2>
                         <p class="cta__lead">Estou aberto a oportunidades como desenvolvedor full-stack ou back-end e a projetos de sistemas web, integrações e modernização de legado.</p>
                         <div class="hero__actions mt-2">
@@ -504,6 +502,7 @@
           </ul>
         </nav>
         <a class="to-top" href="#conteudo"><svg width="14" height="14" aria-hidden="true"><use href="#i-arrow-up"/></svg>Voltar ao topo</a>
+        <p class="site-footer__note">Feito à mão — HTML, CSS e JS puros, sem build · Tipografia: Instrument Serif, Geist e Geist Mono</p>
       </div>
     </footer>
     <!-- /layout:footer -->

@@ -13,7 +13,7 @@
   var themeMeta = $('meta[name="theme-color"]');
   function applyTheme(theme) {
     root.setAttribute('data-theme', theme);
-    if (themeMeta) themeMeta.setAttribute('content', theme === 'light' ? '#f5f6f8' : '#07090d');
+    if (themeMeta) themeMeta.setAttribute('content', theme === 'light' ? '#f3efe7' : '#0f0d0a');
     $$('[data-theme-toggle]').forEach(function (btn) {
       btn.setAttribute('aria-label', theme === 'light' ? 'Ativar tema escuro' : 'Ativar tema claro');
     });
@@ -100,7 +100,7 @@
   spy($$('.toc a[href^="#"]'), '-20% 0px -70% 0px');
 
   /* ------------------------------------------------ revelar ao rolar --- */
-  var reveals = $$('.reveal');
+  var reveals = $$('.reveal, .reveal-mask');
   if (reveals.length) {
     if ('IntersectionObserver' in window && !reduceMotion) {
       var rio = new IntersectionObserver(function (entries) {
@@ -112,17 +112,6 @@
     } else {
       reveals.forEach(function (el) { el.classList.add('is-visible'); });
     }
-  }
-
-  /* ------------------------------------------- brilho que segue o mouse --- */
-  if (window.matchMedia('(hover: hover)').matches) {
-    $$('[data-spotlight]').forEach(function (el) {
-      el.addEventListener('pointermove', function (ev) {
-        var r = el.getBoundingClientRect();
-        el.style.setProperty('--mx', (ev.clientX - r.left) + 'px');
-        el.style.setProperty('--my', (ev.clientY - r.top) + 'px');
-      });
-    });
   }
 
   /* ---------------------------------------- tempo de experiência --- */
